@@ -1,0 +1,30 @@
+{
+	"name": "cmo-so-growth",
+	"version": "0.2.0",
+	"description": "CMO.so Growth & go-to-market skills (9): Product launch, Referral & affiliate program, Co-marketing & partnerships, Free tools as marketing, Directory submissions, PR & earned media…. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/growth",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"growth",
+		"app-store",
+		"cmo.so",
+		"directories",
+		"email",
+		"events",
+		"google-play",
+		"google-search",
+		"linkedin"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

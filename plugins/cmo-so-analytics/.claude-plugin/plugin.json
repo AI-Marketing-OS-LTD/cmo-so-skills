@@ -1,0 +1,28 @@
+{
+	"name": "cmo-so-analytics",
+	"version": "0.2.0",
+	"description": "CMO.so Analytics & reporting skills (5): Tracking & UTM setup, Attribution, Campaign analytics & benchmarks, Client & executive report, Closed-loop measurement. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/analytics",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"analytics",
+		"cmo.so",
+		"ga4",
+		"google-ads",
+		"google-search",
+		"gtm",
+		"meta-ads"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

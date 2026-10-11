@@ -5,28 +5,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Check manifests and skill front matter
+      - name: Check manifests, skills and the index
         run: |
           python3 - <<'PY'
           import json, pathlib, re, sys
           root = pathlib.Path(".")
           market = json.loads((root / ".claude-plugin/marketplace.json").read_text())
+          index = json.loads((root / "skills.json").read_text())
+          names = {p["name"] for p in market["plugins"]}
           errors = []
+          seen = set()
           for p in market["plugins"]:
               pdir = root / p["source"]
               manifest = json.loads((pdir / ".claude-plugin/plugin.json").read_text())
               if manifest["name"] != p["name"] or manifest["version"] != p["version"]:
                   errors.append(f"{p['name']}: marketplace entry and plugin.json disagree")
-              json.loads((pdir / ".mcp.json").read_text())
+              for dep in manifest.get("dependencies", []):
+                  if dep not in names:
+                      errors.append(f"{p['name']}: unknown dependency {dep}")
+              if (pdir / ".mcp.json").exists():
+                  json.loads((pdir / ".mcp.json").read_text())
               for skill in sorted((pdir / "skills").glob("*/SKILL.md")):
                   text = skill.read_text()
-                  m = re.match(r"^---\nname: ([a-z0-9-]+)\ndescription: (.+?)\n---\n", text, re.S)
+                  m = re.match(r'^---\nname: ([a-z0-9-]+)\ndescription: (.+?)\n', text)
                   if not m:
                       errors.append(f"{skill}: missing name/description front matter")
-                  elif m.group(1) != skill.parent.name:
-                      errors.append(f"{skill}: name does not match folder")
-                  elif not m.group(1).startswith("cmo-"):
-                      errors.append(f"{skill}: skill names start with cmo-")
-          print("\n".join(errors) or "ok")
+                      continue
+                  name = m.group(1)
+                  if name != skill.parent.name or not name.startswith("cmo-"):
+                      errors.append(f"{skill}: bad name {name}")
+                  if name in seen:
+                      errors.append(f"{skill}: duplicate skill {name}")
+                  seen.add(name)
+                  if len(m.group(2)) > 1536:
+                      errors.append(f"{skill}: description too long")
+          ids = {s["id"] for s in index["skills"]}
+          if ids != seen:
+              errors.append(f"skills.json and plugins differ: {sorted(ids ^ seen)}")
+          print("\n".join(errors) or f"ok: {len(seen)} skills in {len(names)} plugins")
           sys.exit(1 if errors else 0)
           PY

@@ -1,0 +1,28 @@
+{
+	"name": "cmo-so-content",
+	"version": "0.2.0",
+	"description": "CMO.so Content & copy skills (8): Content strategy, Blog post writing, Conversion copywriting, Copy editing, Humanise AI writing, Content repurposing…. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/content",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"content",
+		"blog",
+		"email",
+		"linkedin",
+		"website",
+		"x",
+		"youtube"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

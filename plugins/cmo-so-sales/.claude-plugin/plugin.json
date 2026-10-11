@@ -1,0 +1,24 @@
+{
+	"name": "cmo-so-sales",
+	"version": "0.2.0",
+	"description": "CMO.so Sales & revenue skills (4): Prospecting & lead research, Sales enablement, Revenue operations, Proposals & statements of work. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/sales",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"sales",
+		"email",
+		"linkedin"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

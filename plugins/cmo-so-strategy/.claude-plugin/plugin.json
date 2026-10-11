@@ -1,0 +1,24 @@
+{
+	"name": "cmo-so-strategy",
+	"version": "0.2.0",
+	"description": "CMO.so Strategy & research skills (12): Customer research & ICP, Positioning & messaging, Competitor research, Marketing plan, Marketing audit, Marketing ideas…. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/strategy",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"strategy",
+		"google-search",
+		"website"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

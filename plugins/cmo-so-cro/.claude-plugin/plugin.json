@@ -1,0 +1,28 @@
+{
+	"name": "cmo-so-cro",
+	"version": "0.2.0",
+	"description": "CMO.so Conversion (CRO) skills (10): Page conversion optimisation, Landing page audit, Form optimisation, Signup flow optimisation, Onboarding & activation, Popups & banners…. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/cro",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"cro",
+		"app",
+		"email",
+		"google-ads",
+		"meta-ads",
+		"shopify",
+		"website"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

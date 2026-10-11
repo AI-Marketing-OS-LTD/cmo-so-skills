@@ -1,0 +1,28 @@
+{
+	"name": "cmo-so-creative",
+	"version": "0.2.0",
+	"description": "CMO.so Images & video skills (3): Marketing images, Video production, Video & podcast repurposing. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/creative",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"creative",
+		"blog",
+		"instagram",
+		"linkedin",
+		"meta-ads",
+		"tiktok",
+		"youtube"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}

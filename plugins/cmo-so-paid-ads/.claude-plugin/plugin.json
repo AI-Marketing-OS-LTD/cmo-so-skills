@@ -1,0 +1,30 @@
+{
+	"name": "cmo-so-paid-ads",
+	"version": "0.2.0",
+	"description": "CMO.so Paid ads skills (11): Paid ads strategy, Paid ads audit, Google Ads, Meta (Facebook & Instagram) ads, LinkedIn ads, Ad creative…. Installs the cmo-so core plugin with it.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/paid-ads",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"paid-ads",
+		"amazon-ads",
+		"apple-ads",
+		"google-ads",
+		"linkedin-ads",
+		"meta-ads",
+		"microsoft-ads",
+		"pinterest-ads",
+		"reddit-ads"
+	],
+	"dependencies": [
+		"cmo-so"
+	]
+}
