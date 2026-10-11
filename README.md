@@ -26,7 +26,7 @@
 <div align="center">
 Maggie, the AI marketing assistant in <a href="https://cmo.so">CMO.so</a>, writes and publishes blog posts to your website, drafts LinkedIn posts for you to approve, and reports how your site does in Google and in AI answers. These skills bring that, plus a full marketing playbook, to the agent you already use.
 <br/><br/>
-<a href="#quick-start">Quick start</a> · <a href="#how-it-works">How it works</a> · <a href="#skills">Skills</a> · <a href="#other-agents-and-mcp-clients">Other agents</a> · <a href="#safety">Safety</a> · <a href="#credits">Credits</a>
+<a href="#quick-start">Quick start</a> · <a href="#how-it-works">How it works</a> · <a href="#skills">Skills</a> · <a href="#the-cmoso-mcp-server">MCP server</a> · <a href="#the-cmo-cli">CLI</a> · <a href="#safety">Safety</a> · <a href="#credits">Credits</a>
 </div>
 
 ---
@@ -260,14 +260,62 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:end -->
 
-## Other agents and MCP clients
+## The CMO.so MCP server
 
-The skills are plain `SKILL.md` folders under [`plugins/`](plugins), and any agent that reads skills can use them. To use CMO.so data, connect the MCP server:
+Every skill above runs on one MCP server: **`https://mcp.cmo.so/mcp`** (Streamable HTTP, OAuth 2.1).
 
-- **Remote (OAuth):** add an HTTP MCP server with the URL `https://mcp.cmo.so/mcp` and sign in when asked. This works for ChatGPT, Claude.ai, Claude Desktop, Cursor and VS Code.
-- **Local (stdio):** sign in once with `npx @cmo-so/cli login`, then use the command `npx -y @cmo-so/mcp`. In CI, set `CMO_API_KEY` to an API key from your account settings instead.
+- **125 tools** cover your websites, results (Search Console, AI visibility, content performance, SEO audit), blog ideas, plan and drafts, the LinkedIn queue and campaigns, business profile and brand voice, autopilot settings and team access.
+- **Sign in with your CMO.so account.** There are no keys to paste. The agent gets exactly your team permissions on each website, and a read-only key only sees read tools.
+- **Two-step changes.** A tool that changes something first returns a preview and a `confirmation`. It runs only when called again with `confirm: true`, and it runs exactly the call that was previewed.
+- **Cards in ChatGPT.** Results, blog posts and the LinkedIn queue (with Approve) render as cards.
 
-The full skill index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
+| Client | How to connect |
+|---|---|
+| Claude Code | This plugin (`/mcp` → **cmo-so** → Authenticate), or `claude mcp add --transport http cmo-so https://mcp.cmo.so/mcp` |
+| Claude.ai / Claude Desktop | Settings → Connectors → Add custom connector → `https://mcp.cmo.so/mcp` |
+| ChatGPT | Plugins → Add → Add custom MCP server → `https://mcp.cmo.so/mcp`, OAuth (developer mode, until the listing is live) |
+| Cursor, VS Code, Windsurf | Add a remote HTTP server with the same URL, or run it locally (below) |
+
+Local (stdio), for clients that start a command:
+
+```json
+{
+  "mcpServers": {
+    "cmo-so": { "command": "npx", "args": ["-y", "@cmo-so/mcp"] }
+  }
+}
+```
+
+Sign in once with `npx @cmo-so/cli login`, or set `CMO_API_KEY` to an API key from your account settings. Package: [`@cmo-so/mcp`](https://www.npmjs.com/package/@cmo-so/mcp).
+
+## The cmo CLI
+
+[`@cmo-so/cli`](https://www.npmjs.com/package/@cmo-so/cli) runs the same actions from your terminal, in scripts and in CI.
+
+```sh
+npx @cmo-so/cli login            # sign in in your browser (device code)
+npm i -g @cmo-so/cli             # then just `cmo`
+
+cmo inbox                        # what needs you now
+cmo results --period 30d         # posts, ideas waiting, AI visibility
+cmo ideas add https://example.com/page     # queue a blog idea
+cmo ideas generate -n 5 --brief "spring skincare"
+cmo posts ls --status planned    # what Maggie writes next
+cmo social ls                    # LinkedIn queue
+cmo social approve 30 31         # approve drafts
+cmo autopilot pause             # or resume
+cmo run gsc_queries_get filter=low_ctr limit=10   # any of the 125 tools
+cmo mcp                          # the local MCP server (stdio)
+```
+
+- Options for every command: `--json`, `-w/--workspace <domain>`, `--dry-run` (preview only), and `-y/--yes` (no prompt, for CI).
+- Changes ask first. Without a terminal and without `--yes`, nothing changes.
+- Exit codes: `0` done, `2` input, `3` sign-in, `4` plan, permission or limit, `5` server.
+- In CI, set `CMO_API_KEY`; `CMO_WORKSPACE` picks the website.
+
+## Other agents
+
+The skills are plain `SKILL.md` folders under [`plugins/`](plugins). Any agent that reads skills (Codex, Cursor, Gemini CLI and others) can use them together with the MCP server above. The full index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
 
 ## Safety
 
