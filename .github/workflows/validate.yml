@@ -1,0 +1,32 @@
+name: validate
+on: [push, pull_request]
+jobs:
+  skills:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check manifests and skill front matter
+        run: |
+          python3 - <<'PY'
+          import json, pathlib, re, sys
+          root = pathlib.Path(".")
+          market = json.loads((root / ".claude-plugin/marketplace.json").read_text())
+          errors = []
+          for p in market["plugins"]:
+              pdir = root / p["source"]
+              manifest = json.loads((pdir / ".claude-plugin/plugin.json").read_text())
+              if manifest["name"] != p["name"] or manifest["version"] != p["version"]:
+                  errors.append(f"{p['name']}: marketplace entry and plugin.json disagree")
+              json.loads((pdir / ".mcp.json").read_text())
+              for skill in sorted((pdir / "skills").glob("*/SKILL.md")):
+                  text = skill.read_text()
+                  m = re.match(r"^---\nname: ([a-z0-9-]+)\ndescription: (.+?)\n---\n", text, re.S)
+                  if not m:
+                      errors.append(f"{skill}: missing name/description front matter")
+                  elif m.group(1) != skill.parent.name:
+                      errors.append(f"{skill}: name does not match folder")
+                  elif not m.group(1).startswith("cmo-"):
+                      errors.append(f"{skill}: skill names start with cmo-")
+          print("\n".join(errors) or "ok")
+          sys.exit(1 if errors else 0)
+          PY

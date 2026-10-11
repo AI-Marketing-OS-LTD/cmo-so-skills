@@ -1,0 +1,19 @@
+{
+	"$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+	"name": "cmo-so",
+	"owner": { "name": "AI Marketing OS Ltd", "email": "maggie@cmo.so" },
+	"metadata": {
+		"description": "Skills for running your marketing with CMO.so and Maggie, its AI marketing assistant, from Claude Code and other agents. Built on the CMO.so MCP server.",
+		"version": "0.1.0"
+	},
+	"plugins": [
+		{
+			"name": "cmo-so",
+			"source": "./plugins/cmo-so",
+			"description": "Connects the CMO.so MCP server and adds skills for your daily marketing check-in, weekly report, blog planning, LinkedIn, SEO opportunities, AI visibility and brand profile.",
+			"version": "0.1.0",
+			"category": "productivity",
+			"keywords": ["marketing", "seo", "blog", "linkedin", "ai-visibility", "mcp"]
+		}
+	]
+}

@@ -1,0 +1,8 @@
+{
+	"mcpServers": {
+		"cmo-so": {
+			"type": "http",
+			"url": "https://mcp.cmo.so/mcp"
+		}
+	}
+}

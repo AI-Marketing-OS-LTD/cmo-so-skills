@@ -1,0 +1,10 @@
+{
+	"name": "cmo-so",
+	"version": "0.1.0",
+	"description": "Run your marketing with CMO.so and Maggie: daily check-in, weekly report, blog planning, LinkedIn queue, SEO opportunities, AI visibility and brand profile, through the CMO.so MCP server.",
+	"author": { "name": "AI Marketing OS Ltd", "email": "maggie@cmo.so", "url": "https://cmo.so" },
+	"homepage": "https://ai.cmo.so/hot/mcp",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": ["cmo.so", "maggie", "marketing", "seo", "linkedin", "mcp"]
+}
