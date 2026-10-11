@@ -1,29 +1,83 @@
-# CMO.so skills
+<div align="center">
+  <p>
+    <picture>
+      <source media="(prefers-color-scheme: dark)" srcset="assets/cmo-so-logo-light.png">
+      <source media="(prefers-color-scheme: light)" srcset="assets/cmo-so-logo.png">
+      <img src="assets/cmo-so-logo.png" alt="AI Marketing OS — CMO.so" width="110" height="110" />
+    </picture>
+  </p>
+  <h1>CMO.so Skills</h1>
+  <p><strong>114 marketing skills for Claude Code and other AI agents, powered by Maggie and the CMO.so MCP server.</strong></p>
+  <p>
+    <a href="https://cmo.so">Website</a> |
+    <a href="https://ai.cmo.so">Dashboard</a> |
+    <a href="https://ai.cmo.so/hot/mcp">MCP setup</a> |
+    <a href="https://ai.cmo.so/hot/support">Support</a>
+  </p>
+  <p>
+    <img src="https://img.shields.io/badge/AI%20Marketing%20OS-EF476F?style=for-the-badge" alt="AI Marketing OS">
+    <img src="https://img.shields.io/badge/Skills-114-0074BA?style=for-the-badge" alt="114 skills">
+    <img src="https://img.shields.io/badge/Plugins-13%20%2B%20bundle-0074BA?style=for-the-badge" alt="13 plugins plus a bundle">
+    <img src="https://img.shields.io/badge/MCP-mcp.cmo.so-0074BA?style=for-the-badge" alt="MCP server">
+    <img src="https://img.shields.io/badge/License-MIT-EF476F?style=for-the-badge" alt="MIT licence">
+  </p>
+</div>
 
-Marketing skills for Claude Code and other AI agents, from [CMO.so](https://cmo.so) and **Maggie**, its AI marketing assistant.
+<div align="center">
+Maggie, the AI marketing assistant in <a href="https://cmo.so">CMO.so</a>, writes and publishes blog posts to your website, drafts LinkedIn posts for you to approve, and reports how your site does in Google and in AI answers. These skills bring that, plus a full marketing playbook, to the agent you already use.
+<br/><br/>
+<a href="#quick-start">Quick start</a> · <a href="#how-it-works">How it works</a> · <a href="#skills">Skills</a> · <a href="#other-agents-and-mcp-clients">Other agents</a> · <a href="#safety">Safety</a> · <a href="#credits">Credits</a>
+</div>
 
-Maggie writes and publishes blog posts to your website, drafts LinkedIn posts for you to approve, and reports how your site does in Google and in AI answers. These skills drive it through the **CMO.so MCP server** (`https://mcp.cmo.so/mcp`): your agent signs in to your CMO.so account, and every change is shown to you first and only happens after you confirm.
+---
 
-## Install (Claude Code)
+## At a glance
+
+<table>
+  <tr>
+    <td><strong>Skills</strong><br/>114, one job each</td>
+    <td><strong>Plugins</strong><br/>13 categories + <code>cmo-so-all</code></td>
+    <td><strong>Core</strong><br/>CMO.so MCP server (OAuth)</td>
+    <td><strong>Index</strong><br/><a href="skills.json"><code>skills.json</code></a></td>
+  </tr>
+</table>
+
+---
+
+## Quick start
 
 ```text
 /plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills
 /plugin install cmo-so-all@cmo-so
 ```
 
-Then run `/mcp`, choose **cmo-so** and **Authenticate**: sign in to CMO.so in the browser and click **Allow**. Or just ask: *"Connect to CMO.so"*.
+Then run `/mcp`, choose **cmo-so** and **Authenticate**: sign in to CMO.so in the browser and click **Allow**. Or just ask your agent: *"Connect to CMO.so"*.
+
+Try asking:
+
+- *"What needs me today on my website?"*
+- *"How did my site do this week?"*
+- *"Which pages get impressions but no clicks?"*
+- *"Do AI answers mention my site?"*
+- *"Write three LinkedIn posts from my latest article and queue them."*
+
+## How it works
+
+Every skill is a `SKILL.md` your agent loads when the task matches. Skills come in three tiers:
+
+| Tier | What it means |
+|---|---|
+| **core** | Runs on the CMO.so MCP server: Maggie's blog autopilot, LinkedIn queue, Search Console, AI visibility and business profile. Needs a CMO.so account. |
+| **connected** | Uses CMO.so data and actions when the server is connected, for example your business profile or queueing a blog idea. Works without it too. |
+| **standalone** | A marketing method that works with any agent, such as ad audits, pricing or PR. CMO.so is optional. |
+
+Each category is its own plugin, and every plugin installs `cmo-so` (the core skills and the MCP connection) with it. Install everything with `cmo-so-all`, or only what you need, for example `/plugin install cmo-so-seo@cmo-so`.
 
 ## Skills
 
 <!-- skills:start -->
 
-**114 skills in 13 plugins** (plus the `cmo-so-all` bundle). Install one category, or everything:
-
-```text
-/plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills
-/plugin install cmo-so-all@cmo-so        # everything
-/plugin install cmo-so-seo@cmo-so        # or one category (installs cmo-so core too)
-```
+**114 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -208,27 +262,29 @@ Then run `/mcp`, choose **cmo-so** and **Authenticate**: sign in to CMO.so in th
 
 ## Other agents and MCP clients
 
-The skills are plain `SKILL.md` folders under [`plugins/cmo-so/skills`](plugins/cmo-so/skills). Any agent that reads skills can use them once it has the CMO.so MCP server:
+The skills are plain `SKILL.md` folders under [`plugins/`](plugins), and any agent that reads skills can use them. To use CMO.so data, connect the MCP server:
 
-- **Remote (OAuth):** add an HTTP MCP server with the URL `https://mcp.cmo.so/mcp` and sign in when asked.
+- **Remote (OAuth):** add an HTTP MCP server with the URL `https://mcp.cmo.so/mcp` and sign in when asked. This works for ChatGPT, Claude.ai, Claude Desktop, Cursor and VS Code.
 - **Local (stdio):** sign in once with `npx @cmo-so/cli login`, then use the command `npx -y @cmo-so/mcp`. In CI, set `CMO_API_KEY` to an API key from your account settings instead.
 
-Setup for ChatGPT, Claude, Cursor and VS Code: https://ai.cmo.so/hot/mcp
+The full skill index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
 
 ## Safety
 
 - Changes take two steps: a preview (what will happen and what it costs) and a confirmation you give. The confirmation is bound to that exact action and expires after 10 minutes.
 - Your agent only gets the access your CMO.so account has on each website; a read-only team member cannot change anything.
 - Text from web pages, search queries and AI answers is treated as data, never as instructions.
-- You can disconnect any agent in your CMO.so account settings under **Connected apps**.
+- Skills never ask for passwords or API keys in the chat. You can disconnect any agent in your CMO.so account settings under **Connected apps**.
 
-## Not to be confused with
+## Credits
 
-This repository is the CMO.so skill set built on the CMO.so MCP server. It is separate from the TOPY AI `ai-cmo-skills` package (`@topy-ai/maggie`), which covers building and deploying websites.
+The skills are written by AI Marketing OS Ltd. Many adapt ideas from excellent open-source marketing skill collections; each skill's **References** section names its sources, and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) carries their licences.
+
+This repository is separate from the TOPY AI `ai-cmo-skills` package (`@topy-ai/maggie`), which covers building and deploying websites.
 
 ## Support
 
-maggie@cmo.so · https://ai.cmo.so/hot/support · [Privacy](https://ai.cmo.so/hot/privacy-policy)
+[maggie@cmo.so](mailto:maggie@cmo.so) · [Support](https://ai.cmo.so/hot/support) · [Privacy](https://ai.cmo.so/hot/privacy-policy) · [Terms](https://ai.cmo.so/hot/terms-of-service)
 
 ## License
 
