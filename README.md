@@ -61,6 +61,16 @@ Ten new skills, and 72 existing skills improved with rules, checklists and platf
 /plugin install cmo-so-all@cmo-so
 ```
 
+Or install the skills with npm, for one project or for your user (Claude Code and Codex):
+
+```sh
+npx @cmo-so/skills install                  # this project: .claude/skills
+npx @cmo-so/skills install --scope user     # every project: ~/.claude/skills (and ~/.codex/skills with --agent all)
+npx @cmo-so/skills install --category seo,social --mcp   # some categories, plus the MCP server in .mcp.json
+```
+
+See [`packages/skills`](packages/skills/README.md) for update, remove and the other options.
+
 Then run `/mcp`, choose **cmo-so** and **Authenticate**: sign in to CMO.so in the browser and click **Allow**. Or just ask your agent: *"Connect to CMO.so"*.
 
 Try asking:
@@ -335,7 +345,7 @@ cmo mcp                          # the local MCP server (stdio)
 
 ## Other agents
 
-The skills are plain `SKILL.md` folders under [`plugins/`](plugins). Any agent that reads skills (Codex, Cursor, Gemini CLI and others) can use them together with the MCP server above. The full index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
+The skills are plain `SKILL.md` folders under [`plugins/`](plugins). `npx @cmo-so/skills install --agent codex` installs them for Codex (`.agents/skills`, or `~/.codex/skills` with `--scope user`). Any agent that reads skills (Codex, Cursor, Gemini CLI and others) can use them together with the MCP server above. The full index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
 
 ## Safety
 

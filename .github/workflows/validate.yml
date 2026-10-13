@@ -45,3 +45,9 @@ jobs:
           print("\n".join(errors) or f"ok: {len(seen)} skills in {len(names)} plugins")
           sys.exit(1 if errors else 0)
           PY
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Test the npm installer (@cmo-so/skills)
+        working-directory: packages/skills
+        run: npm test

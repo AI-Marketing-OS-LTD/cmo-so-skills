@@ -1,0 +1,46 @@
+{
+	"name": "@cmo-so/skills",
+	"version": "0.3.0",
+	"description": "Install the CMO.so marketing skills (SEO, AI search, content, social, email, ads, CRO, analytics) into Claude Code, Codex and other AI coding agents, for one project or for your user.",
+	"type": "module",
+	"license": "MIT",
+	"homepage": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/AI-Marketing-OS-LTD/cmo-so-skills.git",
+		"directory": "packages/skills"
+	},
+	"bugs": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/issues",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"skills",
+		"agent-skills",
+		"claude-code",
+		"codex",
+		"seo",
+		"mcp"
+	],
+	"bin": {
+		"cmo-skills": "bin/cmo-skills.mjs"
+	},
+	"files": [
+		"bin",
+		"skills",
+		"catalog.json",
+		"README.md",
+		"LICENSE",
+		"THIRD_PARTY_NOTICES.md"
+	],
+	"engines": {
+		"node": ">=18"
+	},
+	"publishConfig": {
+		"access": "public"
+	},
+	"scripts": {
+		"prepack": "node scripts/bundle.mjs",
+		"test": "node scripts/bundle.mjs && node --test scripts/cli.test.mjs"
+	}
+}
