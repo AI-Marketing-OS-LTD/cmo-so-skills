@@ -26,7 +26,7 @@
 <div align="center">
 Maggie, the AI marketing assistant in <a href="https://cmo.so">CMO.so</a>, writes and publishes blog posts to your website, drafts LinkedIn posts for you to approve, and reports how your site does in Google and in AI answers. These skills bring that, plus a full marketing playbook, to the agent you already use.
 <br/><br/>
-<a href="#quick-start">Quick start</a> · <a href="#how-it-works">How it works</a> · <a href="#skills">Skills</a> · <a href="#the-cmoso-mcp-server">MCP server</a> · <a href="#the-cmo-cli">CLI</a> · <a href="#safety">Safety</a> · <a href="#credits">Credits</a>
+<a href="#quick-start">Quick start</a> · <a href="#supported-platforms">Platforms</a> · <a href="#standalone-install">Standalone install</a> · <a href="#how-it-works">How it works</a> · <a href="#skills">Skills</a> · <a href="#the-cmoso-mcp-server">MCP server</a> · <a href="#the-cmo-cli">CLI</a> · <a href="#safety">Safety</a> · <a href="#credits">Credits</a>
 </div>
 
 ---
@@ -102,6 +102,68 @@ Try asking:
 - *"Which pages get impressions but no clicks?"*
 - *"Do AI answers mention my site?"*
 - *"Write three LinkedIn posts from my latest article and queue them."*
+
+## Supported platforms
+
+| Platform | How to install | Skills folder (project · user) | MCP server |
+|---|---|---|---|
+| **Claude Code** | Plugin marketplace, or `npx @cmo-so/skills -a claude` | `.claude/skills` · `~/.claude/skills` | Included in the `cmo-so` plugin |
+| **Codex** (CLI, IDE, ChatGPT desktop) | Plugin marketplace, or `npx @cmo-so/skills -a codex` | `.agents/skills` · `~/.agents/skills` | Included in the `cmo-so` plugin |
+| **Pi** | `pi install npm:@cmo-so/skills`, or `npx @cmo-so/skills -a pi` | `.agents/skills` · `~/.agents/skills` | `npx -y @cmo-so/mcp` |
+| **Cursor** | `npx @cmo-so/skills -a cursor` | `.agents/skills` · `~/.cursor/skills` | Remote URL |
+| **Gemini CLI** | `npx @cmo-so/skills -a gemini` | `.agents/skills` · `~/.gemini/skills` | `gemini mcp add` |
+| **OpenCode** | `npx @cmo-so/skills -a opencode` | `.agents/skills` · `~/.config/opencode/skills` | Remote URL |
+| **GitHub Copilot** | `npx @cmo-so/skills -a copilot` | `.agents/skills` · `~/.copilot/skills` | Remote URL |
+| **Windsurf** | `npx @cmo-so/skills -a windsurf` | `.windsurf/skills` · `~/.codeium/windsurf/skills` | Remote URL |
+| **Amp** | `npx @cmo-so/skills -a amp` | `.agents/skills` · `~/.config/agents/skills` | Remote URL |
+| **Cline** | `npx @cmo-so/skills -a cline` | `.agents/skills` · `~/.agents/skills` | Remote URL |
+| **Goose** | `npx @cmo-so/skills -a goose` | `.goose/skills` · `~/.config/goose/skills` | Remote URL |
+| **Kiro** | `npx @cmo-so/skills -a kiro` | `.kiro/skills` · `~/.kiro/skills` | Remote URL |
+| **Qwen Code** | `npx @cmo-so/skills -a qwen` | `.qwen/skills` · `~/.qwen/skills` | Remote URL |
+| **Trae** | `npx @cmo-so/skills -a trae` | `.trae/skills` · `~/.trae/skills` | Remote URL |
+| **Roo Code** | `npx @cmo-so/skills -a roo` | `.roo/skills` · `~/.roo/skills` | Remote URL |
+| **Kilo Code** | `npx @cmo-so/skills -a kilo` | `.kilocode/skills` · `~/.kilocode/skills` | Remote URL |
+| **Augment** | `npx @cmo-so/skills -a augment` | `.augment/skills` · `~/.augment/skills` | Remote URL |
+| **Factory Droid** | `npx @cmo-so/skills -a droid` | `.factory/skills` · `~/.factory/skills` | Remote URL |
+| **OpenHands** | `npx @cmo-so/skills -a openhands` | `.openhands/skills` · `~/.openhands/skills` | Remote URL |
+| **Antigravity** | `npx @cmo-so/skills -a antigravity` | `.agent/skills` · `~/.gemini/antigravity/skills` | Remote URL |
+| **Claude.ai, Claude Desktop** | Upload a skill folder as a zip ([standalone install](#standalone-install)) | — | Settings → Connectors → `https://mcp.cmo.so/mcp` |
+| **ChatGPT** | — (the tools work through the MCP server) | — | Custom MCP server `https://mcp.cmo.so/mcp` |
+| **Any other agent** | [Standalone install](#standalone-install) into the folder it reads | — | Remote URL or `npx -y @cmo-so/mcp` |
+
+Add `-g` to an `npx @cmo-so/skills install` command to install for your user (every project) instead of the current project. "Remote URL" means adding `https://mcp.cmo.so/mcp` as a remote (streamable HTTP) MCP server in that agent's settings; it signs in with OAuth. Tested end to end on Claude Code, Codex and Pi; the other folders follow each agent's documented skills location.
+
+## Standalone install
+
+Each skill is one self-contained folder with a `SKILL.md` (the open Agent Skills format), so you can install without any of the tools above.
+
+**All skills, without Node** (macOS, Linux, WSL; change the target to the folder your agent reads):
+
+```sh
+git clone --depth 1 https://github.com/AI-Marketing-OS-LTD/cmo-so-skills.git
+mkdir -p ~/.agents/skills
+cp -R cmo-so-skills/plugins/*/skills/* ~/.agents/skills/
+```
+
+**One skill** (no clone):
+
+```sh
+mkdir -p ~/.agents/skills
+curl -sL https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/archive/refs/heads/main.tar.gz \
+  | tar -xz --strip-components=4 -C ~/.agents/skills cmo-so-skills-main/plugins/cmo-so-seo/skills/cmo-seo-audit
+```
+
+The path is `plugins/<plugin>/skills/<skill>`; [`skills.json`](skills.json) lists every skill with its plugin (`skill_file`).
+
+**With Node, any agent:** `npx @cmo-so/skills install [-g] -a <agent>` copies the skills, keeps a record, and later updates them without overwriting your edits. The open `skills` CLI works too: `npx skills add AI-Marketing-OS-LTD/cmo-so-skills -a <agent>`.
+
+**Windows:** download the [ZIP](https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/archive/refs/heads/main.zip) and copy the folders from `plugins\<plugin>\skills\` to your agent's skills folder (for example `%USERPROFILE%\.agents\skills`), or use `npx @cmo-so/skills` in PowerShell.
+
+**Claude.ai and Claude Desktop:** zip one skill folder (for example `cmo-seo-audit/`) and upload it in Settings → Capabilities → Skills.
+
+**Agents without a skills folder:** paste a `SKILL.md` into the agent's custom instructions or rules, or point the agent at the file: *"Follow plugins/cmo-so-seo/skills/cmo-seo-audit/SKILL.md"*.
+
+To update, repeat the copy (it replaces the files) or switch to `npx @cmo-so/skills`, which keeps your edits. For the core skills, also connect the [MCP server](#the-cmoso-mcp-server).
 
 ## How it works
 
