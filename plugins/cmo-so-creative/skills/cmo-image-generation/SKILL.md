@@ -79,7 +79,7 @@ Ask one question at a time:
    - Keep the original file with its provenance metadata; resizing in a browser canvas or some editors strips it.
    - Set width and height to avoid layout shift; lazy-load below the fold.
    - OG tags: `og:image`, `og:image:width`, `og:image:height`, `og:image:alt`, and `twitter:card` set to summary_large_image.
-10. **Optional with CMO.so**: CMO.so has no image tool. If an image inspired a new post, the user can save it as a blog idea with `idea_add` (`text`, or a `url`); Maggie drafts the idea with AI, so it is previewed and confirmed first.
+10. **Optional with CMO.so**: for a LinkedIn post in the user's CMO.so queue, CMO.so makes the picture itself: `social_image_new` (`id` from `social_list`) starts it in the background, on the user's own ChatGPT when their Maggie Bridge has images on, else on CMO.so; it takes up to a couple of minutes and appears on the post by itself (`social_image_status` shows progress, `social_image_stop` stops it; one picture at a time per website). For other images (blog heroes, ads), use the routes above. If an image inspired a new post, the user can save it as a blog idea with `idea_add` (`text`, or a `url`); Maggie drafts the idea with AI, so it is previewed and confirmed first.
 
 ## Output
 Per image: Brief | Route | Prompt (or template notes) | Size | File name | Alt text | Status (draft / approved). Then a short web checklist (format, weight, tags) and the generation log (tool, model, prompt, settings, cost if known).
