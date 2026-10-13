@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "app"
-  version: "0.4.0"
+  version: "0.4.1"
   docs: "https://cmo.so/skills/cmo-paywalls"
 ---
 # Paywalls & upgrade prompts

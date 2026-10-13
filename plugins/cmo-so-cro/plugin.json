@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-cro",
-	"version": "0.4.0",
+	"version": "0.4.1",
 	"description": "CMO.so Conversion (CRO) skills (10): Page conversion optimisation, Landing page audit, Form optimisation, Signup flow optimisation, Onboarding & activation, Popups & banners…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

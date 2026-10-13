@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.4.0"
+  version: "0.4.1"
   docs: "https://cmo.so/skills/cmo-search-intent"
 ---
 # Search intent & SERP fit
