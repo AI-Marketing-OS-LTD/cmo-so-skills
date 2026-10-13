@@ -1,0 +1,50 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-seo",
+	"version": "0.4.0",
+	"description": "CMO.so SEO skills (18): SEO audit, Technical SEO, On-page SEO, Keyword research, Keyword clustering & topic map, SEO content brief…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/seo",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"seo",
+		"ai-search",
+		"bing",
+		"blog",
+		"google-maps",
+		"google-search",
+		"google-shopping",
+		"shopify",
+		"website"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so SEO",
+				"shortDescription": "18 SEO skills from CMO.so",
+				"longDescription": "CMO.so SEO skills (18): SEO audit, Technical SEO, On-page SEO, Keyword research, Keyword clustering & topic map, SEO content brief…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so SEO to full SEO audit of a site: technical health, on-page, content, links and search data, delivered as a short prioritised fix list.",
+					"Use CMO.so SEO to crawlability, indexing, Core Web Vitals, rendering, redirects and IndexNow: find and fix what stops pages being found."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

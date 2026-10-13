@@ -1,6 +1,7 @@
 #!/usr/bin/env node
-// Install, update and remove the CMO.so marketing skills for Claude Code and Codex,
-// in one project (default) or for the current user. No dependencies.
+// Install, update and remove the CMO.so marketing skills for Claude Code, Codex, Pi, Cursor,
+// Gemini CLI and other coding agents, in one project (default) or for the current user.
+// No dependencies.
 import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdirSync, readFileSync, readdirSync, renameSync, rmSync, writeFileSync } from "node:fs";
 import { homedir } from "node:os";
@@ -12,35 +13,109 @@ const PKG = JSON.parse(readFileSync(join(PKG_ROOT, "package.json"), "utf8"));
 const SKILLS_ROOT = join(PKG_ROOT, "skills");
 const MCP_URL = "https://mcp.cmo.so/mcp";
 const ID = /^cmo-[a-z0-9-]+$/;
-const AGENTS = ["claude", "codex"];
-
-function loadCatalog() {
-	const path = join(PKG_ROOT, "catalog.json");
-	if (!existsSync(path) || !existsSync(SKILLS_ROOT)) {
-		throw new UsageError("the bundled skills are missing; build the package with `npm pack` (it runs scripts/bundle.mjs)");
-	}
-	const catalog = JSON.parse(readFileSync(path, "utf8"));
-	for (const s of catalog.skills) if (!ID.test(s.id)) throw new Error(`bad skill id in catalog: ${s.id}`);
-	return catalog;
-}
 
 class UsageError extends Error {}
+
+// ---------- agents ----------
+// Where each agent reads skills. project: relative to the project; user: under the home folder.
+// `detect` lists folders whose presence means the agent is set up (user scope: under home).
+// Several agents share .agents/skills (the cross-agent folder); a shared folder is written once.
+const HOME = () => homedir();
+const AGENTS = {
+	claude: { name: "Claude Code", project: ".claude/skills", user: () => join(process.env.CLAUDE_CONFIG_DIR || join(HOME(), ".claude"), "skills"), detect: [".claude"] },
+	codex: { name: "Codex", project: ".agents/skills", user: () => join(HOME(), ".agents", "skills"), detect: [".codex"] },
+	pi: { name: "Pi", project: ".agents/skills", user: () => join(HOME(), ".agents", "skills"), detect: [".pi"] },
+	cursor: { name: "Cursor", project: ".agents/skills", user: () => join(HOME(), ".cursor", "skills"), detect: [".cursor"] },
+	gemini: { name: "Gemini CLI", project: ".agents/skills", user: () => join(HOME(), ".gemini", "skills"), detect: [".gemini"] },
+	opencode: { name: "OpenCode", project: ".agents/skills", user: () => join(HOME(), ".config", "opencode", "skills"), detect: [".config/opencode", ".opencode"] },
+	copilot: { name: "GitHub Copilot", project: ".agents/skills", user: () => join(HOME(), ".copilot", "skills"), detect: [".copilot"] },
+	amp: { name: "Amp", project: ".agents/skills", user: () => join(HOME(), ".config", "agents", "skills"), detect: [".config/amp"] },
+	cline: { name: "Cline", project: ".agents/skills", user: () => join(HOME(), ".agents", "skills"), detect: [".cline"] },
+	windsurf: { name: "Windsurf", project: ".windsurf/skills", user: () => join(HOME(), ".codeium", "windsurf", "skills"), detect: [".codeium/windsurf", ".windsurf"] },
+	goose: { name: "Goose", project: ".goose/skills", user: () => join(HOME(), ".config", "goose", "skills"), detect: [".config/goose", ".goose"] },
+	kiro: { name: "Kiro", project: ".kiro/skills", user: () => join(HOME(), ".kiro", "skills"), detect: [".kiro"] },
+	qwen: { name: "Qwen Code", project: ".qwen/skills", user: () => join(HOME(), ".qwen", "skills"), detect: [".qwen"] },
+	trae: { name: "Trae", project: ".trae/skills", user: () => join(HOME(), ".trae", "skills"), detect: [".trae"] },
+	roo: { name: "Roo Code", project: ".roo/skills", user: () => join(HOME(), ".roo", "skills"), detect: [".roo"] },
+	kilo: { name: "Kilo Code", project: ".kilocode/skills", user: () => join(HOME(), ".kilocode", "skills"), detect: [".kilocode"] },
+	augment: { name: "Augment", project: ".augment/skills", user: () => join(HOME(), ".augment", "skills"), detect: [".augment"] },
+	droid: { name: "Factory Droid", project: ".factory/skills", user: () => join(HOME(), ".factory", "skills"), detect: [".factory"] },
+	openhands: { name: "OpenHands", project: ".openhands/skills", user: () => join(HOME(), ".openhands", "skills"), detect: [".openhands"] },
+	antigravity: { name: "Antigravity", project: ".agent/skills", user: () => join(HOME(), ".gemini", "antigravity", "skills"), detect: [".gemini/antigravity"] },
+};
+const ALIASES = { "claude-code": "claude", "gemini-cli": "gemini", "github-copilot": "copilot", "kilocode": "kilo", "factory": "droid", "roo-code": "roo", "qwen-code": "qwen" };
+
+function agentDir(agent, scope, root) {
+	return scope === "user" ? resolve(AGENTS[agent].user()) : join(root, AGENTS[agent].project);
+}
+
+function detected(scope, root) {
+	const base = scope === "user" ? HOME() : root;
+	return Object.keys(AGENTS).filter((a) => AGENTS[a].detect.some((d) => existsSync(join(base, d))));
+}
+
+function parseAgents(value) {
+	return list(value).map((a) => {
+		const id = ALIASES[a.toLowerCase()] || a.toLowerCase();
+		if (!["auto", "all"].includes(id) && !AGENTS[id]) throw new UsageError(`unknown agent ${a} (see \`cmo-skills agents\`)`);
+		return id;
+	});
+}
+
+// Returns [{ dir, agents: [...] }], one entry per distinct folder.
+function targetsFor(opts, scope, root, previous) {
+	let agents = parseAgents(opts["--agent"] || "auto");
+	if (agents.includes("all")) agents = Object.keys(AGENTS);
+	else if (agents.includes("auto")) {
+		if (previous?.targets?.length) return previous.targets;
+		agents = detected(scope, root);
+		// A project with no agent folders yet: use the agents set up for this user, else Claude Code.
+		if (!agents.length && scope === "project") agents = detected("user", root);
+		if (!agents.length) agents = ["claude"];
+	}
+	const byDir = new Map();
+	for (const a of agents) {
+		const dir = agentDir(a, scope, root);
+		if (!byDir.has(dir)) byDir.set(dir, []);
+		byDir.get(dir).push(a);
+	}
+	return [...byDir].map(([dir, as]) => ({ dir, agents: as }));
+}
+
+// 0.3.0 records listed agent names only; Codex then lived in ~/.codex/skills (CODEX_HOME).
+function legacyTargets(state, scope, root) {
+	if (state.targets) return state.targets;
+	return (state.agents || []).map((a) => ({
+		dir: a === "codex" && scope === "user" ? join(process.env.CODEX_HOME || join(HOME(), ".codex"), "skills") : agentDir(a, scope, root),
+		agents: [a],
+	}));
+}
+
+function mergeTargets(a = [], b = []) {
+	const byDir = new Map();
+	for (const t of [...a, ...b]) byDir.set(t.dir, [...new Set([...(byDir.get(t.dir) || []), ...t.agents])]);
+	return [...byDir].map(([dir, agents]) => ({ dir, agents }));
+}
 
 // ---------- arguments ----------
 
 function parse(argv) {
-	const flags = new Set(["--global", "--force", "--dry-run", "--mcp", "--installed", "--json", "--all", "--help", "-h", "--version", "-v"]);
-	const valued = new Set(["--scope", "--project", "--agent", "--category", "--skills"]);
+	const flags = new Set(["--global", "-g", "--force", "--dry-run", "--mcp", "--installed", "--json", "--all", "--help", "-h", "--version", "-v"]);
+	const valued = new Set(["--scope", "--project", "--agent", "-a", "--category", "--skills"]);
 	const opts = { _: [] };
+	const add = (k, v) => {
+		if (k === "-a") k = "--agent";
+		opts[k] = k === "--agent" && opts[k] ? `${opts[k]},${v}` : v;
+	};
 	for (let i = 0; i < argv.length; i++) {
 		const a = argv[i];
-		if (a.includes("=") && a.startsWith("--") && valued.has(a.split("=")[0])) {
+		if (a.startsWith("--") && a.includes("=") && valued.has(a.split("=")[0])) {
 			const [k, ...v] = a.split("=");
-			opts[k] = v.join("=");
+			add(k, v.join("="));
 		} else if (valued.has(a)) {
 			if (argv[i + 1] === undefined) throw new UsageError(`${a} needs a value`);
-			opts[a] = argv[++i];
-		} else if (flags.has(a)) opts[a] = true;
+			add(a, argv[++i]);
+		} else if (flags.has(a)) opts[a === "-g" ? "--global" : a] = true;
 		else if (a.startsWith("-")) throw new UsageError(`unknown option ${a}`);
 		else opts._.push(a);
 	}
@@ -63,36 +138,23 @@ function projectRoot(opts) {
 	return resolve(opts["--project"] || process.cwd());
 }
 
-function userAgentHome(agent) {
-	if (agent === "claude") return resolve(process.env.CLAUDE_CONFIG_DIR || join(homedir(), ".claude"));
-	return resolve(process.env.CODEX_HOME || join(homedir(), ".codex"));
-}
-
 function stateFile(scope, root) {
 	return scope === "user"
-		? join(resolve(process.env.CMO_SO_HOME || join(homedir(), ".config", "cmo-so")), "skills-install.json")
+		? join(resolve(process.env.CMO_SO_HOME || join(HOME(), ".config", "cmo-so")), "skills-install.json")
 		: join(root, ".cmo-so", "skills-install.json");
 }
 
-// Where each agent reads skills from.
-//   project: Claude Code <project>/.claude/skills, Codex <project>/.agents/skills
-//   user:    Claude Code ~/.claude/skills (CLAUDE_CONFIG_DIR), Codex ~/.codex/skills (CODEX_HOME)
-function skillDir(agent, scope, root) {
-	if (scope === "user") return join(userAgentHome(agent), "skills");
-	return join(root, agent === "claude" ? ".claude" : ".agents", "skills");
-}
+// ---------- catalog and selection ----------
 
-function agentsFor(opts, scope, root, previous) {
-	const requested = opts["--agent"] || "auto";
-	if (!["auto", "all", ...AGENTS].includes(requested)) throw new UsageError(`unknown agent ${requested} (use auto, claude, codex or all)`);
-	if (requested === "all") return [...AGENTS];
-	if (requested !== "auto") return [requested];
-	if (previous?.agents?.length) return previous.agents;
-	const found = AGENTS.filter((a) => existsSync(scope === "user" ? userAgentHome(a) : join(root, a === "claude" ? ".claude" : ".agents")));
-	return found.length ? found : ["claude"];
+function loadCatalog() {
+	const path = join(PKG_ROOT, "catalog.json");
+	if (!existsSync(path) || !existsSync(SKILLS_ROOT)) {
+		throw new UsageError("the bundled skills are missing; build the package with `npm pack` (it runs scripts/bundle.mjs)");
+	}
+	const catalog = JSON.parse(readFileSync(path, "utf8"));
+	for (const s of catalog.skills) if (!ID.test(s.id)) throw new Error(`bad skill id in catalog: ${s.id}`);
+	return catalog;
 }
-
-// ---------- selection ----------
 
 function resolveSelection(catalog, selection) {
 	const byCategory = new Map();
@@ -147,7 +209,7 @@ function filesUnder(dir, base = dir) {
 	return out.sort();
 }
 
-function readState(path) {
+function readJson(path) {
 	try {
 		return JSON.parse(readFileSync(path, "utf8"));
 	} catch {
@@ -156,7 +218,7 @@ function readState(path) {
 }
 
 // Sync one skill folder. A file is replaced only if it is new, identical, or unchanged since we
-// installed it (its hash matches the manifest); local edits are kept unless --force.
+// installed it (its hash matches the record); local edits are kept unless --force.
 function syncSkill(id, target, managed, opts, log, stats) {
 	const source = join(SKILLS_ROOT, id);
 	const dry = opts["--dry-run"];
@@ -176,27 +238,26 @@ function syncSkill(id, target, managed, opts, log, stats) {
 	for (const rel of filesUnder(source)) {
 		const src = join(source, rel);
 		const dst = join(target, rel);
-		const key = join(target, rel);
 		const want = sha(src);
 		if (fresh) {
-			newManaged[key] = want;
+			newManaged[dst] = want;
 			continue;
 		}
 		const have = existsSync(dst) ? sha(dst) : null;
 		if (have === want) {
-			newManaged[key] = want;
+			newManaged[dst] = want;
 			stats.unchanged++;
-		} else if (have === null || managed[key] === have || opts["--force"]) {
+		} else if (have === null || managed[dst] === have || opts["--force"]) {
 			if (!dry) {
 				mkdirSync(dirname(dst), { recursive: true });
 				writeFileSync(dst, readFileSync(src));
 			}
 			log(`${have === null ? "added" : "updated"} ${dst}`);
-			newManaged[key] = want;
+			newManaged[dst] = want;
 			stats.updated++;
 		} else {
 			log(`kept ${dst} (edited locally; --force replaces it)`);
-			newManaged[key] = managed[key];
+			newManaged[dst] = managed[dst];
 			stats.kept++;
 		}
 	}
@@ -235,9 +296,8 @@ function mcpProject(root, opts, log) {
 	const path = join(root, ".mcp.json");
 	let config = {};
 	if (existsSync(path)) {
-		try {
-			config = JSON.parse(readFileSync(path, "utf8"));
-		} catch {
+		config = readJson(path);
+		if (!config) {
 			log(`skipped ${path} (not valid JSON); add the server by hand: ${MCP_URL}`);
 			return;
 		}
@@ -253,15 +313,14 @@ function mcpProject(root, opts, log) {
 }
 
 function mcpHelp(scope) {
-	const claudeScope = scope === "user" ? "user" : "project";
+	const user = scope === "user";
 	return [
-		"Connect the CMO.so MCP server (the core skills need it):",
-		`  Claude Code: claude mcp add --scope ${claudeScope} --transport http cmo-so ${MCP_URL}`,
-		"               then /mcp → cmo-so → Authenticate (sign in to CMO.so in the browser)",
-		`  Codex:       add to ${scope === "user" ? "~/.codex/config.toml" : ".codex/config.toml"}:`,
-		"               [mcp_servers.cmo-so]",
-		`               url = "${MCP_URL}"`,
-		"  Others:      npx -y @cmo-so/mcp (stdio), after `npx @cmo-so/cli login`",
+		`Connect the CMO.so MCP server (${MCP_URL}; the core skills need it, sign in with your CMO.so account):`,
+		`  Claude Code  claude mcp add --scope ${user ? "user" : "project"} --transport http cmo-so ${MCP_URL}`,
+		`  Codex        codex mcp add cmo-so --url ${MCP_URL}   (or [mcp_servers.cmo-so] url = "${MCP_URL}" in ~/.codex/config.toml)`,
+		`  Gemini CLI   gemini mcp add --transport http ${user ? "--scope user " : ""}cmo-so ${MCP_URL}`,
+		`  Cursor       Settings → MCP → Add → URL ${MCP_URL}`,
+		"  Pi and agents that start a command: npx -y @cmo-so/mcp (stdio), after `npx @cmo-so/cli login`",
 	].join("\n");
 }
 
@@ -272,19 +331,19 @@ function install(opts, { update = false } = {}) {
 	const scope = scopeOf(opts);
 	const root = projectRoot(opts);
 	const state = stateFile(scope, root);
-	const previous = readState(state);
+	const previous = readJson(state);
 	if (update && !previous) throw new UsageError(`nothing installed in ${scope === "user" ? "user scope" : root}; run \`cmo-skills install\` first`);
-	const agents = agentsFor(opts, scope, root, previous);
-	const asked = update ? {} : selectionFrom(opts);
-	const selection = update ? previous.selection : mergeSelection(previous?.selection, asked);
-	const ids = resolveSelection(catalog, update && (opts._.length || opts["--skills"]) ? { skills: [...opts._, ...list(opts["--skills"])], withCore: false } : selection);
+	const previousTargets = previous ? legacyTargets(previous, scope, root) : [];
+	const targets = targetsFor(opts, scope, root, previous ? { targets: previousTargets } : null);
+	const selection = update ? previous.selection : mergeSelection(previous?.selection, selectionFrom(opts));
+	const named = [...opts._, ...list(opts["--skills"])];
+	const ids = resolveSelection(catalog, update && named.length ? { skills: named, withCore: false } : selection);
 	const managed = previous?.files || {};
 	const stats = { installed: 0, updated: 0, unchanged: 0, kept: 0, removed: 0 };
 	const log = (line) => console.log(opts["--dry-run"] ? `[dry run] ${line}` : line);
 	const files = { ...managed };
 
-	for (const agent of agents) {
-		const dir = skillDir(agent, scope, root);
+	for (const { dir } of targets) {
 		for (const id of ids) Object.assign(files, syncSkill(id, join(dir, id), managed, opts, log, stats));
 		// Skills that were installed before but are no longer in the package.
 		for (const id of previous?.skills || []) {
@@ -297,16 +356,21 @@ function install(opts, { update = false } = {}) {
 		}
 	}
 
-	const installed = [...new Set([...(update ? previous.skills : previous?.skills || []), ...ids])].filter((id) => catalog.skills.some((s) => s.id === id)).sort();
-	const allAgents = [...new Set([...(previous?.agents || []), ...agents])];
+	const known = (id) => catalog.skills.some((s) => s.id === id);
+	const installed = [...new Set([...(previous?.skills || []), ...ids])].filter(known).sort();
+	const allTargets = mergeTargets(previousTargets, targets);
 	if (opts["--mcp"] && scope === "project") mcpProject(root, opts, log);
 	if (!opts["--dry-run"]) {
 		mkdirSync(dirname(state), { recursive: true });
-		writeFileSync(state, `${JSON.stringify({ package: PKG.name, version: PKG.version, scope, ...(scope === "project" ? { project: root } : {}), agents: allAgents, selection, skills: installed, files, [update ? "updated_at" : "installed_at"]: new Date().toISOString() }, null, 2)}\n`);
+		const record = { package: PKG.name, version: PKG.version, scope, ...(scope === "project" ? { project: root } : {}), targets: allTargets, selection, skills: installed, files, [update ? "updated_at" : "installed_at"]: new Date().toISOString() };
+		writeFileSync(state, `${JSON.stringify(record, null, 2)}\n`);
 	}
-	const where = agents.map((a) => skillDir(a, scope, root)).join(", ");
-	console.log(`\n${update ? "Updated" : "Installed"} ${ids.length} CMO.so skills v${PKG.version} (${scope} scope) in ${where}: ${stats.installed} new, ${stats.updated} files updated, ${stats.unchanged} unchanged, ${stats.kept} kept${stats.removed ? `, ${stats.removed} retired skills removed` : ""}.`);
+	console.log(`\n${update ? "Updated" : "Installed"} ${ids.length} CMO.so skills v${PKG.version} (${scope} scope):`);
+	for (const t of targets) console.log(`  ${t.dir}  (${t.agents.map((a) => AGENTS[a]?.name || a).join(", ")})`);
+	console.log(`${stats.installed} new, ${stats.updated} files updated, ${stats.unchanged} unchanged, ${stats.kept} kept${stats.removed ? `, ${stats.removed} retired skills removed` : ""}.`);
 	if (stats.kept) console.log("Files you edited were kept. Rerun with --force to replace them.");
+	const legacyCodex = previousTargets.find((t) => t.dir.endsWith(join(".codex", "skills")));
+	if (legacyCodex) console.log(`Note: Codex now reads ~/.agents/skills. Move to it with \`cmo-skills install --scope user --agent codex\`, then delete ${legacyCodex.dir}/cmo-*.`);
 	if (!update && !(opts["--mcp"] && scope === "project")) console.log(`\n${mcpHelp(scope)}`);
 	if (!update) console.log(`\nRestart your agent (or start a new session) to load the skills. Try: "Connect to CMO.so" or "What needs me today on my website?"`);
 }
@@ -315,24 +379,26 @@ function remove(opts) {
 	const scope = scopeOf(opts);
 	const root = projectRoot(opts);
 	const state = stateFile(scope, root);
-	const previous = readState(state);
+	const previous = readJson(state);
 	if (!previous) throw new UsageError(`nothing installed in ${scope === "user" ? "user scope" : root}`);
 	const ids = opts["--all"] ? previous.skills : [...opts._, ...list(opts["--skills"])];
 	if (!ids.length) throw new UsageError("name the skills to remove, or pass --all");
-	const agents = opts["--agent"] && opts["--agent"] !== "auto" ? agentsFor(opts, scope, root, null) : previous.agents;
+	const recorded = legacyTargets(previous, scope, root);
+	const targets = opts["--agent"] ? targetsFor(opts, scope, root, null) : recorded;
 	const log = (line) => console.log(opts["--dry-run"] ? `[dry run] ${line}` : line);
 	const files = { ...previous.files };
 	const left = new Set(previous.skills);
 	for (const id of ids) {
 		if (!ID.test(id)) throw new UsageError(`bad skill id ${id}`);
 		let gone = true;
-		for (const agent of agents) {
-			const target = join(skillDir(agent, scope, root), id);
+		for (const { dir } of targets) {
+			const target = join(dir, id);
 			if (removeSkill(target, previous.files, opts, log)) {
 				for (const k of Object.keys(files)) if (k.startsWith(target + sep)) delete files[k];
 			} else gone = false;
 		}
-		if (gone) left.delete(id);
+		// Removing from some agents only: the skill stays installed for the others.
+		if (gone && targets.length === recorded.length) left.delete(id);
 	}
 	if (opts["--dry-run"]) return;
 	if (!left.size) {
@@ -340,18 +406,14 @@ function remove(opts) {
 		console.log("All CMO.so skills removed.");
 		return;
 	}
-	const selection = { categories: [], skills: [...left].sort() };
-	writeFileSync(state, `${JSON.stringify({ ...previous, selection, skills: [...left].sort(), files, updated_at: new Date().toISOString() }, null, 2)}\n`);
+	writeFileSync(state, `${JSON.stringify({ ...previous, targets: recorded, selection: { categories: [], skills: [...left].sort() }, skills: [...left].sort(), files, updated_at: new Date().toISOString() }, null, 2)}\n`);
 	console.log(`${left.size} CMO.so skills still installed.`);
 }
 
 function listCmd(opts) {
 	const catalog = loadCatalog();
 	let installed = null;
-	if (opts["--installed"]) {
-		const scope = scopeOf(opts);
-		installed = new Set(readState(stateFile(scope, projectRoot(opts)))?.skills || []);
-	}
+	if (opts["--installed"]) installed = new Set(readJson(stateFile(scopeOf(opts), projectRoot(opts)))?.skills || []);
 	const category = opts["--category"];
 	const rows = catalog.skills.filter((s) => (!category || s.category === category || s.plugin === category) && (!installed || installed.has(s.id)));
 	if (opts["--json"]) {
@@ -364,14 +426,30 @@ function listCmd(opts) {
 		console.log(`\n${c.name} (--category ${c.id})`);
 		for (const s of inCat) console.log(`  ${s.id.padEnd(30)} ${s.summary}`);
 	}
-	console.log(`\n${rows.length} skills. Install: npx @cmo-so/skills install [--category seo,social] [--scope user]`);
+	console.log(`\n${rows.length} skills. Install: npx @cmo-so/skills install [--category seo,social] [--agent codex,pi] [--scope user]`);
+}
+
+function agentsCmd(opts) {
+	const root = projectRoot(opts);
+	const found = { project: new Set(detected("project", root)), user: new Set(detected("user", root)) };
+	if (opts["--json"]) {
+		console.log(JSON.stringify(Object.entries(AGENTS).map(([id, a]) => ({ id, name: a.name, project: a.project, user: resolve(a.user()), detected: found.user.has(id) || found.project.has(id) })), null, 2));
+		return;
+	}
+	console.log(`${"--agent".padEnd(12)} ${"Agent".padEnd(15)} ${"Project folder".padEnd(18)} User folder`);
+	for (const [id, a] of Object.entries(AGENTS)) {
+		const mark = found.project.has(id) || found.user.has(id) ? " *" : "";
+		console.log(`${id.padEnd(12)} ${a.name.padEnd(15)} ${a.project.padEnd(18)} ${a.user().replace(HOME(), "~")}${mark}`);
+	}
+	console.log("\n* set up on this machine or in this project. --agent auto (the default) installs for those, else Claude Code.");
+	console.log("Combine agents with commas: --agent codex,pi,claude. Agents that share a folder get one copy.");
 }
 
 function doctor(opts) {
 	const catalog = loadCatalog();
 	const scope = scopeOf(opts);
 	const root = projectRoot(opts);
-	const state = readState(stateFile(scope, root));
+	const state = readJson(stateFile(scope, root));
 	let problems = 0;
 	const report = (ok, line) => {
 		console.log(`${ok ? "PASS" : "FAIL"} ${line}`);
@@ -382,17 +460,16 @@ function doctor(opts) {
 		console.log(`INFO nothing installed in ${scope} scope${scope === "project" ? ` (${root})` : ""}`);
 		return;
 	}
-	report(true, `manifest ${stateFile(scope, root)} (installed v${state.version})`);
-	if (state.version !== PKG.version) console.log(`INFO installed v${state.version}, package v${PKG.version}: run \`cmo-skills update${scope === "user" ? " --scope user" : ""}\``);
-	for (const agent of state.agents) {
-		const dir = skillDir(agent, scope, root);
+	report(true, `record ${stateFile(scope, root)} (installed v${state.version})`);
+	if (state.version !== PKG.version) console.log(`INFO installed v${state.version}, package v${PKG.version}: run \`npx @cmo-so/skills@latest update${scope === "user" ? " --scope user" : ""}\``);
+	for (const { dir, agents } of legacyTargets(state, scope, root)) {
 		const missing = state.skills.filter((id) => !existsSync(join(dir, id, "SKILL.md")));
-		report(!missing.length, `${agent}: ${state.skills.length - missing.length}/${state.skills.length} skills in ${dir}${missing.length ? ` (missing: ${missing.join(", ")})` : ""}`);
+		report(!missing.length, `${agents.map((a) => AGENTS[a]?.name || a).join(", ")}: ${state.skills.length - missing.length}/${state.skills.length} skills in ${dir}${missing.length ? ` (missing: ${missing.join(", ")})` : ""}`);
 		const edited = Object.entries(state.files).filter(([p, h]) => p.startsWith(dir + sep) && existsSync(p) && sha(p) !== h).length;
-		if (edited) console.log(`INFO ${agent}: ${edited} file(s) edited locally (kept on update)`);
+		if (edited) console.log(`INFO ${edited} file(s) in ${dir} edited locally (kept on update)`);
 	}
 	if (scope === "project") {
-		const mcp = readState(join(root, ".mcp.json"));
+		const mcp = readJson(join(root, ".mcp.json"));
 		console.log(`INFO MCP server in .mcp.json: ${mcp?.mcpServers?.["cmo-so"] ? "yes" : "no (cmo-skills mcp, or --mcp on install)"}`);
 	}
 	if (problems) process.exitCode = 1;
@@ -405,7 +482,8 @@ function mcp(opts) {
 }
 
 function help() {
-	console.log(`@cmo-so/skills ${PKG.version}: the CMO.so marketing skills for Claude Code and Codex
+	console.log(`@cmo-so/skills ${PKG.version}: the CMO.so marketing skills for Claude Code, Codex, Pi, Cursor,
+Gemini CLI and other coding agents
 
 Usage: npx @cmo-so/skills <command> [options]
 
@@ -414,37 +492,40 @@ Commands
   update                Update installed skills to this version; adds new skills in the categories you chose
   remove SKILL ... | --all   Remove skills (keeps folders you edited unless --force)
   list                  Show the skills by category
+  agents                Show the supported agents and their skill folders
   doctor                Check an install
   mcp                   Connect the CMO.so MCP server (writes .mcp.json in project scope)
 
 Options
-  --scope project|user  project (default): <project>/.claude/skills and <project>/.agents/skills
-                        user: ~/.claude/skills and ~/.codex/skills, for every project
-  --global              Same as --scope user
+  --scope project|user  project (default): skill folders inside the project, e.g. .claude/skills, .agents/skills
+                        user: folders in your home, e.g. ~/.claude/skills, ~/.agents/skills, for every project
+  -g, --global          Same as --scope user
   --project PATH        Project folder (default: current folder)
-  --agent auto|claude|codex|all   Which agent to install for (auto: the ones set up, else Claude Code)
-  --category LIST       Comma-separated categories or plugins, e.g. seo,social or cmo-so-seo
-  --skills LIST         Comma-separated skill ids, e.g. cmo-seo-audit,cmo-x-growth
-  --mcp                 Also add the CMO.so MCP server to the project's .mcp.json
+  -a, --agent LIST      auto (default), all, or agents: claude, codex, pi, cursor, gemini, opencode, copilot,
+                        windsurf, amp, cline, goose, kiro, qwen, trae, roo, kilo, augment, droid, openhands, antigravity
+  --category LIST       Categories or plugins, e.g. seo,social or cmo-so-seo
+  --skills LIST         Skill ids, e.g. cmo-seo-audit,cmo-x-growth
+  --mcp                 Also add the CMO.so MCP server to the project's .mcp.json (Claude Code)
   --force               Replace or remove files you edited
   --dry-run             Show what would change, change nothing
-  --installed, --json   For list
+  --installed, --json   For list and agents
 
 Examples
-  npx @cmo-so/skills install                         # all skills, this project
-  npx @cmo-so/skills install --scope user            # all skills, every project
-  npx @cmo-so/skills install --category seo,ai-search --mcp
-  npx @cmo-so/skills install cmo-seo-audit cmo-x-growth --agent codex
-  npx @cmo-so/skills@latest update --scope user
+  npx @cmo-so/skills install                          # this project, for the agents set up here
+  npx @cmo-so/skills install -g -a codex,pi           # every project, Codex and Pi (~/.agents/skills)
+  npx @cmo-so/skills install -a claude,codex --category seo,ai-search --mcp
+  npx @cmo-so/skills@latest update -g
 
-Prefer Claude Code plugins? /plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills`);
+Also: Claude Code plugins (/plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills),
+Codex plugins (codex plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills),
+Pi packages (pi install npm:@cmo-so/skills).`);
 }
 
 function main(argv) {
 	const [command, ...rest] = argv;
 	const opts = parse(rest);
-	if (!command || command === "help" || command === "--help" || command === "-h" || opts["--help"] || opts["-h"]) return help();
-	if (command === "--version" || command === "-v" || command === "version") return console.log(PKG.version);
+	if (!command || ["help", "--help", "-h"].includes(command) || opts["--help"] || opts["-h"]) return help();
+	if (["--version", "-v", "version"].includes(command)) return console.log(PKG.version);
 	switch (command) {
 		case "install":
 		case "add":
@@ -458,6 +539,8 @@ function main(argv) {
 		case "list":
 		case "ls":
 			return listCmd(opts);
+		case "agents":
+			return agentsCmd(opts);
 		case "doctor":
 			return doctor(opts);
 		case "mcp":

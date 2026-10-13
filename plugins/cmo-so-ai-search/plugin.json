@@ -1,0 +1,48 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-ai-search",
+	"version": "0.4.0",
+	"description": "CMO.so AI search (GEO / AEO) skills (6): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/ai-search",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"ai-search",
+		"ai-search",
+		"blog",
+		"chatgpt",
+		"google-ai-mode",
+		"perplexity",
+		"website"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so AI search (GEO / AEO)",
+				"shortDescription": "6 AI search (GEO / AEO) skills from CMO.so",
+				"longDescription": "CMO.so AI search (GEO / AEO) skills (6): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so AI search (GEO / AEO) to a one-off report on how the brand shows up in AI answers for its market and the few changes most likely to get it cited.",
+					"Use CMO.so AI search (GEO / AEO) to find the questions people ask AI assistants about the market, how they are answered, and which sites get cited."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

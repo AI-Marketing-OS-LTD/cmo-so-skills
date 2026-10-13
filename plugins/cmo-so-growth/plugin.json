@@ -1,0 +1,50 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-growth",
+	"version": "0.4.0",
+	"description": "CMO.so Growth & go-to-market skills (9): Product launch, Referral & affiliate program, Co-marketing & partnerships, Free tools as marketing, Directory submissions, PR & earned media…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/growth",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"growth",
+		"app-store",
+		"cmo.so",
+		"directories",
+		"email",
+		"events",
+		"google-play",
+		"google-search",
+		"linkedin"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Growth & go-to-market",
+				"shortDescription": "9 Growth & go-to-market skills from CMO.so",
+				"longDescription": "CMO.so Growth & go-to-market skills (9): Product launch, Referral & affiliate program, Co-marketing & partnerships, Free tools as marketing, Directory submissions, PR & earned media…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Growth & go-to-market to plan and run a launch or feature announcement: phases, channels, assets, Product Hunt and follow-through.",
+					"Use CMO.so Growth & go-to-market to design and run a referral or affiliate program: incentive, mechanics, promotion and fraud checks."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

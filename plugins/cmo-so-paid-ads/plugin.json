@@ -1,0 +1,50 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-paid-ads",
+	"version": "0.4.0",
+	"description": "CMO.so Paid ads skills (11): Paid ads strategy, Paid ads audit, Google Ads, Meta (Facebook & Instagram) ads, LinkedIn ads, Ad creative…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/paid-ads",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"paid-ads",
+		"amazon-ads",
+		"apple-ads",
+		"google-ads",
+		"linkedin-ads",
+		"meta-ads",
+		"microsoft-ads",
+		"pinterest-ads",
+		"reddit-ads"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Paid ads",
+				"shortDescription": "11 Paid ads skills from CMO.so",
+				"longDescription": "CMO.so Paid ads skills (11): Paid ads strategy, Paid ads audit, Google Ads, Meta (Facebook & Instagram) ads, LinkedIn ads, Ad creative…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Paid ads to plan paid media: objectives, unit economics, channel choice, campaign architecture, audiences and the test plan.",
+					"Use CMO.so Paid ads to audit any ad account against a platform checklist: tracking, structure, targeting, creative, bidding and wasted spend."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

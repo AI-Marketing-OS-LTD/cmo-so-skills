@@ -1,0 +1,48 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-cro",
+	"version": "0.4.0",
+	"description": "CMO.so Conversion (CRO) skills (10): Page conversion optimisation, Landing page audit, Form optimisation, Signup flow optimisation, Onboarding & activation, Popups & banners…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/cro",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"cro",
+		"app",
+		"email",
+		"google-ads",
+		"meta-ads",
+		"shopify",
+		"website"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Conversion (CRO)",
+				"shortDescription": "10 Conversion (CRO) skills from CMO.so",
+				"longDescription": "CMO.so Conversion (CRO) skills (10): Page conversion optimisation, Landing page audit, Form optimisation, Signup flow optimisation, Onboarding & activation, Popups & banners…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Conversion (CRO) to increase conversions on any marketing page: clarity, proof, friction, CTA and offer, with a prioritised test list.",
+					"Use CMO.so Conversion (CRO) to score a landing page against the ads and emails that send traffic: message match, speed, mobile, trust and form friction."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

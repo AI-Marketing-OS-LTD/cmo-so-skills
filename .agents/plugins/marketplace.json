@@ -1,0 +1,164 @@
+{
+	"name": "cmo-so",
+	"interface": {
+		"displayName": "CMO.so marketing skills"
+	},
+	"plugins": [
+		{
+			"name": "cmo-so",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-strategy",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-strategy"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-seo",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-seo"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-ai-search",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-ai-search"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-content",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-content"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-social",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-social"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-email",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-email"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-paid-ads",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-paid-ads"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-cro",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-cro"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-analytics",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-analytics"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-growth",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-growth"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-sales",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-sales"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-creative",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-creative"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
+		}
+	]
+}

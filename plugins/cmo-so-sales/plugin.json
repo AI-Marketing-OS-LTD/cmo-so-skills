@@ -1,0 +1,44 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-sales",
+	"version": "0.4.0",
+	"description": "CMO.so Sales & revenue skills (4): Prospecting & lead research, Sales enablement, Revenue operations, Proposals & statements of work. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/sales",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"sales",
+		"email",
+		"linkedin"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Sales & revenue",
+				"shortDescription": "4 Sales & revenue skills from CMO.so",
+				"longDescription": "CMO.so Sales & revenue skills (4): Prospecting & lead research, Sales enablement, Revenue operations, Proposals & statements of work. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Sales & revenue to find and qualify prospects and build a dossier for each before reaching out.",
+					"Use CMO.so Sales & revenue to decks, one-pagers, objection handling, battlecards and demo scripts that match the marketing message."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

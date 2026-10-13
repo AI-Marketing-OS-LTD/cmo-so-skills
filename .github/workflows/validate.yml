@@ -39,6 +39,15 @@ jobs:
                   seen.add(name)
                   if len(m.group(2)) > 1536:
                       errors.append(f"{skill}: description too long")
+          codex = json.loads((root / ".agents/plugins/marketplace.json").read_text())
+          for e in codex["plugins"]:
+              portable = json.loads((root / e["source"]["path"] / "plugin.json").read_text())
+              if portable["name"] != e["name"] or portable["version"] != market["metadata"]["version"]:
+                  errors.append(f"{e['name']}: Codex plugin.json and marketplaces disagree")
+          if {e["name"] for e in codex["plugins"]} != names - {"cmo-so-all"}:
+              errors.append("Codex marketplace and Claude marketplace list different plugins")
+          if json.loads((root / "package.json").read_text())["version"] != index["version"]:
+              errors.append("package.json (Pi) version differs from skills.json")
           ids = {s["id"] for s in index["skills"]}
           if ids != seen:
               errors.append(f"skills.json and plugins differ: {sorted(ids ^ seen)}")

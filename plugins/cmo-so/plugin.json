@@ -1,0 +1,51 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so",
+	"version": "0.4.0",
+	"description": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, SEO opportunities….",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/core",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"core",
+		"ai-search",
+		"api",
+		"blog",
+		"cmo.so",
+		"google-search",
+		"linkedin",
+		"shopify",
+		"wix"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so",
+				"shortDescription": "Maggie, your AI marketing assistant: blog autopilot, LinkedIn queue, Search Console and AI visibility",
+				"longDescription": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, SEO opportunities….",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read",
+					"Write"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so to connect an AI agent to CMO.so through the MCP server (OAuth, or CLI/API key without a browser) and pick the website to work on.",
+					"Use CMO.so to what needs the user today (LinkedIn drafts, failures, setup steps, quota) and clearing it one approved action at a time."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

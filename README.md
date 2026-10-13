@@ -44,6 +44,11 @@ Maggie, the AI marketing assistant in <a href="https://cmo.so">CMO.so</a>, write
 
 ---
 
+## What's new in 0.4.0
+
+- **Every popular coding agent.** Codex plugins (`codex plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills`), Pi packages (`pi install npm:@cmo-so/skills`), and `npx @cmo-so/skills install -a <agent>` for Cursor, Gemini CLI, OpenCode, GitHub Copilot, Windsurf and 13 more, in project or user scope.
+- Codex skills now go to `~/.agents/skills`, the folder Codex reads.
+
 ## What's new in 0.3.0
 
 Ten new skills, and 72 existing skills improved with rules, checklists and platform details from a review of 196 open-source marketing, SEO, social media and analytics projects:
@@ -56,22 +61,39 @@ Ten new skills, and 72 existing skills improved with rules, checklists and platf
 
 ## Quick start
 
-```text
-/plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills
-/plugin install cmo-so-all@cmo-so
-```
+Pick your agent. Every route installs the same 124 skills; the core ones run on the [CMO.so MCP server](#the-cmoso-mcp-server).
 
-Or install the skills with npm, for one project or for your user (Claude Code and Codex):
+| Agent | Install |
+|---|---|
+| **Claude Code** | `/plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills` then `/plugin install cmo-so-all@cmo-so` |
+| **Codex** | `codex plugin marketplace add AI-Marketing-OS-LTD/cmo-so-skills` then `codex plugin add cmo-so@cmo-so` (and any category, e.g. `cmo-so-seo@cmo-so`) |
+| **Pi** | `pi install npm:@cmo-so/skills` (or `pi install git:github.com/AI-Marketing-OS-LTD/cmo-so-skills`) |
+| **Cursor, Gemini CLI, OpenCode, GitHub Copilot, Windsurf, Amp, Cline, Goose, Kiro, Qwen Code, Trae, Roo, Kilo, Augment, Droid, OpenHands, Antigravity** | `npx @cmo-so/skills install -a cursor` (any agent id; comma-separated for several) |
+| **Any agent, any scope** | `npx @cmo-so/skills install` (this project) or `npx @cmo-so/skills install -g` (your user) |
+
+[`@cmo-so/skills`](https://www.npmjs.com/package/@cmo-so/skills) installs into the folder each agent reads, for one project or for your user:
 
 ```sh
-npx @cmo-so/skills install                  # this project: .claude/skills
-npx @cmo-so/skills install --scope user     # every project: ~/.claude/skills (and ~/.codex/skills with --agent all)
-npx @cmo-so/skills install --category seo,social --mcp   # some categories, plus the MCP server in .mcp.json
+npx @cmo-so/skills install                       # this project, for the agents set up here (.claude/skills, .agents/skills, …)
+npx @cmo-so/skills install -g -a codex,pi        # every project: ~/.agents/skills (Codex, Pi)
+npx @cmo-so/skills install -a claude --category seo,social --mcp   # some categories, plus the MCP server in .mcp.json
+npx @cmo-so/skills agents                        # every supported agent and its folders
+npx @cmo-so/skills@latest update -g              # update later; your edits are kept
 ```
 
-See [`packages/skills`](packages/skills/README.md) for update, remove and the other options.
+See [`packages/skills`](packages/skills/README.md) for update, remove and the other options. The skills also work with the open `skills` CLI: `npx skills add AI-Marketing-OS-LTD/cmo-so-skills -a <agent>`.
 
-Then run `/mcp`, choose **cmo-so** and **Authenticate**: sign in to CMO.so in the browser and click **Allow**. Or just ask your agent: *"Connect to CMO.so"*.
+**Connect the MCP server** (the core skills need it; sign in with your CMO.so account, no keys):
+
+| Agent | Connect |
+|---|---|
+| Claude Code | The plugin brings it: `/mcp` → **cmo-so** → **Authenticate**. Otherwise `claude mcp add --transport http cmo-so https://mcp.cmo.so/mcp` |
+| Codex | The `cmo-so` plugin brings it: `codex mcp login cmo-so`. Otherwise `codex mcp add cmo-so --url https://mcp.cmo.so/mcp` |
+| Gemini CLI | `gemini mcp add --transport http cmo-so https://mcp.cmo.so/mcp` |
+| Cursor, VS Code, Windsurf | Add a remote MCP server with the URL `https://mcp.cmo.so/mcp` |
+| Pi and agents that start a command | `npx -y @cmo-so/mcp` (stdio), after `npx @cmo-so/cli login` |
+
+Or just ask your agent: *"Connect to CMO.so"*.
 
 Try asking:
 
@@ -345,7 +367,11 @@ cmo mcp                          # the local MCP server (stdio)
 
 ## Other agents
 
-The skills are plain `SKILL.md` folders under [`plugins/`](plugins). `npx @cmo-so/skills install --agent codex` installs them for Codex (`.agents/skills`, or `~/.codex/skills` with `--scope user`). Any agent that reads skills (Codex, Cursor, Gemini CLI and others) can use them together with the MCP server above. The full index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
+The skills are plain `SKILL.md` folders under [`plugins/`](plugins), in the open Agent Skills format, so any agent that reads skills can use them with the MCP server above:
+
+- `plugins/*/skills/` for Claude Code plugins (`.claude-plugin/`), Codex and Agent Plugins hosts (`plugin.json`, `mcp.json`, marketplace in `.agents/plugins/marketplace.json`) and Pi packages (`package.json` → `pi.skills`).
+- `npx @cmo-so/skills agents` lists the 20 agents the installer knows and the folders it writes. Agents that share `.agents/skills` (Codex, Pi, Cursor, Gemini CLI, OpenCode, Copilot, Amp, Cline) get one copy.
+- The full index, with categories, channels, funnel stage, tier and the MCP tools each skill uses, is in [`skills.json`](skills.json). Setup guides: https://ai.cmo.so/hot/mcp
 
 ## Safety
 

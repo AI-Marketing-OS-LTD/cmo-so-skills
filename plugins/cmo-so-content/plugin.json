@@ -1,0 +1,50 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-content",
+	"version": "0.4.0",
+	"description": "CMO.so Content & copy skills (8): Content strategy, Blog post writing, Conversion copywriting, Copy editing, Humanise AI writing, Content repurposing…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/content",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"content",
+		"blog",
+		"email",
+		"facebook",
+		"instagram",
+		"linkedin",
+		"tiktok",
+		"website",
+		"x"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Content & copy",
+				"shortDescription": "8 Content & copy skills from CMO.so",
+				"longDescription": "CMO.so Content & copy skills (8): Content strategy, Blog post writing, Conversion copywriting, Copy editing, Humanise AI writing, Content repurposing…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Content & copy to decide what to publish and why: pillars, topics by funnel stage, formats, cadence and how CMO.so's autopilot executes it.",
+					"Use CMO.so Content & copy to write or direct one blog post from brief to publish-ready, in the brand voice, then hand it to Maggie's queue."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

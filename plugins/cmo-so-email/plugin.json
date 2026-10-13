@@ -1,0 +1,47 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-email",
+	"version": "0.4.0",
+	"description": "CMO.so Email & lifecycle skills (6): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter, Email deliverability. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/email",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"email",
+		"email",
+		"in-app",
+		"linkedin",
+		"sms",
+		"whatsapp"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Email & lifecycle",
+				"shortDescription": "6 Email & lifecycle skills from CMO.so",
+				"longDescription": "CMO.so Email & lifecycle skills (6): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter, Email deliverability. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Email & lifecycle to welcome, nurture, launch and re-engagement sequences with subject lines and copy in the brand voice.",
+					"Use CMO.so Email & lifecycle to b2B cold outbound that gets replies: targeting, first lines, follow-ups, deliverability and multichannel cadences."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}

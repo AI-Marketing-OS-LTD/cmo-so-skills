@@ -1,0 +1,48 @@
+{
+	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+	"name": "cmo-so-analytics",
+	"version": "0.4.0",
+	"description": "CMO.so Analytics & reporting skills (5): Tracking & UTM setup, Attribution, Campaign analytics & benchmarks, Client & executive report, Closed-loop measurement. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"author": {
+		"name": "AI Marketing OS Ltd",
+		"email": "maggie@cmo.so",
+		"url": "https://cmo.so"
+	},
+	"homepage": "https://cmo.so/skills/category/analytics",
+	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",
+	"license": "MIT",
+	"keywords": [
+		"cmo.so",
+		"maggie",
+		"marketing",
+		"analytics",
+		"cmo.so",
+		"ga4",
+		"google-ads",
+		"google-search",
+		"gtm",
+		"meta-ads"
+	],
+	"extensions": {
+		"com.openai": {
+			"interface": {
+				"displayName": "CMO.so Analytics & reporting",
+				"shortDescription": "5 Analytics & reporting skills from CMO.so",
+				"longDescription": "CMO.so Analytics & reporting skills (5): Tracking & UTM setup, Attribution, Campaign analytics & benchmarks, Client & executive report, Closed-loop measurement. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"developerName": "AI Marketing OS Ltd",
+				"category": "Productivity",
+				"capabilities": [
+					"Read"
+				],
+				"websiteURL": "https://cmo.so",
+				"privacyPolicyURL": "https://ai.cmo.so/hot/privacy-policy",
+				"termsOfServiceURL": "https://ai.cmo.so/hot/terms-of-service",
+				"defaultPrompt": [
+					"Use CMO.so Analytics & reporting to measurement that works: GA4 and Tag Manager events, conversions, UTM conventions and server-side tracking.",
+					"Use CMO.so Analytics & reporting to work out which marketing drives revenue: models compared side by side, conversion paths and platform disagreements."
+				],
+				"brandColor": "#EF476F"
+			}
+		}
+	}
+}
