@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ads-budget"
 ---
 # Ad budget, bidding & forecasting
@@ -34,16 +34,23 @@ Decide where the next unit of ad money goes, how each campaign bids, whether the
    - Marginal CPA = extra spend / extra conversions between two spend levels; marginal ROAS likewise.
    - MER (blended efficiency) = total business revenue / total ad spend. Platform ROAS and MER answer different questions; do not swap them.
    - Use accepted value: net of refunds, cancellations, fraud and leads sales rejected.
-2. **Allocate on marginal, not average, efficiency.** A channel with a great average can be saturated; a channel with a mediocre average can still have cheap headroom.
+2. **Name the question.** Every allocation answers one of two:
+   - *Same money, most result:* total spend is fixed (or set at an amount); which split returns the most conversions or value?
+   - *Hit a target efficiency:* a target CPA or ROAS is fixed; how far can spend go before marginal results cross it?
+   If the owner has no target for the second, propose a cautious one, for example about 20% worse than today (CPA x 1.2 or ROAS x 0.8), because more spend almost always costs more per result. State it as an assumption and agree it with them. Write the question at the top of the allocation table.
+3. **Allocate on marginal, not average, efficiency.** A channel with a great average can be saturated; a channel with a mediocre average can still have cheap headroom.
    1. Reserve commitments and measurement costs.
    2. Protect campaigns with strong same-account evidence of positive marginal contribution, within saturation and cash.
    3. Fund bounded tests: hypothesis, budget, minimum spend, decision date, stop rule.
    4. Take money from the weakest marginal opportunity, not automatically the worst average CPA.
    A "proven / growth / test" split (such as 70/20/10) is a policy the owner chooses, not a default.
-3. **Find the curve.** From weeks at different spend levels (or platform simulators), estimate how cost per result rises with spend. Signs of saturation: frequency climbing, impression share near its ceiling, marginal CPA well above average CPA. Signs of headroom: budget-limited campaigns that convert below target, low impression share lost to budget, low audience penetration.
-4. **Scale only when all hold:** conversions have matured through the lag; tracking and the landing page are healthy; marginal results are inside the approved economic boundary; the campaign can take the budget; the business can absorb learning swings and cash flow; there is a check date and a rollback trigger. Step size comes from account history and platform guidance; modest steps (often 15-25%) with a wait of several days are a common rule of thumb, not a platform rule.
-5. **Reduce or pause carefully.** Before cutting for a high CPA, check lag, sample size, tracking outages, lead quality and seasonality. Immediate containment is right for runaway spend over an owner ceiling, a broken landing page, confirmed tracking corruption or policy risk.
-6. **Choose bid strategies** per campaign from goal, value data and volume:
+4. **Find the curve.** From weeks at different spend levels (or platform simulators), estimate how cost per result rises with spend. Signs of saturation: frequency climbing, impression share near its ceiling, marginal CPA well above average CPA. Signs of headroom: budget-limited campaigns that convert below target, low impression share lost to budget, low audience penetration.
+   Two shapes sit behind every curve; explain them in plain words when the owner asks why doubling spend did not double results:
+   - *Carryover:* part of this week's ad effect lands in later weeks (roughly, this week's effective pressure = this week's spend + a decaying share of last week's), so cuts and increases take time to show and the last days of a window under-report.
+   - *Saturation:* results grow more slowly as spend rises, then flatten. Some channels also start slowly (an S-shaped curve), so a small budget can look worse than the same channel would at a working level.
+5. **Scale only when all hold:** conversions have matured through the lag; tracking and the landing page are healthy; marginal results are inside the approved economic boundary; the campaign can take the budget; the business can absorb learning swings and cash flow; there is a check date and a rollback trigger. Step size comes from account history and platform guidance; modest steps (often 15-25%) with a wait of several days are a common rule of thumb, not a platform rule.
+6. **Reduce or pause carefully.** Before cutting for a high CPA, check lag, sample size, tracking outages, lead quality and seasonality. Immediate containment is right for runaway spend over an owner ceiling, a broken landing page, confirmed tracking corruption or policy risk.
+7. **Choose bid strategies** per campaign from goal, value data and volume:
 
    | Goal | Strategy family | Needs |
    |---|---|---|
@@ -55,9 +62,9 @@ Decide where the next unit of ad money goes, how each campaign bids, whether the
    | Low volume, learning, repair | Manual or capped bidding, time-boxed | A stop date |
 
    Fix measurement before changing the bidder. Change one thing at a time, judge over conversion cycles not calendar days, and avoid stacking a budget change on a target change.
-7. **Pacing.** Projected month-end = month-to-date spend + (average recent daily spend x days left), adjusted for weekday patterns. Flag campaigns over or under pace; for each, say whether the cause is budget, bid or target too tight, audience too small, or disapprovals. Required daily budget to land = (monthly budget - month-to-date) / days left. Platforms may overspend a daily budget on some days and balance across the month; judge pacing on the month.
-8. **Forecast as ranges.** Conservative, expected and optimistic cases for 30/60/90 days from: the trailing trend, seasonality from the same period last year if available, the spend plan and the marginal curve, and known risks (creative fatigue, new competitors, tracking changes). State every assumption. No single point forecasts; no vendor uplift figures used as forecasts.
-9. **Write change packets.** For each proposed move: current and proposed amount, object, reason, expected effect with uncertainty, learning impact, owner, approval, check date, rollback threshold.
+8. **Pacing.** Projected month-end = month-to-date spend + (average recent daily spend x days left), adjusted for weekday patterns. Flag campaigns over or under pace; for each, say whether the cause is budget, bid or target too tight, audience too small, or disapprovals. Required daily budget to land = (monthly budget - month-to-date) / days left. Platforms may overspend a daily budget on some days and balance across the month; judge pacing on the month.
+9. **Forecast as ranges.** Conservative, expected and optimistic cases for 30/60/90 days from: the trailing trend, seasonality from the same period last year if available, the spend plan and the marginal curve, and known risks (creative fatigue, new competitors, tracking changes). State every assumption. No single point forecasts; no vendor uplift figures used as forecasts.
+10. **Write change packets.** For each proposed move: current and proposed amount, object, reason, expected effect with uncertainty, learning impact, owner, approval, check date, rollback threshold.
 
 ## Output
 - Economics table: input, value, source, formula, result.
@@ -107,3 +114,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - irinabuht12-oss/marketing-skills — roas-forecasting (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — pacing-monitor (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — bid-strategy-recommendations (no licence; ideas only)
+- facebookexperimental/Robyn — budget allocator and adstock/saturation transforms (MIT)

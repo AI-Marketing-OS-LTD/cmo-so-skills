@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-search,ai-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-schema-markup"
 ---
 # Schema markup
@@ -27,7 +27,7 @@ Structured data tells search engines and AI systems what a page is about in a fo
 - Optional: if the business uses CMO.so, the user can copy facts from their business profile in the CMO.so app to speed this up. Nothing in this skill needs a connection.
 
 ## Workflow
-1. **Detect what exists.** Look in the page source for `application/ld+json` blocks, then Microdata (`itemscope`, `itemprop`) and RDFa (`typeof`). Note duplicates (for example a theme plugin and a hand-added block both defining Organization). JSON-LD is the format to standardise on.
+1. **Detect what exists.** Look in the page source for `application/ld+json` blocks, then Microdata (`itemscope`, `itemprop`) and RDFa (`typeof`). Note duplicates (for example a theme plugin and a hand-added block both defining Organization). JSON-LD is the format to standardise on. Expand any `@graph` array into its separate entities before judging it; one block holding a `@graph` is not an untyped block.
 2. **Check the goal is still possible.** Valid Schema.org vocabulary is not the same as a Google feature. Check Google's current structured data gallery before promising an appearance:
    - Supported and worth doing on matching pages: Organization, WebSite (site name), Article/BlogPosting, BreadcrumbList, Product with Offer (and AggregateRating/Review where real), LocalBusiness, Event, VideoObject, SoftwareApplication, Recipe, JobPosting, QAPage and DiscussionForumPosting for genuine user Q&A.
    - Not worth adding to chase a Google rich result: HowTo (no longer shown), the sitelinks search box (retired), and FAQ (shown only for a small set of well-known authoritative sites such as government and health sites). Google has also phased out several niche types; check the gallery. Existing FAQPage markup that matches visible Q&A can stay as plain description.
@@ -48,14 +48,24 @@ Structured data tells search engines and AI systems what a page is about in a fo
 4. **Write the JSON-LD.** One `@graph` per page with stable `@id`s (e.g. `https://example.com/#organization`) so the article's `publisher` and the site's `Organization` point to one entity. Rules:
    - `"@context": "https://schema.org"` always present.
    - Absolute HTTPS URLs for `url`, `image`, `logo`, `item`.
-   - ISO 8601 dates; `dateModified` never earlier than `datePublished`, and only changed when the content really changed.
+   - ISO 8601 dates; `dateModified` never earlier than `datePublished`, and only changed when the content really changed. Always include `dateModified` on Article/BlogPosting; if the post was never updated it equals `datePublished`.
+   - Author is an object, never a bare string: `Person` (name, url, `sameAs`) for a named human; `Organization` when the byline is a company, publication or team; an array for several authors.
+   - Drop empty and null fields instead of shipping `"author": null` or empty strings.
+   - Escape the JSON way, not the HTML way: inside strings write `<` as `\u003c` and `>` as `\u003e` (and the U+2028/U+2029 separators as escapes), so a value containing `</script>` cannot break out of the tag. Never HTML-entity-encode values: parsers read the block as raw JSON, so `Tom &amp; Jerry` is indexed literally, and an encoded `&` breaks URL query strings. This matters most when values come from CMS fields or AI-written text.
    - Every value must be visible on the page or true of the entity; prices and availability must match the page exactly.
    - Placeholders in `[SQUARE BRACKETS]` where facts are missing, listed for the user to fill. Never ship placeholders.
    - Ratings only from genuine, on-site reviews of that item; no self-serving review stars for the business on its own Organization or LocalBusiness page.
-5. **Entity signals for AI answers.** Organization with name, url, logo, description and `sameAs` (LinkedIn, social profiles, Wikidata or Crunchbase if they exist); authors as Person with job title and `sameAs`; consistent names across markup, page text and profiles. This helps systems connect the brand, but it is not a citation guarantee.
+5. **Entity signals for AI answers.** Organization with name, url, logo, description and `sameAs` (LinkedIn, social profiles, Wikidata or Crunchbase if they exist), plus `knowsAbout` with the 3-6 topics the site genuinely covers in depth (from its published content, not aspirations); authors as Person with job title and `sameAs`; consistent names across markup, page text and profiles. This helps systems connect the brand, but it is not a citation guarantee.
 6. **Placement.** Prefer JSON-LD in the server-rendered HTML (template partial or CMS field). Markup injected by JavaScript or a tag manager is processed later and less reliably, especially for prices. On WordPress, configure the SEO plugin first and add custom blocks only for what it does not cover; on Shopify, extend the theme's product markup rather than duplicating it; on headless frameworks, render it in the page component on the server.
+   - When markup is generated from CMS fields, write down a fallback chain per property (description: SEO description, then excerpt, then page description; `datePublished`: publish date, then first-published date, and only as a last resort the record's creation date, flagged because it may not be the real date). In an audit, a missing property often means the CMS has the value but the template does not output it: fix the template, not each page.
 7. **Validate.** Rich Results Test for Google-supported features; the Schema.org validator for general correctness; then watch Search Console's enhancement reports after deployment (they can take a couple of weeks to update). Fix every error; review warnings and fill recommended fields when the data exists.
 8. **Template-level fixes.** For sites with many similar pages, fix the template once and spot-check a sample of pages, rather than editing pages one by one.
+9. **Check the entity graph across pages.** Sample the home page, an article, a product or service page and the about/contact page:
+   - One `@id` per real thing; the same organisation under two `@id`s splits it in two, so merge them. Every referenced `@id` (an article's `publisher` or `author`) is declared somewhere on the site.
+   - `@id`s are absolute URLs on the site's own domain, and one `@id` always has the same `@type`, name, logo and address.
+   - The full Organization or LocalBusiness is declared once (usually the home page) and referenced by `@id` elsewhere; articles with a visible byline have a Person author and a `publisher` pointing at the main organisation.
+   - A rating block is about the page's main subject and visible to readers; a site-wide rating that lands on the privacy policy or a blog post is wrong.
+   - Rich-result markup on a `noindex` page is wasted: fix whichever is unintended.
 
 ## Output
 1. **Audit table**: Page | Types found | Status (valid / warnings / errors / none) | Issues | Fix.
@@ -79,6 +89,9 @@ Structured data tells search engines and AI systems what a page is about in a fo
 - [ ] Every type chosen matches visible content and a real goal.
 - [ ] No retired or restricted type is recommended to obtain a Google appearance.
 - [ ] JSON parses; required properties present; URLs absolute; dates ISO 8601.
+- [ ] Minimum fields per type: Article (headline, datePublished, dateModified, author, publisher), Product (name, offers with price), Event (name, startDate, location), Recipe (name, image, ingredients, instructions).
+- [ ] No HTML entities inside JSON-LD values (an ampersand shows as `&`), `<` escaped, no null or empty fields.
+- [ ] No split or dangling `@id`s across the sampled pages.
 - [ ] One Organization entity, referenced by `@id`, not redefined per page.
 - [ ] No placeholder, invented rating, price or address left in shipped code.
 - [ ] The user knows how to validate and where to watch for errors.
@@ -96,9 +109,15 @@ Structured data tells search engines and AI systems what a page is about in a fo
 - `cmo-local-seo` — LocalBusiness data and NAP consistency.
 - `cmo-ecommerce-seo` — Product, Offer and merchant listing details at scale.
 - `cmo-technical-seo` — rendering issues that hide JavaScript-injected markup.
+- `cmo-brand-protection` — fake sites, phishing pages and impersonation of the brand.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — schema (MIT)
 - alirezarezvani/claude-skills — schema-markup (MIT)
 - AgriciDaniel/claude-seo — seo-schema (MIT)
+- TryGhost/Ghost — ghost_head JSON-LD output (MIT)
+- apostrophecms/apostrophe — SEO JSON-LD schemas and escaping (MIT)
+- zubair-trabzada/geo-seo-claude — geo-schema (MIT)
+- garmeeh/next-seo — JSON-LD serialisation and author rules (MIT)
+- squirrelscan/squirrelscan — schema entity rules (MIT)

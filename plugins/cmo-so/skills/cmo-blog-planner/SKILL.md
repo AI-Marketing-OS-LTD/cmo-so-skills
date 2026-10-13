@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-blog-planner"
 ---
 # Blog planner
@@ -60,6 +60,8 @@ Good practice:
 | Decision | pricing, reviews, how to choose | readers close to buying |
 | Use | templates, examples, setup, tutorial | existing customers, retention |
 
+- Vary the shape, not just the topic. Give each idea an article type: what-is, how-to, comparison, best-of list, alternatives, pillar guide, problem diagnosis ("why is my X doing Y"), original data, case study, glossary term. If the last several planned or published posts share a type, propose a different one next. Choose the type from the query's intent and what already ranks for it, not from habit.
+
 ### 3. Score before planning
 For each candidate, score 1-5 on four factors and weight them:
 
@@ -70,7 +72,7 @@ For each candidate, score 1-5 on four factors and weight them:
 | Search or AI demand | 20% | Do people search or ask AI about it (Search Console queries, watched prompts)? |
 | Something to add | 10% | Can the post say something the top results do not: an example, a number, a clear opinion? |
 
-Total = weighted sum. If an idea scores low on "something to add", it is likely to be one more copy of existing articles; suggest an angle or drop it.
+Total = weighted sum. If an idea scores low on "something to add", it is likely to be one more copy of existing articles; suggest an angle or drop it. Each month, make sure some ideas rest on the business's own substance (its data, real customer outcomes, first-hand know-how): these are the hardest posts to copy and the most likely to be cited.
 
 Act on the scores in the pool before planning (each is a change):
 - Sharpen a promising idea with a weak angle: `idea_update` with `id` and any of `title`, `description`, `topic` (a name from `topics_list`) and up to 5 `keywords`; pass its current title as `title_for_card`. Fix the idea while it waits rather than after it is planned.
@@ -85,7 +87,7 @@ Act on the scores in the pool before planning (each is a change):
 Balance checks before you finish:
 - No more than two posts in a row on the same topic.
 - Most of the plan on the site's core topics (`topics_list`); a minority can be experiments.
-- No near-duplicates of published posts; if one overlaps, suggest a rewrite instead (`cmo-seo-opportunities`).
+- No near-duplicates of planned or published posts. A reworded title with the same search intent is a duplicate; if one overlaps, suggest a rewrite instead (`cmo-seo-opportunities`).
 
 ### 5. Confirm the result
 Read `posts_list` (`planned`) again and show the final order.
@@ -138,3 +140,4 @@ Result (abbreviated):
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AI-Marketing-OS-LTD/cmo-so-skills — cmo-blog-planner (MIT, ours)
 - coreyhaines31/marketingskills — content-strategy (MIT)
+- hyperfx-ai/marketing-skills — blog-generation (MIT)

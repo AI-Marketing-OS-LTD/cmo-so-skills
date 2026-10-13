@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "press"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-public-relations"
 ---
 # PR & earned media
@@ -95,6 +95,7 @@ Earns coverage in publications, newsletters and podcasts by giving journalists a
 - `cmo-thought-leadership` — build the opinions and expertise journalists quote.
 - `cmo-ai-brand-monitoring` — see whether coverage shows up in AI answers.
 - `cmo-linkedin-posts` — share coverage with your network.
+- `cmo-social-crisis` — pausing scheduled posts and responding when something goes wrong in public.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

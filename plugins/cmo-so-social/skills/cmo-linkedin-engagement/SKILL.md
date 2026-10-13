@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-linkedin-engagement"
 ---
 # LinkedIn engagement & outreach
@@ -34,9 +34,9 @@ From a standing start, posts reach few people; useful comments on posts that alr
    | Peer | about 1x | Reciprocity builds; relationships that last |
    | Smaller | under 0.5x | Goodwill; some grow fast |
    Rules: no single account more than twice a week; at least one peer slot a day; no more than half of a day's slots in the huge tier.
-2. **Write comments that add something.** A comment competes with dozens of "great post". Qualifies: a counter-example, a number from your own experience, the case where the advice breaks, the mechanism behind it, a question only a careful reader would ask. Does not qualify: agreement, a summary of the post. Keep most comments to 2-5 sentences; the cap is 1,250 characters. The user writes each one; this skill can critique a draft but does not produce comments to paste in bulk.
+2. **Write comments that add something.** A comment competes with dozens of "great post". Qualifies: a counter-example, a number from your own experience, the case where the advice breaks, the mechanism behind it, a question only a careful reader would ask. Does not qualify: agreement, a summary of the post. Before drafting, look at the whole post (image, video or document included) and skim the top comments, so you neither comment on what you have not seen nor repeat a point already made. Swap test: if the comment could sit unchanged under ten similar posts, rewrite it around something only this post says. Vary the shape: not every comment opens with a personal story. Keep most comments to 2-5 sentences; the cap is 1,250 characters. The user writes each one; this skill can critique a draft but does not produce comments to paste in bulk.
 3. **Daily routine (15-30 minutes).**
-   - 5 min: reply to every substantive comment on your own posts (within the first hour of posting if possible, always within 24 hours). Reply with substance, not "thanks".
+   - 5 min: reply to every substantive comment on your own posts (within the first hour of posting if possible, always within 24 hours). Reply with substance, not "thanks". First decide what each comment needs: an answer, an acknowledgement, a correction or nothing (spam). Answer facts only from the business profile or what the user said; otherwise "I'll check and come back", never a guess. Keep replies short. Complaints needing escalation, legal or sensitive topics and hostile comments are flagged for the user, not drafted. Drafts are suggestions the user posts.
    - 10-20 min: 3-6 comments from today's roster.
    - 5 min: reply to replies on your comments elsewhere; that sub-thread is where people meet you.
    - Optional: 1-3 connection requests to people you have already engaged with.
@@ -47,6 +47,7 @@ From a standing start, posts reach few people; useful comments on posts that alr
    - Acceptance below about 20-30% means the targeting is wrong; stop and fix it before sending more.
    - Above about 40 invitations a day nobody can write real notes; do not plan for it.
    - Avoid machine-like patterns: identical text, constant intervals, activity at odd hours.
+   - If LinkedIn shows a security check, CAPTCHA, identity check or restriction notice, stop all invitations and outreach for at least a day and restart at a lower volume. Count every invitation attempted, including ones that seemed to fail; some still go through.
 7. **Track outcomes by hand.** Weekly: comments made, replies received, profile visits trend, connections accepted, conversations started, conversations that became calls. Adjust the roster monthly: drop accounts whose threads never respond, promote peers who engage back.
 
 ## Output
@@ -89,3 +90,6 @@ From a standing start, posts reach few people; useful comments on posts that alr
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — linkedin-engagement (MIT)
+- replynodes/awesome-social-media-skills — reply-suggestion-assistant (MIT)
+- stickerdaniel/linkedin-mcp-server — live request limits notes (Apache-2.0)
+- prateekjain98/social-media-manager-skills — growth algorithm notes (no licence, ideas only)

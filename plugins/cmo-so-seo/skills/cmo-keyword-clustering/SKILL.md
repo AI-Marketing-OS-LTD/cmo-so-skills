@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-keyword-clustering"
 ---
 # Keyword clustering & topic map
@@ -44,7 +44,7 @@ Turn a flat keyword list into a map of pages: which keywords one page should ans
    Treat these as rules of thumb. Long-tail variants of the same head term can be assumed together without checking. When the results disagree with your word-based guess, the results win.
 5. **Build hub and spokes.** For each topic: one *pillar* (the broadest, most-overlapping keyword; a comprehensive guide) and 2-5 clusters of *spokes* (specific how-tos, comparisons, lists, examples). Choose the page format from intent: how-to, list, explainer, comparison, review, landing page.
 6. **Map to pages.** For each cluster: existing post to update (name it), new post, or "not now" with a reason. One primary keyword per page, never shared between two pages.
-7. **Fix cannibalisation.** Where two existing posts cover the same intent, pick the stronger one (better position, more links, better fit), merge the useful parts of the other into it and 301-redirect, or re-angle the weaker one to a different intent.
+7. **Fix cannibalisation.** Confirm it from data first: with CMO.so, read `gsc_queries_get` (`filter: "top"` and `"striking_distance"`, `period: "90d"`). A query sending impressions to more than one of the site's pages is evidence; two posts on similar topics is only a suspicion. Without Search Console data, label the row "suspected" and recommend no merge or 301. Where the evidence shows two existing posts covering the same intent, pick the stronger one (better position, more links, better fit), merge the useful parts of the other into it and 301-redirect, or re-angle the weaker one to a different intent.
 8. **Plan internal links.**
    - Every spoke links to its pillar, and the pillar links to every spoke (mandatory).
    - Spokes in a cluster link to 2-3 siblings; at most one cross-cluster link per post.
@@ -76,6 +76,7 @@ Turn a flat keyword list into a map of pages: which keywords one page should ans
 ## Quality bar
 - [ ] Clusters are justified by result overlap or clear intent, not by shared words alone.
 - [ ] No primary keyword appears on two pages.
+- [ ] Cannibalisation rows rest on evidence (one query sending impressions to two or more URLs) or are marked "suspected".
 - [ ] Every cluster maps to a real existing post or a clearly labelled new one.
 - [ ] Every spoke has its pillar link both ways and at least 3 incoming links planned.
 - [ ] Ideas were generated or added only after the user approved each preview.

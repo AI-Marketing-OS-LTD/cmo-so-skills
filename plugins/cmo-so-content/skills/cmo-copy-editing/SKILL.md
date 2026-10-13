@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-copy-editing"
 ---
 # Copy editing
@@ -66,11 +66,17 @@ outdated blog post (`cmo-content-refresh`) or Maggie's drafts in CMO.so (`cmo-dr
    a single honest "No card required" and genuine lists of three alone.
 5. **Final checks.** Spelling, grammar, consistent capitalisation and formatting, numbers written
    consistently, links work, the CTA is visible early and repeated at the end on long pages.
-6. **Optional panel check for high-stakes copy** (launch pages, pricing, high-traffic landing
+6. **Optional "will they remember it?" check** for headlines, taglines and key messages. One
+   core idea the reader could repeat (if there are three, choose); something that breaks the
+   reader's guess, then explains it; a concrete image or number instead of an abstraction; proof
+   the reader can check for themselves; a person to care about rather than a statistic; a short
+   example of the idea working. Then read it as a newcomer: the writer knows too much to see what
+   a first-time reader will not understand.
+7. **Optional panel check for high-stakes copy** (launch pages, pricing, high-traffic landing
    pages). Score 1-10 from three or four viewpoints, for example a conversion copywriter, a
    skeptical buyer, an editor and the target customer. Revise the lowest scores first; stop when
    every viewpoint is at 7 or above. These are judgement scores, not measurements.
-7. **Present, do not impose.** Show the edits with reasons, sweep by sweep or as a tracked list.
+8. **Present, do not impose.** Show the edits with reasons, sweep by sweep or as a tracked list.
    Ask the author to accept or reject the judgement calls, then produce the clean version.
 
 ## Output
@@ -114,6 +120,11 @@ Result (abbreviated):
 - Keep legal text, prices, guarantees, disclaimers and regulated claims unchanged in meaning;
   flag problems rather than rewriting them.
 - Respect the author's ownership: suggest, explain, and let them decide on judgement calls.
+- Edit the author's words only: leave quoted text (`>` lines, customer or review quotes) and an
+  existing signature exactly as written, never add a signature, keep the Markdown and answer in
+  the language of the original.
+- "Improve" means better, not more: no new steps, offers, links, details or examples the author
+  did not supply, and a length close to the original unless asked to cut.
 
 ## Related skills
 - `cmo-copywriting` — when the copy needs rewriting from the message up.
@@ -125,3 +136,5 @@ Result (abbreviated):
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — copy-editing (MIT)
 - alirezarezvani/claude-skills — copy-editing (MIT)
+- chatwoot/chatwoot — tone rewrite and improve prompts (MIT)
+- wondelai/skills — made-to-stick (MIT)

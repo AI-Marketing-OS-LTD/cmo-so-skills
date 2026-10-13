@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,wordpress,shopify,wix,api"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-website-setup"
 ---
 # Website setup & verification
@@ -64,6 +64,23 @@ If the user named their platform, use it; do not call detection. Otherwise `plat
 
 For WordPress, `wordpress_plugin_get` shows the latest connector version and download link, the install guide, and whether the site already runs it (version, up to date, key added, enabled). Use it to diagnose: installed but key missing, installed but disabled, or out of date.
 
+**If WordPress is connected but publishing fails.** On the plugin route, check `wordpress_plugin_get` first. Then quote the exact error from the tool or the inbox and match it below; do not guess beyond the table. These are common causes at the time of writing, mostly in the host, CDN or plugins rather than CMO.so:
+
+| What the user sees | Likely cause | Fix, and who does it |
+|---|---|---|
+| "Not logged in" / 401 although the application password is new | The server, proxy or CDN drops the login header before WordPress sees it | Host or developer: pass the Authorization header through (on Apache, re-saving the permalink settings often fixes it) |
+| "Incorrect password" / 401 | Application password revoked, mistyped or made for another user | User: create a new one under Users > Profile, on a computer |
+| No "Application Passwords" section in the profile | WordPress thinks the site is on http (a CDN ends TLS in front of it), or a security plugin turned the feature off | Host or developer: full/strict TLS at the CDN or honour the forwarded https header; or enable it in the plugin for the publishing account |
+| Every API request refused, or the API address returns "not found" | A plugin disables the REST API, or permalinks are set to "Plain" | User: allow the posts and media routes in that plugin; Settings > Permalinks, pick any non-plain option and save |
+| 403, a challenge page or captcha instead of data | Firewall, security plugin or CDN bot protection blocks the requests | Whoever manages the firewall: allow CMO.so's requests to the site's API |
+| Posts stay "scheduled" after their time ("missed schedule") | WordPress's scheduler only runs when someone visits, or is disabled without a server cron | Host or developer: run it from a real server cron every few minutes |
+| Embeds, iframes or structured data disappear after publishing | The publishing account may not post unfiltered HTML (Author role, multisite) | User: publish as an Editor or Administrator, or add structured data through the SEO plugin |
+| Links and images start with http:// on an https site | WordPress Address / Site Address still set to http:// | User: Settings > General, after a backup |
+| Image upload rejected as too big | The host's upload limit | Host: raise the limit |
+| Site or API shows a critical error after a plugin update | A plugin or theme crashes WordPress | Developer: deactivate the named plugin (host-installed "must-use" plugins are not switched off by normal plugin tools) |
+
+Send the matching row to whoever manages the site with `handoff_to_desktop` (`platform: "wordpress"`). Never ask for admin logins, hosting passwords or SSH access to fix it yourself.
+
 `connect_guides_get` covers WordPress, Shopify, Wix and the API route; there is no dedicated guide for other builders. If `platform_detect` reports one of them, say so plainly and offer the API route (`handoff_to_desktop` with `platform: "api"` sends the steps to whoever builds the site); do not improvise any other connection method.
 
 ### 5. Hand off to a computer (a change)
@@ -102,6 +119,7 @@ Result:
 - [ ] DNS values shown exactly as returned, with the record type.
 - [ ] No password, key or admin login requested in chat.
 - [ ] Final state read back, not assumed.
+- [ ] Publishing failures were matched to the troubleshooting table from the quoted error, not guessed.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user.
@@ -121,3 +139,5 @@ Result:
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - every-app/open-seo — seo-project-setup (MIT)
 - CMO.so internal skill (private) — maggie-blog-bootstrap
+- wp-cli/wp-cli — runner and shutdown handler (MIT)
+- WordPress/WordPress — REST authentication, application passwords, cron, kses (GPL-2.0-or-later, ideas only)

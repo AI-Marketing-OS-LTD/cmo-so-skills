@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "blog,linkedin,email"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-humanize"
 ---
 # Humanise AI writing
@@ -49,17 +49,42 @@ Not for: writing from scratch (`cmo-blog-writing` or `cmo-copywriting`), checkin
    | Uniform paragraphs | every paragraph: claim, explanation, example, bridge | Vary length; let one-line paragraphs carry real information |
    | Formatting tells | an em dash in most paragraphs, arrows, bold-label bullets everywhere, emoji on headings, Title Case Headings | Commas, full stops, sentence-case headings, bold only where a reader scans |
    | Chat residue | "I hope this helps", "Great question", knowledge-cutoff notes | Delete |
+   | Tacked-on interpretation | ", showing steady growth", ", highlighting the need for…", a closing line on what the numbers "show" | State the fact and stop; if the meaning matters, make it its own claim with evidence |
+   | Synonym cycling | attracted / drew / garnered / recorded rotated for one plain verb | Repeat the plain verb; rotation reads as generated |
 3. **Rewrite by stating the claim.** For each finding, ask "what is the sentence actually saying?" and write that. Do not swap one flourish for another ("delve" to "dive deep" is not a fix). Never delete a fact, number, name, link or caveat to make a sentence shorter.
 4. **Fix rhythm.** Read the result aloud (or simulate it). Mix sentence lengths; break any run of three sentences of similar length; let a long sentence carry a sequence when the reader has context. Keep lists for genuine steps or parallel items; do not fold instructions back into prose.
 5. **Replace vague with specific.** Where the text says "significantly", "many" or "leading brands", either insert a specific the user supplied, or rewrite as first-hand experience ("in the accounts we run, this usually...") if that is true, or flag it in the "needs a source" list. Never invent the specific.
 6. **Put the voice back.** From the user's sample, note: sentence length, contractions, formality, humour (none, dry, self-deprecating), stance (peer, teacher, challenger) and two or three signature habits. Apply them consistently. Use "you" for the reader in blog and social posts. Allow one aside or admitted mistake if the voice supports it; do not add fake anecdotes.
 7. **Protect what was good.** If the draft has strong paragraphs, leave them alone and say so.
-8. **Re-check.** Run the audit table again on the new text. Every high-severity finding should be gone; if density has not dropped clearly, the rewrite was too timid.
+8. **Re-check.** Run the audit table again on the new text. Every high-severity finding should be gone; if density has not dropped clearly, the rewrite was too timid. Then sweep for the habits that most often survive a rewrite: a "not X but Y" contrast (also split across two sentences or paragraphs), a one-line closer ending each section, dashes, groups of three, and bold labels opening bullets. Check shape too: the same closer after every section is the same tell at a larger scale.
+9. **Clean hidden characters** in the user's own draft: zero-width spaces and joiners outside emoji sequences, directional marks, Unicode tag characters (they can hide text) and unusual spaces (normalise to a normal space). Keep emoji intact and note the counts in the change log.
+
+### When not to change it
+- One weak signal on its own (one dash, one list of three) is not a reason to rewrite; act where several tells cluster.
+- Leave phrases inside quotations, titles, names and legal text, and where the text is discussing the phrase.
+- Keep what carries a person: an odd specific detail, mixed feelings, dated slang, an in-joke, a genuine aside or self-correction.
+- If the writing sample uses dashes or lists of three, keep them at the sample's rate; the sample beats the checklist.
 
 ### Channel notes
 - **Blog**: keep headings, links, schema-relevant facts and keyword phrasing the SEO plan relies on. Humanising must not delete the direct answer under a heading (see `cmo-aeo-content`).
 - **LinkedIn**: the first two lines carry the post; make them a concrete claim or moment, not a teaser formula. Fewer line-break-after-every-sentence stacks.
 - **Email**: shorter sentences, one idea, a single ask. Remove "I hope this email finds you well" and its cousins.
+- **Chinese (Traditional or Simplified)**: run as its own pass. First lock what must not change (verbatim quotes and their punctuation, names, numbers, dates, units, URLs, product and technical terms) and compare against that list afterwards. Edit only flagged passages; industry terms the audience really uses stay.
+
+  | Pattern | Typical form | Fix |
+  |---|---|---|
+  | Inflated meaning | an ordinary fact called 里程碑, 轉捩點, 新時代 | Say what changed and for whom |
+  | Decorative tail clause | …，彰顯了… / 體現出… / 從而推動… | Cut it, or give the real consequence |
+  | Buzzwords | 賦能、閉環、抓手、底層邏輯、全方位 | The plain verb or the concrete thing |
+  | Staged contrast | 不是…而是…, 不僅…更… used repeatedly | At most one, only if both sides are proven |
+  | Vague authority | 專家認為、研究顯示 with no source | Name the source or make it first-hand |
+  | Throat-clearing, scaffolding | 眾所周知、值得注意的是、在當今時代; 首先/其次/此外 on every paragraph | Start with the point; keep only connectives the logic needs |
+  | Rhythm filler | strings of four-character phrases, a slogan line closing every paragraph, heavy —— | Plain sentences that carry information |
+  | Hollow ending, reply bait | 未來可期、拭目以待; 你怎麼看？、留言+1 | End on the decision or next step; ask about a specific choice |
+  | Chat residue | 希望對你有幫助、當然可以 | Delete |
+  | Typography | half-width punctuation in Chinese sentences, emoji bullets, bold on every line | Full-width Chinese punctuation; English names keep their own form |
+
+  Use one stable term per thing. For zh-Hant readers use Taiwan or Hong Kong wording as the user specifies (品質 not 質量, 影片 not 視頻, 資訊 not 信息) and never mix in Simplified characters. The pass fails if a locked item changed, a claim or caveat was dropped, or the result reads like a literal translation.
 
 ## Output
 1. **Verdict**: light polish / targeted rewrite / full rewrite, with the tell count.
@@ -94,6 +119,7 @@ Result (abbreviated):
 - Never invent numbers, quotes, reviews or results; never promise rankings or traffic.
 - The goal is honest, readable writing, not evading AI detectors. Do not promise that text will "pass" a detector, and do not help disguise authorship where the user is required to disclose AI use (school work, some publications, regulated communications).
 - Keep regulated wording (financial, medical, legal disclaimers) verbatim.
+- Statistical AI watermarks live in word choice, not characters; no edit reliably detects or removes them, so never claim it. Clean characters only in the user's own drafts, and do not strip provenance from content they do not own.
 - When editing someone else's writing, keep their voice; do not impose yours.
 
 ## Related skills
@@ -106,3 +132,7 @@ Result (abbreviated):
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — content-humanizer (MIT)
 - every-app/open-seo — deslop (MIT)
+- AgriciDaniel/claude-seo — seo-content (MIT)
+- JeffLi1993/content-repurposing-skills — chinese-humanizer reference (no licence, ideas only)
+- Openpanel-dev/openpanel — win-back writing rules (AGPL-3.0, ideas only)
+- trypostit/trypost — humanizer (AGPL-3.0, ideas only)

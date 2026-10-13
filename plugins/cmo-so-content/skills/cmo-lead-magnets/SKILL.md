@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "website,email"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-lead-magnets"
 ---
 # Lead magnets
@@ -32,6 +32,7 @@ Ask one question at a time; skip anything the user already answered.
 
 ## Workflow
 1. **Find the problem.** List 5-10 specific problems the ideal customer has, each phrased the way they would say it. Good sources: sales questions, support tickets, top blog posts, search queries. Prefer problems that sit just before the product in the journey: solving them makes the need for the product obvious.
+   - **From survey answers** to an open question ("What's your biggest challenge with X?"): group them into 3-7 pain themes, count respondents per theme and keep two verbatim answers as evidence. Rank by size and by buying language (budget, price, hiring, outsourcing, tools, "looking for", "evaluating"); a smaller theme full of buying language can beat a larger one of vague complaints. Brief at most one magnet per top theme (2-3), titled in the respondents' words, naming the segment it is for.
 2. **Match the stage.**
    | Buyer stage | What they need | Formats that fit |
    |---|---|---|
@@ -51,6 +52,7 @@ Ask one question at a time; skip anything the user already answered.
    | Webinar / workshop | about a week | live Q&A builds trust; plan the replay as a second asset |
 4. **Score the shortlist.** Rate each idea 1-5 on: specificity of the problem, closeness to the product, speed to value for the reader, effort to make (5 = easy), and proof you can include. Recommend the top one; show the table.
 5. **Outline the asset.** Title that names the outcome ("The 12-point pre-launch SEO checklist" beats "SEO guide"). Sections, one idea each; a worked example; a final "next step" that points naturally to the product without a hard sell. Use only facts the user can stand behind.
+   - **Quiz or assessment:** about 8-15 questions for a cold audience, grouped into 2-7 scored categories the respondent understands, mostly yes/no or sliding scale, with progress shown. Ask qualifying questions (budget, urgency, size) only if they change the recommendation. The results page gives the overall score, the score per category, guidance per tier and one next step per tier (low: a free guide; medium: a call; high: a consultation). The tier comes from the answers; never shift a score to steer someone to an offer. If the email is asked before the result, say why and what will be sent, and consider showing a basic result without it.
 6. **Decide the gate.**
    - Full gate: high-value, decision-stage assets.
    - Partial gate: show part (or the table of contents), gate the full version.
@@ -59,7 +61,9 @@ Ask one question at a time; skip anything the user already answered.
    Fields: email only by default; add name for personalisation; add company or role only if sales will actually use it. Each extra field costs signups.
 7. **Plan the landing page.** Headline with the outcome; a visual of the asset (cover, page preview); 3-5 bullets of what is inside; proof if real (download counts, a named testimonial); the form; a short FAQ (format, is it free, what emails follow). Write the consent line clearly.
 8. **Plan delivery and the thank-you page.** Show the asset immediately on the thank-you page and also email it (confirms the address). Use the thank-you page for one next step: book a call, start a trial, read a related post, or share.
-9. **Plan the follow-up.** 3-5 emails over about two weeks: deliver, help them use it, a related story or case, then a soft offer. Hand the details to `cmo-email-sequences`.
+   - **Single or double opt-in.** Double opt-in (the person joins the list only after clicking a confirmation link) is the safer default for strict markets such as Germany, for lists that will get regular marketing, or when bots fill the form; single opt-in suits a one-off download. The confirmation email says what they signed up for and holds only the confirm link; the link expires after a few days and unconfirmed sign-ups are deleted. The asset can still show on the thank-you page.
+   - **One person, one record.** A repeat sign-up updates the existing contact and adds the new magnet as a source; it never creates a duplicate or restarts the welcome sequence.
+9. **Plan the follow-up.** 3-5 emails over about two weeks: deliver, help them use it, a related story or case, then a soft offer. Hand the details to `cmo-email-sequences`; a quiz gets one sequence per result tier.
 10. **Plan promotion.** Content upgrades in the matching blog posts; an end-of-post call-to-action; a mention in social posts and the profile link; an exit or scroll prompt matched to the page (see `cmo-popups`); paid only once the page converts organic traffic. With CMO.so connected, the user can add the landing page as a call-to-action Maggie places in new posts with `cta_upsert` (keyword plus the user's own http(s) link and three sample texts; preview, then confirm).
 11. **Set measurement.** Track: landing-page conversion rate, signup source, email engagement on the follow-up, and the share of leads that reach a sales conversation or purchase. Judge a magnet by lead quality, not just volume. Give rough ranges only as rules of thumb (a focused page on warm traffic usually converts far better than a sidebar banner) and replace them with the user's own baseline after a few weeks.
 
@@ -108,3 +112,6 @@ Result (abbreviated):
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — lead-magnets (MIT)
+- ericosiu/ai-marketing-skills — conversion-ops survey lead magnet (MIT)
+- espocrm/espocrm — lead capture opt-in and de-duplication (AGPL-3.0, ideas only)
+- wondelai/skills — scorecard-marketing (MIT)

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-content-brief"
 ---
 # SEO content brief
@@ -36,7 +36,8 @@ Give a writer (human or Maggie) everything needed to produce one page that deser
    - *Topic gaps*: sub-questions searchers have that no top result answers (use "People also ask", related searches, forum threads, customer questions).
    - *Depth gaps*: covered, but thinly.
    - *Quality gaps*: outdated, no first-hand experience, no examples, poor structure.
-   Rank them roughly by impact x advantage / effort.
+   While reading each competitor also note sections under about 150 words, unsourced claims and out-of-date facts. A gap shared by 3 or more of the top 5 is a **must-fill**; one only this business can fill (own data, own case) is a **differentiator**; a statistic or expert input still missing is **data needed** from the user. Rank them roughly by impact x advantage / effort.
+   - *Language map*: from forum threads, video comments and customer questions, write 5-10 lines of "people say X, not Y" for the problem, product and outcome, and use those words in headings and the intro. Quote nobody by name without permission.
 5. **Define the information gain.** State exactly what this page adds that no ranking page has: the business's own data, a real case with outcomes, a worked example, expert input, an original framework, a calculator or template. "More detail" is not information gain. If the business has nothing to add, say so: the page may not be worth writing yet.
 6. **Write the outline.**
    - H1 with the primary keyword near the front; URL slug (short, hyphenated).
@@ -55,7 +56,8 @@ Give a writer (human or Maggie) everything needed to produce one page that deser
 ## Content brief: [primary keyword]
 Search intent — type, format rewarded, audience and level (3-4 lines)
 Competitors — # | URL | Key sections | Approx. words | Score /40 | Main gap
-Gaps — topic, depth, quality (bullets)
+Gaps — topic, depth, quality (bullets), each tagged must-fill / differentiator / data needed
+Language map — 5-10 "people say X, not Y" lines
 Outline — H1, slug, target length; H2/H3 with point, format, length, keyword, snippet targets
 Meta tags — title, meta description
 Information gain — one specific paragraph
@@ -102,3 +104,4 @@ Outline-only mode: H1, slug, length and the annotated outline, nothing else.
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AgriciDaniel/claude-seo — seo-content-brief (MIT)
+- TheCraigHewitt/seomachine — article command (MIT)

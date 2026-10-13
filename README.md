@@ -7,7 +7,7 @@
     </picture>
   </p>
   <h1>CMO.so Skills</h1>
-  <p><strong>114 marketing skills for Claude Code and other AI agents, powered by Maggie and the CMO.so MCP server.</strong></p>
+  <p><strong>124 marketing skills for Claude Code and other AI agents, powered by Maggie and the CMO.so MCP server.</strong></p>
   <p>
     <a href="https://cmo.so">Website</a> |
     <a href="https://ai.cmo.so">Dashboard</a> |
@@ -16,7 +16,7 @@
   </p>
   <p>
     <img src="https://img.shields.io/badge/AI%20Marketing%20OS-EF476F?style=for-the-badge" alt="AI Marketing OS">
-    <img src="https://img.shields.io/badge/Skills-114-0074BA?style=for-the-badge" alt="114 skills">
+    <img src="https://img.shields.io/badge/Skills-124-0074BA?style=for-the-badge" alt="124 skills">
     <img src="https://img.shields.io/badge/Plugins-13%20%2B%20bundle-0074BA?style=for-the-badge" alt="13 plugins plus a bundle">
     <img src="https://img.shields.io/badge/MCP-mcp.cmo.so-0074BA?style=for-the-badge" alt="MCP server">
     <img src="https://img.shields.io/badge/License-MIT-EF476F?style=for-the-badge" alt="MIT licence">
@@ -35,12 +35,22 @@ Maggie, the AI marketing assistant in <a href="https://cmo.so">CMO.so</a>, write
 
 <table>
   <tr>
-    <td><strong>Skills</strong><br/>114, one job each</td>
+    <td><strong>Skills</strong><br/>124, one job each</td>
     <td><strong>Plugins</strong><br/>13 categories + <code>cmo-so-all</code></td>
     <td><strong>Core</strong><br/>CMO.so MCP server (OAuth)</td>
     <td><strong>Index</strong><br/><a href="skills.json"><code>skills.json</code></a></td>
   </tr>
 </table>
+
+---
+
+## What's new in 0.3.0
+
+Ten new skills, and 72 existing skills improved with rules, checklists and platform details from a review of 196 open-source marketing, SEO, social media and analytics projects:
+
+- **Social channels:** `cmo-open-social` (Threads, Bluesky, Mastodon), `cmo-reddit`, `cmo-pinterest`, `cmo-china-social` (Xiaohongshu, WeChat, Douyin, Weibo).
+- **Social operations:** `cmo-social-listening`, `cmo-social-crisis`, `cmo-employee-advocacy`.
+- **Trust and delivery:** `cmo-email-deliverability`, `cmo-brand-protection`, `cmo-agent-readiness` (make your site usable by AI agents).
 
 ---
 
@@ -77,7 +87,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**114 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**124 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -112,6 +122,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-expert-panel`](plugins/cmo-so-strategy/skills/cmo-expert-panel/SKILL.md) | Score and improve any copy, plan or campaign with a simulated panel of expert reviewers until it clears a quality bar. |
 | [`cmo-brand-naming`](plugins/cmo-so-strategy/skills/cmo-brand-naming/SKILL.md) | Find and vet names for a business, product or feature: meaning, pronunciation across markets, domain and trademark checks. |
 | [`cmo-market-sizing`](plugins/cmo-so-strategy/skills/cmo-market-sizing/SKILL.md) | Estimate TAM, SAM and SOM bottom-up and top-down, with stated assumptions, to size goals and budgets. |
+| [`cmo-brand-protection`](plugins/cmo-so-strategy/skills/cmo-brand-protection/SKILL.md) | Respond to fake websites, phishing pages and impersonation of the brand: collect evidence, report in parallel, warn customers and win back branded search. |
 
 ### SEO · `cmo-so-seo`
 
@@ -145,6 +156,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-ai-citation-gaps`](plugins/cmo-so-ai-search/skills/cmo-ai-citation-gaps/SKILL.md) | Find the pages AI assistants cite in the category and which of those sources the brand can get into or out-do. |
 | [`cmo-ai-brand-monitoring`](plugins/cmo-so-ai-search/skills/cmo-ai-brand-monitoring/SKILL.md) | Track what AI assistants say about the brand over time and catch wrong, outdated or damaging claims. |
 | [`cmo-aeo-content`](plugins/cmo-so-ai-search/skills/cmo-aeo-content/SKILL.md) | Restructure pages so AI assistants can quote them: direct answers, facts, sources, E-E-A-T signals and schema. |
+| [`cmo-agent-readiness`](plugins/cmo-so-ai-search/skills/cmo-agent-readiness/SKILL.md) | Make a site usable by AI agents that browse, fill in forms and buy for people: accessibility tree, layout stability, access policy, discovery files and safe agent tools, fixed in priority order. |
 
 ### Content & copy · `cmo-so-content`
 
@@ -175,6 +187,13 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-youtube`](plugins/cmo-so-social/skills/cmo-youtube/SKILL.md) | Plan a YouTube channel: topics from outlier analysis, titles and thumbnails, scripts and what to measure. |
 | [`cmo-short-form-video`](plugins/cmo-so-social/skills/cmo-short-form-video/SKILL.md) | Ideas, hooks, scripts and an edit plan for Reels, TikTok and Shorts from what the business already knows. |
 | [`cmo-organic-social`](plugins/cmo-so-social/skills/cmo-organic-social/SKILL.md) | Grow organically on Instagram, TikTok and Facebook: profile, formats, posting rhythm, hooks and what to measure. |
+| [`cmo-china-social`](plugins/cmo-so-social/skills/cmo-china-social/SKILL.md) | Choose and run mainland-Chinese platforms (Xiaohongshu, WeChat, Douyin, Weibo, Zhihu, Bilibili): native notes, articles and video packs, compliance checks and a draft-only hand-off. |
+| [`cmo-employee-advocacy`](plugins/cmo-so-social/skills/cmo-employee-advocacy/SKILL.md) | Run a voluntary programme where employees and founders share the company's news in their own words: opt-in, share kits with varied angles, disclosure, staggered timing and honest tracking. |
+| [`cmo-open-social`](plugins/cmo-so-social/skills/cmo-open-social/SKILL.md) | Build a presence on Threads, Bluesky and Mastodon: fit check, profile and server setup, native posts within each network's limits, discovery, reply routine and honest measurement. |
+| [`cmo-pinterest`](plugins/cmo-so-social/skills/cmo-pinterest/SKILL.md) | Turn articles and product pages into keyword-led Pins, boards and a steady fresh-Pin schedule that brings search traffic from Pinterest. |
+| [`cmo-reddit`](plugins/cmo-so-social/skills/cmo-reddit/SKILL.md) | Earn an honest, disclosed presence in the subreddits where buyers ask questions: map each community's rules, contribute first, draft launch posts and replies, and correct outdated threads AI answers rely on. |
+| [`cmo-social-crisis`](plugins/cmo-so-social/skills/cmo-social-crisis/SKILL.md) | Prepare for and run the response when something goes wrong in public: triage and severity, pausing scheduled posts, holding statements, fair moderation, approvals and the stand-down. |
+| [`cmo-social-listening`](plugins/cmo-so-social/skills/cmo-social-listening/SKILL.md) | Watch public conversations for the brand, competitors, buyer questions and rising topics, surface only the few worth a reply or a post, and turn themes into content ideas. |
 
 ### Email & lifecycle · `cmo-so-email`
 
@@ -185,6 +204,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-sms-whatsapp`](plugins/cmo-so-email/skills/cmo-sms-whatsapp/SKILL.md) | Compliant SMS and WhatsApp flows: welcome, abandoned cart, post-purchase and win-back. |
 | [`cmo-churn-prevention`](plugins/cmo-so-email/skills/cmo-churn-prevention/SKILL.md) | Keep customers: health signals, cancel flows, save offers, failed-payment recovery and win-back. |
 | [`cmo-newsletter`](plugins/cmo-so-email/skills/cmo-newsletter/SKILL.md) | A newsletter people open: positioning, format, sections, cadence and growth, fed by the posts Maggie publishes. |
+| [`cmo-email-deliverability`](plugins/cmo-so-email/skills/cmo-email-deliverability/SKILL.md) | Check that opted-in marketing email reaches the inbox: authentication, unsubscribe headers, bounces and suppression, sender reputation and list hygiene, with fixes in order. |
 
 ### Paid ads · `cmo-so-paid-ads`
 
@@ -326,7 +346,11 @@ The skills are plain `SKILL.md` folders under [`plugins/`](plugins). Any agent t
 
 ## Credits
 
-The skills are written by AI Marketing OS Ltd. Many adapt ideas from excellent open-source marketing skill collections; each skill's **References** section names its sources, and [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) carries their licences.
+The skills are written by AI Marketing OS Ltd. Many adapt ideas from excellent open-source projects: marketing skill collections, social media and SEO tools, analytics, email and publishing platforms, and MCP servers and CLIs for the channels the skills cover. Each skill's **References** section names its sources, and [`skills.json`](skills.json) pins every source file to a commit with its licence.
+
+- [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md) carries the copyright and licence notice of every MIT, Apache-2.0 or other permissive project a skill adapts.
+- Projects with no licence, or a copyleft or source-available licence (GPL, AGPL, BUSL and similar), were used for ideas only: no text from them is included. They are listed at the end of the notices.
+- `skills.json → excluded` records every source skill we looked at and left out, and why.
 
 This repository is separate from the TOPY AI `ai-cmo-skills` package (`@topy-ai/maggie`), which covers building and deploying websites.
 

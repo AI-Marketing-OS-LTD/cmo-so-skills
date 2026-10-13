@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ad-creative"
 ---
 # Ad creative
@@ -46,6 +46,7 @@ Produce ad creative that is grounded in what the business really offers and what
 
    RSA headlines must each make sense alone and in any combination; include keyword, benefit, proof and call-to-action headlines.
 5. **Write well.** Specific beats vague ("cut month-end close from 5 days to 2" only if the business can prove it); benefits before features; active voice; one idea per line; the landing page must deliver the promise. Avoid generated-sounding tics: "it's not X, it's Y" reveals, stacked "No X. No Y. No Z.", stock openers ("unlock", "say goodbye to", "stop scrolling"), self-answered questions, em dashes in short copy, every variant opening the same way. Name the action and what the person gets in each CTA.
+   - **Ads beside AI answers** (in AI assistants or AI search results): never borrow the assistant's authority. No "recommended by" an assistant, no "AI-verified", no "the answer is", no styling that mimics the answer box. Lead with a checkable fact the answer probably lacks (a spec, a price, delivery time, a fit detail), end with a specific, low-pressure action ("Compare widths"), and write a few variants per question cluster, each from a different angle. Placement rules are new and changing; at the time of writing, check the platform's current policy.
 6. **Visual and video briefs.** Static: layout (stat callout, us vs them, review card, before/after where allowed, founder note, FAQ card), headline, supporting line, product or UI shot, brand colours. Video (15-30 s): hook in the first three seconds, problem, product in action, proof, CTA; captions always; native-looking often beats polished on Meta and TikTok. Hand image production to `cmo-image-generation`.
 7. **Test plan.** One variable per test. Order of impact: concept or angle, hook, visual or format, body copy, CTA. Judge on the business metric after enough spend (at least two to three times the target cost per result per variant); do not crown a winner on a handful of conversions. Hand experiment design to `cmo-ab-testing`.
 8. **Iterate from data.** Sort ads by the business metric. For winners, extract what they share (angle, hook shape, proof type, length, format) and make variants that keep that and change one thing. For losers, note patterns to avoid. Add one or two genuinely new angles per round. Keep an iteration log: round, date, winners with metrics, patterns, new variants, angles retired.
@@ -99,3 +100,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AgriciDaniel/claude-ads — ads-generate (MIT)
 - irinabuht12-oss/marketing-skills — ad-copy-variant-generator (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — creative-fatigue-detection (no licence; ideas only)
+- borghei/Claude-Skills — conversational-ads (MIT + Commons Clause, ideas only)

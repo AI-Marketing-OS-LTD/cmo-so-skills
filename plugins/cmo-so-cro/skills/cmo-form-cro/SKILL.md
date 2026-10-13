@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-form-cro"
 ---
 # Form optimisation
@@ -97,6 +97,7 @@ Makes lead, contact, demo, quote and newsletter forms that more of the right peo
 - `cmo-signup-flow` — for account creation forms.
 - `cmo-popups` — for forms in modals and slide-ins.
 - `cmo-ab-testing` — to test the hypotheses.
+- `cmo-agent-readiness` — make the form usable by AI agents that browse and fill it for people.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

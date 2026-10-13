@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "instagram,tiktok,youtube,linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-influencer"
 ---
 # Influencer & creator partnerships
@@ -36,6 +36,9 @@ Plans creator partnerships that reach the right buyers and can be measured: choo
    | Hybrid | Lower flat fee + commission | Usually the best alignment |
    Most programmes mix a few paid placements with a cohort of smaller creators.
 2. **Find candidates.** Search the niche where the buyer pays attention: hashtags and topics, who your customers already follow (ask them), creators who mention your category unprompted, podcast and newsletter directories for B2B. Shortlist 10-20 across at least two size tiers.
+   - On YouTube, start from videos, not channels: search the buyer's problem phrases, group results by channel, and keep channels that appear for more than one phrase. A channel that keeps making videos about the problem beats one whose name matches the category.
+   - Filter before scoring: subscriber band (the tier you chose), last upload (drop channels silent for roughly two months unless back-catalogue placements are wanted), and type: a person who makes the videos versus a brand, label or media outlet. Outlets are a press conversation (`cmo-public-relations`), not a creator deal.
+   - Keep 2-3 matching videos per channel, with links, as evidence for the fit score.
 3. **Vet on audience fit.**
    | Tier | Followers (rough rule of thumb) | Character |
    |---|---|---|
@@ -45,7 +48,7 @@ Plans creator partnerships that reach the right buyers and can be measured: choo
    | Macro | 500k+ | Awareness; lowest conversion per follower |
    | B2B voice | Any | Judge who follows, not how many |
    Score each 1-5 on: audience matches the buyer (read the comments, not the media kit); engagement quality (real conversation, not generic praise or sudden follower spikes); sponsored posts still get engagement; brand safety over the last ~3 months; genuine fit (do they already use or talk about the category). Reject anything that fails brand safety or audience fit.
-4. **Reach out one to one.** Reference specific content, say why them and what their audience gets. Ask for their rate card before naming a number. Use `cmo-cold-email` craft for the message.
+4. **Reach out one to one.** Reference specific content, say why them and what their audience gets. Ask for their rate card before naming a number. Use `cmo-cold-email` craft for the message. Use only contact details the creator published (About text, bio links, a stated management email) and record where each came from; if none is published, use the platform's business-enquiry route. Never guess or buy addresses, and follow the anti-spam law of the creator's country.
 5. **Structure the deal** in a short written agreement:
    - Deliverables: format, number of posts, platforms, posting window, how long it stays up.
    - Usage rights: whether you may run their content as paid ads (whitelisting) and for how long (often a few months); this is frequently the most valuable clause.
@@ -102,3 +105,4 @@ Plans creator partnerships that reach the right buyers and can be measured: choo
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — influencer-marketing (MIT)
+- ZubeidHendricks/youtube-mcp-server — channel search and metadata (MIT)

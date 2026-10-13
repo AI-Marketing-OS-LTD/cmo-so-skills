@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "blog,linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-content-strategy"
 ---
 # Content strategy
@@ -89,7 +89,14 @@ search-led SEO roadmap (`cmo-seo-plan`) or changing posts per day (`cmo-autopilo
    hierarchies are only worth it for very deep topics.
 9. **Set cadence from capacity, not ambition.** Read posts a day and posts left from
    `publish_settings_get`. A cadence that can be sustained for six months beats a burst. Hubs go
-   first, then their supporting posts, so internal links have somewhere to point.
+   first, then their supporting posts, so internal links have somewhere to point. Ordering rules
+   for the first month (`cmo-blog-planner` applies them to the plan):
+   - First: refreshes of posts close to page one and anything time-sensitive; they pay off soonest.
+   - Then alternate new posts and refreshes.
+   - Give a cluster its own week only when building its hub; otherwise no two pieces from one
+     cluster in the same week.
+   - A focus pillar named by the user gets about 60% of slots; the rest go to the top scores.
+   - Spread posts through the week (two: Mon/Thu; three: Mon/Wed/Fri).
 10. **Plan distribution at creation time.** Each flagship post should yield LinkedIn posts,
     an email and short quotes. On CMO.so, Maggie drafts LinkedIn posts from published articles
     (see `cmo-linkedin`). Route attention toward owned channels (blog, email list) rather than
@@ -153,3 +160,4 @@ Result (abbreviated):
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — content-strategy (MIT)
 - alirezarezvani/claude-skills — content-strategy (MIT)
+- TheCraigHewitt/seomachine — content-calendar command (MIT)

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-seo-monitoring"
 ---
 # SEO change monitoring
@@ -21,7 +21,7 @@ For site owners and teams who ship changes (redesigns, CMS updates, plugin upgra
 - Not for: a full site audit (use `cmo-seo-audit`), deep crawl and indexing work (use `cmo-technical-seo`), or routine traffic reporting (use `cmo-weekly-report`).
 
 ## Before you start
-- Ask which pages matter most. If the user is unsure and CMO.so is connected, `gsc_performance_get` (`period: "90d"`) lists up to 8 top pages; take those plus the homepage and key conversion pages.
+- Ask which pages matter most. If the user is unsure and CMO.so is connected, `gsc_performance_get` (`period: "90d"`) lists up to 8 top pages; take those plus the homepage and key conversion pages, and at least one URL per page template (home, category or listing, article or product, and a missing URL that should return 404): a template change breaks every page built on it.
 - Ask whether there was a recent change and its date.
 - Ask whether a previous baseline exists (a table from an earlier run). If not, this run creates one.
 - Call `workspaces_list` if the website domain is not known.
@@ -54,6 +54,8 @@ For site owners and teams who ship changes (redesigns, CMS updates, plugin upgra
    | Info | Small wording edits; OG image changed; new sections added | Note only |
 
    Judge "meaning changed" by reading both versions, not by character count alone. Many changes are intentional: ask before calling them errors.
+
+   **Speed scores without false alarms.** Lab scores move from run to run. "Clearly worse" means the same device, URL and tool dropped by more than normal noise (roughly 10 points, or a band change such as good to needs work; a rule of thumb) and a second run confirmed it. When several runs exist compare their median, never the best run. A check present in one report and missing in the other is a tool change, not a site change. For yes/no items (crawlable, has a title, valid canonical, not blocked) record pass or a count of failing items, target zero: counts are stable, scores are not. A speed finding stays a Warning unless real-user Core Web Vitals also got worse.
 4. **Check traffic impact** with `gsc_performance_get` (`period: "30d"`): it returns totals with the change against the previous 30 days, the best day and the top pages, but no day-by-day series. Compare the top pages with the baseline list, and for the exact turning point ask the user to read the Search Console chart around the change date. Search data lags by a few days and normal weekly swings exist, so wait at least a week after a change before drawing conclusions, and tie a drop to a regression only when timing and pages line up.
 5. **Diagnose** each critical finding: likely cause (template change, plugin setting, CMS default, migration mapping), and the exact fix (restore the tag, correct the canonical, remove the noindex, add the redirect).
 6. **Set a rhythm**: re-run after every release that touches templates, and monthly otherwise. Refresh the baseline only after the user confirms the current state is the new "known good".
@@ -80,6 +82,7 @@ For site owners and teams who ship changes (redesigns, CMS updates, plugin upgra
 - [ ] Old and new values are shown for every change.
 - [ ] Critical items have a concrete fix and an owner.
 - [ ] Traffic conclusions state the period compared and the lag caveat.
+- [ ] No speed regression is reported from a single run or across different devices or tools.
 - [ ] Intentional changes are confirmed with the user before being labelled regressions.
 
 ## Guardrails
@@ -99,3 +102,5 @@ For site owners and teams who ship changes (redesigns, CMS updates, plugin upgra
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AgriciDaniel/claude-seo — seo-drift (MIT)
+- GoogleChrome/lighthouse-ci — assertions and representative runs (Apache-2.0)
+- GoogleChrome/lighthouse — variability notes (Apache-2.0)

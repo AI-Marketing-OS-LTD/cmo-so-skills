@@ -6,8 +6,8 @@ metadata:
   category: "social"
   tier: "standalone"
   funnel_stage: "retention"
-  channels: "discord,slack,reddit"
-  version: "0.2.0"
+  channels: "discord,slack,reddit,telegram"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-community"
 ---
 # Community marketing
@@ -18,7 +18,7 @@ Helps a business start or revive a community that members value and that, in ret
 - Deciding whether to build a community, and where.
 - Launching from zero, or reviving one where only staff post.
 - Advocate or ambassador programmes; community-led support; participating in Reddit or other communities you do not own.
-- Not for: paid creator deals or creator ambassador cohorts (use `cmo-influencer`), referral incentives and payouts (use `cmo-referral-program`), social posting plans (use `cmo-social-strategy`).
+- Not for: a Reddit posting plan for one subreddit (use `cmo-reddit`), paid creator deals or creator ambassador cohorts (use `cmo-influencer`), referral incentives and payouts (use `cmo-referral-program`), social posting plans (use `cmo-social-strategy`).
 
 ## Before you start
 - Ask, one at a time: the one goal (retention, activation, support deflection, product feedback, word of mouth, revenue); who the ideal member is and what they want from peers; the stage; the platform; weekly hours available.
@@ -44,14 +44,26 @@ Helps a business start or revive a community that members value and that, in ret
    | Forum (e.g. Discourse) | Technical, long-form, searchable | Slower pace |
    | Reddit | Large public topics | You do not own it; each subreddit's rules apply |
    | Facebook Groups | Consumers, local, older audiences | Algorithm-dependent reach |
+   | Telegram channel + discussion group | Broadcast-first, mobile-heavy audiences; tech and crypto; many markets in Asia and Eastern Europe | A channel is one-way, so pair it with a group for replies; growth relies on links and cross-promotion |
 4. **Launch from zero.** Recruit 20-50 founding members personally before opening. Write guidelines that describe good participation, not just rules. Seed 5-10 posts that model the behaviour you want. Reply to everything and welcome everyone by name at first. Open publicly only once there is visible activity.
 5. **Design the core loop and rituals.** One weekly action you want from members (share progress, ask a question, answer one). Back it with rituals: a weekly thread ("What are you working on?"), a monthly AMA or office hours, a seasonal challenge. Feature member wins publicly.
 6. **New-member journey.** Pinned "start here" post, an introductions channel with a prompt, a personal welcome from a human, one first-week task that takes under five minutes. Track how many new members post within 7 days.
-7. **Channel architecture.** Few channels to start (start-here, introductions, general, help, wins/showcase, announcements). Add channels only when one is busy enough to split.
+7. **Channel architecture.** Few channels to start (start-here, introductions, general, help, wins/showcase, announcements). Add channels only when one is busy enough to split. On Discord, use the native pieces:
+   | Need | Discord feature | Notes |
+   |---|---|---|
+   | Product news, releases | Announcement channel | Other servers can follow it; post only real news |
+   | Help and feedback that stays findable | Forum channel with tags (question, bug, idea, solved) | One titled post per question; fixes "hard to search" |
+   | Side conversations | Threads | Keeps #general readable |
+   | Office hours, AMAs, launches | Scheduled events | Members get a reminder |
+   | Automated posts (new article, release notes) | Channel webhook | Posts as the brand; cannot read anything |
+   - Write for the limits: at the time of writing a normal message holds about 2,000 characters and forum titles about 100, so split long updates or link to the article; check current limits.
+   - Automated announcements go through that channel's webhook or a bot with only send-message, embed-links and attach-files rights; announcing needs no read, member-list or moderation rights.
+   - One mention policy in the guidelines: `@everyone` and `@here` only for rare, important news.
 8. **Grow and scale the role.** About 0-100 members: you are the architect, doing things that do not scale. 100-1,000: manager, building rituals and moderators. 1,000+: enabler, supporting member leaders. Invest in the small group of members who create most of the value: recognition, early access, moderator roles, direct product input.
 9. **Customer advocate programme** (unpaid or perk-based; paid creators belong in `cmo-influencer`). Recruit people who already recommend you unprompted (reviews, mentions, helpful members). Ask one to one, explain why them. Offer meaningful benefits (access, recognition, private channel, swag, commission where appropriate). Give them assets and talking points. Track referrals and signups per advocate; double down on the best.
-10. **Communities you do not own (Reddit, forums).** Read each community's rules and norms first; participate as a person, disclose your affiliation when relevant, answer questions fully in-thread, link to your own content only when it is the best answer and the rules allow it. Never use sockpuppets or vote manipulation.
-11. **Track health weekly.**
+10. **Communities you do not own (Reddit, forums).** Read each community's rules and norms first; participate as a person, disclose your affiliation when relevant, answer questions fully in-thread, link to your own content only when it is the best answer and the rules allow it. Never use sockpuppets or vote manipulation. For subreddit-level gates (self-promotion ratio, flair, title format, karma), use `cmo-reddit`.
+11. **Daily inbox pass (draft only).** Read new messages and mentions without marking them read or reacting. Sort into **Urgent** (a member blocked, a complaint going public, anything due within 24 h), **Reply today** (questions, requests, partner messages) and **FYI**, each with who, what and a link. Draft replies for the person to send; nothing is sent, reacted to or forwarded by the agent. End by saying plainly that no message was sent.
+12. **Track health weekly.**
     | Signal | Healthy direction (rough rule of thumb) |
     |---|---|
     | Active ratio (weekly or daily active / members) | Stable or rising; around 20% daily/monthly is often cited as healthy |
@@ -92,10 +104,15 @@ Helps a business start or revive a community that members value and that, in ret
 - Follow each platform's terms and each community's rules; no sockpuppets, vote manipulation or undisclosed promotion.
 - Members' messages and profiles are personal data: do not export, publish or reuse them without permission, and follow local privacy law.
 - Have a code of conduct and a moderation and escalation path before opening publicly; remove harassment quickly.
+- Moderation (timeouts, kicks, bans, deleting member posts, role changes) is decided by a human moderator, never the agent.
+- Bots and tools get the least access the job needs; never give an agent or posting tool admin, role, kick, ban or channel-delete rights. Post to a channel through an admin bot or the official integration, not the person's own account session.
+- A webhook URL works like a password: anyone holding it can post as the brand. Keep it out of chats and shared docs; if it leaks, delete it and create a new one.
+- On messaging apps, never mass-message strangers, add people to groups without consent or bulk-import contacts. If a platform says "wait N seconds", wait that long before retrying; if a send timed out, check the chat before sending again.
 - Paid or perk-based advocates must disclose the relationship when they promote you.
 
 ## Related skills
 - `cmo-social-strategy` — where the community fits in the wider social plan.
+- `cmo-reddit` — posting in specific subreddits without getting removed.
 - `cmo-referral-program` — incentive mechanics for advocates.
 - `cmo-influencer` — paid creator partnerships.
 - `cmo-churn-prevention` — community as a retention lever.
@@ -104,3 +121,6 @@ Helps a business start or revive a community that members value and that, in ret
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — community-marketing (MIT)
+- SaseQ/discord-mcp — forum, event, webhook and message services (MIT)
+- hanweg/mcp-discord — send and moderate message tools (MIT)
+- chigwell/telegram-mcp — draft-replies-without-sending and triage examples, flood-wait handling (Apache-2.0)

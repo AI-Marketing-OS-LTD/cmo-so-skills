@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,google-search,ai-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-weekly-report"
 ---
 # Weekly marketing report
@@ -37,8 +37,14 @@ For "summarise the month", a quarter, or any 30 / 90-day view, add `report_overv
 
 ### 2. Decide what matters
 Look for meaningful changes, not every change. Rough rules of thumb:
+- **Sort metrics before judging them.** Outcomes (clicks, CTR, position, AI citations) are what the work earned. Volume (posts published, ideas waiting) is context, not a win. Setup the user controls (Search Console connected, number of watched prompts, profile completeness) is never praised as a result; mention it only as a likely cause of a weak outcome.
+- **A change passes three gates before it is mentioned:** enough volume across the two periods (tens of clicks, not single digits), a real absolute change (several clicks, not one or two), and roughly 15-20% or more relative change. Compare each page or query with the site's overall change: if the site is up 30%, a page up 35% is not news. Rank what passes by size and movement together (a page with thousands of impressions that moved 20% beats one that went from 3 to 9 clicks) and mention at most five, at most three risers and three fallers, plus anything new or gone. If nothing passes, say it was a quiet week in one sentence.
 - **Small numbers swing.** If clicks went from 4 to 8, say "doubled from a small base" and do not celebrate a trend.
-- **Report the direction and the size together:** "Clicks 312, up 18% on the previous 30 days."
+- **Report the direction and the size together:** "Clicks 312, up 18% on the previous 30 days." Rates (CTR, AI mention rate) change in points, not percent: "CTR 3.2%, up 0.4 points". From zero is "new this period", never +100%. For position, lower is better: say "improved" in words rather than relying on the sign.
+- **Compare like with like.** Complete periods only; leave out today and days Search Console has not finished. If a connection, tag or definition changed inside the period (Search Console reconnected, a new tracking setup), say the comparison crosses that date and do not report it as growth or decline.
+- **Read the shape.** Where daily figures exist, say whether it was a one-day spike, a step that held, or a gradual trend; one good day lifting a weekly total is not growth.
+- **No hype.** Call a result strong only when it is clearly up on a base large enough to matter; state flat or middling numbers plainly. Judge the level as well as the direction: a CTR that rose but is still low for its position is progress, not success. A modest report is often the correct one.
+- **Cold start.** If nothing has been published yet or Search Console has no data for the period, skip the performance lines. Say what is ready (site verified, ideas planned, prompts watched) and what will produce the first numbers; never show empty metrics as zeros or a decline.
 - **Separate cause from coincidence.** Only link a change to an action when the timing and the pages match (for example, the rewritten article is the one whose clicks rose). Otherwise say "we can't tell yet why".
 - **Impressions up, clicks flat** usually points at titles and descriptions; **position improving, impressions flat** at low search demand. Phrase these as likely reasons, not facts.
 - **AI visibility** with only a few watched prompts is fragile; one prompt changing can move the average a lot. Say how many prompts it is based on.
@@ -47,12 +53,12 @@ Look for meaningful changes, not every change. Rough rules of thumb:
 ### 3. Write the report
 Order is fixed; keep each section to a few lines.
 
-1. **This week** — posts published, ideas waiting, AI visibility score. One sentence verdict a founder would repeat, built only from the numbers.
+1. **This week** — posts published, ideas waiting, AI visibility score. One sentence verdict a founder would repeat, built only from the numbers, with at most one concern stated calmly (none when everything is healthy).
 2. **Search** — clicks, impressions, CTR, position, each with the change against the period before; best day if shown; top two or three pages.
 3. **AI answers** — score and how many prompts; prompts where the site is mentioned or cited; pages cited. If not measured, say so and how monitoring starts (`cmo-ai-visibility`).
 4. **Content** — top two or three articles by clicks; two or three in the `no_traffic` band, with the band counts in one line.
 5. **Waiting for you** — inbox items in one line each, failures first.
-6. **Next steps** — two or three, each a concrete action mapped to a skill:
+6. **Next steps** — up to three (fewer when the data is clean; never pad), each a concrete action mapped to a skill, naming the evidence behind it (the query, page, prompt or post and its number) and who acts and when ("you, this week"; "Maggie, after you approve"). A step with no evidence in this period's data is dropped. A step the user declined recently is not repeated in the same words unless the evidence changed; then say what changed. If a step needs a choice, end with one decision line: option A and its trade-off, option B and its trade-off, the recommendation.
 
 | Signal | Next step | Skill |
 |---|---|---|
@@ -104,7 +110,11 @@ Written for a partner, so outcomes lead and the inbox line is kept to one senten
 - [ ] Missing sources are named with how to connect them; the rest of the report still runs.
 - [ ] "Not measured" is never shown as zero.
 - [ ] No more than three next steps, each mapped to a skill.
-- [ ] Fits on one screen.
+- [ ] Fits on one screen; every line passes the "so what?" test.
+- [ ] Every change mentioned passed the volume, absolute and relative gates; rates are in points.
+- [ ] No superlative unless the numbers clearly support it; volume and setup numbers are not presented as wins.
+- [ ] Scale is given in counts, not adjectives ("3 of 40 articles", not "many"); tool scores are reported as given, not recalculated.
+- [ ] A report that will be forwarded or pasted elsewhere ends without questions or offers; the offer to start a next step stays in the chat.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user. (This skill only reads.)
@@ -125,3 +135,10 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AI-Marketing-OS-LTD/cmo-so-skills — cmo-weekly-report (MIT, ours)
 - irinabuht12-oss/marketing-skills — weekly-account-summary (no licence; inspiration only)
 - irinabuht12-oss/marketing-skills — client-report-narratives (no licence; inspiration only)
+- chatwoot/chatwoot — overview summary prompt (MIT)
+- alirezarezvani/claude-skills — agent-protocol (MIT)
+- janreges/siteone-crawler — executive summary prompts (MIT)
+- Openpanel-dev/openpanel — insights engine and weekly digest (AGPL-3.0, ideas only)
+- plausible/analytics — period comparison (AGPL-3.0, ideas only)
+- matomo-org/matomo — movers and shakers insights (GPL-3.0, ideas only)
+- ALwrity/ALwrity — today's tasks and rejection memory (no licence, ideas only)

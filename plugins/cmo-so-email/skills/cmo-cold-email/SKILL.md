@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "email,linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-cold-email"
 ---
 # Cold email & outbound
@@ -89,6 +89,7 @@ Writes B2B cold emails that read like a thoughtful peer noticed something releva
 - `cmo-linkedin-engagement` — the manual LinkedIn side of the cadence.
 - `cmo-sales-enablement` — call scripts and objection handling after the reply.
 - `cmo-email-sequences` — nurture once a prospect opts in.
+- `cmo-email-deliverability` — authentication, bounces, suppression and sender reputation so the email arrives.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

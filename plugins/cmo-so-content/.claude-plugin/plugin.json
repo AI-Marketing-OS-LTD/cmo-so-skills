@@ -1,6 +1,6 @@
 {
 	"name": "cmo-so-content",
-	"version": "0.2.0",
+	"version": "0.3.0",
 	"description": "CMO.so Content & copy skills (8): Content strategy, Blog post writing, Conversion copywriting, Copy editing, Humanise AI writing, Content repurposing…. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
@@ -17,10 +17,12 @@
 		"content",
 		"blog",
 		"email",
+		"facebook",
+		"instagram",
 		"linkedin",
+		"tiktok",
 		"website",
-		"x",
-		"youtube"
+		"x"
 	],
 	"dependencies": [
 		"cmo-so"

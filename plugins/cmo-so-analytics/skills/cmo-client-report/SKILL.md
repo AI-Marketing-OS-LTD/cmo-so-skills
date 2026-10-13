@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-client-report"
 ---
 # Client & executive report
@@ -40,6 +40,8 @@ Produce the report a client or board actually reads: a short, plain-English verd
    - Social: LinkedIn posts sent in the period.
    - Work done: posts and LinkedIn posts from `report_overview_get`, plus grouped actions from `maggie_actions_list` inside the period (for example "refreshed 3 articles, added 2 testimonials"). Leave out failed actions (`ok: false`) or list them as attempts, never as done.
    - Supplied channels: ads, leads, revenue, with their source named.
+   - Last period's plan, closed out: every action promised in the previous report as done, in progress (with progress, such as "3 of 10 pages"), not started, or dropped (with the reason), plus a count ("4 of 6 done"). A report that never revisits its plan cannot be trusted.
+   - New since last report: issues that appeared this period (an article that lost its clicks, a watched prompt where a competitor replaced the brand), each with the date first seen.
 3. **Write findings as Problem / Change / Expected effect** (or Win / Why it happened / Keep doing) in short bullets. Tie each to a number and the comparison period. Explain causes only when the data supports them; otherwise say "likely" or "unclear".
 4. **Write the executive summary last.** Three to five sentences: verdict, biggest win with its number, biggest concern with its number and the response, the one decision or approval needed from the reader. No jargon, no drama words, no exclamation marks.
 5. **Next period.** Three to five concrete actions with owner and how success will be measured, for example "refresh the four articles with impressions but no clicks; measure clicks on those pages in 60 days"; take candidates from the `no_traffic` list.
@@ -55,7 +57,7 @@ Produce the report a client or board actually reads: a short, plain-English verd
 2. Executive summary (verdict first).
 3. Highlights table: `Metric | This period | Previous | Change`.
 4. Sections: Content, Search, AI visibility, Social, other supplied channels.
-5. What we did this period.
+5. What we did this period, then last period's plan: `Action | Owner | Status | Result so far`.
 6. What we will do next (actions, owners, measures).
 7. How this report was made.
 
@@ -76,6 +78,9 @@ Produce the report a client or board actually reads: a short, plain-English verd
 - Missing sources are named, not filled with zeros.
 - Partial data is labelled partial in the summary, not hidden.
 - The file opens offline and prints without broken layout.
+- Section headings name the finding ("Organic clicks fell midweek"), not "Overview" or "Details"; every line carries a number or a finding, with no consultant filler.
+- A metric that could not be fetched keeps its slot as "could not be computed" rather than disappearing.
+- A scheduled report sent by email is one-way: no questions to the reader, no offers, no sign-off chatter.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user.
@@ -97,3 +102,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - zubair-trabzada/ai-marketing-claude — market-report (MIT)
 - zubair-trabzada/ai-marketing-claude — market-report-pdf (MIT)
 - every-app/open-seo — seo-report (MIT)
+- zubair-trabzada/geo-seo-claude — geo-compare (MIT)
+- PostHog/posthog — AI subscription report synthesis (MIT)

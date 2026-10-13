@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "ai-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ai-brand-monitoring"
 ---
 # AI brand answer monitoring
@@ -45,6 +45,13 @@ Not for: discovering which questions to target (`cmo-ai-prompt-research`), a one
    - **Dropped**: mentioned last run, absent now.
    - **New**: competitor appearing next to the brand for the first time.
    AI answers vary between runs: confirm a change on a second run or a second engine before raising an alarm, unless it is severe (legal, safety or pricing claims).
+   For the mention and citation rate per engine, use fixed alert rules (our thresholds; state them in the report):
+   - The first run only sets the baseline: record each engine's rate and its usual number of answered checks; raise nothing.
+   - Baseline = the average of the last two weeks, leaving out periods already flagged as abnormal.
+   - **Drop**: the latest period is below 60% of baseline; **spike**: above 150%. Either needs at least 10 answered checks in that period (pool days into a week if one day has fewer).
+   - More than 30% of checks failed: the monitoring is failing; report that and draw no visibility conclusion.
+   - More than 20% of the panel changed since the baseline: start a new baseline instead of comparing.
+   - An open alert for the same engine is updated, not duplicated.
 5. **Score severity:** High (could stop a purchase or create legal or safety risk: wrong pricing, "shut down", false compliance claims), Medium (wrong feature, wrong segment, outdated plan), Low (wording, minor omissions).
 6. **Trace the likely source.** Read the cited sources and search for the wrong claim: an old blog post or changelog on the brand's own site, an out-of-date review or comparison article, a directory profile, a forum thread, an old press piece. State it as "likely source" unless the answer cites it directly.
 7. **Plan the correction**, owned side first:
@@ -77,7 +84,7 @@ Result (abbreviated):
 ## Quality bar
 - Every flagged claim quotes the answer and cites the fact-sheet line it breaks.
 - Severity is set by business impact, not by how odd the claim sounds.
-- Single-run changes are marked unconfirmed.
+- Single-run changes are marked unconfirmed; rate alerts meet the minimum of answered checks.
 - Correction requests are factual, polite and verifiable.
 - The panel wording is unchanged from the last run, or the change is dated.
 
@@ -94,7 +101,10 @@ Result (abbreviated):
 - `cmo-aeo-content` — rewrite the owned page that should state the correct fact.
 - `cmo-ai-citation-gaps` — the third-party sources shaping the answers.
 - `cmo-public-relations` — when the fix needs earned coverage.
+- `cmo-brand-protection` — fake sites, phishing pages and impersonation of the brand.
+- `cmo-social-listening` — what people say about the brand, competitors and topics on social platforms.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - irinabuht12-oss/marketing-skills — brand-answer-monitoring (no licence; inspiration only)
+- PostHog/posthog — AEO citation scout (MIT)

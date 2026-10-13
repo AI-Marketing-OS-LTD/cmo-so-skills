@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "google-search,google-shopping,shopify"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ecommerce-seo"
 ---
 # E-commerce SEO
@@ -49,7 +49,11 @@ For online stores that want products and categories to be found in Google Search
    | Infinite combinations | multi-select filters | Block crawling of the parameter pattern in robots.txt only after checking those URLs are not indexed and wanted |
 
    Check search demand before promoting a filter (keyword tools or Search Console). Keep sitemaps to canonical, indexable URLs only.
-6. **Product structured data.** Core for merchant listings: `name`, `image`, `offers` with `price` and `priceCurrency`, plus `availability` (check Google's current required and recommended lists before shipping). Strongly recommended: `brand`, `description`, `sku`, a GTIN or `mpn`, `aggregateRating` and `review` (only from real reviews shown on the page), `shippingDetails`, `hasMerchantReturnPolicy`. Rules: price is a plain number string (`"29.99"`, no symbol); currency is ISO 4217; availability uses the full schema.org URL; values must match what the page shows and what the feed says. Hand the detailed build to `cmo-schema-markup`.
+6. **Product structured data.** Core for merchant listings: `name`, `image`, `offers` with `price` and `priceCurrency`, plus `availability` (check Google's current required and recommended lists before shipping). Strongly recommended: `brand`, `description`, `sku`, a GTIN or `mpn`, `aggregateRating` and `review` (only from real reviews shown on the page), `shippingDetails`, `hasMerchantReturnPolicy`. Rules: price is a plain number string (`"29.99"`, no symbol); currency is ISO 4217; availability uses the full schema.org URL; values must match what the page shows and what the feed says. Hand the detailed build to `cmo-schema-markup`. Common merchant-listing blockers (at the time of writing; check Google's current documentation):
+   - One `Offer` per product page rather than `AggregateOffer`, with a `price` above zero and `priceCurrency` whenever `price` is set.
+   - Sale prices carry `validFrom` and `validThrough` or `priceValidUntil` in ISO 8601, with time and timezone when known.
+   - `aggregateRating` has `ratingValue` plus a review or rating count; incentivised reviews are disclosed on the page.
+   - Images meet Google's minimum pixel size for merchant listings; around 800 px or more on the long side is common practice, not a rule.
 7. **Shopping and free listings.** Eligibility depends on a Merchant Center feed (or automatic feed from structured data) that matches the page: same price, currency, availability and identifiers. Common blockers: price mismatch, missing GTIN, policy pages missing (returns, delivery, contact), images with overlays.
 8. **Organic vs Shopping gaps.** For the store's main product terms, note where it appears:
    - Organic only: add or fix the feed so products can show in Shopping.

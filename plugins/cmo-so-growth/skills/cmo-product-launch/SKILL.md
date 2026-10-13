@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "product-hunt,linkedin,email"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-product-launch"
 ---
 # Product launch
@@ -34,15 +34,17 @@ Plans a launch as a sequence, not a single day: get the thing ready to be loved,
    | Medium | Integration, notable feature, new plan | Email to the relevant segment, blog post, LinkedIn posts, in-app notice |
    | Minor | Improvements, fixes | Changelog and a roundup mention |
    Spacing out medium launches keeps a steady drumbeat better than bundling everything.
+   Decide the tier with three questions: how much of the audience does it change things for; is it a new capability or an improvement; does it touch pricing or pipeline directly? When the answers disagree, pick the lower tier and say why. Check the time since the last major launch; back-to-back major moments tire the same audience. A re-launch is a new moment only if it changes what the product does for someone (new capability, new audience, beta to general availability).
 3. **Write the launch message.** One positioning line: for [audience] who [problem], [product] is a [category] that [benefit]; unlike [alternative], it [difference]. Then one headline, three proof points, and the single CTA. Every asset reuses these.
 4. **Map channels: owned, rented, borrowed.** A plan using only one type is incomplete.
    - Owned (you control reach): email list, blog, website banner, in-app messages, community. Activate first; everything else should lead back here.
    - Rented (platform reach): LinkedIn, X (formerly Twitter), Reddit, YouTube, app marketplaces, Product Hunt. Use one or two where the audience is; drive people to owned channels.
    - Borrowed (other people's audiences): partner newsletters, podcasts, guest posts, co-hosted webinars, creators, press. Needs outreach weeks ahead (`cmo-co-marketing`, `cmo-influencer`, `cmo-public-relations`).
+   - The long tail: over the 2-4 weeks after the main platform, smaller launch sites (daily-ranking indie boards, beta-tester communities, "show what you built" threads and subreddits that allow it, after reading their self-promotion rules and posting days). Each gets a short post written for that audience, never the same paste. A launch into a new language market uses that market's own discovery sites and developer communities.
 5. **Phase the plan (major launch).**
    - Weeks -8 to -5: positioning, landing page or waitlist, tracking with UTMs, assets list, beta users recruited, borrowed-channel outreach starts.
    - Weeks -4 to -2: problem-focused content and build-in-public posts, beta feedback and quotes collected, partners briefed with ready-made copy, Product Hunt page drafted, support FAQ written, signup and checkout tested on mobile.
-   - Week -1: everything scheduled, launch-day roles assigned, a dry run of each step.
+   - Week -1: everything scheduled, launch-day roles assigned, a dry run of each step. Write the risk register: top risks with likelihood, impact, owner, mitigation and a stop or rollback condition that can be checked on the day ("pause the announcement if signup errors stay above normal for 30 minutes"); never invent a threshold on launch day. In the run sheet, each irreversible step (deploy, embargo lift, email send, launch-platform post) is its own row with owner, time and a short watch window ending in continue or roll back.
    - Launch week: early access for supporters first, public announcement next (email, blog, LinkedIn, Product Hunt, partners), then proof (first reactions and results), objections (FAQ, comparison, live Q&A), and a clear close if there is a genuine launch offer.
    - Days +1 to +30: onboarding emails for new users, follow-up with everyone who engaged, launch in the next roundup email, comparison and use-case pages, customer stories, retrospective.
 6. **Product Hunt, if it fits.** Good for tools aimed at tech-savvy early adopters; less useful for local or enterprise-only offers. Prepare a clear tagline, a gallery and short demo video, a first comment from the maker telling the story, and supporters who are genuinely interested. On the day, someone answers every comment for the whole day. Ask people to check it out, never to upvote, and never trade or buy votes. Capture visitors into email signups.
@@ -54,13 +56,13 @@ Plans a launch as a sequence, not a single day: get the thing ready to be loved,
    - `social_idea_add` (`title`, optional `summary`) for extra LinkedIn posts outside the campaign (behind the scenes, first results, FAQ). These are the user's own ideas, not attached to the campaign, and go to the normal queue once written. LinkedIn must be connected; writing each idea later uses a credit.
    - `idea_add` for launch blog posts: the announcement, a how-to for the new capability, a comparison or use-case article. Pass one idea per call as `text` (a sentence) or `url` (a page the user gave). Maggie drafts the idea with AI.
    Show the cost notes from each preview and ask before confirming each batch.
-8. **Measure.** Set targets before the day: visits by source, signups or sales, activation of new users, partner and Product Hunt referrals, press and backlinks. Review on day 1, day 7 and day 30, then write a short retrospective: goal vs actual, best channel, what to repeat, what to drop.
+8. **Measure.** Set day-1, week-1 and month-1 targets before the day against the business's own recent baseline ("vs our usual weekly signups"), not industry averages, labelled as estimates: visits by source, signups or sales, activation of new users, partner and Product Hunt referrals, press and backlinks. Between day 1 and day 30, turn the spike into lasting assets (comparison and use-case pages, emails captured from launch traffic) and decide which upcoming releases are major, medium or changelog-only. Review on day 1, day 7 and day 30, then write a short retrospective: goal vs actual, best channel, what to repeat, what to drop.
 
 ## Output
 1. **Launch brief**: tier, date, message, CTA, targets.
 2. **Channel map**: owned / rented / borrowed | channel | action | owner | date.
 3. **Timeline**: week-by-week tasks with owners.
-4. **Launch-day run sheet**: time | action | channel | owner.
+4. **Launch-day run sheet**: time | action | channel | owner | watch window | continue / roll back; plus the risk register.
 5. **30-day follow-through** and retrospective template.
 6. **Saved in CMO.so**: campaign name, LinkedIn ideas and blog ideas created (only those the user confirmed).
 
@@ -100,9 +102,12 @@ Plans a launch as a sequence, not a single day: get the thing ready to be loved,
 - `cmo-linkedin` — run the LinkedIn side day to day.
 - `cmo-directory-submissions` — the directory layer of the launch.
 - `cmo-landing-page-builder` — the launch or waitlist page.
+- `cmo-employee-advocacy` — a programme for staff to share and post about the company.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — launch (MIT)
 - alirezarezvani/claude-skills — launch-strategy (MIT)
 - zubair-trabzada/ai-marketing-claude — market-launch (MIT)
+- aaron-he-zhu/aaron-marketing-skills — launch-tier-planner, launch-day-conductor, momentum-planner (Apache-2.0)
+- naxiaoduo/1000UserGuide — launch channel list (no licence, ideas only)

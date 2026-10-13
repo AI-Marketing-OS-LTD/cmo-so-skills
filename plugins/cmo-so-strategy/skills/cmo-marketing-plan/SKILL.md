@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: ""
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-marketing-plan"
 ---
 # Marketing plan
@@ -57,10 +57,18 @@ Produces a plan a small team can actually run: one goal, a clear audience, a few
    Every row: action, funnel stage, owner, done-by date, success signal.
 9. **Sketch 12 months.** Quarterly milestones, and what changes if budget or headcount grows (first hire, paid channel, agency). Start the next channel while the current one still grows.
 10. **Measurement and decisions.** Weekly review of leading indicators (`results_summary` covers CMO.so's part), monthly review of the goal, RACI for each workstream, and open decisions listed plainly (unknown acquisition cost is usually the biggest).
+11. **Stress-test before handing over** (and before more than about a tenth of the budget goes into a new channel). Answer each in writing; a blank answer is a finding:
+    - *One real customer:* can the user describe one actual buyer (company type, role, their day, what annoys them)? If not, the ICP is too vague to plan channels for.
+    - *The job and today's alternative,* in a sentence the customer would say. "A spreadsheet" and "nothing" count.
+    - *One-sentence positioning:* for [customer] who needs [job], we are [category] that [difference], unlike [alternative]. If it will not fit, send it to `cmo-positioning` before spending.
+    - *One primary channel* where the customer first hears the name, and whether it is inbound or outbound at this stage.
+    - *Payback per paid channel* from the user's numbers. One that takes much longer than about 18 months to pay back (a rule of thumb) is a cost, not a growth channel; unknown is allowed if measuring it is in the plan.
+    - *What a copycat cannot take:* if a well-funded rival copied the messaging tomorrow, what stays theirs (expertise, reputation, an owned niche, relationships)?
+    Put the verdict at the top of the Summary: *ready to execute*, *sharpen positioning first*, or *positioning not ready, hold spend*.
 
 ## Output
 A single document with H2 sections:
-1. Summary (3 bets, 90-day priorities, 12-month outcome; readable in a minute)
+1. Summary (stress-test verdict, 3 bets, 90-day priorities, 12-month outcome; readable in a minute)
 2. Strategic frame
 3. Current state
 4. Moves by funnel stage (table: move | stage | mechanism | indicator | skill | status: now / next quarter / later / skip)
@@ -92,6 +100,7 @@ A single document with H2 sections:
 - Numbers come from the user or the tools; assumptions are labelled as such.
 - Existing work the team is proud of is acknowledged and built on.
 - The summary stands alone.
+- The stress test was answered in writing and its verdict leads the summary.
 
 ## Guardrails
 - This skill only reads CMO.so. Any change (posts per day, pausing, profile edits) goes through the relevant skill with a preview first and `confirm: true` only after the user agrees. Never confirm for the user.
@@ -111,3 +120,4 @@ A single document with H2 sections:
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — marketing-plan (MIT)
 - alirezarezvani/claude-skills — marketing-demand-acquisition (MIT)
+- alirezarezvani/claude-skills — cmo-review (MIT)

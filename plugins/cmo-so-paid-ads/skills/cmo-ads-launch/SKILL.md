@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads,linkedin-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ads-launch"
 ---
 # Campaign setup & launch
@@ -45,7 +45,12 @@ Get a campaign live with the right settings, working tracking and clear guardrai
    - Retargeting audiences created (they collect only from creation) and customer exclusions applied.
    - Billing set; approvers and alert recipients named.
    - Rollback written: what to pause and when.
-5. **Launch in draft first.** Prepare everything paused or as drafts; walk the owner through the build sheet (current state, what will be created, budget at risk); they launch, or approve the exact plan. One campaign at a time when budgets are small.
+5. **Launch in draft first.** Prepare everything paused or as drafts; walk the owner through the build sheet (current state, what will be created, budget at risk); they launch, or approve the exact plan. One campaign at a time when budgets are small. CMO.so does not run ads; if the agent can write to the ad account through the platform's own connector, it follows two stops:
+   - **Stop 1, before creating anything:** one summary of the ad account and the page or brand the ads run under; the account currency (convert a figure given in another currency and agree the amount, never just relabel it); budget type and dates; targeting; landing URLs with UTMs; the copy and CTA (never invent the brand voice silently). Check a payment method exists: without one, objects are created but never deliver.
+   - **Build everything paused,** then fetch a preview of every ad.
+   - **Stop 2, before anything spends:** show the previews with budget, dates, targeting and URLs. Activate only on the owner's explicit go, top-down: campaign, then ad sets, then ads. Ad review can take minutes to hours before delivery starts.
+   - **Never blind-retry a create.** After a timeout or internal error, list the objects to see whether it was created anyway; retry once only if not. When a validation error lists the accepted fields, trust it over remembered API shapes.
+   - Location targeting reaches people physically in the area, not a nationality or language group; if the owner means "speakers of X", agree countries and language explicitly. New or unverified business accounts often face a restriction review before the first launch; allow a day.
 6. **First 72 hours.** Check: ads approved, spend starting, impressions in the right places and regions, search terms or placements look relevant, conversions arriving, no tracking duplicates. Fix setup errors immediately; do not judge performance yet.
 7. **Learning weeks.** Avoid edits that reset learning (big budget jumps, target changes, editing live ads). Weekly: search terms or placements review, frequency, early cost per result vs target with sample size noted, lead quality from the first contacts.
 8. **First optimisation pass (after enough conversions or two to four weeks).** Compare no change, an experiment and a change; pick the smallest reversible step; record it with a check date. Pause rather than delete; never remove history.
@@ -72,6 +77,8 @@ Get a campaign live with the right settings, working tracking and clear guardrai
 - Budget ceilings and pause authority are written down.
 - Each setting that differs from the platform default has a reason.
 - Nothing is judged on performance in the first days.
+- Every value the platform or tool would fill by default (daily budget, country, age range, placements, bid strategy, audience expansion) is written out in the approved build sheet; some tools quietly add a starter budget or default audience when a field is blank.
+- Budgets are read back in plain money in the account currency (APIs often take minor units: 1000 = 10.00). Budget sits at one level only (campaign or ad set); dates sit where the platform expects them, often the ad set; a campaign-level bid or cost cap means every ad set has a bid amount. At the time of writing; check the platform's current rules.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user.
@@ -93,3 +100,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AgriciDaniel/claude-ads — ads-setup (MIT)
 - AgriciDaniel/claude-ads — ads-optimize (MIT)
 - irinabuht12-oss/marketing-skills — campaign-naming-convention-builder (no licence; ideas only)
+- sepivip/meta-ads-skill — meta-ads launch playbook (MIT)
+- pipeboard-co/meta-ads-mcp — campaign and ad set creation defaults (BUSL-1.1, ideas only)

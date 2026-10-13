@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "email,in-app"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-churn-prevention"
 ---
 # Retention & churn prevention
@@ -107,6 +107,7 @@ Reduces customer loss from both directions: people who decide to leave (voluntar
 - `cmo-paywalls` — upgrade moments and plan limits.
 - `cmo-pricing-strategy` — when price is the leading cancel reason.
 - `cmo-customer-research` — interview churned customers.
+- `cmo-email-deliverability` — authentication, bounces, suppression and sender reputation so the email arrives.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

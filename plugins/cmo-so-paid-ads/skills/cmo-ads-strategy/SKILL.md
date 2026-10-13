@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ads-strategy"
 ---
 # Paid ads strategy
@@ -47,6 +47,8 @@ Turn "we should run ads" into a plan that can be judged: what paid media is for,
    | Apps | Apple Ads, Google App campaigns, Meta, TikTok | Store-intent and install formats |
 
    Start with one or two channels the budget can feed properly. A channel earns a place only if it can reach the buyer, its likely cost fits the economics and its ad policies allow the offer. Before committing real budget to a new channel, a small test (a few days of spend) shows its real CPC and CPM for this audience; published averages are often wrong for a specific market.
+
+   **Ads next to AI answers.** Some AI assistants sell ads directly; in the AI features of the big search engines, ads usually come with broad-match or automated search and shopping campaigns rather than as a separate placement, often with no separate report. Do not budget a placement that cannot be bought or seen: fund the underlying campaign and test the change that made it eligible. Judge such tests by a holdout planned before launch (geo or time, see `cmo-attribution`), not platform-reported conversions; keep a small budget on one platform until each test arm can reach a readable volume (roughly 50 conversions is a common rule of thumb). Tag these clicks with a paid medium (`utm_medium=cpc`) so analytics does not count them as organic AI-assistant visits. Availability, excluded categories and countries change often; at the time of writing, check the platform's current documentation.
 5. **Order spend by intent.** Brand search (protect it, cap it) -> high-intent non-brand -> retargeting -> competitor terms -> problem-aware content -> broad awareness. Open the next rung only when the one below converts into the outcome that counts. For B2B, the cheapest fast wins are often at the bottom: existing customers (expansion), closed-lost deals, open pipeline, then in-market capture, then demand creation.
 6. **Design the architecture.** Per channel: campaigns split by objective and by economics (brand, non-brand, competitor and retargeting each get their own budget), few enough that each gets enough conversions to learn. Write a naming convention once, for example `PLATFORM_OBJECTIVE_FUNNEL_AUDIENCE_OFFER_GEO_DATE`, and mirror it in UTM campaign names.
 7. **Plan audiences.** Put audience knowledge into the creative first and into targeting filters second; on Meta and TikTok broad targeting with specific creative usually beats stacked interests, while Search and LinkedIn still lean on keywords and firmographics. Always: exclude existing customers and recent converters (unless upselling), build retargeting pools before launch (some platforms only collect from the day the audience is created), and seed lookalikes from the best customers, not all of them.
@@ -100,3 +102,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — ads (MIT)
 - alirezarezvani/claude-skills — paid-ads (MIT)
 - zubair-trabzada/ai-marketing-claude — market-ads (MIT)
+- borghei/Claude-Skills — conversational-ads (MIT + Commons Clause, ideas only)

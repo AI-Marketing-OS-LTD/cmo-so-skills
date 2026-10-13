@@ -1,7 +1,7 @@
 {
 	"name": "cmo-so-email",
-	"version": "0.2.0",
-	"description": "CMO.so Email & lifecycle skills (5): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter. Installs the cmo-so core plugin with it.",
+	"version": "0.3.0",
+	"description": "CMO.so Email & lifecycle skills (6): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter, Email deliverability. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",

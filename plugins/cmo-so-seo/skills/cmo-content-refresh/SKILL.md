@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-content-refresh"
 ---
 # Content refresh
@@ -50,16 +50,17 @@ Published articles lose ground: facts age, competitors publish better pages, sea
    - Core message still right, details old: refresh (facts, dates, examples, links).
    - Page format no longer matches what the search results show, or the audience changed: full rewrite.
    - No sign of demand and no business value: leave it, or suggest the user unpublish/redirect it themselves.
+   - Name the size so the user knows what to expect: **light** (about a quarter changes: facts, dates, title, meta, intro, links), **moderate** (about half: restructure, expand thin sections, new examples), **major** (most of it: new outline and angle, same topic and URL), **complete** (nearly all: ask whether a new post would serve better).
 5. **Protect what works.** Keep the URL (`rewrite_request` keeps it). Keep sections that already earn their own queries (visible in `content_asset_get`), the author's voice, and any headings other pages link to.
-6. **Write the brief Maggie rewrites from.** For each picked article, draft `instructions` covering: the target query and intent, sections to keep / revise / add, facts to update (only ones the user confirmed), questions to answer near the top, a clear one-sentence answer in the first paragraph, an updated title idea, and the CTA. Add 1-5 `target_keywords` taken from the article's real queries.
+6. **Write the brief Maggie rewrites from.** For each picked article, draft `instructions` grouped under **Keep**, **Update**, **Add** and **Remove**, covering: the target query and intent, sections to keep / revise / add, facts to update (only ones the user confirmed), questions to answer near the top, a clear one-sentence answer in the first paragraph, an updated title idea, and the CTA. Add 1-5 `target_keywords` taken from the article's real queries.
 7. **Preview, then act.** Call `rewrite_request` with `url`, `instructions`, `target_keywords` and no `confirm`. Show the preview, including that it uses one post credit and an AI generation and replaces the live article. Only after a clear yes, call again with `confirm: true` and the `confirmation`. One article per approval.
 8. **Optional: automate.** Start from the current settings read with `rewrite_policy_get`. If the user wants ongoing refreshes, propose `rewrite_policy_set` with only the fields that change: `rewrite_mode` (`off`; `manual` keeps a suggestion queue; `auto` rewrites on its own), `rewrite_ratio` (share of each day's posts spent on rewrites; a modest share such as 0.2-0.3 is a sensible start for a site with a large back catalogue, a rough rule of thumb), and `rewrite_min_age_days` (1-365; 60-90 avoids touching pages still settling, again a rule of thumb). Preview, then confirm.
-9. **Read back.** Record the date of each rewrite and baseline numbers from `content_asset_get`. Check again at about 2, 4 and 8 weeks. Google needs time to recrawl; judge on trend, not one week. Account for seasonality and other site changes. Call a rewrite worked, too early, or no effect; never claim causation from one data point.
+9. **Read back.** Keep a short change log per rewrite: date, size, what was kept / updated / added / removed, target queries and the baseline numbers from `content_asset_get`. Check again at about 2, 4 and 8 weeks. Google needs time to recrawl; judge on trend, not one week. Account for seasonality and other site changes. Call a rewrite worked, too early, or no effect; never claim causation from one data point.
 
 ## Output
 1. **Candidates table**: Article | Band | Clicks | Impressions | Position | Top query | Diagnosis | Action (refresh / rewrite / leave).
 2. **Per picked article**: target query, keep/revise/add outline, instructions text, target keywords.
-3. **Readback plan**: Article | Rewritten on | Baseline (clicks, impressions, position) | Check dates.
+3. **Readback plan / change log**: Article | Rewritten on | Size | Keep / Update / Add / Remove summary | Baseline (clicks, impressions, position) | Check dates.
 
 ## Example
 **Ask:** "Our post on garden office planning permission used to bring enquiries. Now it barely gets clicks. Fix it."
@@ -77,6 +78,7 @@ Published articles lose ground: facts age, competitors publish better pages, sea
 - [ ] Every recommendation cites the numbers it rests on, from the tools or the user.
 - [ ] No article rewritten in the last 2 months, or younger than about 6 weeks, is proposed without a stated reason.
 - [ ] Instructions name one primary query and do not stuff keywords.
+- [ ] The proposed title and opening still contain the queries the article already earns clicks for (from `content_asset_get`); a refresh adds queries, it does not swap out ones that work.
 - [ ] Facts in the instructions were confirmed by the user, not guessed.
 - [ ] Each `rewrite_request` was previewed and approved separately.
 - [ ] Readback dates are set.
@@ -101,3 +103,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — copy-editing (MIT)
 - AgriciDaniel/claude-seo — seo-content (MIT)
 - ericosiu/ai-marketing-skills — seo-ops (MIT)
+- TheCraigHewitt/seomachine — rewrite command (MIT)
+- adityaarsharma/youtube-marketing-skills — batch-seo (MIT)

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ai-citation-gaps"
 ---
 # AI citation gap finder
@@ -95,6 +95,7 @@ Result (abbreviated):
 - `cmo-aeo-content` — build or fix the owned page that should out-do a cited one.
 - `cmo-ai-visibility-audit` — the wider diagnosis this gap list comes from.
 - `cmo-public-relations` — earn editorial and expert citations.
+- `cmo-reddit` — taking part in Reddit communities without breaking their rules.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

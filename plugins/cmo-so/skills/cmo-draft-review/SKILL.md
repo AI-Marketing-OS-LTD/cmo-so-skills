@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "cmo.so,blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-draft-review"
 ---
 # Draft review & publishing
@@ -44,8 +44,14 @@ Report each point as pass, fix or check-with-user. Keep it short.
 | 7 | Business fit | Mentions the business where it genuinely helps; the call to action matches the topic |
 | 8 | Safety | No legal, medical or financial advice beyond what the business may give; no competitor claims it cannot back up |
 | 9 | Snippet | Excerpt reads as a good search description: what the reader gets, in about one or two sentences |
+| 10 | Consistency | Every number, price, date and name appears the same way everywhere (title, excerpt, body, tables) |
+| 11 | Disclosure | Affiliate, sponsored or partner links and paid mentions are disclosed where the reader sees them |
+| 12 | Clean | No leftover filler (lorem ipsum, "Your Company", TODO, `{{ }}`, `[object Object]`), no made-up phone numbers or example.com addresses, no localhost, staging or preview links, no raw Markdown or escaped HTML showing as text; any year in the title or text agrees with the post's date |
 
 Flag the two or three issues that matter most; do not nitpick every line.
+- **Blocking issues** stop a draft until fixed, whatever else passes: the title promises what the body does not deliver (1); a specific statistic or result with no source in the draft or the business profile, until it is sourced or softened to what is known (4, 5); a contradiction on a material fact (10); an undisclosed commercial link or mention (11). Style preferences are never blocking.
+- **Not seen is not passed.** `post_get` returns only the opening. A check that depends on unseen text (consistency across the body, the closing call to action) is "not checked: body not seen", never a pass; ask the user to paste or open the full text if it matters.
+- **Verdict:** *ready* (no fixes), *fix first* (fixes, none blocking), *hold* (a blocking issue; say so plainly and do not suggest publishing now), or *can't tell yet* (a check that matters could not be done).
 
 ### 3. Fix
 
@@ -60,7 +66,14 @@ Writing a good rewrite instruction: one clear goal, what to keep, what to change
 
 After `draft_rewrite`, read the returned preview and check `lost_links`: if links were dropped, tell the user and offer to restore them with `draft_update`.
 
-### 4. Decide
+### 4. Make repeated edits stick
+When the user asks for the same kind of change a second time ("no exclamation marks", "stop opening with a question", "say clients, not customers"), offer to add it to the brand voice so it is not needed again.
+- Record only what the user said, as one short do or don't line. Do not widen "shorter intro on this post" into "always short".
+- Leave out anything specific to one post (a price, a date, a product detail); that belongs in the business profile (`cmo-brand-profile`).
+- Find the voice with `brand_voices_list`. The tools do not return a voice's current writing style, so ask the user to paste it from the app; replace a line the new rule contradicts and merge rather than add a near-duplicate.
+- Preview `brand_voice_update_style` (`id`, `name`, the full new `writing_style`) showing before and after; save only after the user confirms.
+
+### 5. Decide
 
 | Decision | Tool | What happens |
 |---|---|---|
@@ -70,7 +83,9 @@ After `draft_rewrite`, read the returned preview and check `lost_links`: if link
 
 Before publishing now, state plainly: it goes live on their website immediately and uses today's quota. Before deleting, name the draft by title and say it cannot be undone; suggest editing instead if the problem is fixable.
 
-### 5. Next draft
+After a post goes live, open the live page once: run row 12 again and check that the visible date matches the date in the page's structured data.
+
+### 6. Next draft
 Offer the next one. Stop when the user says so; summarise what was done.
 
 ## Output
@@ -78,6 +93,8 @@ Offer the next one. Stop when the user says so; summarise what was done.
 Draft: "How to choose practice software" (#d_812)
 1 Promise ✓  2 Intent ✓  3 Structure fix — two sections repeat  4 Specifics fix — no example
 5 Facts check — price "£29/month": confirm?  6 Voice ✓  7 Fit ✓  8 Safety ✓  9 Snippet fix
+10 Consistency not checked — body not seen  11 Disclosure ✓  12 Clean ✓
+Verdict: fix first
 Suggested: edit-rewrite "merge sections 3 and 4; add one worked example"; new excerpt: "…"
 ```
 Then the actions taken, confirmed by tool results.
@@ -101,6 +118,7 @@ Result:
 - [ ] Whole-text replacements only with text the user saw in full.
 - [ ] Lost links after a rewrite were reported.
 - [ ] Publish-now and delete each had their own preview and yes, one draft at a time.
+- [ ] Every review ends with a verdict; checks on unseen text are marked not checked, never passed.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user, and never delete or publish several drafts in one go.
@@ -120,3 +138,7 @@ Result:
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - CMO.so internal skill (private) — maggie-blog
 - alirezarezvani/claude-skills — content-production (MIT)
+- aaron-he-zhu/aaron-marketing-skills — content-quality-auditor (Apache-2.0)
+- replynodes/awesome-social-media-skills — content-quality-reviewer (MIT)
+- CopilotKit/open-fullstack-social-media-agent — reflection and rule-update prompts (MIT)
+- squirrelscan/squirrelscan — content rules: placeholder text, dev leakage, unrendered markup, date agreement (MIT)

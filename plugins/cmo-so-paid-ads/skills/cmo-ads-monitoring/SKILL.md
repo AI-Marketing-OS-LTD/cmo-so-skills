@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "google-ads,meta-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ads-monitoring"
 ---
 # Ads monitoring & diagnostics
@@ -32,14 +32,24 @@ Catch problems in hours, not weeks, and explain them before anyone touches a bid
    - Delivery: spend vs daily plan; campaigns limited by budget; disapprovals or policy flags; paused-by-rule objects.
    - Outcomes: conversions and cost per result vs baseline, brand and non-brand separately.
    - Landing pages: key URLs return 200 and the conversion still fires (one test conversion after releases).
-   - Pacing: month-to-date vs plan (see `cmo-ads-budget`).
+   - Pacing: month-to-date vs plan (see `cmo-ads-budget`); for lifetime budgets, share of budget spent vs share of the flight elapsed.
 2. **Flag anomalies sensibly.** Score only what you could see: a check you could not run is "unknown", which lowers coverage, not health. Never present a data source that failed as a zero. Compare each metric to its own rolling baseline (7-14 days, same weekdays; a rule of thumb). Flag only when the move is large relative to normal day-to-day variation and the volume is meaningful. A 50% jump on two conversions is not an anomaly; a steady drift over several days can be. Rank flags by money at stake (extra spend or lost conversions), not by percentage. Do not pool across configuration changes; a campaign whose bid strategy is still learning cannot be read yet (fix verified breaks such as tracking or a wrong URL first anyway). Watch brand and non-brand separately: a cheap brand CPA reflects demand you already had, not ad efficiency.
+   - **Compute the flag, do not eyeball it.** With at least 7 daily points (14-28 is steadier), take the median and the median absolute deviation (MAD = median of |value - median|). Robust score = 0.6745 x (today - median) / MAD; flag a spike or dip when |score| > 3.5 and keep the three largest per metric. If MAD is 0 or fewer than 5 points are usable, do not score; say the baseline is too short or too flat. Describe only anomalies the calculation flagged, never one read off a chart or from memory, and still require meaningful volume.
+   - **Creative tests skew delivery.** Early on, the platform pushes spend to the variant it predicts will win, so a low-spend variant with the best CTR may be under-tested rather than worse. Call a laggard only when it has a high share of spend and the worst CTR and cost per click.
 3. **Decompose a CPA change.** CPA = CPC / conversion rate, and CPC = CPM / (CTR x 1000). Work out which moved:
    - CPM up -> auction pressure, narrower audience, seasonality, fatigue (frequency), new competitors.
    - CTR down -> creative fatigue, message mismatch, new placements or queries, lost ad rank or top positions.
    - Conversion rate down -> landing page broken or slower, offer change, lower-intent traffic (match type, PMax, new audiences), tracking loss, longer lag.
    CPM usually moves before CTR, so a CPM rise over a couple of weeks is an early warning of fatigue or saturation. Then find where: break the change down by campaign, ad set, ad, keyword, placement and audience, and attribute the share of the increase to each (change in spend mix plus change in efficiency). Usually one or two objects explain most of it.
 4. **Check the usual suspects in order.** Before blaming performance, check whether "duplicate" campaigns are old experiment arms that kept the base name, and whether two ads in one group point to different landing pages. Tracking (tag removed in a release, consent banner change, duplicate firing), landing page (errors, speed, form broken), budget or bid edits (learning reset), creative fatigue, query or placement drift, competitor entry (impression share and top-of-page rate on brand terms), seasonality or calendar effects, platform reporting delays.
+   When the platform refuses an action, classify the error before advising (at the time of writing; check the platform's current messages):
+
+   | Class | Typical signal | What to tell the owner |
+   |---|---|---|
+   | Rate limit | "too many calls", throttled | Nothing is broken; wait and retry. Do not reconnect. |
+   | Policy or account block | action disallowed, account checkpointed or disabled | Reconnecting will not help; read the reason on the platform's account-quality page and request a review there. |
+   | Expired access | session expired, password changed, permission removed | The owner reconnects the account; never ask for passwords. |
+   | Ad rejection | ad disapproved for a policy | Fix that ad and resubmit; do not repeat the claim in a new ad. |
 5. **Day and hour.** Build a grid of cost per conversion and conversion rate by weekday and hour, with conversion counts in each cell. Only act on cells with enough conversions to be confident; merge thin hours into blocks. For each candidate schedule change, show spend saved, conversions lost and what the freed budget would likely buy at peak times. B2B often converts in business hours; consumer offers often in evenings. Note that bidding algorithms already adjust by time; manual schedules can fight them.
 6. **Device.** Compare conversion rate, cost per conversion and value by device per campaign. A large gap usually has a cause: a long form or slow page on mobile, research on mobile and purchase on desktop (check cross-device paths before cutting mobile), or creative not built for vertical screens. Fix the page before cutting bids.
 7. **Location.** Rank regions or cities by spend, conversions and cost per conversion; group by tier (strong, average, weak) with thresholds based on target CPA and minimum volume. Check location targeting means people physically present. Consider separate campaigns only for high-volume areas that deserve their own budget.
@@ -95,3 +105,6 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - irinabuht12-oss/marketing-skills — device-performance-split (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — geo-performance-analysis (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — retargeting-window-analysis (no licence; ideas only)
+- sepivip/meta-ads-skill — meta-ads monitoring playbook (MIT)
+- pipeboard-co/meta-ads-mcp — API error handling (BUSL-1.1, ideas only)
+- Swetrix/swetrix — anomaly detection (AGPL-3.0, ideas only)

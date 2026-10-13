@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "directories"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-directory-submissions"
 ---
 # Directory submissions
@@ -30,7 +30,7 @@ Builds the directory layer of distribution: listings on the startup, SaaS, AI, r
    - Hard blockers: product publicly reachable; a pricing page (even "free while in beta"); privacy policy and terms; logo files (square, transparent PNG and SVG); several real screenshots; a clear homepage with one H1 and a "what it is" sentence near the top.
    - Strongly recommended: a short demo video; organisation and product structured data; two or three destination pages such as use-case pages (`/for/agencies`) and honest comparison pages (`/alternatives/x`); a handful of users willing to review.
    List what is missing and suggest the skill that builds it (`cmo-landing-page-builder`, `cmo-competitor-pages`, `cmo-schema-markup`).
-2. **Select tiers by fit, not by count.**
+2. **Select tiers by fit, not by count.** Filter by market and language first: ask where the product sells. A directory in a language or region the buyers do not use adds nothing, whatever its authority. Keep a separate list per market (for example global English, mainland China, Taiwan and Hong Kong); never hand a Traditional-Chinese business a Simplified-Chinese or English-only list.
    | Tier | Fits when | Examples of the kind |
    |---|---|---|
    | Launch platforms | A launch moment with an audience ready | Product Hunt, BetaList, Show HN (technical angle only), maker launch sites |
@@ -40,9 +40,12 @@ Builds the directory layer of distribution: listings on the startup, SaaS, AI, r
    | Integration marketplaces | You have real integrations | App directories of the platforms you integrate with |
    | Company profiles | Always | Crunchbase, LinkedIn company page, Wikidata where notable, GitHub org |
    | Vertical and local directories | Industry or local business | Trade associations, chambers, niche catalogues |
+   | Developer publishing communities | Developer tools, APIs, open source | Developer blogging platforms and tech newsletters that take reader submissions: a genuinely useful article featuring the product, not an ad |
+   | Regional launch and navigation sites | Only when actively entering that market | Local-language product-discovery sites, developer forums with a "share what I built" board, web and AI navigation portals; check the market's entry requirements first |
    | Communities | Only after participating | Forums and subreddits that allow self-promotion threads |
    Skip anything that is not a genuine fit; forced categories get rejected.
-3. **Vet each directory before adding it.** Real organic traffic and an editorial process, not just a high authority score (high scores with no traffic often mean link schemes). The domain resolves and is the genuine site (some names lapse or have lookalikes). No paid "guaranteed backlink" packages; paid listings are fine only if the audience is real and the link is labelled sponsored. Prefer a few dozen relevant listings to hundreds of junk ones.
+   For subreddits, prefer ones built for showing projects or recruiting testers. Many allow self-promotion only with a named post flair or on one day of the week; a launch post without them is usually removed and can get the account flagged. Record per subreddit: audience, whether self-promotion is allowed, required flair, allowed day, link rules, any stated minimum account age or karma, and the date checked. Re-read the sidebar rules and pinned posts on the day of posting (`cmo-reddit`).
+3. **Vet each directory before adding it.** Real organic traffic and an editorial process, not just a high authority score (high scores with no traffic often mean link schemes). The domain resolves and is the genuine site (some names lapse or have lookalikes). No paid "guaranteed backlink" packages; paid listings are fine only if the audience is real and the link is labelled sponsored. Prefer a few dozen relevant listings to hundreds of junk ones. Skip old-style general web directories by default (a bare "submit your URL" form, hundreds of unrelated categories, no editorial review): little traffic and a link-scheme risk. Community-maintained channel lists go stale fast; check that each site still resolves, is still the genuine owner and still takes free submissions before it enters the plan.
 4. **Write positioning variants per directory type** instead of one pasted description:
    | Surface | Lead with |
    |---|---|
@@ -63,7 +66,7 @@ Builds the directory layer of distribution: listings on the startup, SaaS, AI, r
 1. **Readiness check**: item | status | blocker? | fix.
 2. **Directory plan**: directory | tier | why it fits | traffic/quality check | week | positioning variant.
 3. **Copy pack**: variants per directory type.
-4. **Tracker** (CSV columns): directory, URL, date submitted, status, listing URL, link destination, rel, verified date, referral visits, notes.
+4. **Tracker** (CSV columns): directory, URL, market/language, fee model (free / paid / free with paid boost), last checked, date submitted, status, listing URL, link destination, rel, verified date, referral visits, notes.
 5. **Review plan**: who to ask, message, timing, platform rules noted.
 
 ## Example
@@ -105,3 +108,5 @@ Builds the directory layer of distribution: listings on the startup, SaaS, AI, r
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — directory-submissions (MIT)
+- naxiaoduo/1000UserGuide — launch channel list (no licence, ideas only)
+- EdoStra/Marketing-for-Founders — places to launch your startup (CC-BY-SA-4.0, ideas only)

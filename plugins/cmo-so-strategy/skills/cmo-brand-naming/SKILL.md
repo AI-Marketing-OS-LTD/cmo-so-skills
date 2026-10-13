@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: ""
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-brand-naming"
 ---
 # Brand & product naming
@@ -48,6 +48,9 @@ Generates and vets names for a company, product, plan or feature. Each candidate
    | Search | is the exact name already crowded in search results or app stores? |
    Say plainly when unsure about a meaning in a language and require a native-speaker check.
 6. **Check the practical layer (signal only).** Look for obvious conflicts: same name in the same category, an existing well-known brand, a taken exact-match domain or main social handles. These are early warnings; they do not replace formal searches.
+   - **Handles.** Aim for one handle on every channel; it is easier to find and to print. Take the channel list from the user's plan (`cmo-social-strategy`), not a fixed list of hundreds of sites.
+   - Test each handle against the channel's format rules before looking anything up. At the time of writing (check the platform's current limits): X up to 15 characters, letters, digits and underscore; Telegram 5-32 characters, letters, digits and underscore, not ending in an underscore; GitHub up to 39 characters, letters, digits and single hyphens, not at the start or end; newsletter subdomains start with a letter or digit. Mastodon handles are per server, and Bluesky can use the brand's own domain as its handle.
+   - Check the channel's own public profile URL or sign-up flow, not third-party mirror sites, which go stale. Mark each channel *looks taken* (a profile clearly exists), *looks free* (the channel clearly says no such account), *not allowed* (fails the format) or *could not confirm* (login wall, challenge page, error, ambiguous page). Never turn "could not confirm" into "free".
 7. **Present 3-5 options.** Never a single favourite. For each: the name, its meaning or origin, how it reads in each market, type, the main risk, and a verdict.
 8. **Hand over verification.** One line each: trademark search in each target market and class (ideally by a trademark professional), domain and handle availability, company register, native-speaker gut check with real people in each market, and a quick say-it-on-the-phone test.
 9. **Optional: save to CMO.so.** Once a product or feature name is final and CMO.so is connected, it can be added to the business profile with `product_upsert` (`name`, plus a one-line `description`; preview first, confirm after the user agrees) so Maggie uses the correct name in posts.
@@ -58,6 +61,7 @@ Generates and vets names for a company, product, plan or feature. Each candidate
   | Name | Meaning / origin | Market read | Type | Main risk | Verdict |
   |---|---|---|---|---|---|
   Cells hold short phrases ("✓ easy to say (EN)", "⚠ close to competitor", "✗ slang meaning (DE)").
+- **Handle check**, one row per handle: `Handle | X | Instagram | TikTok | YouTube | LinkedIn page | Bluesky | Threads | …`, each cell taken, free, not allowed or could not confirm.
 - One line naming the strongest two or three.
 - **Still to verify** list.
 Expand a row into reasoning only when the user asks why.
@@ -90,12 +94,15 @@ Still to verify: trademark search per market and class, native-speaker check in 
 - Never invent numbers, quotes, reviews or results; never promise rankings or traffic.
 - This skill cannot confirm trademark, domain or registry availability and gives no legal advice; always recommend a professional trademark search before spending on a name.
 - Avoid names that copy or allude to well-known brands, people's names without consent, or culturally sacred terms used lightly.
+- Handle checks are for the brand's own candidate names only; never use them to find where a private person has accounts.
 
 ## Related skills
 - `cmo-positioning` — what the name must express, and the messaging around it.
 - `cmo-copywriting` — tagline and launch copy once the name is chosen.
 - `cmo-international-seo` — when the name must work in several markets' search results.
+- `cmo-brand-protection` — lookalike domains and impostor accounts once the name is chosen.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — business-name-fit (MIT)
+- sherlock-project/sherlock — username site manifest and result states (MIT)

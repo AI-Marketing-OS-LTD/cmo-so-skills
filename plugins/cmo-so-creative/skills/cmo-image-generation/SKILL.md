@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "blog,linkedin,meta-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-image-generation"
 ---
 # Marketing images
@@ -30,7 +30,8 @@ Ask one question at a time:
 - **Tool and budget**: which generator or design tool they can use; generation usually costs per image, so agree a cap before batches.
 
 ## Workflow
-1. **Pick the route** with this decision list:
+1. **For a social post, decide whether it needs an image at all.** Posts built on numbers, a comparison or a timeline usually gain from one; a short joke or a personal story usually does not. The image must add something the text does not say (the breakdown behind the number, the before and after); one that restates the post in a nicer font is skipped or changed.
+2. **Pick the route** with this decision list:
    - Shows the real product UI → capture real screenshots and frame them. AI invents interfaces; never generate UI.
    - Needs exact brand layout, many sizes of one design, or a recurring template → design tool template.
    - Needs readable text in the image → a model that renders text well, or generate without text and add it as an overlay.
@@ -38,13 +39,18 @@ Ask one question at a time:
    - Unique concept or metaphor (blog hero, social visual) → AI generation.
    - Logo, favicon, icon system → design by hand or commission; AI only for early concepts.
    - Speed over uniqueness → licensed stock.
-2. **Write the brief per image**: goal, audience, single message, placement and size, mood, must-include and must-avoid, text overlay (if any), safe zone.
-3. **Write the prompt** in six parts: subject, setting, style, lighting, composition, technical (aspect ratio, resolution). Be concrete about what the camera sees ("a ceramic mug on an oak desk beside an open notebook, soft window light from the left, shallow depth of field, editorial photography, 16:9, empty space on the right third for a headline"). Name the style family: commercial photo, editorial, flat illustration, isometric 3D, abstract gradient. Add a short negative list (no text, no extra hands, no logos) when the tool supports it.
-4. **Product shots from a source photo** (ads and e-commerce):
+3. **Write the brief per image**: goal, audience, single message, placement and size, mood, must-include and must-avoid, text overlay (if any), safe zone.
+   - A graphic that carries an argument (diagram, framework, comparison): fix the one claim first, then one way to show it (comparison, sequence, metaphor or a single number), then the style. Text stays short: a headline, an optional subtitle, three to five labels that carry the point of view ("old way → better way"), one takeaway. Prefer a designed layout with real text over AI generation, which garbles text.
+   - A carousel: a slide-by-slide brief first (cover; one point per slide, headline about 8 words or fewer, body about 15 words or fewer; a closing slide with a next step), approved by the user before any prompt is written. All slides share one style block (colours, fonts, layout).
+4. **Write the prompt** in six parts: subject, setting, style, lighting, composition, technical (aspect ratio, resolution). Be concrete about what the camera sees ("a ceramic mug on an oak desk beside an open notebook, soft window light from the left, shallow depth of field, editorial photography, 16:9, empty space on the right third for a headline"). Name the style family: commercial photo, editorial, flat illustration, isometric 3D, abstract gradient. Add a short negative list (no text, no extra hands, no logos) when the tool supports it.
+   - Write prose, not comma-separated tags, and drop stacked quality words ("8K, masterpiece").
+   - Put exact in-image text and hard constraints in the first third; keep in-image text to a short phrase (about 25 characters) or add it as an overlay.
+   - Describe what is present rather than absent. If a safety filter blocks an image, change the concept's context or framing rather than swapping single words.
+5. **Product shots from a source photo** (ads and e-commerce):
    - Keep the product's shape, packaging, label, logo, colour and material exactly; changes need the user's explicit approval.
    - Plan distinct concepts, not cosmetic variants: clean studio, in-use context, ingredient or material story, scale and detail, lifestyle.
    - Do not imply results the product cannot deliver; no before/after shots that are not real.
-5. **Size for placement** (common sizes; check the platform's current spec before final export):
+6. **Size for placement** (common sizes; check the platform's current spec before final export):
 
    | Placement | Size | Ratio |
    |---|---|---|
@@ -55,18 +61,25 @@ Ask one question at a time:
    | Stories, Reels cover | 1080x1920 | 9:16 |
    | LinkedIn personal cover | 1584x396 | 4:1 |
    | X header | 1500x500 | 3:1 |
+   | Pinterest Pin | 1000x1500 | 2:3 |
+   | Threads image | 1080x1350 | 4:5 |
+   | Bluesky image | 1200x675 or 1080x1350, kept small (around 1 MB per image at the time of writing) | 16:9 / 4:5 |
+
+   Multi-image posts: X and Bluesky take a few images per post (four at the time of writing); a Pinterest carousel needs every image the same size. Export JPEG or PNG in sRGB for social uploads.
 
    Keep key content in the centre; covers and headers are cropped differently on mobile and partly hidden by avatars.
-6. **Generate in small rounds**: two to four candidates, review, then refine the prompt. Record tool, model, prompt and settings with each kept file so it can be reproduced.
-7. **Review** each candidate: product and logo accurate, no warped hands, faces or text, brand colours close, message readable at thumbnail size, nothing misleading, no lookalike of a real person or trademark.
-8. **Finish for the web**:
+7. **Generate in small rounds**: two to four candidates, review, then refine the prompt. Record tool, model, prompt and settings with each kept file so it can be reproduced.
+8. **Review** each candidate at full size and at feed size (about 360 px wide): product and logo accurate, no warped hands, faces or text, brand colours close, message readable at thumbnail size, nothing misleading, no lookalike of a real person or trademark. A prompt is not an image: status stays draft until an image was generated and checked.
+   - Disclosure: could the image be taken for a real photo of a real person, place or event? If so, plan the label before publishing: the platform's AI label where it exists, a visible caption where the audience's law requires one (for example in the EU), the strictest treatment for anything political. Never use a generated person as a customer, reviewer or employee. The full per-asset check is in `cmo-video-production`.
+9. **Finish for the web**:
    - Export WebP (JPEG/PNG fallback; PNG or SVG for transparency and line art).
    - Resize to display size; aim for roughly under 200 KB for heroes and under 100 KB for thumbnails (rules of thumb).
    - File name: `topic-description-1200x630.webp`.
-   - Alt text: describe what the image shows and why it is there, in plain words, no keyword stuffing; empty alt for pure decoration.
+   - Alt text: describe the subject, setting and action and why the image is there, in plain words; write out short text that matters (a price, a headline, a chart label). No "Image of", no praise ("stunning"), no guessing a person's identity, age, ethnicity or emotion, no keyword stuffing; one or two sentences (about 250 characters at most). Empty alt for pure decoration.
+   - Keep the original file with its provenance metadata; resizing in a browser canvas or some editors strips it.
    - Set width and height to avoid layout shift; lazy-load below the fold.
    - OG tags: `og:image`, `og:image:width`, `og:image:height`, `og:image:alt`, and `twitter:card` set to summary_large_image.
-9. **Optional with CMO.so**: CMO.so has no image tool. If an image inspired a new post, the user can save it as a blog idea with `idea_add` (`text`, or a `url`); Maggie drafts the idea with AI, so it is previewed and confirmed first.
+10. **Optional with CMO.so**: CMO.so has no image tool. If an image inspired a new post, the user can save it as a blog idea with `idea_add` (`text`, or a `url`); Maggie drafts the idea with AI, so it is previewed and confirmed first.
 
 ## Output
 Per image: Brief | Route | Prompt (or template notes) | Size | File name | Alt text | Status (draft / approved). Then a short web checklist (format, weight, tags) and the generation log (tool, model, prompt, settings, cost if known).
@@ -103,9 +116,16 @@ Result (abbreviated):
 - `cmo-social-strategy` — what to post and where images fit.
 - `cmo-blog-writing` — the post the hero image belongs to.
 - `cmo-video-production` — when the idea needs motion.
+- `cmo-pinterest` — keyword-led Pins that send readers back to articles.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — image (MIT)
 - AgriciDaniel/claude-seo — seo-image-gen (MIT)
 - AgriciDaniel/claude-ads — ads-photoshoot (MIT)
+- borghei/Claude-Skills — ai-content-disclosure (MIT + Commons Clause, ideas only)
+- JeffLi1993/content-repurposing-skills — blog-to-linkedin-post (no licence file, ideas only)
+- prateekjain98/social-media-manager-skills — create-post (no licence, ideas only)
+- charlie947/social-media-skills — gemini-carousel, graphic-designer (MIT)
+- trypostit/trypost — alt-text prompt (AGPL-3.0, ideas only)
+- Upload-Post/upload-post-skill — photo requirements (no licence file, ideas only)

@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,shopify,email"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-checkout-cro"
 ---
 # Checkout & cart recovery
@@ -100,6 +100,7 @@ Gets more shoppers from "added to cart" to "order placed", and wins back some of
 - `cmo-email-sequences` — welcome, post-purchase and win-back emails around recovery.
 - `cmo-ab-testing` — designing tests for the uncertain fixes.
 - `cmo-tracking-setup` — checkout step events and recovery attribution.
+- `cmo-agent-readiness` — make the form usable by AI agents that browse and fill it for people.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-landing-page-builder"
 ---
 # Landing page builder
@@ -46,7 +46,8 @@ Builds a fast, accessible landing page (or a small marketing site of a few pages
 7. **Build for mobile and access.** Single column on small screens, CTA reachable without hunting, tap targets around 44px, readable text without zoom, semantic headings in order, labelled form fields, alt text on meaningful images, visible focus states, a skip link. Respect `prefers-reduced-motion`; motion is decoration, never required to read the page.
 8. **Forms and leads.** Minimum fields for the win (see `cmo-form-cro`). Store submissions somewhere durable before calling third-party tools, send a confirmation, show a clear success state, add spam protection that does not block humans. State in the privacy notice how long lead data is kept.
 9. **SEO and sharing basics.** Unique title and meta description, one H1, canonical URL, Open Graph image and text, structured data that matches the visible business facts, `noindex` on test copies only. If replacing an old page, keep its URL or redirect it to the closest equivalent, never to the homepage.
-10. **Verify the live page.** After the user puts it on their own site: open it on a phone and a desktop, submit the form once with their agreement, run PageSpeed Insights and an accessibility checker, check the analytics event fires on success. A clean build does not prove the page looks or works right.
+10. **Verify the live page.** After the user puts it on their own site: open it on a phone and a desktop, submit the form once with their agreement, run PageSpeed Insights and an accessibility checker, check the analytics event fires on success. Mobile lab targets (at the time of writing): LCP 2.5 s or less, Total Blocking Time 200 ms or less, CLS 0.1 or less, basic SEO checks passing; report the numbers with device and date (the median if several runs).
+   - Launch gate: score the page with `cmo-page-cro` before calling it ready. A weak value proposition, proof or primary CTA blocks launch even if the overall score looks fine. Tracking for CTA clicks, form starts and completions (success page tracked separately) is in place first. A clean build does not prove the page looks or works right.
 11. **Hand over.** Explain where to edit copy and images, and offer `cmo-page-cro` once real traffic arrives.
 
 ## Output
@@ -75,7 +76,8 @@ Builds a fast, accessible landing page (or a small marketing site of a few pages
 - Every claim, number and quote traces to `brand_get` or the user; placeholders are marked, not faked.
 - Works on a 375px-wide screen, with JavaScript off, and passes basic contrast and keyboard checks.
 - No invented logos, awards, reviews or customer counts.
-- Page weight is small and images are sized; performance is measured on the live page, not asserted.
+- Page weight is small and images are sized; performance is measured on the live page against the mobile targets, not asserted.
+- Value proposition, proof and primary CTA each passed the launch gate on their own, not only on average.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the `confirmation` only after they agree. Never confirm for the user.
@@ -91,9 +93,12 @@ Builds a fast, accessible landing page (or a small marketing site of a few pages
 - `cmo-form-cro` — design the form.
 - `cmo-brand-profile` — fill gaps in the business profile the page draws on.
 - `cmo-tracking-setup` — conversion tracking for the page.
+- `cmo-agent-readiness` — make the form usable by AI agents acting for visitors.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — landing (MIT)
 - nurkamol/website-build-kit — website-build (MIT)
 - nurkamol/website-build-kit — site-repair (MIT)
+- eibrahim/landing-pages-resources — landing page review checklist (no licence file, ideas only)
+- GoogleChrome/lighthouse — metric scoring thresholds (Apache-2.0)

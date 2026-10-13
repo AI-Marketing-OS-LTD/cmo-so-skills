@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-page-seo"
 ---
 # On-page SEO
@@ -45,7 +45,12 @@ Make one page the best answer to one query. Maggie checks the page against what 
    | Internal links out | Links to the next step (product, service, pricing, contact) and 2-5 related articles; no "click here" |
    | Images | Descriptive file names; alt text that describes the image (about 10-125 characters, keyword only where natural; empty alt for decorative images); width and height set; modern format (WebP/AVIF); hero image not lazy-loaded; content images roughly under 200 KB |
    | Trust | Named author or business, date updated, sources for claims |
-   | Technical | Self-referencing canonical; indexable; Open Graph title, description and image |
+   | Technical | Self-referencing absolute canonical; indexable; structured data typed for the page (`BlogPosting`/`Article`, `Product`, `Service`), not a generic `WebPage` (detail: `cmo-schema-markup`) |
+   | Social preview | Open Graph title, description and image set for this page, not inherited from the home page; the same title, description and image across meta tags, Open Graph, the X card and structured data (one source, not four hand-edited copies). Share image: the page's own, then its cover image, then one site default; absolute URL, about 1200x630 or larger. With no image the card shrinks to a small summary card. Articles carry `og:type` article with published and modified times. Pages shared mainly in WeChat or QQ may also need `itemprop` name, image and description (check current behaviour) |
+
+   Two quick checks under the table:
+   - **Swap test**: if the title or meta description could move unchanged onto a sibling page (another city, product or post in the series), it says nothing specific; rewrite it around what only this page offers.
+   - **Judge what the server sends**, not the CMS field: read title, description, canonical and robots from the live HTML. Templates often append "| Brand" (so a title written with it gets the brand twice) and may fill an empty description with the first body sentence, or with the site-wide description on every article.
 
 4. **Decide the fix type.** Good position (1-5) but weak CTR: change only the title and meta description, so the result is attributable. Position 5-20: close content gaps and add internal links. No impressions: check indexing and intent before rewriting.
 5. **Rewrite.** Give 2-3 title options and 2 meta descriptions, a revised H1, a heading outline with the sections to add, a new opening paragraph, and the internal links to add (source page, anchor text, target). Keep what already works: a page that ranks has signals worth keeping. Make the smallest change that closes the gap.
@@ -77,7 +82,10 @@ Make one page the best answer to one query. Maggie checks the page against what 
 
 ## Quality bar
 - [ ] The target query is confirmed with the user or clearly stated as inferred.
-- [ ] Titles and descriptions are written out, character counts checked, none duplicated elsewhere on the site where known.
+- [ ] Titles and descriptions are written out, pass the swap test, and the character count includes any suffix the template adds; none duplicated elsewhere on the site where known.
+- [ ] The meta description does not open by restating the title or end on a stock call to action ("Get started today"); it adds a fact the title lacks.
+- [ ] Social preview checked: the page has its own description and share image, not the site defaults.
+- [ ] No generic link text in any language the page uses ("click here", "read more", "learn more", "here"; in Chinese 點此, 更多, 了解更多, 閱讀更多): the anchor names its target. Every internal link has a real `href` (no empty or `javascript:` links, no click handler alone).
 - [ ] Every content suggestion names the section and why searchers need it.
 - [ ] No keyword stuffing: the copy reads naturally aloud.
 - [ ] `draft_update` never sent a partial `markdown` that would cut the article short.
@@ -102,3 +110,8 @@ Make one page the best answer to one query. Maggie checks the page against what 
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AgriciDaniel/claude-seo — seo-page (MIT)
 - AgriciDaniel/claude-seo — seo-images (MIT)
+- gohugoio/hugo — opengraph and twitter_cards templates (Apache-2.0)
+- joshbuchea/HEAD — Open Graph and WeChat/QQ share tags (no licence file, ideas only)
+- GoogleChrome/lighthouse — link-text and crawlable-anchors audits (Apache-2.0)
+- kostja94/marketing-skills — page-metadata (MIT)
+- artesaos/seotools — OpenGraph, JSON-LD single source (MIT)

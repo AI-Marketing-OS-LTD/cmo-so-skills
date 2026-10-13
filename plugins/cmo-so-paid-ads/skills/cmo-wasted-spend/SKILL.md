@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "google-ads,meta-ads"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-wasted-spend"
 ---
 # Wasted ad spend finder
@@ -53,12 +53,16 @@ Find spend that is producing nothing the business wants (irrelevant queries, jun
 5. **Find cannibalisation.** Same keyword text and match type in several campaigns or ad groups; broad or phrase keywords catching queries an exact keyword should own; Search and Performance Max both serving brand terms. For each pair: which one actually serves (from search terms and impressions), CPC and conversion rate of each, and the fix (keep one home, add a routing negative, or exclude the brand from PMax). Check current platform rules on which keyword wins before claiming a cost penalty. Also check that each ad group sends traffic to the page you think: ads carry their own final URLs, and an old landing page can stay in rotation long after a new one ships. Broad match deserves extra scrutiny when the campaign has few conversions a month, no smart bidding or a thin negative list; tightening match type there is often the fix rather than a pile of negatives.
 6. **Mine winners.** Converting search terms that are not keywords yet: group by theme (integrations, use cases, comparisons, pricing, locations), add as exact or phrase to the right ad group, and consider a new ad group when a theme has its own landing page.
 7. **Placements and audiences (Display, YouTube, PMax, Meta).** Flag placements with spend and no conversions after enough impressions, mobile app placements with accidental clicks, content unsuitable for the brand; Meta placements or audience segments with cost per result far above the account; ad sets whose audiences overlap heavily and bid against each other (consolidate or exclude). Respect sample size here too. Check audience exclusions: existing customers (unless the ad is an upsell), recent converters and clearly irrelevant visitors (careers or support pages) should not be in prospecting or retargeting pools. For Performance Max, confirm brand exclusions are set, and compare the lead quality it brings (from the CRM) with Search leads: cheap leads that rarely become customers are expensive.
+   On social and video platforms, where there is no search terms report:
+   - Rule out tracking first. Real spend and clicks with zero conversions across a whole campaign or account usually means a broken or missing conversion event. Compare what the site or pixel recorded with what the platform reports; until they reconcile, nothing is waste and the advice is "do not raise the budget".
+   - High click-through with zero conversions usually means the hook earns curiosity clicks the page does not pay off: set the ad's hook beside the landing page's first screen and check they make the same promise before touching audience or bid. High cost per click with little data is "needs more data", not waste.
+   - Rank campaigns by spend at risk and open the ad sets of the top three only, to see whether the problem sits in one ad set or runs through the campaign.
 8. **Dead ads and keywords.** Keywords with zero impressions for months (clutter, not cost), ads and keywords with spend and no conversions past the sample threshold, ads pointing to old or broken landing pages.
 9. **Size the prize honestly.** Report spend on proven waste separately from spend that is merely unproven. Look at brand and non-brand separately: cheap brand conversions can hide non-brand waste in a blended number. Label each claim verified (pulled and reconciled against totals this session), inferred (reasoned from verified data) or stale (from an older report, with its date). Before a finding goes to a client, ask whether they could disprove it in a minute from their own account; state the limits (disclosed share, sample size, mid-window changes) first. Recovered spend is an estimate; say where it should go (best marginal campaign) rather than promising savings.
 
 ## Output
 - Header: window, disclosed vs total clicks, target CPA, break-even conversion rate used.
-- Waste table: `Item | Type | Clicks | Cost | Conv | Break-even CVR | Verdict (waste / unproven / keep) | Fix`.
+- Waste table: `Item | Type | Clicks | Cost | Conv | Break-even CVR | Verdict (waste / unproven / keep) | Fix`. Each item also gets one spending call: *pause or reduce* (enough data to rule out the break-even rate, tracking verified), *small capped test budget* (one signal but not the other, or tracking unverified) or *needs more data* (with the date a readable sample should exist).
 - Upload-ready lists: negatives by theme with match type and level; placement exclusions.
 - Cannibalisation table and keyword opportunities table.
 - Summary: proven waste, unproven spend, top three fixes.
@@ -100,3 +104,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - irinabuht12-oss/marketing-skills — wasted-spend-finder (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — keyword-cannibalization-check (no licence; ideas only)
 - irinabuht12-oss/marketing-skills — search-term-mining (no licence; ideas only)
+- AdsMCP/tiktok-ads-mcp-server — performance diagnosis tools (MIT)

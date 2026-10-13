@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,app"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-signup-flow"
 ---
 # Signup flow optimisation
@@ -39,6 +39,7 @@ Reduces the number of people who start creating an account and never finish, and
    | Waitlist | Email only, one optional question, a confirmation that says what happens and when. |
    State which option fits the market (price point, buyer, competitor norms) and why.
 6. **Verification.** Delay email verification until it is needed (sending, inviting, billing) and let users in meanwhile. If it must come first: a screen that says exactly what to do, the address it was sent to with a fix-typo link, resend after a short wait, a spam-folder hint, and the option of a code instead of a link on mobile. Add a reminder if verification stalls.
+   - The verification email itself: subject and preview text name the one action ("Confirm your email to finish signing up"), no marketing; one button with the same link below it as copyable plain text (long URLs wrap); how long the link or code works in its own sentence; a code shown large, as text (never only in an image) and easy to copy on a phone; a closing line for people who did not sign up ("If this wasn't you, ignore this email"); checked in dark mode so the logo and text stay visible.
 7. **Copy and trust at the form.** Headline that restates the value, not "Create account". Button that names the outcome ("Start my free trial", "Create my first report"). One true reassurance line under the button ("No card needed", "Cancel anytime"). Visible labels, examples as placeholders, specific errors with a recovery path ("This email already has an account. Log in or reset password").
 8. **Mobile.** Correct keyboards, autofill and passkey support, tap targets about 44px, single column, button visible above the keyboard, app-store sign-in options in native apps.
 9. **The first screen after signup.** It must show one clear next action toward value, not an empty dashboard or a tour. Hand over to `cmo-onboarding-activation` for the rest.
@@ -93,3 +94,4 @@ Reduces the number of people who start creating an account and never finish, and
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — signup (MIT)
 - alirezarezvani/claude-skills — signup-flow-cro (MIT)
+- maizzle/maizzle — welcome, password-reset and two-factor email templates (no licence file, ideas only)

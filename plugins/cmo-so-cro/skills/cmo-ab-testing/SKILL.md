@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,google-ads,meta-ads,email"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ab-testing"
 ---
 # A/B testing & experiments
@@ -41,7 +41,12 @@ Plans experiments whose results can be trusted and reads finished tests honestly
    - Email: randomise the list; for subject lines use clicks or downstream conversions, since privacy features inflate opens; send both at the same time.
 8. **Pre-launch checklist.** Hypothesis, metrics, n, duration and decision rule written; variants QA'd on mobile and desktop; tracking verified on both; no overlapping test on the same users; start date avoids known anomalies (big sale, launch) or records them.
 9. **During the test.** Monitor for bugs and guardrail damage only. Do not stop because one variant "looks" ahead: repeated peeking with a fixed-horizon test inflates false positives badly. If the user needs flexibility to stop early, plan a sequential or Bayesian method up front and read it by its own rules. Do not change variants, traffic sources or split mid-test.
-10. **Read the result.** In order: did it reach the planned sample? Was the split as planned? What is the effect size and its 95% interval (a two-proportion z-test is fine for conversion rates)? Is the p-value below α? Did guardrails hold? Then decide:
+10. **Read the result.** Health checks first (common defaults, not laws):
+    - *Sample ratio mismatch*: a chi-squared test of users per variant against the planned split; if p < 0.001, stop: assignment or tracking is broken and the result cannot be trusted whatever it shows. Skip it until each variant has a handful of users.
+    - *Users in both variants*: more than about 1% means assignment is leaking; find the cause first.
+    - *Too little data per metric*: show a metric as "not enough data" until each variant has a minimum number of its conversions (about 150 is a common default).
+    - *Implausible lift*: a relative change above about 50% on a mature page is treated as a tracking or bucketing bug until checked.
+    Then, in order: did it reach the planned sample? What is the effect size and its 95% interval (a two-proportion z-test is fine for conversion rates)? Is the p-value below α? Did guardrails hold? Then decide:
     | Result | Decision |
     |---|---|
     | Significant win, guardrails fine, effect worth it | Ship; log the pattern |
@@ -71,6 +76,7 @@ Plans experiments whose results can be trusted and reads finished tests honestly
 
 ## Quality bar
 - Sample size and duration were calculated before launch from stated assumptions.
+- Health checks (sample ratio, cross-exposure, minimum data, implausible lift) passed before any metric was read.
 - The decision rule was set in advance and the readout follows it.
 - Effect size and interval are reported, not just "significant".
 - Guardrails are checked; segment findings are labelled exploratory.
@@ -97,3 +103,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - irinabuht12-oss/marketing-skills — ab-test-analyzer (no licence; inspiration only)
 - irinabuht12-oss/marketing-skills — ab-test-setup-and-analysis (no licence; inspiration only)
 - AgriciDaniel/claude-ads — ads-test (MIT)
+- growthbook/growthbook — experiment health defaults and SRM check (MIT)

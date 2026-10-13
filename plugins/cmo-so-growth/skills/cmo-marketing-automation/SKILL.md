@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-marketing-automation"
 ---
 # Recurring marketing loops
@@ -25,7 +25,7 @@ Turns marketing jobs the user would otherwise forget into small routines an agen
 - Settle the approval rule up front: CMO.so changes take a preview and a confirmation from the user. A loop running unattended may call read tools freely, may request a preview, but must never send `confirm: true` itself.
 
 ## Workflow
-1. **Pick at most one or two loops to start.** Add more only after the first proves useful (the user acts on its output). Catalogue:
+1. **Pick at most one or two loops to start.** A loop counts as set up only after one real run produced its report from live tool results and the user saw it; add more only after the first proves useful (the user acts on its output). If part of the request has no CMO.so tool behind it (a channel CMO.so does not publish to, a data source that is not connected), say so plainly before writing the loop, offer the closest version labelled as a stand-in, and add an "Asked for / delivered" line to the spec. Catalogue:
    | Loop | Cadence | Acts when | Body |
    |---|---|---|---|
    | Morning inbox | Daily, at the user's start of day | `inbox_list` returns items not already reported | List what waits (LinkedIn drafts, failures, setup steps, low quota, pauses) grouped by type; propose the one item to handle first; hand off to `cmo-daily` when the user replies |
@@ -41,6 +41,9 @@ Turns marketing jobs the user would otherwise forget into small routines an agen
    - Stop and escalation: skip the run if the workspace is unavailable or a tool errors twice; stop proposing LinkedIn plans while posting is paused or LinkedIn is disconnected; escalate to the user (not retry) on failures listed in the inbox; disable the loop if the user ignores its output for several runs and ask whether to keep it.
    - Output: where the result goes (chat message, note, email draft), kept to a few lines plus the proposed actions.
 4. **Stage, do not execute, changes.** For `social_plan_days` (and any other change a loop suggests), the loop may call it without `confirm` to obtain the preview, then present the preview and its credit cost to the user. Only when the user replies yes, in a conversation, call it again with `confirm: true` and the `confirmation` from that preview. Never confirm on the user's behalf, never confirm a stale preview from an earlier run, never batch several confirmations into one yes they did not see.
+   - One approval covers the exact content and target shown. If the text, audience or schedule changes afterwards, ask again; a second answer to the same proposal is "already answered".
+   - If approvals go out by email or a chat link, opening the link must only show the decision; the yes is a deliberate press. Mail scanners and chat previews open links automatically.
+   - A no stops that action. Do not reach the same result with another tool or a smaller version of the change. Keep the user's reason or edit in the loop's memory for the next preview; without one, wait for them. A no does not switch the loop off: it keeps reading and reporting, and the same proposal returns only after its cooldown.
 5. **Schedule it.** Use the agent tool's own scheduler if it has one, a cron entry that starts the agent with the loop prompt, or simply a calendar reminder for the user to say "run my weekly review". The value is the repeatable body, not the automation. Default times: daily loops at the start of the user's working day; weekly loops on a fixed weekday morning in their timezone.
 6. **Report per run, briefly.** Format: date, loop name, what was checked, what changed since last run (numbers only from tool results), proposed actions with the tool and cost, and what the loop will skip next time. If nothing needs the user, one line or nothing, as agreed.
 7. **Review the loops monthly.** For each: did the user act on its output? Did it raise false alarms? Adjust cadence or thresholds, or retire it.
@@ -78,6 +81,7 @@ Turns marketing jobs the user would otherwise forget into small routines an agen
 - Planning LinkedIn posts uses AI generations and posts appear on the user's LinkedIn; state this every time a plan is proposed. Do not switch approval mode to automatic from a loop.
 - Plans, billing, connecting a website or LinkedIn, and API keys are handled in the CMO.so app via `dashboard_link`; loops never ask for passwords or keys and do not promote upgrades.
 - Respect quota: if `inbox_list` reports low quota, stop proposing actions that use credits and tell the user once.
+- Never blindly retry a publish, send or plan call: it is not safe to repeat. After a timeout, check whether the first attempt went through (`social_list`, recent posts) before trying again.
 
 ## Related skills
 - `cmo-daily` — the interactive version of the morning inbox loop.
@@ -90,3 +94,5 @@ Turns marketing jobs the user would otherwise forget into small routines an agen
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — marketing-loops (MIT)
 - ericosiu/ai-marketing-skills — growth-engine (MIT)
+- activepieces/activepieces — approval links and publishing actions (MIT)
+- n8n-io/n8n — human-in-the-loop denial handling, capability honesty, progressive building (Sustainable Use License, ideas only)

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-marketing-audit"
 ---
 # Marketing audit
@@ -41,7 +41,17 @@ Reviews a website's marketing as a buyer and as a search engine would meet it, s
    | AI visibility | 15% | `ai_visibility_get` average and trend, which prompts cite the site and which pages; are there clear answer-style pages, FAQs, facts an AI can quote. |
    | Content engine | 10% | Publishing rhythm from `results_summary`, blog depth and topical focus, ideas waiting, whether content links to offers. |
    | Social & email | 10% | Active profiles linked from the site, LinkedIn activity and setup completeness from `social_setup_get` (voice learned, formats chosen, posting hours set), email capture with a reason to subscribe, signs of a welcome sequence. |
-   Composite = Σ(score × weight) × 10, giving 0-100. Grades as a rough guide: 80+ strong, 60-79 solid with clear gaps, 40-59 major gaps, under 40 fundamentals missing. Adjust weights if the business model makes an area irrelevant (e.g. local business: raise search, lower content) and say so. If an area is not measured, leave it out and rescale the other weights to 100%, rather than scoring it zero.
+   Composite = Σ(score × weight) × 10, giving 0-100. Grades as a rough guide: 80+ strong, 60-79 solid with clear gaps, 40-59 major gaps, under 40 fundamentals missing. Adjust weights if the business model makes an area irrelevant (e.g. local business: raise search, lower content) and say so.
+   **Score anchors**, so two runs on the same site agree. Note the band before the number:
+   | Score | Meaning |
+   |---|---|
+   | 9-10 | Clear, specific and proven: a first-time visitor gets it in about five seconds, and evidence backs the claim on the page |
+   | 7-8 | Clear but generic or unproven: a competitor could say the same |
+   | 5-6 | Present but weak: vague, buried, or informative rather than persuasive |
+   | 3-4 | Confusing or contradictory: the visitor has to work it out |
+   | 0-2 | Missing or broken |
+   Message: 9-10 is outcome-led, differentiated and proven; 5-6 is generic ("we help businesses grow"). Conversion scores friction, *higher = less friction* (fewer steps and fields, no forced account, clear payment and trust signals); say so in the table. Proof inside Message or Conversion: 9-10 named customers with checkable results; 5-6 a few anonymous quotes; 0-2 none. Search, AI visibility, Content, Social & email: 9-10 measured by a CMO.so tool and healthy; 5-6 measured with clear gaps.
+   **Unknown is not zero.** An area with no evidence (tool not connected, page unreachable, no data) is *Unknown*, never 0 or a middling guess, and is never averaged in. Show the composite only when every weighted area has a score; otherwise show a range (each Unknown area at 0 and at 10) plus what is missing and how to get it ("connect Search Console"). *N/A* (not relevant to this business) is a separate state with a one-line reason; never use it to hide missing data.
 3. **Write findings as problem → evidence → fix.** Example: "Headline names a feature, not an outcome ('AI-powered workflows'). Fix: lead with the result for the ICP, e.g. '[outcome] for [audience] without [pain]'." Give before/after copy where copy is the fix.
 4. **Rank the fixes.** Impact (high/medium/low) × effort (hours, days, weeks):
    - *Quick wins (this week)*: headline and CTA text, missing meta descriptions, proof near CTAs, broken links, shorter forms.
@@ -53,12 +63,12 @@ Reviews a website's marketing as a buyer and as a search engine would meet it, s
 ## Output
 ```
 Marketing audit: <site> · <date> · <business type> · <quick|full>
-Score: <0-100> (<grade>)
+Score: <0-100> (<grade>), or <low>-<high> while any area is Unknown
 | Area | Score /10 | Weight | Key finding (with evidence) |
 Top 3 actions
 Quick wins (5-10) · This month (3-7) · This quarter (2-5)
   each: fix | where | why | impact | effort | owner/skill
-Not measured: <areas and why>
+Unknown: <areas, why, and how to measure>
 ```
 Full audits add a section per area with all findings.
 
@@ -74,14 +84,15 @@ Full audits add a section per area with all findings.
 **Result (abbreviated):**
 ```
 Marketing audit: example-grooming.co.uk · quick · local service
-Score: 52 (major gaps)
-| Message 4 | Conversion 5 | Search 6 | AI visibility n/m | Content 6 | Social & email 3 |
+Score: 41-56 (major gaps; AI visibility unknown)
+| Message 4 | Conversion 5 | Search 6 | AI visibility unknown | Content 6 | Social & email 3 |
 Top 3: outcome headline + price range; booking button in the first screen on mobile; compress hero image
-Not measured: AI visibility (monitoring not started)
+Unknown: AI visibility (monitoring not started; start it to close the range)
 ```
 
 ## Quality bar
-- Every score has visible evidence; nothing scored from assumption.
+- Every score has visible evidence and its band; nothing scored from assumption.
+- Missing evidence is shown as Unknown with how to fill it, and the composite is a range while anything is Unknown.
 - Tool data is dated; stale checks are flagged.
 - Fixes are specific enough to implement without a follow-up question.
 - No revenue figures without the user's own inputs.
@@ -105,3 +116,5 @@ Not measured: AI visibility (monitoring not started)
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - zubair-trabzada/ai-marketing-claude — market-audit (MIT)
 - zubair-trabzada/ai-marketing-claude — market (MIT)
+- zubair-trabzada/ai-marketing-claude — market-content, market-conversion, market-technical agents (MIT)
+- aaron-he-zhu/aaron-marketing-skills — scoring semantics (Apache-2.0)

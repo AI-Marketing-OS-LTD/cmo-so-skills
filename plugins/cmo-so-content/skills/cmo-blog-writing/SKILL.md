@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "blog"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-blog-writing"
 ---
 # Blog post writing
@@ -64,6 +64,10 @@ or rewriting a post already live (`cmo-content-refresh`).
    business profile or sources they trust. No source means no specific claim: either soften it to
    an opinion or mark it `[NEED: source]`.
 5. **Draft.**
+   - Long posts (over ~1,500 words): first plan every section in one line each (type, rough
+     length, the one point it makes, the gap it fills, its proof, internal link, CTA strength:
+     none / soft / firm). Then write and edit one section at a time; long drafts written in one
+     pass get thinner and more generic towards the end.
    - Title: the promise in the reader's words; write several options and pick the clearest.
    - Intro, 3-4 sentences: name the reader's situation, say what the post gives them. No warm-up.
    - Each H2: answer first in the opening 1-2 sentences (40-60 words that make sense if quoted
@@ -72,6 +76,18 @@ or rewriting a post already live (`cmo-content-refresh`).
    - Lists for steps and checks; tables for comparisons; a short FAQ only for real follow-up
      questions.
    - Conclusion: the core point in one or two sentences, the next step, the CTA. No new ideas.
+   - What each section type must have:
+
+     | Type | Must have |
+     |---|---|
+     | Intro | The direct answer in the first 1-2 sentences. Never open with "When it comes to…", "In today's…" or "[Category] is…". |
+     | How-to | Numbered steps, one action each; a short "common mistakes" list at the end. |
+     | Comparison | What each option does well (competitors included), a table on buyers' criteria, a "best for" line per option. |
+     | Explanation | Simple to advanced, with one example the reader can picture. |
+     | FAQ | 4-6 real questions (search queries, sales, support), each answered first in 40-60 words. |
+     | Conclusion | Not a recap: the next step (this week / this month), then the CTA. |
+   - Guides may get 3-5 "key takeaways" under the intro, written last: stand-alone conclusions
+     with a specific number, name or outcome from the post, not a table of contents.
 6. **Edit for the reader.** Ask of every paragraph: is this here for the reader? Cut notes meant
    for a reviewer, hedges that protect the writer, asides that interrupt, and anything that reads
    like an ad. Keep the user's voice and examples when editing their text. Then run
@@ -96,7 +112,11 @@ or rewriting a post already live (`cmo-content-refresh`).
 
 ## Output
 1. Brief (ten lines, as in step 2).
-2. The post in Markdown: H1, intro, H2 sections, conclusion with CTA.
+2. The post in Markdown: H1, intro, H2 sections, conclusion with CTA. If the site keeps posts as
+   files in a code repository, copy the conventions of one existing post the user shares: folder,
+   file name pattern, front matter format (YAML `---`, TOML `+++` or JSON), exact field names
+   (`date` or `pubDate`, `description` or `excerpt`) and image paths. Never invent front matter
+   fields. Links and image URLs are relative, `https://` or `mailto:` only.
 3. Metadata block: title tag, meta description, slug, excerpt, alt text for each image.
 4. Checklist with pass/fail and any `[NEED: ...]` markers still open.
 5. What changed in CMO.so (idea added, idea planned, planned post updated, draft saved), or
@@ -116,6 +136,12 @@ Result (abbreviated):
 > Saved: draft updated (text replaced). Nothing published.
 
 ## Quality bar
+Score the draft first (a rough 0-100 heuristic): voice and no AI tells 30, specificity (numbers,
+names, examples) 25, balance of prose, lists and tables 20, on-page basics 15, readability 10.
+Any invented fact, person, quote or result fails outright. Under 70: fix the three to five
+costliest issues and score again, at most twice; still under 70, hand it over as "needs your
+review" with the scores and the open issues rather than rewriting again.
+
 - [ ] The intro tells the reader what they will get within three sentences.
 - [ ] Every H2 opens with its answer; each section can be quoted on its own.
 - [ ] At least two concrete examples or data points, each traceable to the user or a source.
@@ -152,3 +178,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — content-production (MIT)
 - CMO.so internal skill (private) — maggie-blog
 - every-app/open-seo — openseo-review-web-content (MIT)
+- TheCraigHewitt/seomachine — article and write commands, content scorer (MIT)
+- tinacms/tinacms — collection front matter schema and link sanitising (Apache-2.0)

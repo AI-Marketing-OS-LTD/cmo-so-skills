@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "x"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-x-growth"
 ---
 # X (Twitter) growth
@@ -32,14 +32,17 @@ Builds an audience on X for a founder, expert or brand: a sharp niche, a profile
    - Activity: a mix of posts, threads, replies and quotes; replies should be a large share (roughly a third or more) early on.
 2. **Pick 3-4 content lanes** inside the niche: tactical how-to, lessons from real work, opinions on industry practice, build-in-public updates, curated finds with commentary. Each lane needs a reason this person is credible on it.
 3. **Write single posts.** One idea, shortest form that holds it (often under ~200 characters for a punchy post). Shapes: observation with a reason, a short list, a lesson with the cost, a before/after, a framework in a few lines. Questions that invite real answers earn replies.
+   - Before drafting, answer two questions: what does this save the reader (looking something up, working it out, trial and error, wording a view)? What proof can they see or check (a screenshot, a named tool or page, a number with its conditions)? No proof means a smaller claim, never made-up proof.
+   - Write for the reader: announcements become what the reader can now do; features become a situation where they help; "works well" becomes what was tried and what happened.
 4. **Write threads.**
    - Post 1: the hook in few words plus the promise; it must stand alone in the feed.
    - Body: one idea per post, each readable on its own, 3-4 lines max; roughly 5-12 posts total.
    - Last post: summary and one call to action (follow for the topic, read the full article, reply with X).
    - Every post in the thread must hold its weight; one weak post loses readers.
 5. **Write long-form posts** (long posts and Articles are paid-subscription features on X; check what the account has): hook (contrarian claim or surprising real number) → 2-3 lines of context → sections that each run problem → what happened → what changed → the uncomfortable truth → the payoff. A simple diagram or table in a code block can help on desktop; keep it narrow for mobile. If over ~1,500 characters and long posts are not available, split into a thread.
+   - An X Article starts with its title as the first heading and uses only what Articles render at the time of writing: paragraphs, quotes, lists, two heading levels, bold, italic, links, code blocks, and images or embedded posts on their own line. No tables, so use a list or code block. An Article stands alone; promote it with a separate short post carrying the hook.
 6. **Reply strategy (the main early lever).** Keep a roster of about 20 accounts 2-10x your size plus peers. Reply early with substance: data, a counterpoint, an example. A strong reply often gets more profile visits than an original post. Quote posts must add a real take, never just "this".
-7. **Ranking hygiene** (observed patterns, not official rules): links in the post body tend to reduce reach, so put the link in the first reply; use 0-2 hashtags; be around for the first hour after posting to reply; avoid editing right after posting; do not tag people who have no reason to engage.
+7. **Ranking hygiene** (observed patterns, not official rules): links in the post body tend to reduce reach, so put the link in the first reply; use 0-2 hashtags; be around for the first hour after posting to reply; avoid editing right after posting; do not tag people who have no reason to engage. Opening a post with @username limits who sees it in Home timelines, so put the mention later unless you want a reply. Near-duplicate posts, repeated link-only posts and unrelated trending hashtags break X's authenticity rules; rephrasing the same post across days does not get around them.
 8. **Rough cadence** (rules of thumb, adjust to time):
    | Stage | Posts/day | Threads/week | Replies/day |
    |---|---|---|---|
@@ -70,6 +73,8 @@ Builds an audience on X for a founder, expert or brand: a sharp niche, a profile
 - Each thread post stands alone; the thread has exactly one call to action.
 - No invented metrics; no "It's not X, it's Y", "Here's the thing", self-answered questions, emoji bullets or corporate filler.
 - Cadence matches the stated time.
+- Pre-post check on every draft, pass or fail with a one-line reason, rewritten before showing on any fail: (1) fits the limit by X's weighted count, (2) the first line makes a claim or shows a specific, not a generic question or warm-up, (3) at least one concrete detail (number, time frame, named method, real outcome; ask if missing), (4) one point only, (5) no sentence past about 20 words, (6) no stock AI vocabulary or "Thoughts?"-style closer, (7) media within the limit. Report "N of 7 pass".
+- Counts are X's weighted counts at the time of writing, not plain string length: 280 units on a standard account; Latin letters, digits and basic punctuation 1; Chinese, Japanese and Korean characters and emoji 2 (a CJK post fits about 140 characters); every link 23 whatever its length. Each thread post is counted on its own, with a little margin. Media: up to 4 images, or one video or GIF alone.
 
 ## Guardrails
 - This skill changes nothing in CMO.so by itself. If the user turns a thread into a blog idea with `idea_add` (it uses an AI generation), it takes two calls: a preview first, then `confirm: true` with the `confirmation` only after they agree.
@@ -77,14 +82,23 @@ Builds an audience on X for a founder, expert or brand: a sharp niche, a profile
 - Never invent numbers, quotes, clients or results; never promise followers or virality.
 - No follow-for-follow schemes, bought followers, automation of replies or likes, or coordinated engagement groups; X's rules treat these as platform manipulation.
 - Stay out of harassment, pile-ons and misleading claims; disagree with ideas, not people.
+- Never post the same text from more than one account the user runs; rewrite per account or pick one. Draft replies to others only when the user asks for that reply, never a batch to send automatically.
+- Sponsored posts and AI-made images or video get X's matching disclosure label as well as plain-words disclosure in the text.
+- When unsure, leave it as a draft for the user; posting is public and cannot be undone.
 
 ## Related skills
 - `cmo-thought-leadership` — the bigger point of view the account builds.
 - `cmo-social-strategy` — where X fits among other platforms.
 - `cmo-content-repurposing` — turn articles into threads and back.
 - `cmo-humanize` — remove AI-sounding patterns before posting.
+- `cmo-open-social` — Threads, Bluesky and Mastodon versions of the same idea.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — x-twitter-growth (MIT)
 - ericosiu/ai-marketing-skills — x-longform-post (MIT)
+- typefully/agent-skills — typefully, X and X Articles platform notes (MIT)
+- BrianRWagner/ai-marketing-claude-code-skills — tweet-draft-reviewer (no licence, ideas only)
+- JeffLi1993/content-repurposing-skills — blog-to-twitter-post platform rules and playbook (no licence, ideas only)
+- postbasehq/postbase — character counter (AGPL-3.0, ideas only)
+- EnesCinr/twitter-mcp — post_tweet length check (MIT)

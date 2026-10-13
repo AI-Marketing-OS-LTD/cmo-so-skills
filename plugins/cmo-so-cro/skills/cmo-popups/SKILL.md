@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-popups"
 ---
 # Popups & banners
@@ -44,6 +44,10 @@ Designs popups, slide-ins and bars that offer something worth the interruption, 
    - Behaviour: pricing-page visitors, several pages viewed, returning visitors, cart left. Highest intent, so the offer can be more specific.
 3. **Target and exclude.** Different messages for new vs returning visitors and by traffic source (mirror the ad for paid traffic). Exclude: people who already converted or subscribed, people who dismissed recently, checkout and signup flows, and support/legal pages.
 4. **Set frequency and conflict rules.** At most one popup per session; after dismissal wait days, not hours (7-30 is a common range) before showing again; remember dismissals and submissions. If several popups exist, give each a priority and make sure only one can show per page view; never stack a popup on a cookie banner or chat widget.
+   - On-site and in-app surveys count as popups and share the one-per-session and cooldown rules.
+   - A single shared cooldown lets frequent prompts starve rare ones: give rare, high-value asks their own rule on top (for example a satisfaction survey not shown to the same person within 90 days).
+   - Pick each popup's repeat rule explicitly: once; until answered; at most N times; or every time (only for visitor-started ones such as a feedback button).
+   - On high-traffic sites, show a survey to a sample of eligible visitors rather than everyone.
 5. **Write the copy.**
    - Headline: the benefit, specific ("Get the 12-point checklist we use for every launch"), not "Subscribe".
    - Subheadline: what exactly, how often, and one reassurance ("Weekly, 5-minute read. Unsubscribe anytime").
@@ -82,7 +86,7 @@ Designs popups, slide-ins and bars that offer something worth the interruption, 
 ## Quality bar
 - Every popup has a reason to exist and an offer worth the interruption.
 - No popup on arrival from search on mobile that covers the content.
-- Frequency caps, dismissal memory and exclusions are specified.
+- Frequency caps, dismissal memory, exclusions and a repeat rule per popup or survey are specified.
 - Decline text is neutral; close is easy to find.
 - Benchmarks, if given, are labelled rough rules of thumb.
 
@@ -104,3 +108,4 @@ Designs popups, slide-ins and bars that offer something worth the interruption, 
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — popups (MIT)
 - alirezarezvani/claude-skills — popup-cro (MIT)
+- formbricks/formbricks — survey display logic (AGPL-3.0, ideas only)

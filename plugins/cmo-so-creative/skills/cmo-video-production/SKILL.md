@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,tiktok,instagram,linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-video-production"
 ---
 # Video production
@@ -62,7 +62,14 @@ Ask one question at a time:
    - Normalise audio without clipping; music under speech, licensed.
    - For an alternative cut, change only named items (tighter opening, faster pace) and never the claims.
 7. **Export per platform**: 1080x1920 for vertical, 1920x1080 for horizontal, H.264/AAC MP4; thumbnail or cover, title, description, captions file.
-8. **Review before anyone publishes**: audio in sync after every cut; no word clipped; captions match speech; the speaker stays in frame after cropping; the hook is paid off; every number and claim has a source; logos and music are licensed; avatar or synthetic voice disclosed where required.
+8. **Review before anyone publishes**: audio in sync after every cut; no word clipped; captions match speech; the speaker stays in frame after cropping; the hook is paid off; every number and claim has a source; logos and music are licensed.
+   - **Disclosure check per asset** (current understanding at the time of writing, not legal advice; rules vary by country and change):
+     - Classify AI involvement: none; assistive (trimming, colour, captions, noise removal: no label needed); partly generated; fully generated. Note whether the result could be mistaken for real footage, a real person or a real voice.
+     - Realistic AI scenes, people or voices: switch on the platform's own AI label where it has one (YouTube's altered or synthetic content setting, TikTok's AI-generated label, the AI disclosures in ad tools for political ads), and for EU audiences also a visible label in the asset, since a platform label can sit in a menu viewers never open.
+     - Political or social-issue content takes the strictest path on every platform.
+     - Paid partnerships, gifted products, employees and virtual influencers: disclose the relationship in the content itself (#ad, "paid partnership", "I work at [brand]"), not only in the profile.
+     - AI-generated customer reviews, testimonials or endorsements cannot be fixed with a label: remove them.
+     - Do not rely on automatic detection; editing and compression often strip provenance metadata. Keep a screenshot of the label as set at publishing, and send anything high-stakes to the user's legal adviser.
 9. **Measure**: note what to check after 24 hours, 3 days and 7 days (hook hold, completion, clicks); treat targets as experiments, not forecasts.
 10. **Optional with CMO.so**: CMO.so has no video tool. A video's topic can become a blog post idea via `idea_add` (`text`) if the user wants; it is previewed and confirmed first.
 
@@ -91,6 +98,7 @@ Result (abbreviated):
 - Works muted: captions and on-screen text carry the message.
 - No AI-generated product UI, readable text or logos.
 - Every claim, number and testimonial is sourced and approved.
+- Each asset has a recorded AI-involvement class and the disclosure set for it.
 - Each platform version has the right ratio, length and safe zones.
 
 ## Guardrails
@@ -111,3 +119,4 @@ Result (abbreviated):
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — video (MIT)
 - ericosiu/ai-marketing-skills — net-new-video-editor (MIT)
+- borghei/Claude-Skills — ai-content-disclosure (MIT + Commons Clause, ideas only)

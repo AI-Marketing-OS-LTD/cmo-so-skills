@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-seo-opportunities"
 ---
 # SEO opportunities
@@ -42,6 +42,8 @@ If query data reports it has not been fetched yet, say so and work from content 
 
 | Pattern | What it usually means | Action |
 |---|---|---|
+| Position 1-4, many impressions, CTR far below the site's own CTR at that position | The searcher may be answered on the results page (an AI answer, a featured snippet) and never needs to click | Look at the live results page first. If an AI summary or answer box is there, a new title will not bring clicks back; aim to be the source it cites (`cmo-aeo-content`) and report it as visibility kept, not demand lost |
+| Position 4-10, CTR above the site's average for that position | Searchers already pick this page when they see it | Strong candidate to be quoted: answer-first opening and question headings (`cmo-aeo-content`), then expand |
 | High impressions, CTR well below the site's average, position 1-10 | The result is seen but not chosen | Rewrite title and meta description |
 | Position 4-15, decent impressions | Relevant but not the best answer | Expand: cover the query fully, add examples, answer it near the top |
 | Impressions for a query the article does not really address | Partial match | Add a section for that query, or plan a new post |
@@ -49,10 +51,12 @@ If query data reports it has not been fetched yet, say so and work from content 
 | Article with no impressions after a couple of months | Not indexed, no demand, or duplicated elsewhere | Ask the user to check the URL in Search Console's URL Inspection; then merge, rewrite for a real query, or leave |
 | Several articles showing for the same query | Cannibalisation | Pick one to strengthen; consider merging |
 
-Expected CTR varies a lot by position, query type and how many ads or AI answers sit above the result; compare against the site's own average rather than a fixed benchmark.
+Expected CTR varies a lot by position, query type and how many ads or AI answers sit above the result; compare against the site's own average rather than a fixed benchmark. Never turn a CTR gap into "clicks lost" by multiplying impressions by an assumed CTR; that number is invented. Say "CTR is X% against the site's Y% at similar positions".
+
+**Confirm cannibalisation before acting.** Group the query rows by query, and treat URLs that differ only by a `#section` anchor as one page (Search Console can list them separately). It is cannibalisation only when two or more distinct pages show for the same query and the query has enough impressions to matter (around 100 or more in the period, a rule of thumb). List the pages by position. Two pages on a low-volume query is normal and not worth a merge.
 
 ### 3. Prioritise
-Score each candidate roughly: impressions (size of the prize) × closeness to the top (positions 4-10 beat 11-15) × business value of the page (does it lead to what the business sells). Pick up to five. Prefer two strong ones over five weak ones.
+Score each candidate roughly: impressions (size of the prize) × closeness to the top (positions 4-10 beat 11-15) × business value of the page (does it lead to what the business sells). Pick up to five. Prefer two strong ones over five weak ones. Give each one plain reason a non-expert understands: "already near the top, one place up brings many more clicks" (positions 4-6), "seen often but rarely clicked, the snippet is the problem" (CTR well under the site's average for that position), or "on page two, reaching page one is the big step" (positions 11-15).
 
 ### 4. Propose
 For each opportunity: the page, the evidence (impressions, clicks, CTR, position for the period), and one concrete action. When the action is a new title or description, draft it:
@@ -124,3 +128,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AI-Marketing-OS-LTD/cmo-so-skills — cmo-seo-opportunities (MIT, ours)
 - AgriciDaniel/claude-seo — seo-google (MIT)
 - coreyhaines31/marketingskills — copy-editing (MIT)
+- Openpanel-dev/openpanel — Search Console cannibalisation and opportunity queries (AGPL-3.0, ideas only)
+- ALwrity/ALwrity — AI Overview impact detection (no licence, ideas only)

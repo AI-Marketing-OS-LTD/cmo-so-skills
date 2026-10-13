@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -74,6 +74,8 @@ A good brief names: the audience, the one thing they should do or remember, the 
 ### 5. Pause, resume, approval mode
 - `social_set_paused` pauses or resumes all posting (holidays, a crisis, a sensitive news day). Approved posts wait while paused.
 - `social_approval_mode_set` (`manual` or `auto`): auto means future drafts go out at posting times without review. Only on an explicit request; restate the consequence before confirming. Recommend manual for new accounts, regulated industries, or any recent off-brand draft.
+- Base any suggestion about the mode on the user's own record in `social_list`. Mention auto only after the user has approved nearly all recent drafts unchanged (roughly nine in ten over at least a few weeks) with none off-brand; explain it and leave the decision to them.
+- The reverse holds too: if the user keeps rejecting or heavily rewriting one kind of post (a format, a source, a campaign), stop producing more of it. Change the formats with `social_formats_set` (`keys`: the full list to keep, read from `social_setup_get`) or relearn the voice from a post the user likes with `social_voice_learn` (`post_text`; it becomes the default voice), each previewed and confirmed, instead of queuing drafts they will reject (`cmo-linkedin-posts` for format choice).
 
 ## Output
 ```
@@ -112,14 +114,22 @@ Result:
 - Customer names, logos and results appear only with the customer's permission.
 - Never ask for LinkedIn credentials; connecting is done through the link.
 - Show draft text as written; rewrite only when asked.
+- If an approve, move, copy update or connect call errors or times out, do not repeat it. Read `social_list` again to see whether it took effect, report what you found, and retry only if it did not. A blind retry can publish or schedule the same post twice.
+- A post that failed with a timeout or unclear error may already be live. Ask the user to check their LinkedIn feed before restoring, re-approving or rewriting it. If the failure says the connection lapsed, reconnect first (`linkedin_connect_link`) and then decide about the post; reconnecting does not resend it.
+- When LinkedIn asks for something only the user can do (signing in again, a security check, identity verification), stop and tell them; do not loop on the connect link or look for a way round.
+- Use LinkedIn tools only when the user asked for LinkedIn work in this conversation.
 
 ## Related skills
 - `cmo-daily` — quick daily approvals.
 - `cmo-linkedin-posts` — craft individual posts and hooks.
 - `cmo-social-strategy` — channel choice and themes.
 - `cmo-blog-planner` — the articles that feed LinkedIn posts.
+- `cmo-social-crisis` — pausing scheduled posts and responding when something goes wrong in public.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - AI-Marketing-OS-LTD/cmo-so-skills — cmo-linkedin (MIT, ours)
 - CMO.so internal skill (private) — maggie-social-share
+- gokulsvision/Crewm8-Social-Media-Manager-Skill-Graph — draft-review (MIT)
+- stickerdaniel/linkedin-mcp-server — linkedin-mcp (Apache-2.0)
+- gitroomhq/postiz-app — post workflow, unconfirmed posts (AGPL-3.0, ideas only)

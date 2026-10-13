@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search,chatgpt"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-ai-prompt-research"
 ---
 # AI prompt research
@@ -33,7 +33,7 @@ Not for: a full diagnosis with recommendations (`cmo-ai-visibility-audit`), work
 3. **Clean the list.** Normalise (lowercase, trim), merge near-duplicates, and drop questions that share words but not the market (other meanings of the term). Say how many you dropped.
 4. **Group by intent**, not wording:
    - **Learning**: how something works, what a term means.
-   - **Choosing**: best tools, comparisons, alternatives, recommendations for a situation.
+   - **Choosing**: best tools, comparisons, alternatives, recommendations for a situation. Cover six kinds, a few prompts each: *recommendation* ("best X for Y"), *comparison* ("A vs B"), *feature* ("X that supports Z"), *situation* ("X for a 5-person clinic"), *price and value* ("cheapest", "free", "is A worth it") and *switching* ("alternative to A", "how to move from A to B"). Vary them by audience (beginner, small business, larger team) and constraint (free, easiest, fastest). Recommendation and switching prompts usually name the most products, so spot-check those first.
    - **Doing**: how to accomplish a task.
    - **Branded**: names the brand or a competitor. Keep separate; it measures reputation, not discovery.
    Choosing prompts usually matter most because the answer names products.
@@ -64,6 +64,7 @@ Result (abbreviated):
 
 ## Quality bar
 - Every group has a real example prompt, not a paraphrased theme.
+- Choosing prompts cover all six kinds, including price and switching, or the gap is stated.
 - Branded prompts are reported apart from discovery prompts.
 - Observations ("answers cite these three domains") are kept apart from proposals ("get listed there").
 - No demand numbers attached to prompts; sample size stated for every rate.
@@ -85,3 +86,4 @@ Result (abbreviated):
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - every-app/open-seo — ai-prompt-research (MIT)
+- TheCraigHewitt/seomachine — research-ai-citations (MIT)

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-copywriting"
 ---
 # Conversion copywriting
@@ -46,6 +46,17 @@ Not for: polishing copy that is basically right (`cmo-copy-editing`), page layou
    - Proof: evidence for the claim.
    - Action: the one next step.
    Any empty line is a gap: ask, or mark it `[NEED: ...]`. Never fill it with an invented claim.
+   - Cast the customer as the lead and the business as the experienced helper with a plan; copy
+     that is mostly about "we" competes with the reader for attention.
+   - Name the discomfort at three depths: the practical problem ("my books are three months
+     behind"), how it feels ("I dread opening my inbox") and why it is unfair ("running a shop
+     shouldn't mean becoming an accountant"). Most copy stops at the first; people often buy to
+     fix the second.
+   - Pair one line of empathy with proof of competence, and state the stakes both ways: life once
+     it is solved, and the honest cost of leaving it. No invented fear.
+   - Write the one-liner the user can say out loud: "We help [who] who struggle with [problem]
+     to [do what] so they can [result]." Test: could someone repeat it after hearing it once? It
+     can go into the business description via `cmo-brand-profile` (preview, then confirm).
 2. **Headline.** Write 8-10 candidates using different shapes: outcome without the pain; outcome
    in a timeframe; "the [category] for [audience]"; the pain as a question; turn [input] into
    [outcome]. Filter them:
@@ -110,7 +121,8 @@ Result (abbreviated):
 ## Quality bar
 - [ ] A stranger knows what it is, who it is for and what to do within five seconds.
 - [ ] Headline passes the "Now you can…" and swap tests.
-- [ ] Copy leads with the customer, not "We" or the company name.
+- [ ] Copy leads with the customer, not "We" or the company name; the problem is named beyond
+      the practical level, and empathy, proof, a short plan and the stakes are all present.
 - [ ] Every claim has proof nearby or is marked `[NEED: ...]`.
 - [ ] One primary action; secondary links do not compete with it.
 - [ ] Voice matches the brand; no AI tells, no unexplained jargon.
@@ -142,3 +154,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — copywriting (MIT)
 - alirezarezvani/claude-skills — copywriting (MIT)
 - zubair-trabzada/ai-marketing-claude — market-copy (MIT)
+- wondelai/skills — storybrand-messaging (MIT)

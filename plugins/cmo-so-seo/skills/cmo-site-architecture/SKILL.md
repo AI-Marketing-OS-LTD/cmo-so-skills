@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "website"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-site-architecture"
 ---
 # Site architecture & internal links
@@ -54,6 +54,7 @@ How pages are grouped, addressed and linked decides two things: whether visitors
    - Anchors describe the target ("cold email templates"); mostly partial-match, exact-match sparingly, never "click here".
    - A rough rule of thumb: a few contextual links per 1,000 words, chosen for the reader, not a quota.
    - The pages that matter most should have the most internal links pointing at them. Check that against step 1's list.
+   - Picking 3-5 related articles per post, explainably: score candidates by shared keywords or topic tags (heavy weight) and a close publish date (light weight); ignore terms that appear on a large share of posts (the brand, the main category), since they make everything look related; exclude the post itself and, by default, posts newer than it; require more than one weak shared tag. Break ties with the newer post, and check that a spoke's related links include its hub.
 8. **Audit checks (existing sites).** Flag: pages deeper than 3 clicks; orphans (in sitemap or Search Console but linked from nowhere); duplicate paths covering one topic (merge or canonicalise); thin category or hub pages; parameter URLs creating duplicates; generic anchors; footer links to hundreds of posts; nav links to utility pages instead of money pages.
 9. **XML sitemap.** Valid XML; each file under 50,000 URLs and 50 MB uncompressed, otherwise a sitemap index split by type (pages, posts, products); only canonical, indexable, 200-status HTTPS URLs; `<lastmod>` only when it reflects a real content change; `priority` and `changefreq` can be dropped (Google ignores them); referenced in robots.txt and submitted in Search Console.
 10. **Redirect map (if URLs change).** One row per old URL to its closest new URL, 301, no chains, no mass redirects to the homepage. Update internal links to the new URLs rather than relying on redirects. Re-check Search Console coverage in the weeks after launch.
@@ -107,3 +108,4 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — site-architecture (MIT)
 - alirezarezvani/claude-skills — site-architecture (MIT)
 - AgriciDaniel/claude-seo — seo-sitemap (MIT)
+- gohugoio/hugo — related content index (Apache-2.0)

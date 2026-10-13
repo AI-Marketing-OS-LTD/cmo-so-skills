@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-brand-profile"
 ---
 # Brand profile & marketing context
@@ -22,7 +22,7 @@ Everything Maggie writes, and every CMO.so skill, reads the business profile: wh
 
 ## Before you start
 1. `brand_gaps_get`: the empty fields, most important first, each with a one-line reason (`complete: true` when none are empty). It checks for empty fields only; a vague description counts as filled, so still read the profile.
-2. `brand_get`: the current profile. Summarise it in a few lines so the user sees what Maggie already knows.
+2. `brand_get`: the current profile. Summarise it in a few lines so the user sees what Maggie already knows. If dated notes in `market_research` or `additional_information` are more than about three months old, say so and offer a short refresh (prices, products, audiences, competitors) before other skills rely on them.
 3. `brand_voices_list`: the user's own voices for this website (name, products, regions, audiences) and which is the default. Teammates' voices are not shown.
 
 Ask about the most useful gap first, one question at a time. Re-runs are normal: confirm or correct what is there instead of re-asking.
@@ -48,6 +48,8 @@ Order matters: later parts depend on earlier ones.
 
 Each write is a change: preview, then confirm.
 
+**No testimonials yet?** Help the user ask for one rather than inventing it. Draft a short request they send to a happy customer: one line recalling the specific work or result, then two easy options: answer three questions (what was it like before, what changed, would you recommend it and to whom) or approve a draft. A draft may only be built from the customer's own words (their answers, an email, a review), in the order situation → change → result → recommendation, with no superlatives or numbers they did not give. Before saving, check it is specific, sounds like a person and is long enough to quote; if it is only "Great service!", suggest one follow-up question instead of embellishing. Save with `testimonial_upsert` only after the customer approved the exact text and its use.
+
 ### 2. Make each answer useful
 - **Be specific.** "Small accounting firms in the UK with 2-20 staff" beats "businesses". Ask for an example when an answer is vague.
 - **Keep customer language.** Phrases customers actually use beat polished descriptions; they make posts sound right and match how people search.
@@ -57,9 +59,20 @@ Each write is a change: preview, then confirm.
 - **Lists replace whole lists.** `brand_update` with `target_region`, `industries` or `unique_selling_points` replaces that list; include the items to keep and show the before and after.
 - **Upserts replace by name.** `product_upsert`, `audience_upsert`, `competitor_upsert`, `cta_upsert` (by keyword) and `testimonial_upsert` (by person) overwrite the entry with the same name; show what changes.
 - **Objections and anti-customers** (who is not a fit, top worries before buying) fit in `brand_research_update` as additional information; they help Maggie write honestly.
+- **Operating rules worth recording** in `additional_information` (ask only those that apply): whether AI images, avatars or voice clones are allowed and how AI-assisted content is labelled; accessibility defaults (alt text, captions); the competitor rule (name them, compare, or never mention); sensitive topics and banned words; regulated claims and required disclaimers; how voice or compliance changes by language and market; two or three posts the user loves and one they dislike, each with a line on why.
 
 ### 3. Brand voice
-- `brand_voice_update_style` changes tone, writing style, user intent, positioning or example sentences for one voice. Describe voice in three to five adjectives plus do and don't lines ("short sentences; no exclamation marks; explain jargon").
+**Learn the voice from samples, not adjectives.**
+- Ask for 3-5 pieces the user wrote and likes, about 500 words in total. With less, write only a short provisional voice and say it needs more samples; one sample shows a mood, not a pattern.
+- Best sources first: emails and messages the owner wrote, then call or podcast transcripts, then their social posts, and last website or brochure copy (often edited by someone else). Leave out what is not voice: quotes from other people, legal or press-release wording, one app's formatting habits, typos.
+- Note only patterns that repeat across samples: *voice* (sentence length, rhythm, point of view, how the reader is addressed, contractions, phrases used word for word), *structure* (length, lists or prose, how pieces open and close), *topics* (what recurs, what the author stands for) and *absences* with counts ("no exclamation marks, 0 of 5"). Keep explicit bans apart from things merely absent in a small sample; those are provisional, not rules.
+- Every trait must point to a sample. "Professional yet approachable" with nothing behind it is generic: drop it or ask for a sample that shows it. Name two things that set this voice apart from the competitors in `brand_get`, each with the line that shows it.
+- If samples contradict each other (formal on the site, casual on LinkedIn), ask which channel each applies to; do not average them.
+- Say how sure you are ("2 short posts, no long-form sample, so the blog tone is a guess") and turn each gap into one question.
+- Samples someone else wrote describe a borrowed style; never present their stories or results as the user's own.
+
+**Tools**
+- `brand_voice_update_style` changes tone, writing style, user intent, positioning or example sentences for one voice. Fill it from the analysis: three to five tone adjectives, do lines, never lines as checkable lists (banned words, banned openers, punctuation limits), and two or three example sentences taken from the samples.
 - `brand_voice_create` makes a new voice from the profile (uses an AI generation): pick at least one product, region, audience and topic, using names exactly as in `brand_get`.
 - `brand_voice_set_default` picks the voice new blog posts use.
 - `brand_voice_delete` cannot be undone; name the voice on the card.
@@ -67,7 +80,9 @@ Each write is a change: preview, then confirm.
 A useful test: read a recent post aloud next to the voice description. If they do not match, edit the voice, not just the post.
 
 ### 4. Close
-Call `brand_gaps_get` again and report what was filled and what is still missing, with the one gap worth doing next time.
+- Facts the user mentioned in passing during the session (a new product, a price change, a new region, a competitor won or lost) are offered as updates now, each as a preview. Never change the profile silently.
+- Call `brand_gaps_get` again and report what was filled and what is still missing, with the one gap worth doing next time.
+- Suggest a review about once a quarter, and straight away after a pivot, launch, price change or new market.
 
 ## Output
 ```
@@ -95,6 +110,7 @@ Result:
 - [ ] Every fact (prices, results, claims) is in the user's words or confirmed by them.
 - [ ] Before/after shown for every list replacement and upsert.
 - [ ] Every CTA link came from the user.
+- [ ] Every voice trait is backed by a sample line; provisional traits are labelled.
 - [ ] Gaps re-checked at the end.
 
 ## Guardrails
@@ -119,3 +135,8 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — marketing-context (MIT)
 - AgriciDaniel/claude-ads — ads-dna (MIT)
 - CMO.so internal skill (private) — maggie-project-context
+- charlie947/social-media-skills — voice-builder (MIT)
+- social-media-skills/skills — brand-profile (MIT)
+- alirezarezvani/claude-skills — context-engine (MIT)
+- BrianRWagner/ai-marketing-claude-code-skills — voice-extractor, testimonial-collector (no licence, ideas only)
+- ALwrity/ALwrity — core persona builder (no licence, ideas only)

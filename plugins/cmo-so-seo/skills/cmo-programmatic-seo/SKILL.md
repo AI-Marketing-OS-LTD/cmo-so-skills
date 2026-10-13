@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-programmatic-seo"
 ---
 # Programmatic SEO
@@ -48,11 +48,15 @@ Programmatic SEO builds many pages from one template and a dataset, each aimed a
    - Unique value per page: at least two or three blocks that only this record can fill (local reviews, setup steps for this app, prices, stats, examples).
    - Internal links: a hub page per play linking to every page; each page links to the hub, to 3-5 related pages sharing an attribute, and to the relevant commercial page. Breadcrumbs.
    - Schema per page type (see `cmo-schema-markup`); a self-referencing canonical on every page.
+   - Facts come from the data, wording from the writer: every number, price, name and date comes from a field in the row; generated text only phrases, shortens, localises and orders those facts and never adds a figure. Show the row's facts on the page (a table or spec block) so each claim can be checked.
+   - Vary structure, not adjectives: give rows flags (beginner or expert reader, buying or learning intent, data-rich or data-light) that change section order, which optional sections show and how long the FAQ is. Swapping synonyms does not make pages different.
+   - Freshness per field: record each field's source and last update, set a refresh interval for volatile fields (prices, ratings, availability) and show an "as of" date beside them. A page past its refresh date goes back into review, not straight to republish.
 5. **Apply quality gates before publishing.** Rough rules of thumb, not official thresholds:
    - Uniqueness: if well under half of a page's body text differs from its siblings, treat it as thin. Measure on samples by comparing two pages side by side.
    - Very short pages (a few hundred words with no unique data) need a reason to exist.
    - Standalone test: would this page be worth publishing if it were the only one?
    - Human review of a sample (around 5-10%) before any batch goes live.
+   - Metadata gets its own check, apart from body uniqueness: flag descriptions that open by repeating the title and end on a stock call to action ("Get started today"), equal the title, or carry the title's brand suffix (compare only titles of about 25+ characters). If 10% or more of the set is flagged, revise the formula; at 30% or more, do not publish until it is rewritten.
    - More than about 100 pages without a content review: stop and review. Several hundred at once without explicit sign-off: do not launch.
 6. **Index management.** Only pages that pass the gates go in the XML sitemap (split by play, `lastmod` = real data update). Noindex or merge records with too little data into a parent page. Watch indexed versus submitted counts in Search Console.
 7. **Roll out in batches.** Start with a hand-checked first batch (tens of pages, not hundreds), wait 2-4 weeks, check indexing, impressions and engagement, then expand. Kill rule: pages that remain unindexed or without impressions after a few months get improved, merged or noindexed.
@@ -82,6 +86,8 @@ Programmatic SEO builds many pages from one template and a dataset, each aimed a
 ## Quality bar
 - [ ] Every recommended play is backed by owned or reliable data and evidence of demand.
 - [ ] Three rendered sample pages read as different, useful pages, not one page with a word swapped.
+- [ ] Every figure on a sample page traces to a field in its row; volatile fields show an "as of" date.
+- [ ] Title and description formulas pass the metadata check on the rendered sample.
 - [ ] No page targets the same query as an existing page (cannibalisation check).
 - [ ] Sitemap, canonical and noindex rules are set before launch.
 - [ ] Rollout is staged with a stop point.
@@ -106,5 +112,6 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - coreyhaines31/marketingskills — programmatic-seo (MIT)
 - alirezarezvani/claude-skills — programmatic-seo (MIT)
 - AgriciDaniel/claude-seo — seo-programmatic (MIT)
+- kostja94/marketing-skills — programmatic-seo (MIT)
 - irinabuht12-oss/marketing-skills — programmatic-seo-builder (none; inspiration only)
 - irinabuht12-oss/marketing-skills — programmatic-seo-playbook (none; inspiration only)

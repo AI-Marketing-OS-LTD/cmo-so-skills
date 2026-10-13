@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-international-seo"
 ---
 # International SEO & localisation
@@ -102,6 +102,7 @@ Helps a business that sells in more than one language or country make sure each 
 - `cmo-site-architecture` — where locale folders sit in the URL tree and navigation.
 - `cmo-local-seo` — map and local-pack visibility inside one country.
 - `cmo-schema-markup` — `inLanguage` and localised structured data.
+- `cmo-china-social` — Xiaohongshu, WeChat, Douyin and Weibo for Chinese-speaking audiences.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

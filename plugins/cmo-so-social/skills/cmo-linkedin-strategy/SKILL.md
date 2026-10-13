@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.2.0"
+  version: "0.3.0"
   docs: "https://cmo.so/skills/cmo-linkedin-strategy"
 ---
 # LinkedIn strategy & analytics
@@ -37,14 +37,23 @@ Decides what a person or company stands for on LinkedIn, how much they can susta
    - Starting from few followers: put about half or more of the time into commenting on others (see `cmo-linkedin-engagement`).
    - Always write the minimum viable week (for example one post + three comments) for weeks that go wrong. A skipped week is fine; a skipped month resets momentum.
 4. **Newsletter only if the promise can be paid.** LinkedIn sets eligibility rules for newsletters and has changed them over time; check the current ones in the account. Price six months of issues against the budget, plan a 12-issue arc that rotates pillars, and write a stop rule before issue one.
-5. **Connect it to CMO.so.** Check that the queue (from `social_list`) reflects the pillars and cadence: queued posts per week vs the plan, drafts piling up unapproved, posting paused. Campaign set-up with `campaign_get`: does the objective match the brief, do the idea titles fit the pillars, are all ideas written; from `social_list`, are the start day and posts per day realistic. Changes are made with `cmo-linkedin`; results after it ran belong in `cmo-social-analytics`.
-6. **Read performance honestly.**
+5. **Know what search and AI can see.** At the time of writing (check before relying on it):
+   | LinkedIn surface | Visible to search engines and AI assistants? | Use it for |
+   |---|---|---|
+   | Personal profile (headline, About, experience) | Yes, for name, role and company queries | About in short, answer-first paragraphs that can be quoted alone |
+   | Public articles | Yes | The only feed-adjacent content with off-site and citation value |
+   | Company page | Yes, for brand queries | A description consistent with the website |
+   | Newsletter issues | Only if public | As articles, when public |
+   | Feed posts | Mostly no (login wall) | In-network reach only; never count them as search assets |
+   If the user wants LinkedIn to help AI visibility, plan at least one public article a quarter on a core pillar, and keep name, company and role identical on LinkedIn, the website and other bios.
+6. **Connect it to CMO.so.** Check that the queue (from `social_list`) reflects the pillars and cadence: queued posts per week vs the plan, drafts piling up unapproved, posting paused. Campaign set-up with `campaign_get`: does the objective match the brief, do the idea titles fit the pillars, are all ideas written; from `social_list`, are the start day and posts per day realistic. Changes are made with `cmo-linkedin`; results after it ran belong in `cmo-social-analytics`.
+7. **Read performance honestly.**
    - Define engagement rate explicitly: (reactions + comments + reposts) / impressions. Other definitions differ several-fold; compare only with the user's own history.
    - Use medians, not means (the thresholds below are rules of thumb): one breakout post drags an average away from every typical post. Report the median, the middle half (25th-75th percentile) and mark a post as a breakout only above Q3 + 1.5 x IQR.
    - Under 10 posts: describe, do not conclude.
    - Prefer comment share (comments / all interactions) and the hand-counted success signs over impressions and followers.
    - Compare periods close in time; LinkedIn has changed how it counts impressions.
-7. **Test a pattern before believing it.** A difference seen in past posts is a hypothesis, confounded by topic, timing and effort. A pattern is worth testing only with at least 5 posts on each side and a median gap of roughly 15% or more. Then plan a test: one variable, matched topics, alternate weeks, enough posts per arm (often 8-12+), a stop date and the result that would prove it wrong, written before the first post. If the test needs more posts than the quarter allows, say so; that is the honest answer.
+8. **Test a pattern before believing it.** A difference seen in past posts is a hypothesis, confounded by topic, timing and effort. A pattern is worth testing only with at least 5 posts on each side and a median gap of roughly 15% or more. Then plan a test: one variable, matched topics, alternate weeks, enough posts per arm (often 8-12+), a stop date and the result that would prove it wrong, written before the first post. If the test needs more posts than the quarter allows, say so; that is the honest answer.
 
 ## Output
 1. **Positioning brief**: objective | audience | exclusions | pillars (share, why you, proof) | 90-day success signs.
@@ -82,8 +91,11 @@ Decides what a person or company stands for on LinkedIn, how much they can susta
 - `cmo-social-analytics` — cross-platform measurement and reporting.
 - `cmo-linkedin-posts` — write posts for each pillar.
 - `cmo-linkedin-profile` — align the profile with the brief.
+- `cmo-employee-advocacy` — a programme for staff to share and post about the company.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - alirezarezvani/claude-skills — linkedin-strategy (MIT)
 - alirezarezvani/claude-skills — linkedin-analytics (MIT)
+- aaron-he-zhu/aaron-marketing-skills — platform-norm-profiler, LinkedIn notes (Apache-2.0)
+- kostja94/marketing-skills — linkedin-posts (MIT)
