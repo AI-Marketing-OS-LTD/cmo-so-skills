@@ -49,6 +49,9 @@ Each channel's post costs one AI generation: two channels, two generations. Say 
 | A run of posts on one theme | `series_create` (`brief`, `count` 1-7, `channels`) |
 | Write it yourself | `social_idea_brief` (one brief per channel, each with its limit) → `social_idea_save` (`posts`: `{facebook: "…"}`) |
 
+
+Writing runs in the background: `social_from_article`, `social_plan_days` and `social_idea_write` answer at once with a job (`job_id`, `posts_expected`). Tell the user Maggie is writing and they will be told when it is ready (the app shows a notice and sends a push). When they ask, `social_write_status` says whether it is done, the new post ids and any channel that failed; then `social_list` shows the posts. Do not poll in a loop.
+
 ### 3. Review Facebook drafts
 For each, show the first lines, its id and slot. Check:
 - **First line:** the point lands before Facebook's "See more" (about 80 characters).
@@ -79,7 +82,7 @@ User: "Write a post about our new Saturday brunch for LinkedIn and Facebook."
 
 1. `social_list` → LinkedIn and Facebook connected, approval manual.
 2. Preview `social_idea_add` `{title: "New Saturday brunch", summary: "From 10 to 2, sourdough waffles, local eggs", channels: ["linkedin", "facebook"]}` → confirm.
-3. Preview `social_idea_write` with the same channels, stating it uses two AI generations → confirm → two drafts: a LinkedIn post about why the bakery started brunch, and a short Facebook post ending "What would you order first?".
+3. Preview `social_idea_write` with the same channels, stating it uses two AI generations → confirm → "Maggie is writing them"; when the user asks, `social_write_status` → done, two drafts: a LinkedIn post about why the bakery started brunch, and a short Facebook post ending "What would you order first?".
 4. Show both; the user approves both (`social_approve`, previewed with the public consequence) → each goes out at its own channel's next slot.
 
 ## Quality bar

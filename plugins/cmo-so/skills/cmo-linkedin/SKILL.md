@@ -57,6 +57,9 @@ Approved drafts jump to the front of the queue and go out at the next slots, whe
 | Fill the next days | `social_plan_days` (`days` 1-7, `timezone` as an IANA name such as `Europe/London`; UTC if left out) | AI generations, from the best recent articles, queued in order |
 | User's own idea | `social_idea_add` (`title`, optional `summary`) → `social_idea_write` (`id`) | Adding is free; writing uses a credit and the post joins the queue |
 
+
+Writing runs in the background: `social_from_article`, `social_plan_days` and `social_idea_write` answer at once with a job (`job_id`, `posts_expected`). Tell the user Maggie is writing and they will be told when it is ready (the app shows a notice and sends a push). When they ask, `social_write_status` says whether it is done, the new post ids and any channel that failed; then `social_list` shows the posts. Do not poll in a loop.
+
 In `auto` approval mode, new posts from any of these go out at the next slots without review. Check the mode first and say so before confirming.
 
 Rule of thumb for cadence: steady beats bursts. A few posts a week that each say something useful usually do better than daily posts that repeat the blog. Let posting hours decide the rhythm rather than queueing many posts for one day.
@@ -93,7 +96,7 @@ User: "Make a LinkedIn post from our new wedding-cake guide, and pause everythin
 
 1. `social_list` → connected, posting on, approval `manual`, 2 drafts waiting.
 2. `social_sources_list` `{search: "wedding cake"}` → "How far ahead to order a wedding cake" (id `a91`).
-3. Preview `social_from_article` `{source_id: "a91"}`, AI generation shown → confirm → draft #518 at the front of the queue.
+3. Preview `social_from_article` `{source_id: "a91"}`, AI generation shown → confirm → "Maggie is writing it". A minute later `social_write_status` → done, draft #518 at the front of the queue.
 4. Review #518: hook works alone; it says "most couples order 6 months ahead", which the article does not support. Suggest a fix; preview `social_update_copy` with the full new text → confirm.
 5. User approves: preview `social_approve` `{ids: [518]}`, stating it goes out publicly at Tue 09:00 → confirm.
 6. A pause cannot be scheduled ahead: tell the user to ask for `social_set_paused` `{paused: true}` on the 20th and `{paused: false}` on return.
