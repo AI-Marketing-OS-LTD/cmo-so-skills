@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.4.1",
+	"version": "0.5.0",
 	"updated": "2026-10-14",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -12655,6 +12655,106 @@
 			"skill_file": "plugins/cmo-so/skills/cmo-facebook/SKILL.md"
 		},
 		{
+			"id": "cmo-instagram",
+			"name": "Instagram queue",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Run the Instagram queue in CMO.so: connect an Instagram professional account through its Facebook Page, write posts for it (alone or next to LinkedIn and Facebook), make sure each has its picture or set of 4, review and approve, pause and pace.",
+			"channels": [
+				"instagram"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_list",
+				"instagram_connect_link",
+				"facebook_connect_link",
+				"social_approve",
+				"social_update_copy",
+				"social_skip",
+				"social_restore",
+				"social_move",
+				"social_set_paused",
+				"social_sources_list",
+				"social_from_article",
+				"social_plan_days",
+				"social_idea_add",
+				"social_idea_write",
+				"social_write_status",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_approve_all",
+				"social_image_new",
+				"social_image_status",
+				"social_text_effects",
+				"series_create",
+				"social_approval_mode_set"
+			],
+			"pairs_with": [
+				"cmo-instagram-posts",
+				"cmo-facebook",
+				"cmo-linkedin",
+				"cmo-social-strategy"
+			],
+			"doc": "docs/skills/core/cmo-instagram.md",
+			"url": "https://cmo.so/skills/cmo-instagram",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-facebook, cmo-linkedin",
+					"path": "plugins/cmo-so/skills/cmo-facebook/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-facebook/SKILL.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "instagram-growth, instagram-seo, hashtag-strategy",
+					"path": "skills/instagram-growth/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/instagram-growth/SKILL.md"
+				},
+				{
+					"repo": "coreyhaines31/marketingskills",
+					"skill": "social (carousel frameworks)",
+					"path": "skills/social/references/carousel-frameworks.md",
+					"commit": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+					"license": "MIT",
+					"usage": "inspiration only (ideas)",
+					"url": "https://github.com/coreyhaines31/marketingskills/blob/1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff/skills/social/references/carousel-frameworks.md"
+				}
+			],
+			"triggers": [
+				"connect my Instagram",
+				"post this on Instagram too",
+				"write an Instagram post about our new menu",
+				"show what's waiting for Instagram",
+				"make a carousel for Instagram",
+				"approve the Instagram posts",
+				"pause Instagram this week",
+				"why can't you find my Instagram account?"
+			],
+			"inputs": [
+				"The website (`workspace`) the Instagram account posts for",
+				"Which channels a new post is for: Instagram only, or every connected channel",
+				"One picture or a set of 4, and optionally the style of the words on the picture",
+				"Which drafts to approve, edit or skip"
+			],
+			"outputs": [
+				"A connected Instagram professional account (the right one when several are linked)",
+				"Instagram posts with a caption written for Instagram and a picture (or a set of 4) with a title on it",
+				"A reviewed Instagram queue, paused or running at the chosen pace"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-instagram/SKILL.md"
+		},
+		{
 			"id": "cmo-facebook-posts",
 			"name": "Facebook Page post writing",
 			"category": "social",
@@ -12731,6 +12831,88 @@
 			],
 			"plugin": "cmo-so-social",
 			"skill_file": "plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md"
+		},
+		{
+			"id": "cmo-instagram-posts",
+			"name": "Instagram post writing",
+			"category": "social",
+			"category_name": "Social & community",
+			"summary": "Write Instagram posts where the picture does the stopping and the caption does the keeping: the short title and line on the picture, a set of 4 for steps or tips, and a caption with a hook before '… more', no links and 3-5 hashtags; adapt one idea from LinkedIn, Facebook or the blog, then queue it in CMO.so.",
+			"channels": [
+				"instagram"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_idea_add",
+				"social_idea_write",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_update_copy",
+				"social_image_new",
+				"social_text_effects"
+			],
+			"pairs_with": [
+				"cmo-instagram",
+				"cmo-facebook-posts",
+				"cmo-linkedin-posts",
+				"cmo-humanize"
+			],
+			"doc": "docs/skills/social/cmo-instagram-posts.md",
+			"url": "https://cmo.so/skills/cmo-instagram-posts",
+			"references": [
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "instagram-growth, instagram-seo, carousel-writer, caption-writer, hashtag-strategy, quote-cards-and-text-graphics",
+					"path": "skills/carousel-writer/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/carousel-writer/SKILL.md"
+				},
+				{
+					"repo": "coreyhaines31/marketingskills",
+					"skill": "social (carousel frameworks)",
+					"path": "skills/social/references/carousel-frameworks.md",
+					"commit": "1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/coreyhaines31/marketingskills/blob/1efedbc5148b54b2f0f6c6c9fe0be62e151c7fff/skills/social/references/carousel-frameworks.md"
+				},
+				{
+					"repo": "blacktwist/social-media-skills",
+					"skill": "caption-writer",
+					"path": "skills/caption-writer-sms/SKILL.md",
+					"commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/skills/caption-writer-sms/SKILL.md"
+				}
+			],
+			"triggers": [
+				"write an Instagram caption for this",
+				"turn this LinkedIn post into an Instagram one",
+				"what should the picture say?",
+				"make this a 4-slide carousel",
+				"is this good for Instagram?",
+				"which hashtags should we use?"
+			],
+			"inputs": [
+				"The raw material: an article, a LinkedIn or Facebook post, a photo and a line about it, an offer, or notes",
+				"The one specific detail only the business knows: the place, the product, the number, what a customer said",
+				"Optionally a post the account published before, to match the voice"
+			],
+			"outputs": [
+				"The words on the picture: a title of 2-5 words and a supporting line (or one per picture for a set of 4)",
+				"A caption: hook under 125 characters, short body, a save/share ending, 3-5 hashtags, no links",
+				"The format used and why (one picture or a set of 4), and the alt text",
+				"The post saved in the user's CMO.so Instagram queue, waiting for approval"
+			],
+			"plugin": "cmo-so-social",
+			"skill_file": "plugins/cmo-so-social/skills/cmo-instagram-posts/SKILL.md"
 		}
 	],
 	"excluded": [

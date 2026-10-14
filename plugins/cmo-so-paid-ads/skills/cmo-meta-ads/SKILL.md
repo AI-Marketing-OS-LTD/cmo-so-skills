@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "meta-ads"
-  version: "0.4.1"
+  version: "0.5.0"
   docs: "https://cmo.so/skills/cmo-meta-ads"
 ---
 # Meta (Facebook & Instagram) ads

@@ -1,8 +1,8 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-social",
-	"version": "0.4.1",
-	"description": "CMO.so Social & community skills (20): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"version": "0.5.0",
+	"description": "CMO.so Social & community skills (21): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -29,8 +29,8 @@
 		"com.openai": {
 			"interface": {
 				"displayName": "CMO.so Social & community",
-				"shortDescription": "20 Social & community skills from CMO.so",
-				"longDescription": "CMO.so Social & community skills (20): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"shortDescription": "21 Social & community skills from CMO.so",
+				"longDescription": "CMO.so Social & community skills (21): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 				"developerName": "AI Marketing OS Ltd",
 				"category": "Productivity",
 				"capabilities": [

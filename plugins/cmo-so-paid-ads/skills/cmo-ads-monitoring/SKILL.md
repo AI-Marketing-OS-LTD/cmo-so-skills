@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "google-ads,meta-ads"
-  version: "0.4.1"
+  version: "0.5.0"
   docs: "https://cmo.so/skills/cmo-ads-monitoring"
 ---
 # Ads monitoring & diagnostics

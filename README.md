@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**126 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**128 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -200,6 +200,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-draft-review`](plugins/cmo-so/skills/cmo-draft-review/SKILL.md) | Review Maggie's blog drafts before they go out: read, edit, ask for a rewrite, delete, or publish one now. |
 | [`cmo-team-access`](plugins/cmo-so/skills/cmo-team-access/SKILL.md) | Manage who can do what on a website and the account itself: team permissions, connected apps, API keys and notifications. |
 | [`cmo-facebook`](plugins/cmo-so/skills/cmo-facebook/SKILL.md) | Run the Facebook Page queue in CMO.so: connect a Page, write posts for it (alone or next to LinkedIn), review and approve, pause, and set how often it posts. |
+| [`cmo-instagram`](plugins/cmo-so/skills/cmo-instagram/SKILL.md) | Run the Instagram queue in CMO.so: connect an Instagram professional account through its Facebook Page, write posts for it (alone or next to LinkedIn and Facebook), make sure each has its picture or set of 4, review and approve, pause and pace. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -290,6 +291,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-social-crisis`](plugins/cmo-so-social/skills/cmo-social-crisis/SKILL.md) | Prepare for and run the response when something goes wrong in public: triage and severity, pausing scheduled posts, holding statements, fair moderation, approvals and the stand-down. |
 | [`cmo-social-listening`](plugins/cmo-so-social/skills/cmo-social-listening/SKILL.md) | Watch public conversations for the brand, competitors, buyer questions and rising topics, surface only the few worth a reply or a post, and turn themes into content ideas. |
 | [`cmo-facebook-posts`](plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md) | Write Facebook Page posts that land before 'See more' (question, behind the scenes, tip, before/after, offer, story), adapt one idea from LinkedIn or the blog, then queue them in CMO.so. |
+| [`cmo-instagram-posts`](plugins/cmo-so-social/skills/cmo-instagram-posts/SKILL.md) | Write Instagram posts where the picture does the stopping and the caption does the keeping: the short title and line on the picture, a set of 4 for steps or tips, and a caption with a hook before '… more', no links and 3-5 hashtags; adapt one idea from LinkedIn, Facebook or the blog, then queue it in CMO.so. |
 
 ### Email & lifecycle · `cmo-so-email`
 

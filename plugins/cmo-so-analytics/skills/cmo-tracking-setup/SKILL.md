@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "ga4,gtm,google-ads,meta-ads"
-  version: "0.4.1"
+  version: "0.5.0"
   docs: "https://cmo.so/skills/cmo-tracking-setup"
 ---
 # Tracking & UTM setup
