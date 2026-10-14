@@ -12,7 +12,7 @@ metadata:
 ---
 # Connect to CMO.so
 
-CMO.so runs Maggie, an AI marketing assistant that writes and publishes blog posts to the user's website, drafts LinkedIn posts for approval, and reports how the site does in Google Search and in AI answers. Agents reach it through the CMO.so MCP server at `https://mcp.cmo.so/mcp`. This skill gets the agent connected, proves the connection works with a free read, and picks the website every other CMO.so skill acts on.
+CMO.so runs Maggie, an AI marketing assistant that writes and publishes blog posts to the user's website, drafts LinkedIn and Facebook Page posts for approval, and reports how the site does in Google Search and in AI answers. Agents reach it through the CMO.so MCP server at `https://mcp.cmo.so/mcp`. This skill gets the agent connected, proves the connection works with a free read, and picks the website every other CMO.so skill acts on.
 
 ## When to use
 - Any CMO.so tool is missing from the agent, or a tool answers that the user must sign in or that the sign-in expired.

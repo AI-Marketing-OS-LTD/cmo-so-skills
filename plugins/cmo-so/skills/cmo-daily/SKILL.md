@@ -28,25 +28,26 @@ A five-minute routine for the person who owns the website's marketing. Maggie lo
 ## Workflow
 
 ### 1. Read the inbox
-Call `inbox_list` (no arguments). Each item has a `type`, `id`, `title` and a shortened `body`. If it is empty, say so in one sentence ("Nothing is waiting for you on example.com today.") and offer the weekly report. Stop there; do not invent work.
+Call `inbox_list` (no arguments). In the CMO.so app the same messages open from "Inbox" at the top of the Home tab (Home also shows usage, website health and performance). Each item has a `type`, `id`, `title` and a shortened `body`. If it is empty, say so in one sentence ("Nothing is waiting for you on example.com today.") and offer the weekly report. Stop there; do not invent work.
 
 ### 2. Triage
 Sort each item into one bucket and order the buckets like this, fires first:
 
 | Order | Bucket | Why first | Read with |
 |---|---|---|---|
-| 1 | Failures (a post or LinkedIn update that failed) | Something the user expected did not happen | the message in the inbox item |
-| 2 | Setup blockers (not verified, not connected, LinkedIn disconnected) | Nothing publishes until fixed | `setup_status_get` |
-| 3 | LinkedIn drafts to review | They wait on the user; the queue stalls | `social_list` |
+| 1 | Failures (a blog post, or a LinkedIn or Facebook post, that failed) | Something the user expected did not happen | the message in the inbox item |
+| 2 | Setup blockers (not verified, not connected, a social channel disconnected or a Facebook Page not picked) | Nothing publishes until fixed | `setup_status_get` |
+| 3 | Social drafts to review (per channel) | They wait on the user; the queue stalls | `social_list` |
 | 4 | Pauses and low quota | Facts to know, often intentional | inbox item, `social_list` (`posting_paused`), `quota_get` |
 
 Rules for the triage:
 - Group drafts: "4 LinkedIn drafts to review" is one line, not four.
 - For a failure, quote the tool's message as given. Do not guess the cause beyond it. Then sort it using only what the message says (if unclear, say so):
   - *Rate-limited by the platform:* not a failure to fix; say when it will be tried again only if the message says so.
-  - *Account disconnected or token expired:* every later post for that account fails too until the user reconnects. List it first, with the reconnect step (`linkedin_connect_link` through `cmo-linkedin`).
+  - *Account disconnected or token expired:* every later post for that account fails too until the user reconnects. List it first, with the reconnect step (`linkedin_connect_link` through `cmo-linkedin`, `facebook_connect_link` through `cmo-facebook`).
   - *Rejected content* (too long, unsupported media, duplicate): it did not go out and needs an edit. Name the post and the reason; fix the cause before it is re-queued in `cmo-linkedin`.
-  - *Not confirmed* (timeout, server error, no confirmation): the post may already be live. Ask the user to check their LinkedIn activity first; only if it is not there, offer to restore or re-queue it. Never re-send because a result is unclear: a duplicate is public.
+  - *Not confirmed* (timeout, server error, no confirmation): the post may already be live. Ask the user to check the LinkedIn activity or Facebook Page first; only if it is not there, offer to restore or re-queue it. Never re-send because a result is unclear: a duplicate is public.
+- A website that is not verified yet can still post to LinkedIn (a few free posts per account; `social_list` → `free_posts`), so do not list verification as a LinkedIn blocker. It still blocks blog publishing.
 - For setup, call `setup_status_get` and name only the single next step (for example "verify the site by email"), then offer `cmo-website-setup`.
 - For quota, call `quota_get` (no arguments, read-only): blog posts left for this website today, this month and in total, with limits and plan only if the user may see them. Report it when posts are nearly used up or when the user asks why nothing was published today ("0 of 2 posts left today; resets tomorrow"). If it is healthy, skip it.
 - For quota and pauses, state the fact. Do not suggest buying anything.

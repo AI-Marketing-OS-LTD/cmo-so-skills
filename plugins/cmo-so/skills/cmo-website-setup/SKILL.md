@@ -1,6 +1,6 @@
 ---
 name: cmo-website-setup
-description: "Get a website ready in CMO.so: verify ownership by email or DNS, detect the platform, and hand off the publishing connection to a computer. Use when the user says things like \"add my website to CMO.so\"; \"verify my website\"; \"I didn't get the verification code\"; \"how do I connect WordPress?\"; \"what platform is my site on?\"; \"why isn't Maggie publishing to my site?\". Needs the CMO.so MCP server."
+description: "Get a website ready in CMO.so: verify ownership by email, DNS, the WordPress plugin or by asking the team, detect the platform, and hand off the publishing connection to a computer. Use when the user says things like \"add my website to CMO.so\"; \"verify my website\"; \"I didn't get the verification code\"; \"how do I connect WordPress?\"; \"what platform is my site on?\"; \"why isn't Maggie publishing to my site?\". Needs the CMO.so MCP server."
 license: MIT
 metadata:
   category: "core"
@@ -37,7 +37,10 @@ Choose the route with one question: "Do you have an email address at example.com
 |---|---|---|
 | User has a mailbox at the site's domain | Email code | Minutes |
 | No such mailbox, but DNS access (registrar, Cloudflare, host panel) | DNS TXT record | Minutes to hours |
-| Neither | Ask whoever manages the domain or email; or send the DNS steps to them via `handoff_to_desktop` | Varies |
+| WordPress site, user can install a plugin | WordPress plugin: install the CMO.so connector and add its key; that verifies and connects in one go | Minutes |
+| None of these | "Ask us": the user emails maggie@cmo.so or messages the team on WhatsApp from the app, and the team verifies it by hand; or send the DNS steps to whoever manages the domain via `handoff_to_desktop` | Hours |
+
+The WordPress-plugin and "Ask us" routes are in the CMO.so app only (Home → "Verify my domain"); there is no tool for them. Point the user there, use `wordpress_plugin_get` to check the plugin and key afterwards, then `setup_status_get` to confirm.
 
 **Email code** (both are changes: preview, then confirm):
 1. `verify_email_start` with the address at the site's domain. Free providers (Gmail, Outlook and similar) are refused; that is by design, not an error to work around.

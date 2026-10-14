@@ -871,7 +871,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"profile_get",
@@ -974,7 +974,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"inbox_list",
@@ -1074,7 +1074,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"results_summary",
@@ -1083,7 +1083,8 @@
 				"ai_visibility_get",
 				"content_performance_list",
 				"inbox_list",
-				"report_overview_get"
+				"report_overview_get",
+				"seo_audit_get"
 			],
 			"pairs_with": [
 				"cmo-client-report",
@@ -1304,7 +1305,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1741,7 +1742,7 @@
 			"name": "Website setup & verification",
 			"category": "core",
 			"category_name": "CMO.so core (MCP)",
-			"summary": "Get a website ready in CMO.so: verify ownership by email or DNS, detect the platform, and hand off the publishing connection to a computer.",
+			"summary": "Get a website ready in CMO.so: verify ownership by email, DNS, the WordPress plugin or by asking the team, detect the platform, and hand off the publishing connection to a computer.",
 			"channels": [
 				"cmo.so",
 				"wordpress",
@@ -1752,7 +1753,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"setup_status_get",

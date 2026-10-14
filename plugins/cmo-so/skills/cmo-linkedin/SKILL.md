@@ -23,6 +23,7 @@ Maggie drafts LinkedIn posts, mostly from the blog articles she publishes, and p
 - Call `social_list` first: connection, paused or not, approval mode, the queue (drafts and queued posts with when each goes out), campaigns, recent posts. Its `channels` list shows every channel (LinkedIn, a Facebook Page) and each queued post has its `channel`.
 - A website can post to LinkedIn and a Facebook Page. The writing tools take `channels`: `["linkedin"]` when the user asks for a LinkedIn post; leave it out when they want "a social post" or "everywhere" (one post per connected channel, each written for it, one AI generation each). For the Facebook side use `cmo-facebook`.
 - Not connected, or a post failed because the connection lapsed: `linkedin_connect_link` returns a short-lived link to open in a browser (preview, then confirm; the result says how long it is valid). Never ask for the LinkedIn password.
+- The website does not need to be verified to post on LinkedIn: before verification each account gets a few free posts (`social_list` → `free_posts`: limit, used, remaining). When they run out, verifying the site (`cmo-website-setup`) unlocks the plan's posting.
 - Setup unfinished: `social_setup_get` lists the missing steps (formats, posting hours, image style, voice). Formats, hours and style are finished in the CMO.so app.
 - Ask the timezone once if you will plan days.
 

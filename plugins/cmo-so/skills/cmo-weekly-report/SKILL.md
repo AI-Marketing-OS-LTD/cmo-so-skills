@@ -32,6 +32,7 @@ A plain-language briefing on what Maggie did and what it achieved: posts publish
 3. `ai_visibility_get`: average score, watched prompts with score, position and cited pages, 30-day trend. If it reports no checks yet, that is "not measured", not zero.
 4. `content_performance_list` with `sort: "clicks"` (top articles), then with `band: "no_traffic"` (tracked articles not getting traffic yet). Each item carries its band (`no_data`, `no_traffic`, `emerging`, `strong`) and a suggested `next_step`; `counts` gives how many articles sit in each band.
 5. `inbox_list`: anything waiting.
+6. Optionally `seo_audit_get` (the app's "Website health"): PageSpeed scores and top technical issues. Mention it only if a score dropped or an issue is new; if it is out of date, say so rather than starting `seo_audit_run` unasked.
 
 For "summarise the month", a quarter, or any 30 / 90-day view, add `report_overview_get` with `range: "30d"` or `"90d"` (`"7d"` also works): blog posts published, split by topic, against the period before, plus Search Console totals, AI visibility and LinkedIn posts sent. Use it as the backbone of the "This week" and "Search" sections for that period and keep `results_summary` for the quick weekly view; do not mix periods from the two in one line.
 
