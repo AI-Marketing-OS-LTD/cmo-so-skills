@@ -28,7 +28,7 @@ A plain-language briefing on what Maggie did and what it achieved: posts publish
 
 ### 1. Gather (read-only, no confirmation needed)
 1. `results_summary` with `days: "7"` (or `"30"`): posts published, ideas waiting, AI visibility average.
-2. `gsc_status_get`. If connected, `gsc_performance_get` with `period: "30d"` (it also accepts `"90d"` and `"12m"`, nothing shorter): totals for clicks, impressions, CTR and average position, the previous period and the change, the best day, and up to eight top pages. If it answers `needs_sync`, say the numbers have not been fetched yet. If not connected, note it and continue.
+2. `gsc_status_get`. If connected, `gsc_performance_get` with `period: "30d"` (it also accepts `"90d"` and `"12m"`, nothing shorter): totals for clicks, impressions, CTR and average position, the previous period and the change, the best day, and up to eight top pages. If it answers `needs_sync`, say the numbers have not been fetched yet. If not connected, note it, offer `gsc_connect_link` once (the user signs in with the Google account that manages the site in Search Console), and continue.
 3. `ai_visibility_get`: average score, watched prompts with score, position and cited pages, 30-day trend. If it reports no checks yet, that is "not measured", not zero.
 4. `content_performance_list` with `sort: "clicks"` (top articles), then with `band: "no_traffic"` (tracked articles not getting traffic yet). Each item carries its band (`no_data`, `no_traffic`, `emerging`, `strong`) and a suggested `next_step`; `counts` gives how many articles sit in each band.
 5. `inbox_list`: anything waiting.

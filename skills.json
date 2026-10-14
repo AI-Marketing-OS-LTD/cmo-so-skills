@@ -1074,7 +1074,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"results_summary",
@@ -1084,7 +1084,8 @@
 				"content_performance_list",
 				"inbox_list",
 				"report_overview_get",
-				"seo_audit_get"
+				"seo_audit_get",
+				"gsc_connect_link"
 			],
 			"pairs_with": [
 				"cmo-client-report",
@@ -1423,10 +1424,11 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"gsc_status_get",
+				"gsc_connect_link",
 				"gsc_queries_get",
 				"gsc_performance_get",
 				"content_performance_list",

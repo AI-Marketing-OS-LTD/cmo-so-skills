@@ -22,7 +22,7 @@ The fastest SEO gains usually come from pages Google already shows: queries with
 
 ## Before you start
 - Know the `workspace`.
-- `gsc_status_get`. If Search Console is not connected, say so, give `dashboard_link` with `page: "autopilot"`, and continue with content performance and the technical audit only.
+- `gsc_status_get`. If Search Console is not connected, say so and offer `gsc_connect_link` (preview, then confirm): a Google sign-in link for the user to open with the Google account that manages the site in Search Console; in the app it is Home → Performance → SEO → Connect. If that account cannot see the site, the sign-in page says which account and how to add it as a user. Meanwhile continue with content performance and the technical audit only.
 - If `synced_at` is more than a day or two old, offer `gsc_sync` to fetch fresh numbers from Google now (no arguments; a change, so preview then confirm; at most once an hour per website). If the user declines, mention the date the numbers are from.
 
 ## Workflow
