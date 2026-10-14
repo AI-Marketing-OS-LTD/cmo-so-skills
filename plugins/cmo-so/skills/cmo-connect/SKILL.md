@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.5.0"
+  version: "0.5.1"
   docs: "https://cmo.so/skills/cmo-connect"
 ---
 # Connect to CMO.so

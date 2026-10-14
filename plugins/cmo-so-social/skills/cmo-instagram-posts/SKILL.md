@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.5.0"
+  version: "0.5.1"
   docs: "https://cmo.so/skills/cmo-instagram-posts"
 ---
 # Instagram post writing
@@ -39,7 +39,9 @@ A set is one story: each picture is one beat and makes sense on its own if scree
 - **Line:** 3 to 9 words that say why it matters.
 - **Set of 4:** a title and a line per picture, in story order, each different; the same length roughly, so they read as one set.
 - Never on the picture: prices, dates, phone numbers, web addresses, claims you can't back, other people's names.
-- Pick the words' style with `social_text_effects` only when the user cares; otherwise Maggie picks one that reads on any background.
+- Pick the words' style with `social_text_effects` only when the user cares; otherwise Maggie picks one of the brand's that reads on any background.
+- A list post can be a picture of the list itself (`style: infographic`: the title and 3-5 items, no AI picture); a post with one real number can show it big (the number must be in the post).
+- Already made and the words are off? `social_picture_edit` with the new words (all pictures, in order) re-sets them for free; no new picture needed.
 
 ### 3. The caption
 - **Hook (first line, under 125 characters):** different from the title on the picture: the picture says *what*, the hook says *why you should care*. Put the main keyword people would search for in it (Instagram captions are searchable, and Google indexes public business posts).

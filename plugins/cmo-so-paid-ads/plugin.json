@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-paid-ads",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "CMO.so Paid ads skills (11): Paid ads strategy, Paid ads audit, Google Ads, Meta (Facebook & Instagram) ads, LinkedIn ads, Ad creative…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

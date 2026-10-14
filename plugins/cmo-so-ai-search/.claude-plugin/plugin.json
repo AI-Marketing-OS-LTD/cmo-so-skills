@@ -1,6 +1,6 @@
 {
 	"name": "cmo-so-ai-search",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "CMO.so AI search (GEO / AEO) skills (6): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

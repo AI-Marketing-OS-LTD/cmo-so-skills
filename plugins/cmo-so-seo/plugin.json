@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-seo",
-	"version": "0.5.0",
+	"version": "0.5.1",
 	"description": "CMO.so SEO skills (18): SEO audit, Technical SEO, On-page SEO, Keyword research, Keyword clustering & topic map, SEO content brief…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
