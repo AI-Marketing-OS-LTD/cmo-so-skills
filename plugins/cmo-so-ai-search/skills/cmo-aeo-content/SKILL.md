@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search,blog"
-  version: "0.5.2"
+  version: "0.5.3"
   docs: "https://cmo.so/skills/cmo-aeo-content"
 ---
 # Answer-ready content (AEO)

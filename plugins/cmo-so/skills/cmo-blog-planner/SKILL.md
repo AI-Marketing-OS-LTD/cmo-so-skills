@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,blog"
-  version: "0.5.2"
+  version: "0.5.3"
   docs: "https://cmo.so/skills/cmo-blog-planner"
 ---
 # Blog planner

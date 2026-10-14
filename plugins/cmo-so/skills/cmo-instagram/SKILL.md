@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.5.2"
+  version: "0.5.3"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
@@ -76,7 +76,8 @@ For each, show the first line, its id, its picture (or set) and slot. Check:
 Approve with `social_approve`; change text with `social_update_copy`; skip or restore with `social_skip` / `social_restore`; reorder with `social_move`; `social_approve_all` with `channel: "instagram"`.
 
 ### 5. After it's out
-Instagram doesn't let apps edit or delete a post. A posted Instagram post is opened on Instagram to change or delete it; never promise to take it down from CMO.so.
+- **How it's doing**: `social_post_insights` gives a posted post's views, reach, likes, comments, saves and shares. Judge a post by saves and shares per reach, not likes.
+- **Change or delete**: Instagram can't edit a caption. In the app (Posted → the post) the user can delete it from Instagram, or change the text and republish (the old post comes down with its likes and comments, the new one goes out). An account connected before deleting was allowed must reconnect Instagram once first. Maggie doesn't delete posts herself: point the user to the app.
 
 ### 6. Pause and pace
 `social_set_paused` with `channel: "instagram"` pauses only Instagram. How often is set in the app (Social → Instagram → settings); three a week is a good start (most of the growth comes from showing up steadily).
@@ -111,7 +112,7 @@ User: "Turn our receipts article into an Instagram carousel."
 - Follow Instagram's Community Guidelines: no misleading claims, no engagement bait, no reposting other people's content as the account's own, no tagging people who didn't agree.
 - Never invent numbers, reviews, customers or results, in the caption or in the picture.
 - If a call errors or times out, read `social_list` before retrying; a blind retry can post twice.
-- Instagram posts can't be deleted or changed from CMO.so once out; say so before posting.
+- A posted Instagram post can only be changed by deleting and posting again (its likes and comments are lost); say so before posting.
 
 ## Related skills
 - `cmo-instagram-posts` — the caption and the words on the picture.
