@@ -3,7 +3,7 @@
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
 	"version": "0.4.1",
-	"updated": "2026-10-13",
+	"updated": "2026-10-14",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
 		"url": "https://cmo.so",
@@ -1304,7 +1304,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1334,6 +1334,7 @@
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
+				"cmo-facebook",
 				"cmo-social-strategy",
 				"cmo-social-crisis"
 			],
@@ -12553,6 +12554,178 @@
 			],
 			"plugin": "cmo-so-cro",
 			"skill_file": "plugins/cmo-so-cro/skills/cmo-checkout-cro/SKILL.md"
+		},
+		{
+			"id": "cmo-facebook",
+			"name": "Facebook Page queue",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Run the Facebook Page queue in CMO.so: connect a Page, write posts for it (alone or next to LinkedIn), review and approve, pause, and set how often it posts.",
+			"channels": [
+				"facebook"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_list",
+				"facebook_connect_link",
+				"social_approve",
+				"social_update_copy",
+				"social_skip",
+				"social_restore",
+				"social_move",
+				"social_set_paused",
+				"social_sources_list",
+				"social_from_article",
+				"social_plan_days",
+				"social_idea_add",
+				"social_idea_write",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_approve_all",
+				"series_create",
+				"social_approval_mode_set"
+			],
+			"pairs_with": [
+				"cmo-facebook-posts",
+				"cmo-linkedin",
+				"cmo-social-strategy"
+			],
+			"doc": "docs/skills/core/cmo-facebook.md",
+			"url": "https://cmo.so/skills/cmo-facebook",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-linkedin",
+					"path": "plugins/cmo-so/skills/cmo-linkedin/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-linkedin/SKILL.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "facebook-strategy",
+					"path": "skills/facebook-strategy/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/facebook-strategy/SKILL.md"
+				},
+				{
+					"repo": "oliverames/meta-mcp-server",
+					"skill": "Page publishing and permissions",
+					"path": "README.md",
+					"commit": "4b84d439d8b33c919077bbbf5707c71fa4810f4b",
+					"license": "MIT",
+					"usage": "inspiration only (ideas)",
+					"url": "https://github.com/oliverames/meta-mcp-server/blob/4b84d439d8b33c919077bbbf5707c71fa4810f4b/README.md"
+				}
+			],
+			"triggers": [
+				"connect my Facebook page",
+				"post this on Facebook too",
+				"write a Facebook post about our new menu",
+				"show what's waiting for Facebook",
+				"approve the Facebook posts",
+				"pause Facebook while I'm away",
+				"post on Facebook three times a week",
+				"write it for LinkedIn and Facebook"
+			],
+			"inputs": [
+				"The website (`workspace`) the Facebook Page posts for",
+				"Which channels a new post is for: Facebook only, or every connected channel",
+				"Which drafts to approve, edit or skip",
+				"How often the Page should post (2, 3 or 5 a week)"
+			],
+			"outputs": [
+				"A connected Facebook Page (the right one when the user manages several)",
+				"Facebook posts written for the Page, waiting for approval or queued",
+				"A reviewed Facebook queue, paused or running at the chosen pace"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-facebook/SKILL.md"
+		},
+		{
+			"id": "cmo-facebook-posts",
+			"name": "Facebook Page post writing",
+			"category": "social",
+			"category_name": "Social & community",
+			"summary": "Write Facebook Page posts that land before 'See more' (question, behind the scenes, tip, before/after, offer, story), adapt one idea from LinkedIn or the blog, then queue them in CMO.so.",
+			"channels": [
+				"facebook"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_idea_add",
+				"social_idea_write",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_update_copy"
+			],
+			"pairs_with": [
+				"cmo-facebook",
+				"cmo-linkedin-posts",
+				"cmo-humanize"
+			],
+			"doc": "docs/skills/social/cmo-facebook-posts.md",
+			"url": "https://cmo.so/skills/cmo-facebook-posts",
+			"references": [
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "facebook-strategy, cross-platform-repurposing",
+					"path": "skills/facebook-strategy/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/facebook-strategy/SKILL.md"
+				},
+				{
+					"repo": "blacktwist/social-media-skills",
+					"skill": "caption-writer, post-writer",
+					"path": "skills/caption-writer-sms/SKILL.md",
+					"commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/skills/caption-writer-sms/SKILL.md"
+				},
+				{
+					"repo": "ALwrity/ALwrity",
+					"skill": "Facebook post templates",
+					"path": "backend/api/facebook_writer/README.md",
+					"commit": "a7e860782907b84ed654b369131fc83ff3a21ca9",
+					"license": "none",
+					"usage": "inspiration only (no license: ideas, not text)",
+					"url": "https://github.com/ALwrity/ALwrity/blob/a7e860782907b84ed654b369131fc83ff3a21ca9/backend/api/facebook_writer/README.md"
+				}
+			],
+			"triggers": [
+				"write a Facebook post about this",
+				"turn this LinkedIn post into a Facebook one",
+				"is this good for our Facebook page?",
+				"give me a Facebook post with a question at the end",
+				"a behind-the-scenes post for Facebook",
+				"shorter, friendlier, for Facebook"
+			],
+			"inputs": [
+				"The raw material: an article, a LinkedIn post, an offer, a photo and a line about it, or notes",
+				"The local, specific details only the business knows: the street, the product, what a customer said",
+				"Optionally a post the Page published before, to match the voice"
+			],
+			"outputs": [
+				"A Facebook Page post with a first line that works alone, a short body and a real question or one next step",
+				"The format used and why, plus a note on the picture or link",
+				"The post saved in the user's CMO.so Facebook queue, waiting for approval"
+			],
+			"plugin": "cmo-so-social",
+			"skill_file": "plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md"
 		}
 	],
 	"excluded": [

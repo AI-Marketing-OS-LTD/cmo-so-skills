@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**124 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**126 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -199,6 +199,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-autopilot`](plugins/cmo-so/skills/cmo-autopilot/SKILL.md) | Tune how Maggie publishes: posts per day, pause and resume, rewrite policy for old posts, and the content guard that blocks off-brand text. |
 | [`cmo-draft-review`](plugins/cmo-so/skills/cmo-draft-review/SKILL.md) | Review Maggie's blog drafts before they go out: read, edit, ask for a rewrite, delete, or publish one now. |
 | [`cmo-team-access`](plugins/cmo-so/skills/cmo-team-access/SKILL.md) | Manage who can do what on a website and the account itself: team permissions, connected apps, API keys and notifications. |
+| [`cmo-facebook`](plugins/cmo-so/skills/cmo-facebook/SKILL.md) | Run the Facebook Page queue in CMO.so: connect a Page, write posts for it (alone or next to LinkedIn), review and approve, pause, and set how often it posts. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -288,6 +289,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-reddit`](plugins/cmo-so-social/skills/cmo-reddit/SKILL.md) | Earn an honest, disclosed presence in the subreddits where buyers ask questions: map each community's rules, contribute first, draft launch posts and replies, and correct outdated threads AI answers rely on. |
 | [`cmo-social-crisis`](plugins/cmo-so-social/skills/cmo-social-crisis/SKILL.md) | Prepare for and run the response when something goes wrong in public: triage and severity, pausing scheduled posts, holding statements, fair moderation, approvals and the stand-down. |
 | [`cmo-social-listening`](plugins/cmo-so-social/skills/cmo-social-listening/SKILL.md) | Watch public conversations for the brand, competitors, buyer questions and rising topics, surface only the few worth a reply or a post, and turn themes into content ideas. |
+| [`cmo-facebook-posts`](plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md) | Write Facebook Page posts that land before 'See more' (question, behind the scenes, tip, before/after, offer, story), adapt one idea from LinkedIn or the blog, then queue them in CMO.so. |
 
 ### Email & lifecycle · `cmo-so-email`
 

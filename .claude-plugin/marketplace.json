@@ -25,10 +25,10 @@
 				"api",
 				"blog",
 				"cmo.so",
+				"facebook",
 				"google-search",
 				"linkedin",
-				"shopify",
-				"wix"
+				"shopify"
 			]
 		},
 		{
@@ -112,7 +112,7 @@
 		{
 			"name": "cmo-so-social",
 			"source": "./plugins/cmo-so-social",
-			"description": "CMO.so Social & community skills (19): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Installs the cmo-so core plugin with it.",
+			"description": "CMO.so Social & community skills (20): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Installs the cmo-so core plugin with it.",
 			"version": "0.4.1",
 			"category": "productivity",
 			"keywords": [
@@ -265,7 +265,7 @@
 		{
 			"name": "cmo-so-all",
 			"source": "./plugins/cmo-so-all",
-			"description": "All 124 CMO.so marketing skills in one install: core, Strategy & research, SEO, AI search (GEO / AEO), Content & copy, Social & community, Email & lifecycle, Paid ads, Conversion (CRO), Analytics & reporting, Growth & go-to-market, Sales & revenue, Images & video.",
+			"description": "All 126 CMO.so marketing skills in one install: core, Strategy & research, SEO, AI search (GEO / AEO), Content & copy, Social & community, Email & lifecycle, Paid ads, Conversion (CRO), Analytics & reporting, Growth & go-to-market, Sales & revenue, Images & video.",
 			"version": "0.4.1",
 			"category": "productivity",
 			"keywords": [

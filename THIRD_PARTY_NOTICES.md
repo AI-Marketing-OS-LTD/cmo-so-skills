@@ -549,7 +549,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## blacktwist/social-media-skills
 
-Used by 4 skill(s). https://github.com/blacktwist/social-media-skills
+Used by 5 skill(s). https://github.com/blacktwist/social-media-skills
 
 MIT License
 
@@ -1665,7 +1665,7 @@ Distributed on an "AS IS" basis, without warranties or conditions of any kind.
 
 ## social-media-skills/skills
 
-Used by 10 skill(s). https://github.com/social-media-skills/skills
+Used by 12 skill(s). https://github.com/social-media-skills/skills
 
 MIT License
 

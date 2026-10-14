@@ -20,7 +20,8 @@ Maggie drafts LinkedIn posts, mostly from the blog articles she publishes, and p
 - Not for: a quick "what's waiting today" pass across blog and LinkedIn (`cmo-daily`); writing standalone LinkedIn copy with hooks and formats (`cmo-linkedin-posts`); deciding which social channels to use and why (`cmo-social-strategy`).
 
 ## Before you start
-- Call `social_list` first: connection, paused or not, approval mode, the queue (drafts and queued posts with when each goes out), campaigns, recent posts.
+- Call `social_list` first: connection, paused or not, approval mode, the queue (drafts and queued posts with when each goes out), campaigns, recent posts. Its `channels` list shows every channel (LinkedIn, a Facebook Page) and each queued post has its `channel`.
+- A website can post to LinkedIn and a Facebook Page. The writing tools take `channels`: `["linkedin"]` when the user asks for a LinkedIn post; leave it out when they want "a social post" or "everywhere" (one post per connected channel, each written for it, one AI generation each). For the Facebook side use `cmo-facebook`.
 - Not connected, or a post failed because the connection lapsed: `linkedin_connect_link` returns a short-lived link to open in a browser (preview, then confirm; the result says how long it is valid). Never ask for the LinkedIn password.
 - Setup unfinished: `social_setup_get` lists the missing steps (formats, posting hours, image style, voice). Formats, hours and style are finished in the CMO.so app.
 - Ask the timezone once if you will plan days.
@@ -72,7 +73,7 @@ Use a campaign for a bounded push: a launch, an event, an announcement, or an ev
 A good brief names: the audience, the one thing they should do or remember, the proof points available, dates that matter, and what not to say.
 
 ### 5. Pause, resume, approval mode
-- `social_set_paused` pauses or resumes all posting (holidays, a crisis, a sensitive news day). Approved posts wait while paused.
+- `social_set_paused` pauses or resumes posting: `channel: "linkedin"` for LinkedIn only, no `channel` for every channel (holidays, a crisis, a sensitive news day). Approved posts wait while paused.
 - `social_approval_mode_set` (`manual` or `auto`): auto means future drafts go out at posting times without review. Only on an explicit request; restate the consequence before confirming. Recommend manual for new accounts, regulated industries, or any recent off-brand draft.
 - Base any suggestion about the mode on the user's own record in `social_list`. Mention auto only after the user has approved nearly all recent drafts unchanged (roughly nine in ten over at least a few weeks) with none off-brand; explain it and leave the decision to them.
 - The reverse holds too: if the user keeps rejecting or heavily rewriting one kind of post (a format, a source, a campaign), stop producing more of it. Change the formats with `social_formats_set` (`keys`: the full list to keep, read from `social_setup_get`) or relearn the voice from a post the user likes with `social_voice_learn` (`post_text`; it becomes the default voice), each previewed and confirmed, instead of queuing drafts they will reject (`cmo-linkedin-posts` for format choice).
@@ -122,6 +123,7 @@ Result:
 ## Related skills
 - `cmo-daily` — quick daily approvals.
 - `cmo-linkedin-posts` — craft individual posts and hooks.
+- `cmo-facebook` — the same queue for a Facebook Page; one idea can go to both.
 - `cmo-social-strategy` — channel choice and themes.
 - `cmo-blog-planner` — the articles that feed LinkedIn posts.
 - `cmo-social-crisis` — pausing scheduled posts and responding when something goes wrong in public.
