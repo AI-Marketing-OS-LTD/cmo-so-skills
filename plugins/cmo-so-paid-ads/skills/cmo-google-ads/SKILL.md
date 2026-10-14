@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "google-ads"
-  version: "0.5.1"
+  version: "0.5.2"
   docs: "https://cmo.so/skills/cmo-google-ads"
 ---
 # Google Ads

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.5.1"
+  version: "0.5.2"
   docs: "https://cmo.so/skills/cmo-page-seo"
 ---
 # On-page SEO

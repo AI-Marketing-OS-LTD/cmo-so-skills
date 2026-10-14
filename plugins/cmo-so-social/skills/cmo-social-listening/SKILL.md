@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "reddit,x,linkedin,bluesky,mastodon,youtube,tiktok,forums"
-  version: "0.5.1"
+  version: "0.5.2"
   docs: "https://cmo.so/skills/cmo-social-listening"
 ---
 # Social listening and topic pulse

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.5.1"
+  version: "0.5.2"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
@@ -58,6 +58,7 @@ Writing runs in the background (`social_write_status` when the user asks; don't 
 - **The words' style**: `social_text_effects` lists the styles (sticker, outline, 3D, neon, highlighter…); pass one as `text_effect`, or leave it out and Maggie picks one of the brand's 5 that suits the picture (calm on paper or a band, strong on a busy photo, bold on big words).
 - **The picture style**: the brand has 3 (`social_look`), and Maggie takes turns so the grid doesn't repeat: `photo_headline` (a photo with the words on a band), `editorial` (the photo framed, words on paper), `duotone`, `illustrated`, `bold_type` (big words on the brand colour) and `infographic` (a numbered list or one big number from the post). Pass `style` to `social_image_new` for one; `bold_type` and `infographic` make no AI picture and cost nothing.
 - **Change a picture for free**: when a post's picture is `editable` (in `social_list`), `social_picture_edit` changes its words, style, text style or a set's order, or drops a picture, in seconds and without a new generation. Prefer it over a new picture when the user wants different words or a different look.
+- **The user's own photo**: a post whose picture is their own photo (`own_photo`) can get a title and a line in their look with `social_photo_words` (`real_photo`: framed, words below; `product_hero`: words on a card). Free; then `social_picture_edit` changes the words.
 - **The check**: every new picture is read back small by a vision check (can the words be read in the feed, is anything invented). A picture where Maggie saw something that may be invented has `hold`: it never goes out by itself, even with automatic approval. Show the note; the user approves it (or asks for a new picture).
 - **The brand's look**: `social_look` shows the 3 styles, 5 text styles, fonts, colours, the description used for new photos and things never to show; `social_look_update` changes them (preview first). New pictures use it.
 - A change of picture is a new generation; `social_image_status` says when it's ready. One picture is made at a time per website; others wait in line.
