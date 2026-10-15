@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,blog"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-autopilot"
 ---
 # Blog autopilot settings

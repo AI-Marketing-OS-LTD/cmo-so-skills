@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**130 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**132 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -202,6 +202,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-facebook`](plugins/cmo-so/skills/cmo-facebook/SKILL.md) | Run the Facebook Page queue in CMO.so: connect a Page, write posts for it (alone or next to LinkedIn), review and approve, pause, and set how often it posts. |
 | [`cmo-instagram`](plugins/cmo-so/skills/cmo-instagram/SKILL.md) | Run the Instagram queue in CMO.so: connect an Instagram professional account through its Facebook Page, write posts for it (alone or next to LinkedIn and Facebook), make sure each has its picture or set of 4, review and approve, pause and pace. |
 | [`cmo-google-business`](plugins/cmo-so/skills/cmo-google-business/SKILL.md) | Run the Google Business Profile queue in CMO.so: connect the business's profile, write short local updates for Google Search and Maps (alone or next to the other channels), pick each post's button, follow Google's review, and keep the pace within Google's limits. |
+| [`cmo-youtube`](plugins/cmo-so/skills/cmo-youtube/SKILL.md) | Run the YouTube queue in CMO.so: connect the channel, add a short video (5-30 seconds) from the app or a file link, check its title, description, tags, visibility and made-for-kids answer, get the user's approval, and follow it through YouTube's processing until it's live as a Short. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -281,7 +282,8 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-social-analytics`](plugins/cmo-so-social/skills/cmo-social-analytics/SKILL.md) | Measure social performance honestly: engagement, reach, clicks and pipeline, with benchmarks and next tests. |
 | [`cmo-community`](plugins/cmo-so-social/skills/cmo-community/SKILL.md) | Start or grow a community (Discord, Slack, forum, Reddit) that drives product growth and loyalty. |
 | [`cmo-influencer`](plugins/cmo-so-social/skills/cmo-influencer/SKILL.md) | Find, vet and brief creators, structure deals and measure what each partnership returns. |
-| [`cmo-youtube`](plugins/cmo-so-social/skills/cmo-youtube/SKILL.md) | Plan a YouTube channel: topics from outlier analysis, titles and thumbnails, scripts and what to measure. |
+| [`cmo-youtube-strategy`](plugins/cmo-so-social/skills/cmo-youtube-strategy/SKILL.md) | Plan a long-form YouTube channel: positioning, topics from outlier analysis, titles and thumbnails, scripts, a 90-day plan and what to measure. |
+| [`cmo-youtube-posts`](plugins/cmo-so-social/skills/cmo-youtube-posts/SKILL.md) | Write one YouTube Short's title, description, tags and hashtags so it's found and watched, and check the video before it goes out: the first seconds, the loop, captions inside the safe zones, licensed music and no other platform's watermark; then save it to the CMO.so YouTube queue. |
 | [`cmo-short-form-video`](plugins/cmo-so-social/skills/cmo-short-form-video/SKILL.md) | Ideas, hooks, scripts and an edit plan for Reels, TikTok and Shorts from what the business already knows. |
 | [`cmo-organic-social`](plugins/cmo-so-social/skills/cmo-organic-social/SKILL.md) | Grow organically on Instagram, TikTok and Facebook: profile, formats, posting rhythm, hooks and what to measure. |
 | [`cmo-china-social`](plugins/cmo-so-social/skills/cmo-china-social/SKILL.md) | Choose and run mainland-Chinese platforms (Xiaohongshu, WeChat, Douyin, Weibo, Zhihu, Bilibili): native notes, articles and video packs, compliance checks and a draft-only hand-off. |

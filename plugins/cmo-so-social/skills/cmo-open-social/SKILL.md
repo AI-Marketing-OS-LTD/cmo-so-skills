@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "threads,bluesky,mastodon"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-open-social"
 ---
 # Threads, Bluesky & Mastodon

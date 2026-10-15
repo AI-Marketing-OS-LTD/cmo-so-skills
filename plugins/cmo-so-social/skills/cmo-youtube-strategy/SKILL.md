@@ -1,29 +1,30 @@
 ---
-name: cmo-youtube
-description: "Plan a YouTube channel: topics from outlier analysis, titles and thumbnails, scripts and what to measure. Use when the user says things like \"help us start a YouTube channel\"; \"what videos should we make?\"; \"write titles and a thumbnail for this video\"; \"script this YouTube video\"; \"what's working for competitors on YouTube?\"; \"why are our views so low?\"."
+name: cmo-youtube-strategy
+description: "Plan a long-form YouTube channel: positioning, topics from outlier analysis, titles and thumbnails, scripts, a 90-day plan and what to measure. Use when the user says things like \"help us start a YouTube channel\"; \"what long videos should we make for YouTube?\"; \"write titles and a thumbnail for this long video\"; \"script this 10-minute YouTube video\"; \"what's working for competitors on YouTube?\"; \"why are our views so low?\"."
 license: MIT
 metadata:
   category: "social"
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube"
-  version: "0.6.0"
-  docs: "https://cmo.so/skills/cmo-youtube"
+  version: "0.7.0"
+  docs: "https://cmo.so/skills/cmo-youtube-strategy"
 ---
-# YouTube growth
+# YouTube channel strategy
 
-Plans and runs a YouTube channel for a business or expert: a niche narrow enough to own, topics chosen from what is already working in that niche, packaging (title and thumbnail) designed as a promise the video repays, scripts that hold attention, and a measurement loop that changes rules only when the channel's own data supports it.
+Plans and runs a long-form YouTube channel for a business or expert: a niche narrow enough to own, topics chosen from what is already working in that niche, packaging (title and thumbnail) designed as a promise the video repays, scripts that hold attention, and a measurement loop that changes rules only when the channel's own data supports it.
 
 ## When to use
 - Starting a channel, choosing topics, writing titles, thumbnails or scripts.
 - Views are low or uneven and nobody knows why.
 - Turning articles, webinars or demos into YouTube videos.
-- Not for: Shorts, Reels and TikTok scripts (use `cmo-short-form-video`), filming and editing (use `cmo-video-production`), cutting long videos into clips (use `cmo-video-repurposing`), a webinar programme (use `cmo-events-webinars`).
+- Not for: posting a video to YouTube through CMO.so, its details, approval and the queue (use `cmo-youtube`); one Short's title, description and tags (use `cmo-youtube-posts`); Shorts, Reels and TikTok scripts (use `cmo-short-form-video`), filming and editing (use `cmo-video-production`), cutting long videos into clips (use `cmo-video-repurposing`), a webinar programme (use `cmo-events-webinars`).
 
 ## Before you start
 - Ask, one at a time: the goal (search discovery, authority, leads, product education); the ideal viewer in one sentence; 5-10 channels in the niche; who can film and edit and how often.
 - If the channel exists, ask for YouTube Studio numbers per video: impressions, click-through rate, average view duration, retention, subscribers gained, traffic sources.
 - Works fully without CMO.so. Optional: with it connected, the site's blog topics and search queries (via `cmo-seo-opportunities`) show what the audience already searches for.
+- CMO.so posts short videos (5-30 seconds, Shorts) to a connected YouTube channel (`cmo-youtube`); long videos in this plan are uploaded by the user in YouTube Studio.
 
 ## Workflow
 1. **Position the channel.** Who (specific viewer), what problem, what you provide that others do not, why you are credible. Test: can you describe the ideal subscriber in one sentence? If not, narrow it.
@@ -52,7 +53,7 @@ Plans and runs a YouTube channel for a business or expert: a niche narrow enough
    - Captions: a corrected caption file (names, products, numbers), not automatic captions alone.
    - Playlist for the pillar; end screen to the next video in it; a pinned comment asking one specific question; reply to early comments.
    - Stage it: upload as private, review metadata and thumbnail there, then publish or schedule. Never make a live video private just to schedule it.
-9. **Plan 90 days.** Weeks 1-2: channel art, trailer, first three scripts. Weeks 3-6: publish on a cadence the team can keep (even one a week). Weeks 7-10: double down on topics and packages that beat the channel baseline. Weeks 11-13: cut the best videos into Shorts for discovery.
+9. **Plan 90 days.** Weeks 1-2: channel art, trailer, first three scripts. Weeks 3-6: publish on a cadence the team can keep (even one a week). Weeks 7-10: double down on topics and packages that beat the channel baseline. Weeks 11-13: cut the best videos into Shorts for discovery (post them through CMO.so with `cmo-youtube`).
 10. **Measure with readback windows.** Log per video: topic, pillar, package lane, title, thumbnail concept, length, publish date. Read CTR and early retention at 24-72 hours, average view duration and watch time at 7 days, subscribers and long-tail search at 28 days. Compare with the channel's own median for similar videos. Low CTR with good retention points to packaging; good CTR with poor early retention points to a broken promise or slow open. Change a rule only after several comparable videos agree.
    - Good watch time but few subscribers: no clear ask at the right moment, or an audience that does not match. Subscribers fine but views falling: check upload cadence, then topic drift. "Good" and "low" mean against the channel's own medians, not outside benchmarks.
    - Read Shorts, long videos and live streams separately, each with its own median; Shorts inflate views and drag average view duration down.
@@ -107,6 +108,8 @@ Plans and runs a YouTube channel for a business or expert: a niche narrow enough
 - Before changing a live video, read what is there, change only the fields asked for and show old vs new. Before deleting or making private any video, playlist or comment, list exactly which (title and link) and get a clear yes; visibility changes break embeds and links.
 
 ## Related skills
+- `cmo-youtube` — post Shorts and short videos to the channel through CMO.so (connect, details, approval).
+- `cmo-youtube-posts` — the title, description and tags of one Short.
 - `cmo-short-form-video` — Shorts that feed the channel.
 - `cmo-video-production` — filming and editing.
 - `cmo-video-repurposing` — clips and posts from each video.

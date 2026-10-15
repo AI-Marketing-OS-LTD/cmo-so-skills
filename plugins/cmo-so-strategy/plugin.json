@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-strategy",
-	"version": "0.6.0",
+	"version": "0.7.0",
 	"description": "CMO.so Strategy & research skills (13): Customer research & ICP, Positioning & messaging, Competitor research, Marketing plan, Marketing audit, Marketing ideas…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

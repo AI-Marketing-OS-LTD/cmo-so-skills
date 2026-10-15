@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "tiktok,instagram,youtube-shorts,linkedin"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-short-form-video"
 ---
 # Short-form video
@@ -18,12 +18,12 @@ Turns what a business is already doing into short vertical videos people watch t
 - "What should we film", "short video ideas", "write a Reel/TikTok/Short", "better hooks".
 - A founder or expert has knowledge but no format for video.
 - Turning articles, webinars or podcasts into clips.
-- Not for: long YouTube videos (use `cmo-youtube`), filming and editing technique (use `cmo-video-production`), cutting existing long videos (use `cmo-video-repurposing`), a full Instagram/TikTok/Facebook plan beyond video (use `cmo-organic-social`).
+- Not for: posting a finished video to YouTube through CMO.so (use `cmo-youtube`), long YouTube videos (use `cmo-youtube-strategy`), filming and editing technique (use `cmo-video-production`), cutting existing long videos (use `cmo-video-repurposing`), a full Instagram/TikTok/Facebook plan beyond video (use `cmo-organic-social`).
 
 ## Before you start
 - Read anything supplied first (briefs, transcripts, analytics, past videos). Do not ask what is already there.
 - Then ask one question at a time, in this order, stopping when more answers would not change the list: the outcome wanted; the viewer and the moment they would care; owned proof and results; current builds, experiments and opinions; claims that must not be made; the CTA and destination; what can be filmed.
-- Works fully without CMO.so. Optional: with it connected, recent blog articles are a ready source of topics, and a strong video can become a blog idea with `idea_add` and `text`.
+- Works fully without CMO.so. Optional: with it connected, recent blog articles are a ready source of topics, and a strong video can become a blog idea with `idea_add` and `text`, and a finished 5-30 second video can be posted to the user's connected YouTube channel as a Short (`cmo-youtube`).
 
 ## Workflow
 1. **Study what already works (optional).** When the user has their own videos or names peer accounts, take 5-10 videos that beat their account's median views and code each on one sheet so patterns can be counted: hook type (pattern interrupt, question, bold claim, story tease, visual surprise, curiosity gap, direct address, contrarian take, relatable pain, result preview); the first 3 seconds, rewritten as a reusable template ("If you [do X], you are [losing Y]"); format (problem-solution, list, story, tutorial, before-after, reaction, hot take, demo); sections with their share of running time and pacing; delivery (to camera, voiceover, text only); CTA type and where it appears. Carry only patterns that repeat across several videos into the next steps, adapted to the business's own proof. One hit is an anecdote; never copy a script or its wording.
@@ -55,7 +55,7 @@ Turns what a business is already doing into short vertical videos people watch t
 3. **Shot list** and **edit brief**.
 4. **Opening test plan** and **measurement log** template.
 5. **Breakdown table** (if step 1 ran): video | account | views vs account median | hook type | opening template | format | pacing | CTA type.
-6. **Posting sheet** per video, for the user or an approved integration to post: caption within the platform limit with a first line that works alone; visibility, comments and (on TikTok) duet and stitch chosen on purpose; the AI-generated label on when the video uses AI footage, avatars or synthetic voices; the paid-partnership label on for paid or gifted relationships; the scheduled time in the user's time zone (platform schedulers have minimum lead times and maximum windows; check the current ones).
+6. **Posting sheet** per video, for the user or an approved integration to post (with CMO.so, a 5-30 second vertical video goes to the YouTube queue through `cmo-youtube`, with its title, description and tags from `cmo-youtube-posts`; the user always approves it there): caption within the platform limit with a first line that works alone; visibility, comments and (on TikTok) duet and stitch chosen on purpose; the AI-generated label on when the video uses AI footage, avatars or synthetic voices (on YouTube, the altered or synthetic content setting); the paid-partnership label on for paid or gifted relationships; the scheduled time in the user's time zone (platform schedulers have minimum lead times and maximum windows; check the current ones).
 7. **Export spec**: vertical 1080x1920 (9:16), H.264 with AAC audio, MP4. Check each platform's current length and size limits before cutting; if one cut serves several platforms, cut to the strictest.
 
 ## Example
@@ -90,7 +90,9 @@ Turns what a business is already doing into short vertical videos people watch t
 ## Related skills
 - `cmo-video-production` — filming, editing and production workflow.
 - `cmo-content-repurposing` — one source, many formats.
-- `cmo-youtube` — long-form that Shorts can feed.
+- `cmo-youtube` — post the finished Short to YouTube through CMO.so.
+- `cmo-youtube-posts` — the Short's title, description and tags.
+- `cmo-youtube-strategy` — long-form that Shorts can feed.
 - `cmo-video-repurposing` — clips from long videos.
 
 ## References

@@ -2,8 +2,8 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.6.0",
-	"updated": "2026-10-14",
+	"version": "0.7.0",
+	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
 		"url": "https://cmo.so",
@@ -22,7 +22,7 @@
 		{
 			"id": "core",
 			"name": "CMO.so core (MCP)",
-			"count": 12
+			"count": 16
 		},
 		{
 			"id": "strategy",
@@ -47,7 +47,7 @@
 		{
 			"id": "social",
 			"name": "Social & community",
-			"count": 19
+			"count": 23
 		},
 		{
 			"id": "email",
@@ -6070,7 +6070,8 @@
 				"cmo-content-repurposing",
 				"cmo-open-social",
 				"cmo-social-listening",
-				"cmo-google-business"
+				"cmo-google-business",
+				"cmo-youtube"
 			],
 			"doc": "docs/skills/social/cmo-social-strategy.md",
 			"url": "https://cmo.so/skills/cmo-social-strategy",
@@ -6968,26 +6969,28 @@
 			"skill_file": "plugins/cmo-so-social/skills/cmo-influencer/SKILL.md"
 		},
 		{
-			"id": "cmo-youtube",
-			"name": "YouTube growth",
+			"id": "cmo-youtube-strategy",
+			"name": "YouTube channel strategy",
 			"category": "social",
 			"category_name": "Social & community",
-			"summary": "Plan a YouTube channel: topics from outlier analysis, titles and thumbnails, scripts and what to measure.",
+			"summary": "Plan a long-form YouTube channel: positioning, topics from outlier analysis, titles and thumbnails, scripts, a 90-day plan and what to measure.",
 			"channels": [
 				"youtube"
 			],
 			"funnel_stage": "awareness",
 			"tier": "standalone",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [],
 			"pairs_with": [
+				"cmo-youtube",
+				"cmo-youtube-posts",
 				"cmo-video-production",
 				"cmo-short-form-video"
 			],
-			"doc": "docs/skills/social/cmo-youtube.md",
-			"url": "https://cmo.so/skills/cmo-youtube",
+			"doc": "docs/skills/social/cmo-youtube-strategy.md",
+			"url": "https://cmo.so/skills/cmo-youtube-strategy",
 			"references": [
 				{
 					"repo": "alirezarezvani/claude-skills",
@@ -7082,9 +7085,9 @@
 			],
 			"triggers": [
 				"help us start a YouTube channel",
-				"what videos should we make?",
-				"write titles and a thumbnail for this video",
-				"script this YouTube video",
+				"what long videos should we make for YouTube?",
+				"write titles and a thumbnail for this long video",
+				"script this 10-minute YouTube video",
 				"what's working for competitors on YouTube?",
 				"why are our views so low?",
 				"our old videos have no descriptions, fix them"
@@ -7104,7 +7107,129 @@
 				"An upload checklist, and a review card per older video to refresh"
 			],
 			"plugin": "cmo-so-social",
-			"skill_file": "plugins/cmo-so-social/skills/cmo-youtube/SKILL.md"
+			"skill_file": "plugins/cmo-so-social/skills/cmo-youtube-strategy/SKILL.md"
+		},
+		{
+			"id": "cmo-youtube-posts",
+			"name": "YouTube Short writing",
+			"category": "social",
+			"category_name": "Social & community",
+			"summary": "Write one YouTube Short's title, description, tags and hashtags so it's found and watched, and check the video before it goes out: the first seconds, the loop, captions inside the safe zones, licensed music and no other platform's watermark; then save it to the CMO.so YouTube queue.",
+			"channels": [
+				"youtube"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_video_add",
+				"social_youtube_set",
+				"social_update_copy"
+			],
+			"pairs_with": [
+				"cmo-youtube",
+				"cmo-short-form-video",
+				"cmo-video-production",
+				"cmo-humanize"
+			],
+			"doc": "docs/skills/social/cmo-youtube-posts.md",
+			"url": "https://cmo.so/skills/cmo-youtube-posts",
+			"references": [
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "youtube-shorts",
+					"path": "skills/youtube-shorts/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/youtube-shorts/SKILL.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "youtube-shorts (hooks, retention and captions)",
+					"path": "skills/youtube-shorts/references/hooks-retention-and-captions.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/youtube-shorts/references/hooks-retention-and-captions.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "youtube-publishing-and-metadata",
+					"path": "skills/youtube-publishing-and-metadata/references/youtube-metadata-2026-reality.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/youtube-publishing-and-metadata/references/youtube-metadata-2026-reality.md"
+				},
+				{
+					"repo": "adityaarsharma/youtube-marketing-skills",
+					"skill": "youtube-marketing shorts",
+					"path": "skills/youtube-marketing/sub-skills/shorts.md",
+					"commit": "e9136cb39379a82801ee5ae542ff53a1d1109bd2",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/adityaarsharma/youtube-marketing-skills/blob/e9136cb39379a82801ee5ae542ff53a1d1109bd2/skills/youtube-marketing/sub-skills/shorts.md"
+				},
+				{
+					"repo": "adityaarsharma/youtube-marketing-skills",
+					"skill": "shorts playbook",
+					"path": "skills/youtube-marketing/references/shorts-playbook.md",
+					"commit": "e9136cb39379a82801ee5ae542ff53a1d1109bd2",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/adityaarsharma/youtube-marketing-skills/blob/e9136cb39379a82801ee5ae542ff53a1d1109bd2/skills/youtube-marketing/references/shorts-playbook.md"
+				},
+				{
+					"repo": "aaron-he-zhu/aaron-marketing-skills",
+					"skill": "platform playbook (YouTube)",
+					"path": "references/platforms/youtube.md",
+					"commit": "e5ad3446bdaca81d7e36c735b51d6b9325ef94ff",
+					"license": "Apache-2.0",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/e5ad3446bdaca81d7e36c735b51d6b9325ef94ff/references/platforms/youtube.md"
+				},
+				{
+					"repo": "blacktwist/social-media-skills",
+					"skill": "caption-writer-sms (YouTube)",
+					"path": "skills/caption-writer-sms/SKILL.md",
+					"commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/skills/caption-writer-sms/SKILL.md"
+				},
+				{
+					"repo": "eat-pray-ai/yutu",
+					"skill": "youtube (seo-guide)",
+					"path": "skills/youtube/references/seo-guide.md",
+					"commit": "b8af51b8e3b26f4e90e5d82806a553c47ed8e82d",
+					"license": "Apache-2.0",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/eat-pray-ai/yutu/blob/b8af51b8e3b26f4e90e5d82806a553c47ed8e82d/skills/youtube/references/seo-guide.md"
+				}
+			],
+			"triggers": [
+				"write a title for this Short",
+				"what tags should this YouTube video have?",
+				"write the YouTube description",
+				"is this video ready for YouTube?",
+				"make this title better for Shorts",
+				"turn this clip's idea into a YouTube title and description"
+			],
+			"inputs": [
+				"The video (or what happens in it, second by second) and what it's about",
+				"The keyword people would search for, and who the video is for",
+				"Where viewers should go next (the website, a page), if anywhere"
+			],
+			"outputs": [
+				"A title (40-60 characters, never over 100), a short description with up to 3 hashtags, and 5-8 tags",
+				"A video check: first seconds, loop, captions and safe zones, music rights, watermarks, length and shape",
+				"The details saved to the user's YouTube draft in CMO.so, waiting for their approval"
+			],
+			"plugin": "cmo-so-social",
+			"skill_file": "plugins/cmo-so-social/skills/cmo-youtube-posts/SKILL.md"
 		},
 		{
 			"id": "cmo-short-form-video",
@@ -7126,7 +7251,9 @@
 			"mcp_tools": [],
 			"pairs_with": [
 				"cmo-video-production",
-				"cmo-content-repurposing"
+				"cmo-content-repurposing",
+				"cmo-youtube",
+				"cmo-youtube-posts"
 			],
 			"doc": "docs/skills/social/cmo-short-form-video.md",
 			"url": "https://cmo.so/skills/cmo-short-form-video",
@@ -11154,7 +11281,9 @@
 			"mcp_tools": [],
 			"pairs_with": [
 				"cmo-short-form-video",
-				"cmo-youtube"
+				"cmo-youtube",
+				"cmo-youtube-posts",
+				"cmo-youtube-strategy"
 			],
 			"doc": "docs/skills/creative/cmo-video-production.md",
 			"url": "https://cmo.so/skills/cmo-video-production",
@@ -11229,7 +11358,9 @@
 			"mcp_tools": [],
 			"pairs_with": [
 				"cmo-content-repurposing",
-				"cmo-short-form-video"
+				"cmo-short-form-video",
+				"cmo-youtube",
+				"cmo-youtube-posts"
 			],
 			"doc": "docs/skills/creative/cmo-video-repurposing.md",
 			"url": "https://cmo.so/skills/cmo-video-repurposing",
@@ -12941,6 +13072,8 @@
 				"social_list",
 				"google_business_connect_link",
 				"social_google_button",
+				"social_google_post_type",
+				"google_business_performance",
 				"social_approve",
 				"social_update_copy",
 				"social_skip",
@@ -13004,6 +13137,78 @@
 			"skill_file": "plugins/cmo-so/skills/cmo-google-business/SKILL.md"
 		},
 		{
+			"id": "cmo-youtube",
+			"name": "YouTube queue",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Run the YouTube queue in CMO.so: connect the channel, add a short video (5-30 seconds) from the app or a file link, check its title, description, tags, visibility and made-for-kids answer, get the user's approval, and follow it through YouTube's processing until it's live as a Short.",
+			"channels": [
+				"youtube"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"youtube_connect_link",
+				"social_list",
+				"social_video_add",
+				"social_youtube_set",
+				"youtube_settings",
+				"youtube_settings_set",
+				"social_approve",
+				"social_update_copy",
+				"social_skip",
+				"social_restore",
+				"social_move",
+				"social_set_paused"
+			],
+			"pairs_with": [
+				"cmo-youtube-posts",
+				"cmo-short-form-video",
+				"cmo-video-production",
+				"cmo-youtube-strategy",
+				"cmo-social-strategy"
+			],
+			"doc": "docs/skills/core/cmo-youtube.md",
+			"url": "https://cmo.so/skills/cmo-youtube",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-instagram, cmo-google-business",
+					"path": "plugins/cmo-so/skills/cmo-instagram/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "queue workflow structure"
+				}
+			],
+			"triggers": [
+				"connect my YouTube channel",
+				"post this video on YouTube",
+				"turn this clip into a YouTube Short",
+				"is my Short live yet?",
+				"why did my YouTube upload fail?",
+				"make the YouTube video unlisted",
+				"pause YouTube this week",
+				"which channel does Maggie upload to?"
+			],
+			"inputs": [
+				"The website (`workspace`) the YouTube channel belongs to",
+				"The video: uploaded in the CMO.so app, or a direct link to a video file (MP4 or MOV), 5-30 seconds",
+				"The part to use (start and end seconds) and, for a wide video, whether to make it vertical",
+				"The user's answers for visibility (public, unlisted, private), made for kids, and altered or synthetic content",
+				"Which drafts to approve, edit or skip"
+			],
+			"outputs": [
+				"A connected YouTube channel (the right one when the Google account has several)",
+				"A YouTube draft in Review with a title, a description and tags, ready for the user's approval",
+				"The video uploaded at its slot and followed through YouTube's processing: live as a Short or a video, or failed with the reason in plain words"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-youtube/SKILL.md"
+		},
+		{
 			"id": "cmo-google-business-posts",
 			"name": "Google Business post writing",
 			"category": "social",
@@ -13024,6 +13229,7 @@
 				"social_idea_save",
 				"social_update_copy",
 				"social_google_button",
+				"social_google_post_type",
 				"social_image_new"
 			],
 			"pairs_with": [

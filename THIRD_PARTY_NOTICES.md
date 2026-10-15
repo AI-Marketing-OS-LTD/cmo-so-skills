@@ -356,7 +356,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## aaron-he-zhu/aaron-marketing-skills
 
-Used by 11 skill(s). https://github.com/aaron-he-zhu/aaron-marketing-skills
+Used by 12 skill(s). https://github.com/aaron-he-zhu/aaron-marketing-skills
 
 Copyright 2024 Aaron He Zhu
 
@@ -388,7 +388,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## adityaarsharma/youtube-marketing-skills
 
-Used by 3 skill(s). https://github.com/adityaarsharma/youtube-marketing-skills
+Used by 4 skill(s). https://github.com/adityaarsharma/youtube-marketing-skills
 
 MIT License
 
@@ -549,7 +549,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## blacktwist/social-media-skills
 
-Used by 6 skill(s). https://github.com/blacktwist/social-media-skills
+Used by 7 skill(s). https://github.com/blacktwist/social-media-skills
 
 MIT License
 
@@ -751,7 +751,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## eat-pray-ai/yutu
 
-Used by 1 skill(s). https://github.com/eat-pray-ai/yutu
+Used by 2 skill(s). https://github.com/eat-pray-ai/yutu
 
 Copyright 2025 eat-pray-ai & OpenWaygate
 
@@ -1665,7 +1665,7 @@ Distributed on an "AS IS" basis, without warranties or conditions of any kind.
 
 ## social-media-skills/skills
 
-Used by 14 skill(s). https://github.com/social-media-skills/skills
+Used by 15 skill(s). https://github.com/social-media-skills/skills
 
 MIT License
 

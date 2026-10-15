@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin,x,instagram,tiktok,facebook"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-social-strategy"
 ---
 # Social media strategy
@@ -39,11 +39,11 @@ Decides where a business should show up on social, what it talks about, how ofte
    | Bluesky | Tech, science, journalism, academia, policy | Short posts, threads; custom feeds and starter packs drive discovery | Several a week |
    | Mastodon | Open-source, developer, academic and privacy-minded communities | Short posts with hashtags (the main way posts are found); each server has its own rules | A few a week; conversation over volume |
    | Reddit | Niche communities, technical buyers, honest product questions | Text posts, answers in comments | Participate before posting; follow each community's self-promotion rules |
-   | YouTube | Explainers, tutorials, reviews, search-led demand | Long video, Shorts | Weekly or less, only if someone can film |
+   | YouTube | Explainers, tutorials, reviews, search-led demand | Shorts (connected in CMO.so: 5-30 s videos, `cmo-youtube`), long video | About 3 Shorts a week if someone can film; long video weekly or less |
    | Pinterest | Home, food, fashion, weddings, DIY, visual ecommerce | Image or video pins linking to pages | Steady weekly pinning; pins stay findable for months |
    | Telegram / Discord | An existing community or customer group | Channel posts, announcements, events | Only when the group exists |
    | Google Business Profile | Local businesses | Updates, offers, events with one photo | Weekly |
-   Rule of thumb: do one or two platforms well before adding a third; under about 2 hours a week, run one. Cadences are rough starting points; consistency matters more than the number. Threads, Bluesky and Mastodon reward replies over broadcasting: never mirror X posts to them unchanged (see `cmo-open-social`). Reddit, Pinterest, Chinese platforms and community channels have their own skills: `cmo-reddit`, `cmo-pinterest`, `cmo-china-social`, `cmo-community`.
+   Rule of thumb: do one or two platforms well before adding a third; under about 2 hours a week, run one. Cadences are rough starting points; consistency matters more than the number. Threads, Bluesky and Mastodon reward replies over broadcasting: never mirror X posts to them unchanged (see `cmo-open-social`). Reddit, Pinterest, Chinese platforms and community channels have their own skills: `cmo-reddit`, `cmo-pinterest`, `cmo-china-social`, `cmo-community`. YouTube is a connected CMO.so channel for short videos: the user adds each video and approves every upload (`cmo-youtube`); a long-form channel plan is `cmo-youtube-strategy`.
 3. **Benchmark 3-5 peers on the chosen platforms** (optional, 30-60 minutes). Pick direct competitors and one or two accounts the buyers already follow; confirm each profile really belongs to them.
    - Per account, collect the last 20 or more posts on one platform (under 10 = low confidence): format, topic, hook (first line or first seconds), call to action, date and visible metrics.
    - Score each post against **that account's own median** (lift = post metric ÷ median; views for video, reactions + comments + reposts for text). Never compare raw numbers across account sizes or mix platforms in one baseline. Treat 2x or more as an outlier worth studying.
@@ -120,6 +120,7 @@ Decides where a business should show up on social, what it talks about, how ofte
 - `cmo-linkedin-strategy` — deeper positioning and testing for LinkedIn alone.
 - `cmo-social-analytics` — measure what the calendar produced.
 - `cmo-short-form-video` — when video platforms are in the mix.
+- `cmo-youtube` — the CMO.so YouTube queue for Shorts; `cmo-youtube-strategy` for a long-form channel.
 - `cmo-open-social` — Threads, Bluesky and Mastodon execution.
 - `cmo-reddit`, `cmo-pinterest`, `cmo-china-social` — platform playbooks for those channels.
 - `cmo-social-listening` — mentions, competitor and trend scans that feed the topical slot.

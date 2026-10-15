@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,tiktok,instagram,linkedin"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-video-production"
 ---
 # Video production
@@ -19,7 +19,7 @@ Maggie plans and produces marketing videos with modern tools: the script, the ri
 - Turning fresh talking-head footage into a review-ready short.
 - Setting up a repeatable template for weekly or batch videos.
 
-Not for: mining existing long videos for clips (`cmo-video-repurposing`), short-form ideas, hooks and posting rhythm (`cmo-short-form-video`), YouTube channel growth (`cmo-youtube`) or ad scripts as part of an ad test (`cmo-ad-creative`).
+Not for: mining existing long videos for clips (`cmo-video-repurposing`), short-form ideas, hooks and posting rhythm (`cmo-short-form-video`), YouTube channel growth (`cmo-youtube-strategy`), posting to YouTube through CMO.so (`cmo-youtube`) or ad scripts as part of an ad test (`cmo-ad-creative`).
 
 ## Before you start
 Ask one question at a time:
@@ -71,7 +71,7 @@ Ask one question at a time:
      - AI-generated customer reviews, testimonials or endorsements cannot be fixed with a label: remove them.
      - Do not rely on automatic detection; editing and compression often strip provenance metadata. Keep a screenshot of the label as set at publishing, and send anything high-stakes to the user's legal adviser.
 9. **Measure**: note what to check after 24 hours, 3 days and 7 days (hook hold, completion, clicks); treat targets as experiments, not forecasts.
-10. **Optional with CMO.so**: CMO.so has no video tool. A video's topic can become a blog post idea via `idea_add` (`text`) if the user wants; it is previewed and confirmed first.
+10. **Optional with CMO.so**: a finished 5-30 second video (vertical or square becomes a Short) can be posted to the user's connected YouTube channel: hand it to `cmo-youtube` (added in the app or from a direct file link, details from `cmo-youtube-posts`, approved by the user; the altered or synthetic content answer from step 8 goes with it). A video's topic can also become a blog post idea via `idea_add` (`text`). Each is previewed and confirmed first.
 
 ## Output
 1. **Brief**: spine sentence, audience, platform, length, CTA.
@@ -111,7 +111,9 @@ Result (abbreviated):
 
 ## Related skills
 - `cmo-short-form-video` — hooks, series and posting for short video.
-- `cmo-youtube` — titles, thumbnails and channel strategy.
+- `cmo-youtube` — post the finished video to YouTube through CMO.so.
+- `cmo-youtube-posts` — the Short's title, description, tags and pre-upload check.
+- `cmo-youtube-strategy` — titles, thumbnails and channel strategy for long videos.
 - `cmo-video-repurposing` — clips from long recordings.
 - `cmo-image-generation` — thumbnails and covers.
 

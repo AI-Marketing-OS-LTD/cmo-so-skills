@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,linkedin,tiktok"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-video-repurposing"
 ---
 # Video & podcast repurposing
@@ -52,7 +52,7 @@ Not for: producing a new video from scratch (`cmo-video-production`), repurposin
    - Show notes: summary, key points with timestamps, links mentioned, guest bio.
    - Companion article (when the video answers something people search for): first check whether the site already has an article on that query; if so, propose adding the video to it rather than a competing page. Structure: video near the top; an 80-120 word opening that answers the question; "what you'll learn" bullets; each chapter as a heading with a 2-3 sentence summary and a screenshot where it helps; a short FAQ from questions viewers really asked; links to related guides. Mark it up with VideoObject (see `cmo-schema-markup`); no FAQ rich-result promise.
 9. **Plan the first release wave**: the 3-7 strongest assets, order and spacing, platform for each, and which are timely vs evergreen. Avoid releasing two clips with the same promise close together.
-10. **Optional with CMO.so**: CMO.so has no video tool. If the user wants, a strong idea can be saved as a blog idea with `idea_add` (`text`) or as a LinkedIn idea with `social_idea_add` (`title`, `summary`; needs a connected LinkedIn account). Each is previewed and confirmed before saving.
+10. **Optional with CMO.so**: a finished 5-30 second clip from the user's own recording can be posted to their connected YouTube channel as a Short: hand it to `cmo-youtube` (the clip's in and out points become the start and end; a wide recording can be cropped to vertical), with its title, description and tags from `cmo-youtube-posts`; the user approves it there. Never use a clip downloaded from someone else's video. If the user wants, a strong idea can be saved as a blog idea with `idea_add` (`text`) or as a LinkedIn idea with `social_idea_add` (`title`, `summary`; needs a connected LinkedIn account). Each is previewed and confirmed before saving.
 
 ## Output
 1. **Summary**: source, coverage (transcript only, selected ranges, full video), transcript language and caption type, sponsored ranges excluded and how they were found, number of moments found, recommended first wave.
@@ -90,6 +90,7 @@ Result (abbreviated):
 ## Related skills
 - `cmo-content-repurposing` — turn the written assets into a cross-channel plan.
 - `cmo-short-form-video` — hooks, series and posting rhythm for the clips.
+- `cmo-youtube` — post a clip to YouTube as a Short through CMO.so.
 - `cmo-video-production` — re-record pickups or build new videos.
 - `cmo-linkedin-posts` — polish the LinkedIn posts.
 

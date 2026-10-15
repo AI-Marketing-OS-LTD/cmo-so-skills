@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "google_business"
-  version: "0.6.0"
+  version: "0.7.0"
   docs: "https://cmo.so/skills/cmo-google-business"
 ---
 # Google Business Profile queue
@@ -58,6 +58,9 @@ Every Google post has one button, and its link lives there (links in the text ar
 | join a list, an event | `SIGN_UP` |
 | phone the business | `CALL` (the profile's own number, no link) |
 
+### 3b. Events and offers
+An open day, a workshop or a seasonal promotion can be an **Event** (title up to 58 characters, dates, optional times) or an **Offer** (title, dates, optional code and terms; Google adds a "View offer" button) with `social_google_post_type`. Only real dates and offers the user gave. Offers are not allowed for regulated businesses (finance, health, alcohol, gambling) or hotels: make it an update or an event.
+
 ### 4. Review Google drafts
 Show the first line, its id, its picture, its button and slot. Check: short (about 300 characters), local and useful; no phone number, email, web address or @handle in the text (Google removes them); no hashtags; nothing about regulated products (financial products, loans, medical devices, medicines, alcohol, gambling); one clear action that matches the button. Approve with `social_approve`; change the text with `social_update_copy`; skip or restore; `social_approve_all` with `channel: "google_business"`.
 
@@ -66,7 +69,10 @@ Show the first line, its id, its picture, its button and slot. Check: short (abo
 - Google limits the whole of CMO.so to about 100 new Google posts a day. When that's reached, due posts wait for the next day; tell the user it's a Google limit, not their error.
 - A live post can be edited (the text, picture or button; Google checks it again) or deleted from the app (Posted → the post).
 
-### 6. Pause and pace
+### 6. How the profile is doing
+`google_business_performance` gives views on Google Search and Maps, website clicks, calls and direction requests for the last 28 days next to the 28 before (Google's numbers lag 2-3 days). Report the change plainly; don't claim a post caused it.
+
+### 7. Pause and pace
 `social_set_paused` with `channel: "google_business"` pauses only Google. Two a week is a good pace for a local business; more rarely helps on Google.
 
 ## Output
