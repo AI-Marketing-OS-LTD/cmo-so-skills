@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: ""
-  version: "0.5.3"
+  version: "0.6.0"
   docs: "https://cmo.so/skills/cmo-marketing-ideas"
 ---
 # Marketing ideas

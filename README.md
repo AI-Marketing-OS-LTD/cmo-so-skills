@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**128 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**130 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -201,6 +201,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-team-access`](plugins/cmo-so/skills/cmo-team-access/SKILL.md) | Manage who can do what on a website and the account itself: team permissions, connected apps, API keys and notifications. |
 | [`cmo-facebook`](plugins/cmo-so/skills/cmo-facebook/SKILL.md) | Run the Facebook Page queue in CMO.so: connect a Page, write posts for it (alone or next to LinkedIn), review and approve, pause, and set how often it posts. |
 | [`cmo-instagram`](plugins/cmo-so/skills/cmo-instagram/SKILL.md) | Run the Instagram queue in CMO.so: connect an Instagram professional account through its Facebook Page, write posts for it (alone or next to LinkedIn and Facebook), make sure each has its picture or set of 4, review and approve, pause and pace. |
+| [`cmo-google-business`](plugins/cmo-so/skills/cmo-google-business/SKILL.md) | Run the Google Business Profile queue in CMO.so: connect the business's profile, write short local updates for Google Search and Maps (alone or next to the other channels), pick each post's button, follow Google's review, and keep the pace within Google's limits. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -292,6 +293,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-social-listening`](plugins/cmo-so-social/skills/cmo-social-listening/SKILL.md) | Watch public conversations for the brand, competitors, buyer questions and rising topics, surface only the few worth a reply or a post, and turn themes into content ideas. |
 | [`cmo-facebook-posts`](plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md) | Write Facebook Page posts that land before 'See more' (question, behind the scenes, tip, before/after, offer, story), adapt one idea from LinkedIn or the blog, then queue them in CMO.so. |
 | [`cmo-instagram-posts`](plugins/cmo-so-social/skills/cmo-instagram-posts/SKILL.md) | Write Instagram posts where the picture does the stopping and the caption does the keeping: the short title and line on the picture, a set of 4 for steps or tips, and a caption with a hook before '… more', no links and 3-5 hashtags; adapt one idea from LinkedIn, Facebook or the blog, then queue it in CMO.so. |
+| [`cmo-google-business-posts`](plugins/cmo-so-social/skills/cmo-google-business-posts/SKILL.md) | Write Google Business Profile posts that nearby customers act on: a first line that says what's new, why it matters locally, one action that matches the post's button, about 300 characters, no links, phone numbers, hashtags or regulated-product claims; adapt an idea or article, then queue it in CMO.so. |
 
 ### Email & lifecycle · `cmo-so-email`
 

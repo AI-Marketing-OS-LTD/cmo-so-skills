@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "ai-search"
-  version: "0.5.3"
+  version: "0.6.0"
   docs: "https://cmo.so/skills/cmo-ai-brand-monitoring"
 ---
 # AI brand answer monitoring

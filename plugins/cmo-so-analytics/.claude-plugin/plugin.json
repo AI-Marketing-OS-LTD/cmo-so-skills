@@ -1,6 +1,6 @@
 {
 	"name": "cmo-so-analytics",
-	"version": "0.5.3",
+	"version": "0.6.0",
 	"description": "CMO.so Analytics & reporting skills (5): Tracking & UTM setup, Attribution, Campaign analytics & benchmarks, Client & executive report, Closed-loop measurement. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

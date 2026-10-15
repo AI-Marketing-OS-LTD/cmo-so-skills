@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.5.3",
+	"version": "0.6.0",
 	"updated": "2026-10-14",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -4171,7 +4171,8 @@
 			"brand": "CMO.so",
 			"mcp_tools": [],
 			"pairs_with": [
-				"cmo-schema-markup"
+				"cmo-schema-markup",
+				"cmo-google-business"
 			],
 			"doc": "docs/skills/seo/cmo-local-seo.md",
 			"url": "https://cmo.so/skills/cmo-local-seo",
@@ -6068,7 +6069,8 @@
 				"cmo-linkedin",
 				"cmo-content-repurposing",
 				"cmo-open-social",
-				"cmo-social-listening"
+				"cmo-social-listening",
+				"cmo-google-business"
 			],
 			"doc": "docs/skills/social/cmo-social-strategy.md",
 			"url": "https://cmo.so/skills/cmo-social-strategy",
@@ -12920,6 +12922,147 @@
 			],
 			"plugin": "cmo-so-social",
 			"skill_file": "plugins/cmo-so-social/skills/cmo-instagram-posts/SKILL.md"
+		},
+		{
+			"id": "cmo-google-business",
+			"name": "Google Business Profile queue",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Run the Google Business Profile queue in CMO.so: connect the business's profile, write short local updates for Google Search and Maps (alone or next to the other channels), pick each post's button, follow Google's review, and keep the pace within Google's limits.",
+			"channels": [
+				"google_business"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_list",
+				"google_business_connect_link",
+				"social_google_button",
+				"social_approve",
+				"social_update_copy",
+				"social_skip",
+				"social_restore",
+				"social_move",
+				"social_set_paused",
+				"social_sources_list",
+				"social_from_article",
+				"social_plan_days",
+				"social_idea_add",
+				"social_idea_write",
+				"social_write_status",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_approve_all",
+				"social_image_new",
+				"social_image_status",
+				"series_create",
+				"social_approval_mode_set"
+			],
+			"pairs_with": [
+				"cmo-google-business-posts",
+				"cmo-local-seo",
+				"cmo-facebook",
+				"cmo-social-strategy"
+			],
+			"doc": "docs/skills/core/cmo-google-business.md",
+			"url": "https://cmo.so/skills/cmo-google-business",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-facebook, cmo-instagram",
+					"path": "plugins/cmo-so/skills/cmo-facebook/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "queue workflow structure"
+				}
+			],
+			"triggers": [
+				"connect my Google Business Profile",
+				"post on Google Maps",
+				"write a Google post about our new opening hours",
+				"add a Book button to the Google post",
+				"why isn't my Google post showing yet?",
+				"post this on Google too",
+				"pause Google posts this week",
+				"which profile does Maggie post to?"
+			],
+			"inputs": [
+				"The website (`workspace`) the Google Business Profile belongs to",
+				"Which channels a new post is for: Google only, or every connected channel",
+				"The button each post should have (Learn more, Book, Order online, Buy, Sign up, Call now) and its link",
+				"Which drafts to approve, edit or skip"
+			],
+			"outputs": [
+				"A connected Google Business Profile (the right location when the Google account manages several)",
+				"Short local Google posts, each with one photo and a button, waiting for approval or queued",
+				"Posts followed through Google's review: live, or rejected with the reason"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-google-business/SKILL.md"
+		},
+		{
+			"id": "cmo-google-business-posts",
+			"name": "Google Business post writing",
+			"category": "social",
+			"category_name": "Social & community",
+			"summary": "Write Google Business Profile posts that nearby customers act on: a first line that says what's new, why it matters locally, one action that matches the post's button, about 300 characters, no links, phone numbers, hashtags or regulated-product claims; adapt an idea or article, then queue it in CMO.so.",
+			"channels": [
+				"google_business"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_idea_add",
+				"social_idea_write",
+				"social_idea_brief",
+				"social_idea_save",
+				"social_update_copy",
+				"social_google_button",
+				"social_image_new"
+			],
+			"pairs_with": [
+				"cmo-google-business",
+				"cmo-local-seo",
+				"cmo-facebook-posts",
+				"cmo-humanize"
+			],
+			"doc": "docs/skills/social/cmo-google-business-posts.md",
+			"url": "https://cmo.so/skills/cmo-google-business-posts",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-facebook-posts, cmo-local-seo",
+					"path": "plugins/cmo-so-social/skills/cmo-facebook-posts/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "post structure and local guidance"
+				}
+			],
+			"triggers": [
+				"write a Google post for this",
+				"turn this article into a Google Business update",
+				"what should our Google post say about the new hours?",
+				"is this OK for Google?",
+				"which button should this Google post have?"
+			],
+			"inputs": [
+				"The news, offer, tip or article the post is about",
+				"The local detail only the business knows: the street, the town, the season, the team",
+				"What people should do next (book, call, order, read more) and the link for it"
+			],
+			"outputs": [
+				"A Google post of about 300 characters (never over 1,500) with no link, phone, email or hashtag in the text",
+				"The button that fits (Learn more, Book, Order online, Buy, Sign up, Call now) and its link",
+				"The post saved in the user's CMO.so Google Business queue, waiting for approval"
+			],
+			"plugin": "cmo-so-social",
+			"skill_file": "plugins/cmo-so-social/skills/cmo-google-business-posts/SKILL.md"
 		}
 	],
 	"excluded": [

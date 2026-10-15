@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "ai-search"
-  version: "0.5.3"
+  version: "0.6.0"
   docs: "https://cmo.so/skills/cmo-ai-visibility"
 ---
 # AI visibility monitor
