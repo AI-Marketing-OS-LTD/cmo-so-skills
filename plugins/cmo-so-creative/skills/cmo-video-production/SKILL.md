@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,tiktok,instagram,linkedin"
-  version: "0.7.0"
+  version: "0.8.0"
   docs: "https://cmo.so/skills/cmo-video-production"
 ---
 # Video production
@@ -112,6 +112,7 @@ Result (abbreviated):
 ## Related skills
 - `cmo-short-form-video` — hooks, series and posting for short video.
 - `cmo-youtube` — post the finished video to YouTube through CMO.so.
+- `cmo-tiktok` — post the finished video to TikTok through CMO.so (beta).
 - `cmo-youtube-posts` — the Short's title, description, tags and pre-upload check.
 - `cmo-youtube-strategy` — titles, thumbnails and channel strategy for long videos.
 - `cmo-video-repurposing` — clips from long recordings.

@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**132 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**134 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -203,6 +203,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-instagram`](plugins/cmo-so/skills/cmo-instagram/SKILL.md) | Run the Instagram queue in CMO.so: connect an Instagram professional account through its Facebook Page, write posts for it (alone or next to LinkedIn and Facebook), make sure each has its picture or set of 4, review and approve, pause and pace. |
 | [`cmo-google-business`](plugins/cmo-so/skills/cmo-google-business/SKILL.md) | Run the Google Business Profile queue in CMO.so: connect the business's profile, write short local updates for Google Search and Maps (alone or next to the other channels), pick each post's button, follow Google's review, and keep the pace within Google's limits. |
 | [`cmo-youtube`](plugins/cmo-so/skills/cmo-youtube/SKILL.md) | Run the YouTube queue in CMO.so: connect the channel, add a short video (5-30 seconds) from the app or a file link, check its title, description, tags, visibility and made-for-kids answer, get the user's approval, and follow it through YouTube's processing until it's live as a Short. |
+| [`cmo-tiktok`](plugins/cmo-so/skills/cmo-tiktok/SKILL.md) | Run the TikTok queue in CMO.so (beta): connect the account, add a short video (5-30 seconds) from the app or a file link, let the user choose TikTok's settings for it (who can view it, comments, Duet, Stitch, content disclosure, AI label) exactly as TikTok's rules ask, get their approval, and follow it through TikTok's processing. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -284,6 +285,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-influencer`](plugins/cmo-so-social/skills/cmo-influencer/SKILL.md) | Find, vet and brief creators, structure deals and measure what each partnership returns. |
 | [`cmo-youtube-strategy`](plugins/cmo-so-social/skills/cmo-youtube-strategy/SKILL.md) | Plan a long-form YouTube channel: positioning, topics from outlier analysis, titles and thumbnails, scripts, a 90-day plan and what to measure. |
 | [`cmo-youtube-posts`](plugins/cmo-so-social/skills/cmo-youtube-posts/SKILL.md) | Write one YouTube Short's title, description, tags and hashtags so it's found and watched, and check the video before it goes out: the first seconds, the loop, captions inside the safe zones, licensed music and no other platform's watermark; then save it to the CMO.so YouTube queue. |
+| [`cmo-tiktok-posts`](plugins/cmo-so-social/skills/cmo-tiktok-posts/SKILL.md) | Write one TikTok video's caption so it's found in TikTok search and watched to the end: the keyword in the first line, 3-5 specific hashtags, no dead links; and check the video before it goes out: the first second, completion and loop, on-screen words in the safe zone, the cover frame, music rights, no other app's watermark and the AI label; then save it to the CMO.so TikTok queue. |
 | [`cmo-short-form-video`](plugins/cmo-so-social/skills/cmo-short-form-video/SKILL.md) | Ideas, hooks, scripts and an edit plan for Reels, TikTok and Shorts from what the business already knows. |
 | [`cmo-organic-social`](plugins/cmo-so-social/skills/cmo-organic-social/SKILL.md) | Grow organically on Instagram, TikTok and Facebook: profile, formats, posting rhythm, hooks and what to measure. |
 | [`cmo-china-social`](plugins/cmo-so-social/skills/cmo-china-social/SKILL.md) | Choose and run mainland-Chinese platforms (Xiaohongshu, WeChat, Douyin, Weibo, Zhihu, Bilibili): native notes, articles and video packs, compliance checks and a draft-only hand-off. |

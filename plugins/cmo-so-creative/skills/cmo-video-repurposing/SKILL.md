@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,linkedin,tiktok"
-  version: "0.7.0"
+  version: "0.8.0"
   docs: "https://cmo.so/skills/cmo-video-repurposing"
 ---
 # Video & podcast repurposing
@@ -91,6 +91,7 @@ Result (abbreviated):
 - `cmo-content-repurposing` — turn the written assets into a cross-channel plan.
 - `cmo-short-form-video` — hooks, series and posting rhythm for the clips.
 - `cmo-youtube` — post a clip to YouTube as a Short through CMO.so.
+- `cmo-tiktok` — post a clip to TikTok through CMO.so (beta).
 - `cmo-video-production` — re-record pickups or build new videos.
 - `cmo-linkedin-posts` — polish the LinkedIn posts.
 

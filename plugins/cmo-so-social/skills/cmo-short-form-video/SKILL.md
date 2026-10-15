@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "tiktok,instagram,youtube-shorts,linkedin"
-  version: "0.7.0"
+  version: "0.8.0"
   docs: "https://cmo.so/skills/cmo-short-form-video"
 ---
 # Short-form video
@@ -18,7 +18,7 @@ Turns what a business is already doing into short vertical videos people watch t
 - "What should we film", "short video ideas", "write a Reel/TikTok/Short", "better hooks".
 - A founder or expert has knowledge but no format for video.
 - Turning articles, webinars or podcasts into clips.
-- Not for: posting a finished video to YouTube through CMO.so (use `cmo-youtube`), long YouTube videos (use `cmo-youtube-strategy`), filming and editing technique (use `cmo-video-production`), cutting existing long videos (use `cmo-video-repurposing`), a full Instagram/TikTok/Facebook plan beyond video (use `cmo-organic-social`).
+- Not for: posting a finished video to YouTube or TikTok through CMO.so (use `cmo-youtube` or `cmo-tiktok`), long YouTube videos (use `cmo-youtube-strategy`), filming and editing technique (use `cmo-video-production`), cutting existing long videos (use `cmo-video-repurposing`), a full Instagram/TikTok/Facebook plan beyond video (use `cmo-organic-social`).
 
 ## Before you start
 - Read anything supplied first (briefs, transcripts, analytics, past videos). Do not ask what is already there.
@@ -55,7 +55,7 @@ Turns what a business is already doing into short vertical videos people watch t
 3. **Shot list** and **edit brief**.
 4. **Opening test plan** and **measurement log** template.
 5. **Breakdown table** (if step 1 ran): video | account | views vs account median | hook type | opening template | format | pacing | CTA type.
-6. **Posting sheet** per video, for the user or an approved integration to post (with CMO.so, a 5-30 second vertical video goes to the YouTube queue through `cmo-youtube`, with its title, description and tags from `cmo-youtube-posts`; the user always approves it there): caption within the platform limit with a first line that works alone; visibility, comments and (on TikTok) duet and stitch chosen on purpose; the AI-generated label on when the video uses AI footage, avatars or synthetic voices (on YouTube, the altered or synthetic content setting); the paid-partnership label on for paid or gifted relationships; the scheduled time in the user's time zone (platform schedulers have minimum lead times and maximum windows; check the current ones).
+6. **Posting sheet** per video, for the user or an approved integration to post (with CMO.so, a 5-30 second vertical video goes to the YouTube queue through `cmo-youtube` (title, description and tags from `cmo-youtube-posts`) and / or the TikTok queue through `cmo-tiktok` (caption from `cmo-tiktok-posts`; the user chooses TikTok's settings); the user always approves it there): caption within the platform limit with a first line that works alone; visibility, comments and (on TikTok) duet and stitch chosen on purpose; the AI-generated label on when the video uses AI footage, avatars or synthetic voices (on YouTube, the altered or synthetic content setting); the paid-partnership label on for paid or gifted relationships; the scheduled time in the user's time zone (platform schedulers have minimum lead times and maximum windows; check the current ones).
 7. **Export spec**: vertical 1080x1920 (9:16), H.264 with AAC audio, MP4. Check each platform's current length and size limits before cutting; if one cut serves several platforms, cut to the strictest.
 
 ## Example
@@ -91,6 +91,7 @@ Turns what a business is already doing into short vertical videos people watch t
 - `cmo-video-production` — filming, editing and production workflow.
 - `cmo-content-repurposing` — one source, many formats.
 - `cmo-youtube` — post the finished Short to YouTube through CMO.so.
+- `cmo-tiktok` — post the finished video to TikTok through CMO.so (beta).
 - `cmo-youtube-posts` — the Short's title, description and tags.
 - `cmo-youtube-strategy` — long-form that Shorts can feed.
 - `cmo-video-repurposing` — clips from long videos.
@@ -101,6 +102,5 @@ Ideas adapted from (see `catalog.json` for pinned commits and licences):
 - ericosiu/ai-marketing-skills — shortform-format-library (MIT)
 - ericosiu/ai-marketing-skills — shortform-production (MIT)
 - bradautomates/head-of-content — video-content-analyzer (MIT)
-- makiisthenes/TiktokAutoUploader — upload options and publish-uncertain handling (AGPL-3.0, ideas only)
 - social-media-skills/skills — platform-specs-and-validation (MIT)
 - Upload-Post/upload-post-skill — video requirements (no licence, ideas only)

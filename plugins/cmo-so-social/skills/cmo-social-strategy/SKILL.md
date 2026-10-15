@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin,x,instagram,tiktok,facebook"
-  version: "0.7.0"
+  version: "0.8.0"
   docs: "https://cmo.so/skills/cmo-social-strategy"
 ---
 # Social media strategy
@@ -121,6 +121,7 @@ Decides where a business should show up on social, what it talks about, how ofte
 - `cmo-social-analytics` — measure what the calendar produced.
 - `cmo-short-form-video` — when video platforms are in the mix.
 - `cmo-youtube` — the CMO.so YouTube queue for Shorts; `cmo-youtube-strategy` for a long-form channel.
+- `cmo-tiktok` — the CMO.so TikTok queue (beta).
 - `cmo-open-social` — Threads, Bluesky and Mastodon execution.
 - `cmo-reddit`, `cmo-pinterest`, `cmo-china-social` — platform playbooks for those channels.
 - `cmo-social-listening` — mentions, competitor and trend scans that feed the topical slot.

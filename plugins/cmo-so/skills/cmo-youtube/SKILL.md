@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "youtube"
-  version: "0.7.0"
+  version: "0.8.0"
   docs: "https://cmo.so/skills/cmo-youtube"
 ---
 # YouTube queue
@@ -125,6 +125,7 @@ User: "Post this clip as a YouTube Short: https://example.com/media/receipts.mp4
 - `cmo-short-form-video` — ideas, hooks and scripts for the next video.
 - `cmo-video-production` — filming, editing and AI footage.
 - `cmo-youtube-strategy` — a long-form channel plan.
+- `cmo-tiktok` — the same video on TikTok (beta).
 - `cmo-social-strategy` — which channels and why.
 
 ## References

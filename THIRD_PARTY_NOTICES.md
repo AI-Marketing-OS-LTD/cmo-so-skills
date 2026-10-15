@@ -356,7 +356,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## aaron-he-zhu/aaron-marketing-skills
 
-Used by 12 skill(s). https://github.com/aaron-he-zhu/aaron-marketing-skills
+Used by 13 skill(s). https://github.com/aaron-he-zhu/aaron-marketing-skills
 
 Copyright 2024 Aaron He Zhu
 
@@ -549,7 +549,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## blacktwist/social-media-skills
 
-Used by 7 skill(s). https://github.com/blacktwist/social-media-skills
+Used by 8 skill(s). https://github.com/blacktwist/social-media-skills
 
 MIT License
 
@@ -1017,7 +1017,7 @@ CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 ## hyperfx-ai/marketing-skills
 
-Used by 4 skill(s). https://github.com/hyperfx-ai/marketing-skills
+Used by 5 skill(s). https://github.com/hyperfx-ai/marketing-skills
 
 MIT License
 
@@ -1665,7 +1665,7 @@ Distributed on an "AS IS" basis, without warranties or conditions of any kind.
 
 ## social-media-skills/skills
 
-Used by 15 skill(s). https://github.com/social-media-skills/skills
+Used by 16 skill(s). https://github.com/social-media-skills/skills
 
 MIT License
 
@@ -1913,7 +1913,6 @@ used as a source of ideas only (methods, checklists, well-known facts), and no t
 - [joshbuchea/HEAD](https://github.com/joshbuchea/HEAD) (no licence)
 - [knadh/listmonk](https://github.com/knadh/listmonk) (AGPL-3.0)
 - [maizzle/maizzle](https://github.com/maizzle/maizzle) (no licence)
-- [makiisthenes/TiktokAutoUploader](https://github.com/makiisthenes/TiktokAutoUploader) (AGPL-3.0)
 - [marcolang/Marketing-Skills](https://github.com/marcolang/Marketing-Skills) (no licence)
 - [matomo-org/matomo](https://github.com/matomo-org/matomo) (GPL-3.0-or-later)
 - [mautic/mautic](https://github.com/mautic/mautic) (GPL-3.0)

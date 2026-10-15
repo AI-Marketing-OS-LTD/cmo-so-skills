@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.7.0",
+	"version": "0.8.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -22,7 +22,7 @@
 		{
 			"id": "core",
 			"name": "CMO.so core (MCP)",
-			"count": 16
+			"count": 17
 		},
 		{
 			"id": "strategy",
@@ -47,7 +47,7 @@
 		{
 			"id": "social",
 			"name": "Social & community",
-			"count": 23
+			"count": 24
 		},
 		{
 			"id": "email",
@@ -6071,7 +6071,8 @@
 				"cmo-open-social",
 				"cmo-social-listening",
 				"cmo-google-business",
-				"cmo-youtube"
+				"cmo-youtube",
+				"cmo-tiktok"
 			],
 			"doc": "docs/skills/social/cmo-social-strategy.md",
 			"url": "https://cmo.so/skills/cmo-social-strategy",
@@ -7232,6 +7233,118 @@
 			"skill_file": "plugins/cmo-so-social/skills/cmo-youtube-posts/SKILL.md"
 		},
 		{
+			"id": "cmo-tiktok-posts",
+			"name": "TikTok caption writing",
+			"category": "social",
+			"category_name": "Social & community",
+			"summary": "Write one TikTok video's caption so it's found in TikTok search and watched to the end: the keyword in the first line, 3-5 specific hashtags, no dead links; and check the video before it goes out: the first second, completion and loop, on-screen words in the safe zone, the cover frame, music rights, no other app's watermark and the AI label; then save it to the CMO.so TikTok queue.",
+			"channels": [
+				"tiktok"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"social_video_add",
+				"social_update_copy",
+				"social_tiktok_set"
+			],
+			"pairs_with": [
+				"cmo-tiktok",
+				"cmo-short-form-video",
+				"cmo-video-production",
+				"cmo-humanize"
+			],
+			"doc": "docs/skills/social/cmo-tiktok-posts.md",
+			"url": "https://cmo.so/skills/cmo-tiktok-posts",
+			"references": [
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "tiktok-video-publishing",
+					"path": "skills/tiktok-video-publishing/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/tiktok-video-publishing/SKILL.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "tiktok-script (mechanics, formats and sound)",
+					"path": "skills/tiktok-script/references/formats-and-sound.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/tiktok-script/references/formats-and-sound.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "tiktok-growth (completion and search)",
+					"path": "skills/tiktok-growth/references/completion-search-volume.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/tiktok-growth/references/completion-search-volume.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "hashtag-strategy",
+					"path": "skills/hashtag-strategy/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/hashtag-strategy/SKILL.md"
+				},
+				{
+					"repo": "social-media-skills/skills",
+					"skill": "caption-writer",
+					"path": "skills/caption-writer/SKILL.md",
+					"commit": "6e30eeb2f6736bda8683b6bbaa674af3641d7945",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/social-media-skills/skills/blob/6e30eeb2f6736bda8683b6bbaa674af3641d7945/skills/caption-writer/SKILL.md"
+				},
+				{
+					"repo": "aaron-he-zhu/aaron-marketing-skills",
+					"skill": "TikTok platform playbook",
+					"path": "references/platforms/tiktok.md",
+					"commit": "e5ad3446bdaca81d7e36c735b51d6b9325ef94ff",
+					"license": "Apache-2.0",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/aaron-he-zhu/aaron-marketing-skills/blob/e5ad3446bdaca81d7e36c735b51d6b9325ef94ff/references/platforms/tiktok.md"
+				},
+				{
+					"repo": "blacktwist/social-media-skills",
+					"skill": "caption-writer-sms",
+					"path": "skills/caption-writer-sms/SKILL.md",
+					"commit": "4f85b07069983b3b0b9bbe6519fed7017edcce81",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/blacktwist/social-media-skills/blob/4f85b07069983b3b0b9bbe6519fed7017edcce81/skills/caption-writer-sms/SKILL.md"
+				}
+			],
+			"triggers": [
+				"write a TikTok caption for this video",
+				"what hashtags should this TikTok have?",
+				"is this video ready for TikTok?",
+				"make this caption better for TikTok search",
+				"turn this clip's idea into a TikTok caption"
+			],
+			"inputs": [
+				"The video (or what happens in it, second by second) and what it's about",
+				"The words people would search on TikTok, and who the video is for",
+				"Whether it promotes the user's own business or someone else's"
+			],
+			"outputs": [
+				"A caption: hook and keyword first, under about 150 characters before 3-5 hashtags (never over 2,200)",
+				"A video check: first second, completion and loop, on-screen keyword, safe zones, cover frame, music, watermarks, AI label, length",
+				"The caption saved to the user's TikTok draft in CMO.so, waiting for their settings and approval"
+			],
+			"plugin": "cmo-so-social",
+			"skill_file": "plugins/cmo-so-social/skills/cmo-tiktok-posts/SKILL.md"
+		},
+		{
 			"id": "cmo-short-form-video",
 			"name": "Short-form video",
 			"category": "social",
@@ -7253,7 +7366,8 @@
 				"cmo-video-production",
 				"cmo-content-repurposing",
 				"cmo-youtube",
-				"cmo-youtube-posts"
+				"cmo-youtube-posts",
+				"cmo-tiktok"
 			],
 			"doc": "docs/skills/social/cmo-short-form-video.md",
 			"url": "https://cmo.so/skills/cmo-short-form-video",
@@ -7293,15 +7407,6 @@
 					"license": "MIT",
 					"usage": "adapted with attribution",
 					"url": "https://github.com/bradautomates/head-of-content/blob/d841dcff2e4d74a4c31cb3ed2de6c2184de3a970/.claude/skills/video-content-analyzer/scripts/analyze_videos.py"
-				},
-				{
-					"repo": "makiisthenes/TiktokAutoUploader",
-					"skill": "uploader / mcp_server upload options",
-					"path": "autotok/mcp_server.py",
-					"commit": "6516870d64591a1d0fe2af6cecdfa48660b732fc",
-					"license": "AGPL-3.0",
-					"usage": "inspiration only (AGPL-3.0: ideas, not text)",
-					"url": "https://github.com/makiisthenes/TiktokAutoUploader/blob/6516870d64591a1d0fe2af6cecdfa48660b732fc/autotok/mcp_server.py"
 				},
 				{
 					"repo": "social-media-skills/skills",
@@ -11283,7 +11388,8 @@
 				"cmo-short-form-video",
 				"cmo-youtube",
 				"cmo-youtube-posts",
-				"cmo-youtube-strategy"
+				"cmo-youtube-strategy",
+				"cmo-tiktok"
 			],
 			"doc": "docs/skills/creative/cmo-video-production.md",
 			"url": "https://cmo.so/skills/cmo-video-production",
@@ -11360,7 +11466,8 @@
 				"cmo-content-repurposing",
 				"cmo-short-form-video",
 				"cmo-youtube",
-				"cmo-youtube-posts"
+				"cmo-youtube-posts",
+				"cmo-tiktok"
 			],
 			"doc": "docs/skills/creative/cmo-video-repurposing.md",
 			"url": "https://cmo.so/skills/cmo-video-repurposing",
@@ -13169,7 +13276,8 @@
 				"cmo-short-form-video",
 				"cmo-video-production",
 				"cmo-youtube-strategy",
-				"cmo-social-strategy"
+				"cmo-social-strategy",
+				"cmo-tiktok"
 			],
 			"doc": "docs/skills/core/cmo-youtube.md",
 			"url": "https://cmo.so/skills/cmo-youtube",
@@ -13207,6 +13315,84 @@
 			],
 			"plugin": "cmo-so",
 			"skill_file": "plugins/cmo-so/skills/cmo-youtube/SKILL.md"
+		},
+		{
+			"id": "cmo-tiktok",
+			"name": "TikTok queue",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Run the TikTok queue in CMO.so (beta): connect the account, add a short video (5-30 seconds) from the app or a file link, let the user choose TikTok's settings for it (who can view it, comments, Duet, Stitch, content disclosure, AI label) exactly as TikTok's rules ask, get their approval, and follow it through TikTok's processing.",
+			"channels": [
+				"tiktok"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"tiktok_connect_link",
+				"tiktok_creator",
+				"social_list",
+				"social_video_add",
+				"social_tiktok_set",
+				"social_approve",
+				"social_update_copy",
+				"social_skip",
+				"social_restore",
+				"social_move",
+				"social_set_paused"
+			],
+			"pairs_with": [
+				"cmo-tiktok-posts",
+				"cmo-youtube",
+				"cmo-short-form-video",
+				"cmo-video-production",
+				"cmo-social-strategy"
+			],
+			"doc": "docs/skills/core/cmo-tiktok.md",
+			"url": "https://cmo.so/skills/cmo-tiktok",
+			"references": [
+				{
+					"repo": "hyperfx-ai/marketing-skills",
+					"skill": "tiktok",
+					"path": "skills/tiktok/SKILL.md",
+					"commit": "86b70abe987fd7f52ea2ff01b3039cff0f6c7ec4",
+					"license": "MIT",
+					"usage": "adapted with attribution",
+					"url": "https://github.com/hyperfx-ai/marketing-skills/blob/86b70abe987fd7f52ea2ff01b3039cff0f6c7ec4/skills/tiktok/SKILL.md"
+				},
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-youtube",
+					"path": "plugins/cmo-so/skills/cmo-youtube/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "queue workflow structure"
+				}
+			],
+			"triggers": [
+				"connect my TikTok",
+				"post this video on TikTok",
+				"put this clip on our TikTok too",
+				"is my TikTok live yet?",
+				"why did my TikTok post fail?",
+				"who can see my TikTok video?",
+				"pause TikTok this week"
+			],
+			"inputs": [
+				"The website (`workspace`) the TikTok account belongs to",
+				"The video: uploaded in the CMO.so app, or a direct link to a video file (MP4 or MOV), 5-30 seconds",
+				"The user's own choices for TikTok's settings: who can view it, comments / Duet / Stitch, whether it promotes their brand or a third party, whether it's AI-generated",
+				"Which drafts to approve, edit or skip"
+			],
+			"outputs": [
+				"A connected TikTok account (beta testers only for now)",
+				"A TikTok draft in Review with Maggie's caption and the settings the user chose, ready for their approval",
+				"The video posted at its slot and followed through TikTok's processing: posted (with its link once public, else the profile) or failed with the reason in plain words"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-tiktok/SKILL.md"
 		},
 		{
 			"id": "cmo-google-business-posts",
