@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "facebook"
-  version: "0.8.0"
+  version: "0.9.0"
   docs: "https://cmo.so/skills/cmo-facebook"
 ---
 # Facebook Page queue
@@ -67,6 +67,12 @@ Approve with `social_approve` (ids the user chose); change text with `social_upd
 - `social_set_paused` with `channel: "facebook"` pauses or resumes the Page only; without `channel` it pauses every channel.
 - How often (2, 3 or 5 a week) is set in the CMO.so app (Social → Facebook → settings). Three a week is a good start for a small business; a steady rhythm beats bursts.
 - `social_approval_mode_set` changes the mode for every channel; only on an explicit request, with the consequence restated.
+
+### Video posts
+A Facebook post can be a video instead of text or a picture. A vertical (9:16) video of 3-90 seconds goes out as a Reel; anything else as a Page video.
+- New: `social_video_add` with `channels: ["facebook"]` (or several channels: one post each, words written for each) and a DIRECT link to a 5-30 second video file the user owns (never a platform page). In the app: Social → Write a post → the title's menu → Video.
+- From a post that hasn't gone out: `social_video_attach` `{id, url}` makes it a video post (its picture is removed: a video post never has one); `social_video_detach` makes it a text post again.
+- A video post gets no picture: never offer `social_image_new` or a photo for it. It is approved like any other post; after it goes out, the platform takes a minute or more to process it before it shows.
 
 ## Output
 ```

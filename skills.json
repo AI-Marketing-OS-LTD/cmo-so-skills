@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.8.0",
+	"version": "0.9.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -1306,7 +1306,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1333,7 +1333,10 @@
 				"campaign_get",
 				"social_ideas_list",
 				"social_formats_set",
-				"social_voice_learn"
+				"social_voice_learn",
+				"social_video_add",
+				"social_video_attach",
+				"social_video_detach"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -12811,7 +12814,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12832,7 +12835,10 @@
 				"social_idea_save",
 				"social_approve_all",
 				"series_create",
-				"social_approval_mode_set"
+				"social_approval_mode_set",
+				"social_video_add",
+				"social_video_attach",
+				"social_video_detach"
 			],
 			"pairs_with": [
 				"cmo-facebook-posts",
@@ -12906,7 +12912,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12936,7 +12942,10 @@
 				"social_photo_words",
 				"social_post_insights",
 				"series_create",
-				"social_approval_mode_set"
+				"social_approval_mode_set",
+				"social_video_add",
+				"social_video_attach",
+				"social_video_detach"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",

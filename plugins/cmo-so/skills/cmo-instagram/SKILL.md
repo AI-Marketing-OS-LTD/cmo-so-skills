@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.8.0"
+  version: "0.9.0"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
@@ -17,7 +17,7 @@ Instagram is picture-first: the picture is the post, and the caption adds the wh
 ## When to use
 - Anything about Instagram with CMO.so: connecting, writing, pictures and sets, approving, pausing, how often.
 - "Post this on Instagram too", "make it a carousel", "write it for every channel".
-- Not for: crafting one caption or the words on a picture outside the queue (`cmo-instagram-posts`); Facebook Pages (`cmo-facebook`); Instagram ads (`cmo-meta-ads`); Reels and Stories, which CMO.so doesn't post yet.
+- Not for: crafting one caption or the words on a picture outside the queue (`cmo-instagram-posts`); Facebook Pages (`cmo-facebook`); Instagram ads (`cmo-meta-ads`); Stories, which CMO.so doesn't post yet (Reels: see Video posts below).
 
 ## Before you start
 - Call `social_list` first. Its `channels` list says whether Instagram is connected, which account (`@username`), whether it is paused, whether an account still has to be picked (`needs_account`), and how many posts a week it makes. Each post carries its `channel` and its pictures (`image_url`, and `image_urls` for a set).
@@ -81,6 +81,12 @@ Approve with `social_approve`; change text with `social_update_copy`; skip or re
 
 ### 6. Pause and pace
 `social_set_paused` with `channel: "instagram"` pauses only Instagram. How often is set in the app (Social → Instagram → settings); three a week is a good start (most of the growth comes from showing up steadily).
+
+### Video posts
+A Instagram post can be a video instead of text or a picture. It goes out as a Reel (shared to the feed); no picture is needed, and the picture steps above don't apply.
+- New: `social_video_add` with `channels: ["instagram"]` (or several channels: one post each, words written for each) and a DIRECT link to a 5-30 second video file the user owns (never a platform page). In the app: Social → Write a post → the title's menu → Video.
+- From a post that hasn't gone out: `social_video_attach` `{id, url}` makes it a video post (its picture is removed: a video post never has one); `social_video_detach` makes it a text post again.
+- A video post gets no picture: never offer `social_image_new` or a photo for it. It is approved like any other post; after it goes out, the platform takes a minute or more to process it before it shows.
 
 ## Output
 ```

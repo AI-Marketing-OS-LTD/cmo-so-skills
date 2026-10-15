@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.8.0"
+  version: "0.9.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -81,6 +81,12 @@ A good brief names: the audience, the one thing they should do or remember, the 
 - `social_approval_mode_set` (`manual` or `auto`): auto means future drafts go out at posting times without review. Only on an explicit request; restate the consequence before confirming. Recommend manual for new accounts, regulated industries, or any recent off-brand draft.
 - Base any suggestion about the mode on the user's own record in `social_list`. Mention auto only after the user has approved nearly all recent drafts unchanged (roughly nine in ten over at least a few weeks) with none off-brand; explain it and leave the decision to them.
 - The reverse holds too: if the user keeps rejecting or heavily rewriting one kind of post (a format, a source, a campaign), stop producing more of it. Change the formats with `social_formats_set` (`keys`: the full list to keep, read from `social_setup_get`) or relearn the voice from a post the user likes with `social_voice_learn` (`post_text`; it becomes the default voice), each previewed and confirmed, instead of queuing drafts they will reject (`cmo-linkedin-posts` for format choice).
+
+### Video posts
+A LinkedIn post can be a video instead of text or a picture. LinkedIn shows it in the feed with the text above it (about 140 characters before "see more").
+- New: `social_video_add` with `channels: ["linkedin"]` (or several channels: one post each, words written for each) and a DIRECT link to a 5-30 second video file the user owns (never a platform page). In the app: Social → Write a post → the title's menu → Video.
+- From a post that hasn't gone out: `social_video_attach` `{id, url}` makes it a video post (its picture is removed: a video post never has one); `social_video_detach` makes it a text post again.
+- A video post gets no picture: never offer `social_image_new` or a photo for it. It is approved like any other post; after it goes out, the platform takes a minute or more to process it before it shows.
 
 ## Output
 ```

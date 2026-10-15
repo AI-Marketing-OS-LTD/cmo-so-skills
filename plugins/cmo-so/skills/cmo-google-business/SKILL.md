@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "google_business"
-  version: "0.8.0"
+  version: "0.9.0"
   docs: "https://cmo.so/skills/cmo-google-business"
 ---
 # Google Business Profile queue
@@ -74,6 +74,9 @@ Show the first line, its id, its picture, its button and slot. Check: short (abo
 
 ### 7. Pause and pace
 `social_set_paused` with `channel: "google_business"` pauses only Google. Two a week is a good pace for a local business; more rarely helps on Google.
+
+### No video
+Google Business posts can only carry pictures (Google's API takes no video in a post). A video goes to the other channels (`social_video_add`); never promise a video post on Google.
 
 ## Output
 ```
