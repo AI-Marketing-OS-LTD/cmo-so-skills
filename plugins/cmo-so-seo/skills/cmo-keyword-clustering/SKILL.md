@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.11.0"
+  version: "0.11.1"
   docs: "https://cmo.so/skills/cmo-keyword-clustering"
 ---
 # Keyword clustering & topic map

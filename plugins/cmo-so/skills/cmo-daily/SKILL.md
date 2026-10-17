@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,linkedin"
-  version: "0.11.0"
+  version: "0.11.1"
   docs: "https://cmo.so/skills/cmo-daily"
 ---
 # Daily marketing check-in

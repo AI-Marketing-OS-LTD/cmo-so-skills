@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.11.0"
+  version: "0.11.1"
   docs: "https://cmo.so/skills/cmo-team-access"
 ---
 # Team & account access
@@ -44,8 +44,8 @@ Presets:
 | Preset | overview | autopilot | report | subscription | api_access | teams |
 |---|---|---|---|---|---|---|
 | viewer | read | read | read | none | none | none |
-| editor | read | write | read | none | none | none |
-| manager | write | write | write | read | none | read |
+| editor | write | write | read | none | none | none |
+| manager | write | write | write | read | read | write |
 
 Nobody can be given more than the user has, and the user cannot change their own access.
 
@@ -101,7 +101,7 @@ It covers this user's Maggie actions only, not changes other members made in the
 ```
 Team — example.com
 Owner: Alex
-Sam — editor (autopilot write) · Jo — manager ⚠ teams read
+Sam — editor (profile and posts write) · Jo — manager ⚠ can change the team
 Suggest: Jo to editor if they no longer manage the team
 Connected apps: 3 (1 unused since <date> — revoke?)
 API keys: 2 (1 read-write, last used <date>)
