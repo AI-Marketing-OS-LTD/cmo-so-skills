@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "x"
-  version: "0.11.4"
+  version: "0.11.5"
   docs: "https://cmo.so/skills/cmo-x-growth"
 ---
 # X (Twitter) growth

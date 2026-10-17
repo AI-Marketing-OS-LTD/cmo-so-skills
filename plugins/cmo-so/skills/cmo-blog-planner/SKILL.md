@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,blog"
-  version: "0.11.4"
+  version: "0.11.5"
   docs: "https://cmo.so/skills/cmo-blog-planner"
 ---
 # Blog planner
@@ -41,7 +41,7 @@ Runway rule of thumb: planned posts ÷ posts per day = days of writing ahead. Th
 
 ### 2. Add ideas (each is a change: preview, then confirm)
 
-- **A researched list** (titles, keywords, benchmark URLs the user already has): `ideas_add_list`, up to 100 at once, kept exactly as given, no AI generation used. Keep each idea's title, primary keyword, description, benchmark URL and priority; add a `topic` from `topics_list` when one clearly fits. It goes to the pool, not the plan; plan the best with `idea_plan`. Report what was skipped (duplicates, over the limit of 100 waiting ideas the user added).
+- **A researched list** (titles, keywords, benchmark URLs the user already has): `ideas_add_list`, up to 100 at once, kept exactly as given, no AI generation used. Keep each idea's title, primary keyword, description, benchmark URL and priority; add a `topic` from `topics_list` when one clearly fits. It goes to the pool, not the plan; plan the best with `idea_plan`. Report what was skipped (duplicates, or over the limit of the user's own waiting ideas: `cap` in `ideas_list`, 200 today). Read limits from the tools (`cap`, `plan_max` in `ideas_list`), never from memory.
 
 | The user says | Tool | Arguments | Notes |
 |---|---|---|---|
