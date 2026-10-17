@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.10.0",
+	"version": "0.11.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -974,7 +974,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"inbox_list",
@@ -984,7 +984,10 @@
 				"social_update_copy",
 				"social_skip",
 				"social_set_paused",
-				"quota_get"
+				"quota_get",
+				"workspace_summary",
+				"feedback_send",
+				"feedback_list"
 			],
 			"pairs_with": [
 				"cmo-weekly-report",
@@ -1306,7 +1309,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.6.0",
+			"version": "0.7.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1336,7 +1339,14 @@
 				"social_voice_learn",
 				"social_video_add",
 				"social_video_attach",
-				"social_video_detach"
+				"social_video_detach",
+				"series_approve",
+				"social_idea_update",
+				"social_idea_delete",
+				"social_images_fill",
+				"social_image_stop",
+				"social_style_set",
+				"social_style_retrain"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -1415,6 +1425,68 @@
 			],
 			"plugin": "cmo-so",
 			"skill_file": "plugins/cmo-so/skills/cmo-linkedin/SKILL.md"
+		},
+		{
+			"id": "cmo-memory",
+			"name": "Maggie Memory",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Keep the user's lasting taste in Maggie Memory (prefer, always, never per channel) so every future post, draft and picture follows it, and show or forget what is remembered.",
+			"channels": [
+				"cmo.so",
+				"blog",
+				"linkedin",
+				"facebook",
+				"instagram",
+				"google-business"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"memory_get",
+				"memory_remember",
+				"memory_forget"
+			],
+			"pairs_with": [
+				"cmo-draft-review",
+				"cmo-linkedin",
+				"cmo-brand-profile"
+			],
+			"doc": "docs/skills/core/cmo-memory.md",
+			"url": "https://cmo.so/skills/cmo-memory",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-memory",
+					"path": "plugins/cmo-so/skills/cmo-memory/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-memory/SKILL.md"
+				}
+			],
+			"triggers": [
+				"remember that I never use emojis",
+				"from now on, always mention our free trial",
+				"what do you remember about how I write?",
+				"stop doing that every time",
+				"forget what you learned about my hashtags",
+				"what's in my Maggie Memory?"
+			],
+			"inputs": [
+				"The website (`workspace`); `workspaces_list` if unknown",
+				"The preference in the user's own words, or which remembered item to remove"
+			],
+			"outputs": [
+				"One short rule saved in the right channel and section, previewed and confirmed",
+				"A plain list of what Maggie remembers, grouped by channel",
+				"A removed item, confirmed"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-memory/SKILL.md"
 		},
 		{
 			"id": "cmo-seo-opportunities",
@@ -1853,7 +1925,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"publish_settings_get",
@@ -1864,7 +1936,8 @@
 				"content_guard_get",
 				"content_guard_set",
 				"content_guard_test",
-				"quota_get"
+				"quota_get",
+				"plan_quota_get"
 			],
 			"pairs_with": [
 				"cmo-blog-planner",
@@ -1927,7 +2000,7 @@
 			"funnel_stage": "consideration",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"posts_list",
@@ -1937,7 +2010,10 @@
 				"draft_delete",
 				"post_publish_now",
 				"brand_voices_list",
-				"brand_voice_update_style"
+				"brand_voice_update_style",
+				"draft_rewrite_brief",
+				"draft_rewrite_save",
+				"memory_remember"
 			],
 			"pairs_with": [
 				"cmo-copy-editing",
@@ -2035,7 +2111,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"team_list",
@@ -2050,7 +2126,8 @@
 				"profile_update",
 				"maggie_usage_get",
 				"dashboard_link",
-				"maggie_actions_list"
+				"maggie_actions_list",
+				"invoices_list"
 			],
 			"pairs_with": [
 				"cmo-connect"
@@ -12913,7 +12990,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12946,7 +13023,9 @@
 				"social_approval_mode_set",
 				"social_video_add",
 				"social_video_attach",
-				"social_video_detach"
+				"social_video_detach",
+				"social_images_fill",
+				"social_image_stop"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",

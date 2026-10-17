@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,blog"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-autopilot"
 ---
 # Blog autopilot settings
@@ -83,6 +83,9 @@ Suggested strictness, rough rules: regulated industries (health, finance, legal,
 
 ### 5. Test the guard (a change; uses AI)
 `content_guard_test` with a `content_id` of an existing post, or a `title` and `body` that should fail. Run at least one case that should be held and one that should pass. If the result disagrees, adjust the guideline wording or `min_confidence` and test again. A guard that has never held anything in 30 days may be too loose; one holding most posts is too strict for the user to keep up with.
+
+### 5b. What the plan allows
+`plan_quota_get` (read-only) gives the plan for this website and what is left this month and today; it needs permission to see the plan, otherwise use `quota_get`. Use it when the user asks why fewer posts go out than they set: posts per day can't exceed the plan. State the numbers; never suggest buying anything.
 
 ### 6. Summarise
 Read the settings back (`publish_settings_get`, `rewrite_policy_get`, `content_guard_get`) and show the final table.

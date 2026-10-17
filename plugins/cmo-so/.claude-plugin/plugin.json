@@ -1,7 +1,7 @@
 {
 	"name": "cmo-so",
-	"version": "0.10.0",
-	"description": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, SEO opportunities….",
+	"version": "0.11.0",
+	"description": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, Maggie Memory….",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -20,8 +20,8 @@
 		"blog",
 		"cmo.so",
 		"facebook",
+		"google-business",
 		"google-search",
-		"google_business",
-		"instagram"
+		"google_business"
 	]
 }

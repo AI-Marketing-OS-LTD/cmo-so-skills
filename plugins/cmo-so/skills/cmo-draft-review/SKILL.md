@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "cmo.so,blog"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-draft-review"
 ---
 # Draft review & publishing
@@ -62,6 +62,8 @@ Flag the two or three issues that matter most; do not nitpick every line.
 | Tidy formatting and mistakes | `draft_rewrite` (`id`, `mode: "fix"`) | Uses one of today's messages and an AI generation; saves the result straight away |
 | Change by instruction | `draft_rewrite` (`id`, `mode: "edit"`, `instruction`) | E.g. "shorten to about 900 words", "add a section on pricing", "make the intro direct" |
 
+If you write with your own model (ChatGPT, Claude or a Maggie Bridge), use the free pair instead of `draft_rewrite`: `draft_rewrite_brief` (`id`, `mode` `fix` or `edit`, `instruction` for edit) returns the draft's whole Markdown and the rules; write the new version yourself, then preview `draft_rewrite_save` (`id`, the whole new `markdown`) and save after the user agrees. It is checked like Maggie's own rewrites: not much shorter, and a fix keeps every link and image.
+
 Writing a good rewrite instruction: one clear goal, what to keep, what to change, and any limit. "Keep the structure and examples; cut the intro to three sentences; replace the generic conclusion with a two-line summary and the demo CTA." Vague instructions ("make it better") give random results.
 
 After `draft_rewrite`, read the returned preview and check `lost_links`: if links were dropped, tell the user and offer to restore them with `draft_update`.
@@ -70,6 +72,7 @@ After `draft_rewrite`, read the returned preview and check `lost_links`: if link
 When the user asks for the same kind of change a second time ("no exclamation marks", "stop opening with a question", "say clients, not customers"), offer to add it to the brand voice so it is not needed again.
 - Record only what the user said, as one short do or don't line. Do not widen "shorter intro on this post" into "always short".
 - Leave out anything specific to one post (a price, a date, a product detail); that belongs in the business profile (`cmo-brand-profile`).
+- If it is the user's taste rather than the brand's voice (it applies to them, across channels or only one), offer to keep it in Maggie Memory instead: `cmo-memory` (`memory_remember`).
 - Find the voice with `brand_voices_list`. The tools do not return a voice's current writing style, so ask the user to paste it from the app; replace a line the new rule contradicts and merge rather than add a near-duplicate.
 - Preview `brand_voice_update_style` (`id`, `name`, the full new `writing_style`) showing before and after; save only after the user confirms.
 

@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**134 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**135 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -192,6 +192,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-weekly-report`](plugins/cmo-so/skills/cmo-weekly-report/SKILL.md) | Weekly report from CMO.so data: posts, Search Console, AI visibility, best and worst content, and two or three next steps. |
 | [`cmo-blog-planner`](plugins/cmo-so/skills/cmo-blog-planner/SKILL.md) | Plan the blog in CMO.so: ideas from links, sentences, AI generation or the sitemap, and the ordered writing plan Maggie follows. |
 | [`cmo-linkedin`](plugins/cmo-so/skills/cmo-linkedin/SKILL.md) | Run the LinkedIn queue in CMO.so: review and approve drafts, turn articles into posts, plan days, campaigns, pause and resume. |
+| [`cmo-memory`](plugins/cmo-so/skills/cmo-memory/SKILL.md) | Keep the user's lasting taste in Maggie Memory (prefer, always, never per channel) so every future post, draft and picture follows it, and show or forget what is remembered. |
 | [`cmo-seo-opportunities`](plugins/cmo-so/skills/cmo-seo-opportunities/SKILL.md) | Quick SEO wins from Search Console and content performance: low-CTR queries, positions 4-15, no-traffic articles, then Maggie rewrites. |
 | [`cmo-ai-visibility`](plugins/cmo-so/skills/cmo-ai-visibility/SKILL.md) | Monitor how the website shows up in AI answers: score, watched prompts, cited pages, live checks and keywords to watch. |
 | [`cmo-brand-profile`](plugins/cmo-so/skills/cmo-brand-profile/SKILL.md) | Complete the business profile every other skill reads: offer, products, audiences, competitors, CTAs, testimonials and brand voice. |

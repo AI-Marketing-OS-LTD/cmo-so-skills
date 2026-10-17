@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
@@ -63,6 +63,8 @@ Writing runs in the background (`social_write_status` when the user asks; don't 
 - **The brand's look**: `social_look` shows the 3 styles, 5 text styles, fonts, colours, the description used for new photos and things never to show; `social_look_update` changes them (preview first). New pictures use it.
 - A change of picture is a new generation; `social_image_status` says when it's ready. One picture is made at a time per website; others wait in line.
 - The picture belongs to the idea: the same idea's LinkedIn and Facebook posts get it too.
+
+Instagram posts need a picture before they can go out. For every waiting post without one, `social_images_fill` (optional `ids`) makes them in the background, 1 AI generation each; preview the count first. `social_image_stop` stops the picture being made (`all: true` also empties the line).
 
 ### 4. Review Instagram drafts
 For each, show the first line, its id, its picture (or set) and slot. Check:

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,linkedin"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-daily"
 ---
 # Daily marketing check-in
@@ -52,6 +52,9 @@ Rules for the triage:
 - For quota, call `quota_get` (no arguments, read-only): blog posts left for this website today, this month and in total, with limits and plan only if the user may see them. Report it when posts are nearly used up or when the user asks why nothing was published today ("0 of 2 posts left today; resets tomorrow"). If it is healthy, skip it.
 - For quota and pauses, state the fact. Do not suggest buying anything.
 
+- For the website's basics in one call (the user's role and permissions, plan, quota left, and whether blog publishing is on, paused, where and how often), use `workspace_summary` (read-only). It is a quick way to answer "is everything running?" before reading the inbox in detail.
+- If the user has sent feedback to the cmo.so team, `feedback_list` shows its status and the team's reply; mention a new reply in one line.
+
 ### 3. Present and ask
 Show the sorted list in a few lines, then ask which to handle first. Default suggestion: the top item. Handle one item at a time.
 
@@ -80,6 +83,9 @@ If `social_list` shows posting is paused, approved drafts will wait. Ask whether
 Two lines, based only on what tool results confirmed:
 - **Done:** e.g. "Approved 3 LinkedIn drafts, skipped 1."
 - **Still waiting:** e.g. "Website not connected for publishing; 2 drafts left."
+
+### Tell the cmo.so team
+When the user reports a problem with CMO.so or with Maggie, asks for a feature, or says something works well, offer to pass it on. Preview `feedback_send` (`type`: `bug`, `quality`, `idea`, `praise` or `other`; `summary`: one sentence of the user's own point, at most 200 characters; optional `details`, and for a bug `expected` and `actual`) and send it after they agree. Do not include passwords, keys or other people's details.
 
 ## Output
 ```

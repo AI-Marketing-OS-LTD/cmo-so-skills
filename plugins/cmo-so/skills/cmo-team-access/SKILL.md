@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-team-access"
 ---
 # Team & account access
@@ -81,6 +81,9 @@ Removal is done in the CMO.so app: give `dashboard_link` with `page: "team"`. If
 - `connected_apps_list`: each app (for example an AI assistant or the CMO.so app), what it may do, when it was authorised and last used; `current` marks the one in this conversation.
 - Suggest revoking apps not used for a long time or not recognised. `connected_app_revoke` (`grant_id`, `app`) disconnects one at once; it must be connected again to work. Never revoke the app in use now; the tool refuses it anyway.
 - `api_keys_list`: name, first characters, read or read-write, last used. The full key is never shown. Creating and revoking keys is in the app: `dashboard_link` with `page: "api_access"`. Suggest revoking unused keys and read-write keys where read is enough.
+
+### 6b. Invoices
+`invoices_list` (read-only) lists the user's latest invoices across the subscriptions they pay for: date, amount, status and a link to view or download each. Share the link the tool gives; never suggest a plan change.
 
 ### 7. Audit what was changed
 Before a security tidy-up, or when the user asks "who changed this?" or "what has Maggie done?", call `maggie_actions_list` (optional `limit`, 1-50, default 20). It lists, newest first, the changes Maggie made for this user on this website and the result of each (for example a team member added, an app revoked, a plan reordered). Use it to:

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.10.0"
+  version: "0.11.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -58,6 +58,10 @@ Approved drafts jump to the front of the queue and go out at the next slots, whe
 | User's own idea | `social_idea_add` (`title`, optional `summary`) → `social_idea_write` (`id`) | Adding is free; writing uses a credit and the post joins the queue |
 
 
+A written series (a run of posts on one theme, made with `series_create` in `cmo-instagram` or from the app) waits until it is approved: `series_approve` (`id`) sends its posts out in order at the user's posting times on each channel, after the user's own posts. Show the posts first and confirm.
+
+Ideas waiting to be written (`social_ideas_list`) can be tidied before they cost anything: `social_idea_update` (`id`, `title` and/or `summary`) to sharpen one, `social_idea_delete` (`id`) for one the user no longer wants. Both are previewed and confirmed; neither uses a credit.
+
 Writing runs in the background: `social_from_article`, `social_plan_days` and `social_idea_write` answer at once with a job (`job_id`, `posts_expected`). Tell the user Maggie is writing and they will be told when it is ready (the app shows a notice and sends a push). When they ask, `social_write_status` says whether it is done, the new post ids and any channel that failed; then `social_list` shows the posts. Do not poll in a loop.
 
 In `auto` approval mode, new posts from any of these go out at the next slots without review. Check the mode first and say so before confirming.
@@ -75,6 +79,11 @@ Use a campaign for a bounded push: a launch, an event, an announcement, or an ev
 6. `campaign_pause` (`id`, `paused`) to pause or resume.
 
 A good brief names: the audience, the one thing they should do or remember, the proof points available, dates that matter, and what not to say.
+
+### 4b. Pictures
+- Posts without a picture: `social_images_fill` (optional `ids` from `social_list`) makes one for each, one after another in the background, 1 AI generation each; a LinkedIn and a Facebook post of the same idea share one picture. Preview the count and the cost first; it says how many are in line and why it stopped early (the line is full, or the day's AI generations ran out).
+- A picture being made that the user doesn't want: `social_image_stop` stops it (the post keeps the picture it had; the next in line starts); `all: true` also empties the line.
+- The look of LinkedIn pictures: `social_style_set` changes the image style (an id from `social_setup_get` styles) and/or the colour palette (hex colours). `social_style_retrain` has Maggie look at the saved logo again and pick a new style and palette (uses AI). Both are previewed and confirmed; for the full picture look across channels use `cmo-instagram`.
 
 ### 5. Pause, resume, approval mode
 - `social_set_paused` pauses or resumes posting: `channel: "linkedin"` for LinkedIn only, no `channel` for every channel (holidays, a crisis, a sensitive news day). Approved posts wait while paused.
