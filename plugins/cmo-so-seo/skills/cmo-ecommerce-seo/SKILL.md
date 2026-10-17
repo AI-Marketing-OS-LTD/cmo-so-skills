@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "google-search,google-shopping,shopify"
-  version: "0.11.1"
+  version: "0.11.2"
   docs: "https://cmo.so/skills/cmo-ecommerce-seo"
 ---
 # E-commerce SEO

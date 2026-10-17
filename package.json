@@ -1,7 +1,7 @@
 {
 	"name": "cmo-so-skills",
 	"private": true,
-	"version": "0.11.1",
+	"version": "0.11.2",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
 	"license": "MIT",
 	"repository": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills",

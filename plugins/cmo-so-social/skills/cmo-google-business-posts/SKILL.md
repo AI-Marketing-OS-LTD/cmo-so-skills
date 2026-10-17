@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google_business"
-  version: "0.11.1"
+  version: "0.11.2"
   docs: "https://cmo.so/skills/cmo-google-business-posts"
 ---
 # Google Business post writing

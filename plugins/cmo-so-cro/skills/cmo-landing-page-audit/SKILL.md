@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,google-ads,meta-ads"
-  version: "0.11.1"
+  version: "0.11.2"
   docs: "https://cmo.so/skills/cmo-landing-page-audit"
 ---
 # Landing page audit

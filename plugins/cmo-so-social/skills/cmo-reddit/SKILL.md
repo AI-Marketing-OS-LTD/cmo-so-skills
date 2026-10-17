@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "consideration"
   channels: "reddit"
-  version: "0.11.1"
+  version: "0.11.2"
   docs: "https://cmo.so/skills/cmo-reddit"
 ---
 # Reddit marketing

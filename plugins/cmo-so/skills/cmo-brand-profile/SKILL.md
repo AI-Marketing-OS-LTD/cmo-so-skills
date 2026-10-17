@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.11.1"
+  version: "0.11.2"
   docs: "https://cmo.so/skills/cmo-brand-profile"
 ---
 # Brand profile & marketing context
@@ -40,7 +40,7 @@ Order matters: later parts depend on earlier ones.
 | 4 | Products and services | "What do you sell? Which matters most?" | `product_upsert` (name, description, priority) |
 | 5 | Audiences | "Who buys? Describe each group in a sentence." | `audience_upsert` (`segment`, `description`) |
 | 6 | Why you | "Why do customers pick you over the alternatives?" | `brand_update` (`unique_selling_points`) |
-| 7 | Competitors | "Who do customers compare you with?" | `competitor_upsert` (name, description, website) |
+| 7 | Competitors | "Who do customers compare you with?" Also offer Maggie's suggestions: `competitor_suggestions_list` | `competitor_upsert` (name, description, website); a suggestion: `competitor_suggestion_add`, or `competitor_suggestion_dismiss` when it isn't one |
 | 8 | Calls to action | "Where should a reader go next, and for which topics?" | `cta_upsert` (`target_keyword`, `cta_url`, `priority` high/medium/low, `example_texts`); at most 10 |
 | 9 | Proof | "Any customer quotes we may use?" | `testimonial_upsert` (`name`, `title` = role and company, `content`, `use_in_posts`), `testimonials_change` |
 | 10 | Notes | Market research, SWOT, anything else Maggie should know | `brand_research_update` (`market_research`, `additional_information`, `swot` as items named Strengths, Weaknesses, Opportunities or Threats; the SWOT list replaces the whole list) |
@@ -57,6 +57,7 @@ Each write is a change: preview, then confirm.
 - **Selling points are differences, not features everyone has.** Test each: "Could a competitor say this too?" If yes, sharpen it.
 - **CTAs:** one per main topic or product, each with a real http(s) link the user gave and three short example texts. Never invent a URL. High priority for the main conversion. With 10 already, remove one (`cta_remove`) before adding.
 - **Lists replace whole lists.** `brand_update` with `target_region`, `industries` or `unique_selling_points` replaces that list; include the items to keep and show the before and after.
+- **Competitor suggestions are found on the web (each website checked), never added on their own.** On subscribed websites Maggie looks about monthly (`competitor_suggestions_find` looks now, once a day) and already uses the suggested sites for blog ideas while they wait. Show each with its website and one line; add only the ones the user confirms, dismiss the ones they reject (a dismissed one never comes back and its site stops giving ideas).
 - **Upserts replace by name.** `product_upsert`, `audience_upsert`, `competitor_upsert`, `cta_upsert` (by keyword) and `testimonial_upsert` (by person) overwrite the entry with the same name; show what changes.
 - **Objections and anti-customers** (who is not a fit, top worries before buying) fit in `brand_research_update` as additional information; they help Maggie write honestly.
 - **Operating rules worth recording** in `additional_information` (ask only those that apply): whether AI images, avatars or voice clones are allowed and how AI-assisted content is labelled; accessibility defaults (alt text, captions); the competitor rule (name them, compare, or never mention); sensitive topics and banned words; regulated claims and required disclaimers; how voice or compliance changes by language and market; two or three posts the user loves and one they dislike, each with a line on why.
