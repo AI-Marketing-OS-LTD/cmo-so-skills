@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: ""
-  version: "0.11.2"
+  version: "0.11.3"
   docs: "https://cmo.so/skills/cmo-offer-design"
 ---
 # Offer design

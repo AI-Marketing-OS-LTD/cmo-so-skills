@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "website,google-search,google-ads,email"
-  version: "0.11.2"
+  version: "0.11.3"
   docs: "https://cmo.so/skills/cmo-brand-protection"
 ---
 # Brand protection

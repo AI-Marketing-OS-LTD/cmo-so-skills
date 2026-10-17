@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.11.2"
+  version: "0.11.3"
   docs: "https://cmo.so/skills/cmo-brand-profile"
 ---
 # Brand profile & marketing context
@@ -57,7 +57,7 @@ Each write is a change: preview, then confirm.
 - **Selling points are differences, not features everyone has.** Test each: "Could a competitor say this too?" If yes, sharpen it.
 - **CTAs:** one per main topic or product, each with a real http(s) link the user gave and three short example texts. Never invent a URL. High priority for the main conversion. With 10 already, remove one (`cta_remove`) before adding.
 - **Lists replace whole lists.** `brand_update` with `target_region`, `industries` or `unique_selling_points` replaces that list; include the items to keep and show the before and after.
-- **Competitor suggestions are found on the web (each website checked), never added on their own.** On subscribed websites Maggie looks about monthly (`competitor_suggestions_find` looks now, once a day) and already uses the suggested sites for blog ideas while they wait. Show each with its website and one line; add only the ones the user confirms, dismiss the ones they reject (a dismissed one never comes back and its site stops giving ideas).
+- **Competitor suggestions are found on the web (each website checked), never added on their own.** On subscribed websites Maggie looks on her own only when the website and its known competitors have no new pages left (`competitor_suggestions_find` looks now, once a day) and already uses the suggested sites for blog ideas while they wait. Show each with its website and one line; add only the ones the user confirms, dismiss the ones they reject (a dismissed one never comes back and its site stops giving ideas).
 - **Upserts replace by name.** `product_upsert`, `audience_upsert`, `competitor_upsert`, `cta_upsert` (by keyword) and `testimonial_upsert` (by person) overwrite the entry with the same name; show what changes.
 - **Objections and anti-customers** (who is not a fit, top worries before buying) fit in `brand_research_update` as additional information; they help Maggie write honestly.
 - **Operating rules worth recording** in `additional_information` (ask only those that apply): whether AI images, avatars or voice clones are allowed and how AI-assisted content is labelled; accessibility defaults (alt text, captions); the competitor rule (name them, compare, or never mention); sensitive topics and banned words; regulated claims and required disclaimers; how voice or compliance changes by language and market; two or three posts the user loves and one they dislike, each with a line on why.

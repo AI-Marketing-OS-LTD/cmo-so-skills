@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "email"
-  version: "0.11.2"
+  version: "0.11.3"
   docs: "https://cmo.so/skills/cmo-email-deliverability"
 ---
 # Email deliverability

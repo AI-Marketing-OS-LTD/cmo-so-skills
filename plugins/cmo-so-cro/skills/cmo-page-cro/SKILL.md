@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.11.2"
+  version: "0.11.3"
   docs: "https://cmo.so/skills/cmo-page-cro"
 ---
 # Page conversion optimisation
