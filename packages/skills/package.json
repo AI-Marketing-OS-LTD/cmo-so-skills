@@ -1,6 +1,6 @@
 {
 	"name": "@cmo-so/skills",
-	"version": "0.9.0",
+	"version": "0.10.0",
 	"description": "Install the CMO.so marketing skills (SEO, AI search, content, social, email, ads, CRO, analytics) into Claude Code, Codex, Pi, Cursor, Gemini CLI, OpenCode, Copilot and other coding agents, for one project or for your user. Also a Pi package.",
 	"type": "module",
 	"license": "MIT",

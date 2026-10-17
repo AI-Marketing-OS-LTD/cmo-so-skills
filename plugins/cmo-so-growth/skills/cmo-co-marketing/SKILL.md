@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: ""
-  version: "0.9.0"
+  version: "0.10.0"
   docs: "https://cmo.so/skills/cmo-co-marketing"
 ---
 # Co-marketing & partnerships

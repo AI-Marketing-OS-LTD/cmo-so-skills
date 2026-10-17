@@ -7,12 +7,12 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,wordpress,shopify,wix,api"
-  version: "0.9.0"
+  version: "0.10.0"
   docs: "https://cmo.so/skills/cmo-website-setup"
 ---
 # Website setup & verification
 
-Before Maggie can publish, a website goes through three stages in CMO.so: added (Maggie reads it and builds its business profile), verified (the user proves they own it), and connected (CMO.so can deliver posts to the site's platform). This skill walks through them in order, picks the easiest verification route, identifies the platform, and hands the connection step to a computer when it needs keys or an admin login. It never asks for passwords or keys in chat.
+Before Maggie can publish, a website goes through three stages in CMO.so: added (Maggie reads it and builds its business profile), verified (the user proves they own it), and connected (CMO.so can deliver posts to the site's platform). This skill walks through them in order, picks the easiest verification route, identifies the platform, and opens the CMO.so app's connect form for the step that needs keys. It never asks for passwords or keys in chat.
 
 ## When to use
 - New user, new website, or a site stuck at "not verified" or "not connected".
@@ -84,10 +84,14 @@ For WordPress, `wordpress_plugin_get` shows the latest connector version and dow
 
 Send the matching row to whoever manages the site with `handoff_to_desktop` (`platform: "wordpress"`). Never ask for admin logins, hosting passwords or SSH access to fix it yourself.
 
-`connect_guides_get` covers WordPress, Shopify, Wix and the API route; there is no dedicated guide for other builders. If `platform_detect` reports one of them, say so plainly and offer the API route (`handoff_to_desktop` with `platform: "api"` sends the steps to whoever builds the site); do not improvise any other connection method.
+`connect_guides_get` covers WordPress, Shopify, Wix and the API route; there is no dedicated guide for other builders. If `platform_detect` reports one of them, say so plainly and offer the API route (`connect_form_open` with `platform: "api"`, or `vibe` when the user builds the site with an AI coding tool); do not improvise any other connection method.
 
-### 5. Hand off to a computer (a change)
-Creating keys, installing plugins and logging in to a site admin are done on a computer, not in chat. `handoff_to_desktop` emails the user a link to finish the step, optionally for one `platform` (`wordpress`, `shopify`, `wix`, `api`). Use it whenever the user is on a phone or the step needs credentials. Tell them which email address will receive it if the tool reports it.
+### 5. Connect in the app's form
+The keys themselves (a WordPress application password, a Shopify app's client ID and secret, a Wix API key) go into the CMO.so app's connect form, which checks them with the platform and saves them; they never pass through the chat. `connect_form_open` gives the form for one `platform` (`wordpress`, `shopify`, `wix`, `api`, `vibe`): a button in the CMO.so app's chat, a link (`app.cmo.so/posts?connect=…`) anywhere else. Say what to prepare first (from `connect_guides_get`), then give the form. The WordPress plugin route needs no typing at all and also verifies the website.
+
+If you are working in the user's own codebase (vibe coding), `npx @cmo-so/cli connect api-pull` creates the website key and writes it to `.env` without printing it; build the blog pages on `GET https://api.cmo.so/posts`, then `npx @cmo-so/cli connect api-pull --enable` once the user has seen them work.
+
+`handoff_to_desktop` still emails a link to finish later on a computer, optionally for one `platform`; offer it only when the user asks to do it later or elsewhere.
 
 ### 6. Confirm the state
 `setup_status_get` again. Report each stage: added / reading progress, verified, connected. When all are done, suggest `cmo-autopilot` to choose how often Maggie publishes and `cmo-brand-profile` to check what she learned.
@@ -98,7 +102,7 @@ Setup — example.com
 Added: yes (profile reading 80%)
 Verified: yes, by email
 Platform: WordPress
-Connected: not yet — install the CMO.so connector plugin; setup link emailed to you
+Connected: not yet — connect form opened in the CMO.so app (WordPress plugin)
 Next: cmo-autopilot once connected
 ```
 
@@ -110,11 +114,11 @@ User: "I just signed up. Add harbourcatering.co.uk and get it publishing."
 3. Preview `verify_email_start` `{email: "orders@harbourcatering.co.uk"}` → confirm. User reads back the code; preview `verify_email_confirm` `{code: "…"}` → confirm → verified.
 4. User does not know the platform: `platform_detect` → WordPress.
 5. `wordpress_plugin_get` → not installed. `connect_guides_get` → summarise the WordPress plugin route only.
-6. User is on a phone: preview `handoff_to_desktop` `{platform: "wordpress"}` → confirm.
+6. `connect_form_open` `{platform: "wordpress"}` → the user follows the plugin steps in the app.
 7. `setup_status_get` → profile reading in progress, verified, not connected.
 
 Result:
-> Added and verified by email. Platform: WordPress. Connected: not yet; the plugin steps were emailed to you. Next: `cmo-autopilot` once connected.
+> Added and verified by email. Platform: WordPress. Connected: not yet; the connect form is open in the CMO.so app. Next: `cmo-autopilot` once connected.
 
 ## Quality bar
 - [ ] Started from `setup_status_get`; skipped stages already done.
