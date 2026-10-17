@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,blog"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-blog-planner"
 ---
 # Blog planner
@@ -35,11 +35,13 @@ Maggie writes blog posts from an ordered plan, and the plan is filled from a poo
 ### 1. Diagnose the plan
 Say in two or three lines: how many posts are planned, how many days that covers at the current rate, how many ideas wait, and any obvious problem (duplicates, a topic dominating, topics off the business).
 
-Runway rule of thumb: planned posts ÷ posts per day = days of writing ahead. The plan holds at most 10 posts, so at 1-2 posts a day it covers roughly a week at best, and at higher rates less than a day; past that, Maggie picks from the pool by priority. So:
+Runway rule of thumb: planned posts ÷ posts per day = days of writing ahead. The plan holds up to 100 posts; past what is planned, Maggie picks from the pool by priority. So:
 - Low rate: keep the plan full and ordered; it is what goes out next.
 - High rate: the pool matters more than the plan. Keep plenty of good ideas waiting and use `idea_priority` so the best are picked first.
 
 ### 2. Add ideas (each is a change: preview, then confirm)
+
+- **A researched list** (titles, keywords, benchmark URLs the user already has): `ideas_add_list`, up to 100 at once, kept exactly as given, no AI generation used. Keep each idea's title, primary keyword, description, benchmark URL and priority; add a `topic` from `topics_list` when one clearly fits. It goes to the pool, not the plan; plan the best with `idea_plan`. Report what was skipped (duplicates, over the limit of 100 waiting ideas the user added).
 
 | The user says | Tool | Arguments | Notes |
 |---|---|---|---|

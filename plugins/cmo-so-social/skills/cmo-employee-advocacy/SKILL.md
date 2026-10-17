@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin,x"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-employee-advocacy"
 ---
 # Employee and founder advocacy

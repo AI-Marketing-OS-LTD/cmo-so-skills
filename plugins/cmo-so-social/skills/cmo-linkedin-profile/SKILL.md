@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-linkedin-profile"
 ---
 # LinkedIn profile optimisation

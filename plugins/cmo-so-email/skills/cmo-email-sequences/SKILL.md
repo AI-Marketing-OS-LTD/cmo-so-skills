@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "consideration"
   channels: "email"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-email-sequences"
 ---
 # Email sequences

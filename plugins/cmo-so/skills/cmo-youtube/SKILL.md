@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "youtube"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-youtube"
 ---
 # YouTube queue

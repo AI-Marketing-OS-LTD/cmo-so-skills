@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,blog"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-autopilot"
 ---
 # Blog autopilot settings
@@ -46,7 +46,7 @@ How to choose, as rough rules of thumb:
 Considerations to state:
 - Higher rates use the quota faster; check `quota_get` so the month does not run out mid-way.
 - Quality and coverage matter more than volume. Publishing many similar posts can create near-duplicates competing for the same queries.
-- The ideas must keep up: the plan holds at most 10 posts, so at higher rates Maggie draws mostly from the idea pool by priority. Keep the pool healthy with `cmo-blog-planner`.
+- The ideas must keep up: the plan holds up to 100 posts, and past what is planned Maggie draws from the idea pool by priority. Keep the pool healthy with `cmo-blog-planner`.
 - Raise the rate in steps and watch a weekly report between steps.
 
 ### 2. Pause and resume (a change)

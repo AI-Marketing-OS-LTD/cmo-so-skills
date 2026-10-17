@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "app,email"
-  version: "0.11.3"
+  version: "0.11.4"
   docs: "https://cmo.so/skills/cmo-onboarding-activation"
 ---
 # Onboarding & activation
