@@ -1,0 +1,18 @@
+name: sync cmo.so
+# Tell cmo.so/skills to pick up the new skills at once (it also syncs daily on its own).
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Sync the skills library on cmo.so
+        env:
+          SITE: ${{ vars.SKILLS_SITE || 'https://preview.cmo.so' }}
+          TOKEN: ${{ secrets.SKILLS_SYNC_TOKEN }}
+        run: |
+          if [ -z "$TOKEN" ]; then echo "SKILLS_SYNC_TOKEN not set; cmo.so syncs daily on its own"; exit 0; fi
+          sleep 30  # let raw.githubusercontent.com serve the new commit
+          curl -sf -X POST -H "Authorization: Bearer $TOKEN" "$SITE/api/skills/sync"
