@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,tiktok,instagram,linkedin"
-  version: "0.11.6"
+  version: "0.11.7"
   docs: "https://cmo.so/skills/cmo-video-production"
 ---
 # Video production

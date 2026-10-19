@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,google-search,ai-search"
-  version: "0.11.6"
+  version: "0.11.7"
   docs: "https://cmo.so/skills/cmo-weekly-report"
 ---
 # Weekly marketing report

@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "directories"
-  version: "0.11.6"
+  version: "0.11.7"
   docs: "https://cmo.so/skills/cmo-directory-submissions"
 ---
 # Directory submissions
