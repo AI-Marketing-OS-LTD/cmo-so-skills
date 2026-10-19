@@ -41,10 +41,11 @@ Order matters: later parts depend on earlier ones.
 | 5 | Audiences | "Who buys? Describe each group in a sentence." | `audience_upsert` (`segment`, `description`) |
 | 6 | Why you | "Why do customers pick you over the alternatives?" | `brand_update` (`unique_selling_points`) |
 | 7 | Competitors | "Who do customers compare you with?" Also offer Maggie's suggestions: `competitor_suggestions_list` | `competitor_upsert` (name, description, website); a suggestion: `competitor_suggestion_add`, or `competitor_suggestion_dismiss` when it isn't one |
-| 8 | Calls to action | "Where should a reader go next, and for which topics?" | `cta_upsert` (`target_keyword`, `cta_url`, `priority` high/medium/low, `example_texts`); at most 10 |
-| 9 | Proof | "Any customer quotes we may use?" | `testimonial_upsert` (`name`, `title` = role and company, `content`, `use_in_posts`), `testimonials_change` |
-| 10 | Notes | Market research, SWOT, anything else Maggie should know | `brand_research_update` (`market_research`, `additional_information`, `swot` as items named Strengths, Weaknesses, Opportunities or Threats; the SWOT list replaces the whole list) |
-| 11 | Voice | "How should posts sound? Show me something you wrote that you like." | voice tools, step 3 |
+| 8 | Sitemaps | "Which sitemaps should Maggie read: your own, competitors' or other sites you follow?" Show `sitemap_list` first | `sitemap_upsert` (`url`, `owner` own/competitor/other, `label`, `uses`: blog post ideas, social post ideas; own sitemaps also internal links and finding published posts), `sitemap_remove`; at most 20 |
+| 9 | Calls to action | "Where should a reader go next, and for which topics?" | `cta_upsert` (`target_keyword`, `cta_url`, `priority` high/medium/low, `example_texts`); at most 10 |
+| 10 | Proof | "Any customer quotes we may use?" | `testimonial_upsert` (`name`, `title` = role and company, `content`, `use_in_posts`), `testimonials_change` |
+| 11 | Notes | Market research, SWOT, anything else Maggie should know | `brand_research_update` (`market_research`, `additional_information`, `swot` as items named Strengths, Weaknesses, Opportunities or Threats; the SWOT list replaces the whole list) |
+| 12 | Voice | "How should posts sound? Show me something you wrote that you like." | voice tools, step 3 |
 
 Each write is a change: preview, then confirm.
 
@@ -59,6 +60,7 @@ Each write is a change: preview, then confirm.
 - **Links to the site's own articles:** each new post also links to a few of the website's latest articles, picked for the topic (default 3, separate from CTAs). Change the number with `internal_links_set` (0 to 10; 0 turns it off) when the user wants more cross-linking or none.
 - **Lists replace whole lists.** `brand_update` with `target_region`, `industries` or `unique_selling_points` replaces that list; include the items to keep and show the before and after.
 - **Competitor suggestions are found on the web (each website checked), never added on their own.** On subscribed websites Maggie looks on her own only when the website and its known competitors have no new pages left (`competitor_suggestions_find` looks now, once a day) and already uses the suggested sites for blog ideas while they wait. Show each with its website and one line; add only the ones the user confirms, dismiss the ones they reject (a dismissed one never comes back and its site stops giving ideas).
+- **Sitemaps are read, not trusted blindly.** Saving checks each new address and reports how many pages it found or why it failed; tell the user when one failed. Competitors' and other sites' pages only inspire ideas: posts never link to or name them. Sitemaps are crawled daily only while the website is on a plan.
 - **Upserts replace by name.** `product_upsert`, `audience_upsert`, `competitor_upsert`, `cta_upsert` (by keyword) and `testimonial_upsert` (by person) overwrite the entry with the same name; show what changes.
 - **Objections and anti-customers** (who is not a fit, top worries before buying) fit in `brand_research_update` as additional information; they help Maggie write honestly.
 - **Operating rules worth recording** in `additional_information` (ask only those that apply): whether AI images, avatars or voice clones are allowed and how AI-assisted content is labelled; accessibility defaults (alt text, captions); the competitor rule (name them, compare, or never mention); sensitive topics and banned words; regulated claims and required disclaimers; how voice or compliance changes by language and market; two or three posts the user loves and one they dislike, each with a line on why.

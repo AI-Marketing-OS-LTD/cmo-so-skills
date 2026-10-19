@@ -1664,7 +1664,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.2",
+			"version": "0.3.3",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_gaps_get",
@@ -1681,6 +1681,9 @@
 				"competitor_suggestion_add",
 				"competitor_suggestion_dismiss",
 				"competitor_suggestions_find",
+				"sitemap_list",
+				"sitemap_upsert",
+				"sitemap_remove",
 				"cta_upsert",
 				"cta_remove",
 				"internal_links_set",
