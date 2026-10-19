@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.11.5"
+  version: "0.11.6"
   docs: "https://cmo.so/skills/cmo-brand-profile"
 ---
 # Brand profile & marketing context
@@ -56,6 +56,7 @@ Each write is a change: preview, then confirm.
 - **Competitors in three kinds:** direct (same solution), secondary (different solution, same problem), and the do-nothing option (spreadsheets, an assistant, doing it by hand). Add only ones the user names.
 - **Selling points are differences, not features everyone has.** Test each: "Could a competitor say this too?" If yes, sharpen it.
 - **CTAs:** one per main topic or product, each with a real http(s) link the user gave and three short example texts. Never invent a URL. High priority for the main conversion. With 10 already, remove one (`cta_remove`) before adding.
+- **Links to the site's own articles:** each new post also links to a few of the website's latest articles, picked for the topic (default 3, separate from CTAs). Change the number with `internal_links_set` (0 to 10; 0 turns it off) when the user wants more cross-linking or none.
 - **Lists replace whole lists.** `brand_update` with `target_region`, `industries` or `unique_selling_points` replaces that list; include the items to keep and show the before and after.
 - **Competitor suggestions are found on the web (each website checked), never added on their own.** On subscribed websites Maggie looks on her own only when the website and its known competitors have no new pages left (`competitor_suggestions_find` looks now, once a day) and already uses the suggested sites for blog ideas while they wait. Show each with its website and one line; add only the ones the user confirms, dismiss the ones they reject (a dismissed one never comes back and its site stops giving ideas).
 - **Upserts replace by name.** `product_upsert`, `audience_upsert`, `competitor_upsert`, `cta_upsert` (by keyword) and `testimonial_upsert` (by person) overwrite the entry with the same name; show what changes.

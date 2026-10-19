@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads,microsoft-ads,reddit-ads,x-ads,pinterest-ads,snapchat-ads,amazon-ads,apple-ads,youtube-ads"
-  version: "0.11.5"
+  version: "0.11.6"
   docs: "https://cmo.so/skills/cmo-ads-audit"
 ---
 # Paid ads audit

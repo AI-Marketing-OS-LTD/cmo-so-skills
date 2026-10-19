@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "tiktok"
-  version: "0.11.5"
+  version: "0.11.6"
   docs: "https://cmo.so/skills/cmo-tiktok-posts"
 ---
 # TikTok caption writing

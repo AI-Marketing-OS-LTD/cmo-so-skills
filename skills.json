@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.11.5",
+	"version": "0.11.6",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -881,7 +881,6 @@
 				"cmo-website-setup",
 				"cmo-daily"
 			],
-			"doc": "docs/skills/core/cmo-connect.md",
 			"url": "https://cmo.so/skills/cmo-connect",
 			"references": [
 				{
@@ -993,7 +992,6 @@
 				"cmo-weekly-report",
 				"cmo-linkedin"
 			],
-			"doc": "docs/skills/core/cmo-daily.md",
 			"url": "https://cmo.so/skills/cmo-daily",
 			"references": [
 				{
@@ -1094,7 +1092,6 @@
 				"cmo-client-report",
 				"cmo-seo-opportunities"
 			],
-			"doc": "docs/skills/core/cmo-weekly-report.md",
 			"url": "https://cmo.so/skills/cmo-weekly-report",
 			"references": [
 				{
@@ -1246,7 +1243,6 @@
 				"cmo-content-strategy",
 				"cmo-keyword-research"
 			],
-			"doc": "docs/skills/core/cmo-blog-planner.md",
 			"url": "https://cmo.so/skills/cmo-blog-planner",
 			"references": [
 				{
@@ -1355,7 +1351,6 @@
 				"cmo-social-strategy",
 				"cmo-social-crisis"
 			],
-			"doc": "docs/skills/core/cmo-linkedin.md",
 			"url": "https://cmo.so/skills/cmo-linkedin",
 			"references": [
 				{
@@ -1456,7 +1451,6 @@
 				"cmo-linkedin",
 				"cmo-brand-profile"
 			],
-			"doc": "docs/skills/core/cmo-memory.md",
 			"url": "https://cmo.so/skills/cmo-memory",
 			"references": [
 				{
@@ -1521,7 +1515,6 @@
 				"cmo-seo-audit",
 				"cmo-content-refresh"
 			],
-			"doc": "docs/skills/core/cmo-seo-opportunities.md",
 			"url": "https://cmo.so/skills/cmo-seo-opportunities",
 			"references": [
 				{
@@ -1617,7 +1610,6 @@
 				"cmo-ai-visibility-audit",
 				"cmo-aeo-content"
 			],
-			"doc": "docs/skills/core/cmo-ai-visibility.md",
 			"url": "https://cmo.so/skills/cmo-ai-visibility",
 			"references": [
 				{
@@ -1672,7 +1664,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.1",
+			"version": "0.3.2",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_gaps_get",
@@ -1691,6 +1683,7 @@
 				"competitor_suggestions_find",
 				"cta_upsert",
 				"cta_remove",
+				"internal_links_set",
 				"testimonial_upsert",
 				"testimonials_change",
 				"brand_research_update",
@@ -1703,7 +1696,6 @@
 				"cmo-positioning",
 				"cmo-customer-research"
 			],
-			"doc": "docs/skills/core/cmo-brand-profile.md",
 			"url": "https://cmo.so/skills/cmo-brand-profile",
 			"references": [
 				{
@@ -1855,7 +1847,6 @@
 				"cmo-connect",
 				"cmo-autopilot"
 			],
-			"doc": "docs/skills/core/cmo-website-setup.md",
 			"url": "https://cmo.so/skills/cmo-website-setup",
 			"references": [
 				{
@@ -1948,7 +1939,6 @@
 				"cmo-blog-planner",
 				"cmo-draft-review"
 			],
-			"doc": "docs/skills/core/cmo-autopilot.md",
 			"url": "https://cmo.so/skills/cmo-autopilot",
 			"references": [
 				{
@@ -2024,7 +2014,6 @@
 				"cmo-copy-editing",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/core/cmo-draft-review.md",
 			"url": "https://cmo.so/skills/cmo-draft-review",
 			"references": [
 				{
@@ -2137,7 +2126,6 @@
 			"pairs_with": [
 				"cmo-connect"
 			],
-			"doc": "docs/skills/core/cmo-team-access.md",
 			"url": "https://cmo.so/skills/cmo-team-access",
 			"references": [
 				{
@@ -2194,7 +2182,6 @@
 				"cmo-positioning",
 				"cmo-social-listening"
 			],
-			"doc": "docs/skills/strategy/cmo-customer-research.md",
 			"url": "https://cmo.so/skills/cmo-customer-research",
 			"references": [
 				{
@@ -2307,7 +2294,6 @@
 				"cmo-competitor-research",
 				"cmo-copywriting"
 			],
-			"doc": "docs/skills/strategy/cmo-positioning.md",
 			"url": "https://cmo.so/skills/cmo-positioning",
 			"references": [
 				{
@@ -2388,7 +2374,6 @@
 				"cmo-competitor-pages",
 				"cmo-ads-competitor-research"
 			],
-			"doc": "docs/skills/strategy/cmo-competitor-research.md",
 			"url": "https://cmo.so/skills/cmo-competitor-research",
 			"references": [
 				{
@@ -2537,7 +2522,6 @@
 				"cmo-marketing-audit",
 				"cmo-content-strategy"
 			],
-			"doc": "docs/skills/strategy/cmo-marketing-plan.md",
 			"url": "https://cmo.so/skills/cmo-marketing-plan",
 			"references": [
 				{
@@ -2616,7 +2600,6 @@
 				"cmo-marketing-plan",
 				"cmo-seo-audit"
 			],
-			"doc": "docs/skills/strategy/cmo-marketing-audit.md",
 			"url": "https://cmo.so/skills/cmo-marketing-audit",
 			"references": [
 				{
@@ -2694,7 +2677,6 @@
 			"pairs_with": [
 				"cmo-marketing-plan"
 			],
-			"doc": "docs/skills/strategy/cmo-marketing-ideas.md",
 			"url": "https://cmo.so/skills/cmo-marketing-ideas",
 			"references": [
 				{
@@ -2755,7 +2737,6 @@
 				"cmo-page-cro",
 				"cmo-offer-design"
 			],
-			"doc": "docs/skills/strategy/cmo-marketing-psychology.md",
 			"url": "https://cmo.so/skills/cmo-marketing-psychology",
 			"references": [
 				{
@@ -2817,7 +2798,6 @@
 				"cmo-pricing-strategy",
 				"cmo-copywriting"
 			],
-			"doc": "docs/skills/strategy/cmo-offer-design.md",
 			"url": "https://cmo.so/skills/cmo-offer-design",
 			"references": [
 				{
@@ -2870,7 +2850,6 @@
 				"cmo-offer-design",
 				"cmo-paywalls"
 			],
-			"doc": "docs/skills/strategy/cmo-pricing-strategy.md",
 			"url": "https://cmo.so/skills/cmo-pricing-strategy",
 			"references": [
 				{
@@ -2959,7 +2938,6 @@
 			"pairs_with": [
 				"cmo-copy-editing"
 			],
-			"doc": "docs/skills/strategy/cmo-expert-panel.md",
 			"url": "https://cmo.so/skills/cmo-expert-panel",
 			"references": [
 				{
@@ -3029,7 +3007,6 @@
 				"cmo-positioning",
 				"cmo-brand-protection"
 			],
-			"doc": "docs/skills/strategy/cmo-brand-naming.md",
 			"url": "https://cmo.so/skills/cmo-brand-naming",
 			"references": [
 				{
@@ -3100,7 +3077,6 @@
 				"cmo-technical-seo",
 				"cmo-seo-opportunities"
 			],
-			"doc": "docs/skills/seo/cmo-seo-audit.md",
 			"url": "https://cmo.so/skills/cmo-seo-audit",
 			"references": [
 				{
@@ -3259,7 +3235,6 @@
 				"cmo-site-architecture",
 				"cmo-agent-readiness"
 			],
-			"doc": "docs/skills/seo/cmo-technical-seo.md",
 			"url": "https://cmo.so/skills/cmo-technical-seo",
 			"references": [
 				{
@@ -3454,7 +3429,6 @@
 				"cmo-content-brief",
 				"cmo-schema-markup"
 			],
-			"doc": "docs/skills/seo/cmo-page-seo.md",
 			"url": "https://cmo.so/skills/cmo-page-seo",
 			"references": [
 				{
@@ -3566,7 +3540,6 @@
 				"cmo-keyword-clustering",
 				"cmo-blog-planner"
 			],
-			"doc": "docs/skills/seo/cmo-keyword-research.md",
 			"url": "https://cmo.so/skills/cmo-keyword-research",
 			"references": [
 				{
@@ -3643,7 +3616,6 @@
 				"cmo-keyword-research",
 				"cmo-site-architecture"
 			],
-			"doc": "docs/skills/seo/cmo-keyword-clustering.md",
 			"url": "https://cmo.so/skills/cmo-keyword-clustering",
 			"references": [
 				{
@@ -3711,7 +3683,6 @@
 				"cmo-blog-planner",
 				"cmo-page-seo"
 			],
-			"doc": "docs/skills/seo/cmo-content-brief.md",
 			"url": "https://cmo.so/skills/cmo-content-brief",
 			"references": [
 				{
@@ -3782,7 +3753,6 @@
 				"cmo-seo-opportunities",
 				"cmo-copy-editing"
 			],
-			"doc": "docs/skills/seo/cmo-content-refresh.md",
 			"url": "https://cmo.so/skills/cmo-content-refresh",
 			"references": [
 				{
@@ -3871,7 +3841,6 @@
 				"cmo-keyword-clustering",
 				"cmo-technical-seo"
 			],
-			"doc": "docs/skills/seo/cmo-site-architecture.md",
 			"url": "https://cmo.so/skills/cmo-site-architecture",
 			"references": [
 				{
@@ -3955,7 +3924,6 @@
 				"cmo-aeo-content",
 				"cmo-brand-protection"
 			],
-			"doc": "docs/skills/seo/cmo-schema-markup.md",
 			"url": "https://cmo.so/skills/cmo-schema-markup",
 			"references": [
 				{
@@ -4074,7 +4042,6 @@
 				"cmo-site-architecture",
 				"cmo-competitor-pages"
 			],
-			"doc": "docs/skills/seo/cmo-programmatic-seo.md",
 			"url": "https://cmo.so/skills/cmo-programmatic-seo",
 			"references": [
 				{
@@ -4187,7 +4154,6 @@
 				"cmo-competitor-research",
 				"cmo-programmatic-seo"
 			],
-			"doc": "docs/skills/seo/cmo-competitor-pages.md",
 			"url": "https://cmo.so/skills/cmo-competitor-pages",
 			"references": [
 				{
@@ -4260,7 +4226,6 @@
 				"cmo-schema-markup",
 				"cmo-google-business"
 			],
-			"doc": "docs/skills/seo/cmo-local-seo.md",
 			"url": "https://cmo.so/skills/cmo-local-seo",
 			"references": [
 				{
@@ -4343,7 +4308,6 @@
 				"cmo-technical-seo",
 				"cmo-china-social"
 			],
-			"doc": "docs/skills/seo/cmo-international-seo.md",
 			"url": "https://cmo.so/skills/cmo-international-seo",
 			"references": [
 				{
@@ -4408,7 +4372,6 @@
 				"cmo-schema-markup",
 				"cmo-technical-seo"
 			],
-			"doc": "docs/skills/seo/cmo-ecommerce-seo.md",
 			"url": "https://cmo.so/skills/cmo-ecommerce-seo",
 			"references": [
 				{
@@ -4463,7 +4426,6 @@
 				"cmo-public-relations",
 				"cmo-directory-submissions"
 			],
-			"doc": "docs/skills/seo/cmo-link-building.md",
 			"url": "https://cmo.so/skills/cmo-link-building",
 			"references": [
 				{
@@ -4539,7 +4501,6 @@
 			"pairs_with": [
 				"cmo-technical-seo"
 			],
-			"doc": "docs/skills/seo/cmo-seo-monitoring.md",
 			"url": "https://cmo.so/skills/cmo-seo-monitoring",
 			"references": [
 				{
@@ -4610,7 +4571,6 @@
 				"cmo-content-brief",
 				"cmo-page-seo"
 			],
-			"doc": "docs/skills/seo/cmo-search-intent.md",
 			"url": "https://cmo.so/skills/cmo-search-intent",
 			"references": [
 				{
@@ -4679,7 +4639,6 @@
 				"cmo-keyword-clustering",
 				"cmo-marketing-plan"
 			],
-			"doc": "docs/skills/seo/cmo-seo-plan.md",
 			"url": "https://cmo.so/skills/cmo-seo-plan",
 			"references": [
 				{
@@ -4743,7 +4702,6 @@
 				"cmo-technical-seo",
 				"cmo-agent-readiness"
 			],
-			"doc": "docs/skills/ai-search/cmo-ai-visibility-audit.md",
 			"url": "https://cmo.so/skills/cmo-ai-visibility-audit",
 			"references": [
 				{
@@ -4920,7 +4878,6 @@
 			"pairs_with": [
 				"cmo-ai-citation-gaps"
 			],
-			"doc": "docs/skills/ai-search/cmo-ai-prompt-research.md",
 			"url": "https://cmo.so/skills/cmo-ai-prompt-research",
 			"references": [
 				{
@@ -4988,7 +4945,6 @@
 				"cmo-aeo-content",
 				"cmo-reddit"
 			],
-			"doc": "docs/skills/ai-search/cmo-ai-citation-gaps.md",
 			"url": "https://cmo.so/skills/cmo-ai-citation-gaps",
 			"references": [
 				{
@@ -5064,7 +5020,6 @@
 				"cmo-brand-protection",
 				"cmo-social-listening"
 			],
-			"doc": "docs/skills/ai-search/cmo-ai-brand-monitoring.md",
 			"url": "https://cmo.so/skills/cmo-ai-brand-monitoring",
 			"references": [
 				{
@@ -5132,7 +5087,6 @@
 				"cmo-schema-markup",
 				"cmo-ai-visibility-audit"
 			],
-			"doc": "docs/skills/ai-search/cmo-aeo-content.md",
 			"url": "https://cmo.so/skills/cmo-aeo-content",
 			"references": [
 				{
@@ -5250,7 +5204,6 @@
 				"cmo-form-cro",
 				"cmo-checkout-cro"
 			],
-			"doc": "docs/skills/ai-search/cmo-agent-readiness.md",
 			"url": "https://cmo.so/skills/cmo-agent-readiness",
 			"references": [
 				{
@@ -5349,7 +5302,6 @@
 				"cmo-keyword-clustering",
 				"cmo-autopilot"
 			],
-			"doc": "docs/skills/content/cmo-content-strategy.md",
 			"url": "https://cmo.so/skills/cmo-content-strategy",
 			"references": [
 				{
@@ -5432,7 +5384,6 @@
 				"cmo-content-brief",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/content/cmo-blog-writing.md",
 			"url": "https://cmo.so/skills/cmo-blog-writing",
 			"references": [
 				{
@@ -5526,7 +5477,6 @@
 				"cmo-page-cro",
 				"cmo-copy-editing"
 			],
-			"doc": "docs/skills/content/cmo-copywriting.md",
 			"url": "https://cmo.so/skills/cmo-copywriting",
 			"references": [
 				{
@@ -5611,7 +5561,6 @@
 				"cmo-copywriting",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/content/cmo-copy-editing.md",
 			"url": "https://cmo.so/skills/cmo-copy-editing",
 			"references": [
 				{
@@ -5694,7 +5643,6 @@
 				"cmo-copy-editing",
 				"cmo-draft-review"
 			],
-			"doc": "docs/skills/content/cmo-humanize.md",
 			"url": "https://cmo.so/skills/cmo-humanize",
 			"references": [
 				{
@@ -5807,7 +5755,6 @@
 				"cmo-china-social",
 				"cmo-pinterest"
 			],
-			"doc": "docs/skills/content/cmo-content-repurposing.md",
 			"url": "https://cmo.so/skills/cmo-content-repurposing",
 			"references": [
 				{
@@ -5998,7 +5945,6 @@
 				"cmo-email-sequences",
 				"cmo-free-tools"
 			],
-			"doc": "docs/skills/content/cmo-lead-magnets.md",
 			"url": "https://cmo.so/skills/cmo-lead-magnets",
 			"references": [
 				{
@@ -6081,7 +6027,6 @@
 				"cmo-linkedin-posts",
 				"cmo-x-growth"
 			],
-			"doc": "docs/skills/content/cmo-thought-leadership.md",
 			"url": "https://cmo.so/skills/cmo-thought-leadership",
 			"references": [
 				{
@@ -6160,7 +6105,6 @@
 				"cmo-youtube",
 				"cmo-tiktok"
 			],
-			"doc": "docs/skills/social/cmo-social-strategy.md",
 			"url": "https://cmo.so/skills/cmo-social-strategy",
 			"references": [
 				{
@@ -6332,7 +6276,6 @@
 				"cmo-linkedin",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-linkedin-posts.md",
 			"url": "https://cmo.so/skills/cmo-linkedin-posts",
 			"references": [
 				{
@@ -6431,7 +6374,6 @@
 			"pairs_with": [
 				"cmo-linkedin-strategy"
 			],
-			"doc": "docs/skills/social/cmo-linkedin-profile.md",
 			"url": "https://cmo.so/skills/cmo-linkedin-profile",
 			"references": [
 				{
@@ -6484,7 +6426,6 @@
 				"cmo-linkedin-posts",
 				"cmo-prospecting"
 			],
-			"doc": "docs/skills/social/cmo-linkedin-engagement.md",
 			"url": "https://cmo.so/skills/cmo-linkedin-engagement",
 			"references": [
 				{
@@ -6569,7 +6510,6 @@
 				"cmo-social-analytics",
 				"cmo-employee-advocacy"
 			],
-			"doc": "docs/skills/social/cmo-linkedin-strategy.md",
 			"url": "https://cmo.so/skills/cmo-linkedin-strategy",
 			"references": [
 				{
@@ -6652,7 +6592,6 @@
 				"cmo-thought-leadership",
 				"cmo-open-social"
 			],
-			"doc": "docs/skills/social/cmo-x-growth.md",
 			"url": "https://cmo.so/skills/cmo-x-growth",
 			"references": [
 				{
@@ -6766,7 +6705,6 @@
 				"cmo-linkedin-strategy",
 				"cmo-campaign-analytics"
 			],
-			"doc": "docs/skills/social/cmo-social-analytics.md",
 			"url": "https://cmo.so/skills/cmo-social-analytics",
 			"references": [
 				{
@@ -6925,7 +6863,6 @@
 				"cmo-social-strategy",
 				"cmo-reddit"
 			],
-			"doc": "docs/skills/social/cmo-community.md",
 			"url": "https://cmo.so/skills/cmo-community",
 			"references": [
 				{
@@ -7010,7 +6947,6 @@
 			"pairs_with": [
 				"cmo-co-marketing"
 			],
-			"doc": "docs/skills/social/cmo-influencer.md",
 			"url": "https://cmo.so/skills/cmo-influencer",
 			"references": [
 				{
@@ -7076,7 +7012,6 @@
 				"cmo-video-production",
 				"cmo-short-form-video"
 			],
-			"doc": "docs/skills/social/cmo-youtube-strategy.md",
 			"url": "https://cmo.so/skills/cmo-youtube-strategy",
 			"references": [
 				{
@@ -7221,7 +7156,6 @@
 				"cmo-video-production",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-youtube-posts.md",
 			"url": "https://cmo.so/skills/cmo-youtube-posts",
 			"references": [
 				{
@@ -7343,7 +7277,6 @@
 				"cmo-video-production",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-tiktok-posts.md",
 			"url": "https://cmo.so/skills/cmo-tiktok-posts",
 			"references": [
 				{
@@ -7455,7 +7388,6 @@
 				"cmo-youtube-posts",
 				"cmo-tiktok"
 			],
-			"doc": "docs/skills/social/cmo-short-form-video.md",
 			"url": "https://cmo.so/skills/cmo-short-form-video",
 			"references": [
 				{
@@ -7559,7 +7491,6 @@
 				"cmo-churn-prevention",
 				"cmo-email-deliverability"
 			],
-			"doc": "docs/skills/email/cmo-email-sequences.md",
 			"url": "https://cmo.so/skills/cmo-email-sequences",
 			"references": [
 				{
@@ -7697,7 +7628,6 @@
 				"cmo-linkedin-engagement",
 				"cmo-email-deliverability"
 			],
-			"doc": "docs/skills/email/cmo-cold-email.md",
 			"url": "https://cmo.so/skills/cmo-cold-email",
 			"references": [
 				{
@@ -7769,7 +7699,6 @@
 			"pairs_with": [
 				"cmo-email-sequences"
 			],
-			"doc": "docs/skills/email/cmo-sms-whatsapp.md",
 			"url": "https://cmo.so/skills/cmo-sms-whatsapp",
 			"references": [
 				{
@@ -7825,7 +7754,6 @@
 				"cmo-email-sequences",
 				"cmo-email-deliverability"
 			],
-			"doc": "docs/skills/email/cmo-churn-prevention.md",
 			"url": "https://cmo.so/skills/cmo-churn-prevention",
 			"references": [
 				{
@@ -7902,7 +7830,6 @@
 				"cmo-ads-budget",
 				"cmo-ad-creative"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-strategy.md",
 			"url": "https://cmo.so/skills/cmo-ads-strategy",
 			"references": [
 				{
@@ -8014,7 +7941,6 @@
 				"cmo-meta-ads",
 				"cmo-linkedin-ads"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-audit.md",
 			"url": "https://cmo.so/skills/cmo-ads-audit",
 			"references": [
 				{
@@ -8168,7 +8094,6 @@
 				"cmo-ads-audit",
 				"cmo-wasted-spend"
 			],
-			"doc": "docs/skills/paid-ads/cmo-google-ads.md",
 			"url": "https://cmo.so/skills/cmo-google-ads",
 			"references": [
 				{
@@ -8250,7 +8175,6 @@
 				"cmo-ad-creative",
 				"cmo-ads-audit"
 			],
-			"doc": "docs/skills/paid-ads/cmo-meta-ads.md",
 			"url": "https://cmo.so/skills/cmo-meta-ads",
 			"references": [
 				{
@@ -8359,7 +8283,6 @@
 				"cmo-linkedin",
 				"cmo-ads-audit"
 			],
-			"doc": "docs/skills/paid-ads/cmo-linkedin-ads.md",
 			"url": "https://cmo.so/skills/cmo-linkedin-ads",
 			"references": [
 				{
@@ -8429,7 +8352,6 @@
 				"cmo-image-generation",
 				"cmo-ab-testing"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ad-creative.md",
 			"url": "https://cmo.so/skills/cmo-ad-creative",
 			"references": [
 				{
@@ -8548,7 +8470,6 @@
 				"cmo-ads-strategy",
 				"cmo-ads-monitoring"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-budget.md",
 			"url": "https://cmo.so/skills/cmo-ads-budget",
 			"references": [
 				{
@@ -8676,7 +8597,6 @@
 				"cmo-google-ads",
 				"cmo-ads-monitoring"
 			],
-			"doc": "docs/skills/paid-ads/cmo-wasted-spend.md",
 			"url": "https://cmo.so/skills/cmo-wasted-spend",
 			"references": [
 				{
@@ -8767,7 +8687,6 @@
 				"cmo-ads-budget",
 				"cmo-wasted-spend"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-monitoring.md",
 			"url": "https://cmo.so/skills/cmo-ads-monitoring",
 			"references": [
 				{
@@ -8914,7 +8833,6 @@
 				"cmo-competitor-research",
 				"cmo-ad-creative"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-competitor-research.md",
 			"url": "https://cmo.so/skills/cmo-ads-competitor-research",
 			"references": [
 				{
@@ -8978,7 +8896,6 @@
 				"cmo-tracking-setup",
 				"cmo-ads-strategy"
 			],
-			"doc": "docs/skills/paid-ads/cmo-ads-launch.md",
 			"url": "https://cmo.so/skills/cmo-ads-launch",
 			"references": [
 				{
@@ -9080,7 +8997,6 @@
 				"cmo-ab-testing",
 				"cmo-copywriting"
 			],
-			"doc": "docs/skills/cro/cmo-page-cro.md",
 			"url": "https://cmo.so/skills/cmo-page-cro",
 			"references": [
 				{
@@ -9164,7 +9080,6 @@
 				"cmo-page-cro",
 				"cmo-ad-creative"
 			],
-			"doc": "docs/skills/cro/cmo-landing-page-audit.md",
 			"url": "https://cmo.so/skills/cmo-landing-page-audit",
 			"references": [
 				{
@@ -9236,7 +9151,6 @@
 				"cmo-page-cro",
 				"cmo-agent-readiness"
 			],
-			"doc": "docs/skills/cro/cmo-form-cro.md",
 			"url": "https://cmo.so/skills/cmo-form-cro",
 			"references": [
 				{
@@ -9290,7 +9204,6 @@
 			"pairs_with": [
 				"cmo-onboarding-activation"
 			],
-			"doc": "docs/skills/cro/cmo-signup-flow.md",
 			"url": "https://cmo.so/skills/cmo-signup-flow",
 			"references": [
 				{
@@ -9363,7 +9276,6 @@
 				"cmo-signup-flow",
 				"cmo-email-sequences"
 			],
-			"doc": "docs/skills/cro/cmo-onboarding-activation.md",
 			"url": "https://cmo.so/skills/cmo-onboarding-activation",
 			"references": [
 				{
@@ -9426,7 +9338,6 @@
 			"pairs_with": [
 				"cmo-lead-magnets"
 			],
-			"doc": "docs/skills/cro/cmo-popups.md",
 			"url": "https://cmo.so/skills/cmo-popups",
 			"references": [
 				{
@@ -9497,7 +9408,6 @@
 			"pairs_with": [
 				"cmo-pricing-strategy"
 			],
-			"doc": "docs/skills/cro/cmo-paywalls.md",
 			"url": "https://cmo.so/skills/cmo-paywalls",
 			"references": [
 				{
@@ -9563,7 +9473,6 @@
 				"cmo-page-cro",
 				"cmo-ad-creative"
 			],
-			"doc": "docs/skills/cro/cmo-ab-testing.md",
 			"url": "https://cmo.so/skills/cmo-ab-testing",
 			"references": [
 				{
@@ -9668,7 +9577,6 @@
 				"cmo-copywriting",
 				"cmo-page-cro"
 			],
-			"doc": "docs/skills/cro/cmo-landing-page-builder.md",
 			"url": "https://cmo.so/skills/cmo-landing-page-builder",
 			"references": [
 				{
@@ -9761,7 +9669,6 @@
 				"cmo-attribution",
 				"cmo-ads-launch"
 			],
-			"doc": "docs/skills/analytics/cmo-tracking-setup.md",
 			"url": "https://cmo.so/skills/cmo-tracking-setup",
 			"references": [
 				{
@@ -9946,7 +9853,6 @@
 				"cmo-tracking-setup",
 				"cmo-campaign-analytics"
 			],
-			"doc": "docs/skills/analytics/cmo-attribution.md",
 			"url": "https://cmo.so/skills/cmo-attribution",
 			"references": [
 				{
@@ -10079,7 +9985,6 @@
 				"cmo-attribution",
 				"cmo-client-report"
 			],
-			"doc": "docs/skills/analytics/cmo-campaign-analytics.md",
 			"url": "https://cmo.so/skills/cmo-campaign-analytics",
 			"references": [
 				{
@@ -10230,7 +10135,6 @@
 				"cmo-weekly-report",
 				"cmo-campaign-analytics"
 			],
-			"doc": "docs/skills/analytics/cmo-client-report.md",
 			"url": "https://cmo.so/skills/cmo-client-report",
 			"references": [
 				{
@@ -10343,7 +10247,6 @@
 				"cmo-ab-testing",
 				"cmo-seo-monitoring"
 			],
-			"doc": "docs/skills/analytics/cmo-closed-loop-measurement.md",
 			"url": "https://cmo.so/skills/cmo-closed-loop-measurement",
 			"references": [
 				{
@@ -10408,7 +10311,6 @@
 				"cmo-email-sequences",
 				"cmo-employee-advocacy"
 			],
-			"doc": "docs/skills/growth/cmo-product-launch.md",
 			"url": "https://cmo.so/skills/cmo-product-launch",
 			"references": [
 				{
@@ -10497,7 +10399,6 @@
 			"pairs_with": [
 				"cmo-churn-prevention"
 			],
-			"doc": "docs/skills/growth/cmo-referral-program.md",
 			"url": "https://cmo.so/skills/cmo-referral-program",
 			"references": [
 				{
@@ -10559,7 +10460,6 @@
 				"cmo-events-webinars",
 				"cmo-influencer"
 			],
-			"doc": "docs/skills/growth/cmo-co-marketing.md",
 			"url": "https://cmo.so/skills/cmo-co-marketing",
 			"references": [
 				{
@@ -10624,7 +10524,6 @@
 				"cmo-lead-magnets",
 				"cmo-programmatic-seo"
 			],
-			"doc": "docs/skills/growth/cmo-free-tools.md",
 			"url": "https://cmo.so/skills/cmo-free-tools",
 			"references": [
 				{
@@ -10688,7 +10587,6 @@
 				"cmo-link-building",
 				"cmo-product-launch"
 			],
-			"doc": "docs/skills/growth/cmo-directory-submissions.md",
 			"url": "https://cmo.so/skills/cmo-directory-submissions",
 			"references": [
 				{
@@ -10762,7 +10660,6 @@
 				"cmo-product-launch",
 				"cmo-social-crisis"
 			],
-			"doc": "docs/skills/growth/cmo-public-relations.md",
 			"url": "https://cmo.so/skills/cmo-public-relations",
 			"references": [
 				{
@@ -10819,7 +10716,6 @@
 				"cmo-email-sequences",
 				"cmo-co-marketing"
 			],
-			"doc": "docs/skills/growth/cmo-events-webinars.md",
 			"url": "https://cmo.so/skills/cmo-events-webinars",
 			"references": [
 				{
@@ -10883,7 +10779,6 @@
 			"pairs_with": [
 				"cmo-ads-audit"
 			],
-			"doc": "docs/skills/growth/cmo-app-store-optimization.md",
 			"url": "https://cmo.so/skills/cmo-app-store-optimization",
 			"references": [
 				{
@@ -10962,7 +10857,6 @@
 				"cmo-daily",
 				"cmo-weekly-report"
 			],
-			"doc": "docs/skills/growth/cmo-marketing-automation.md",
 			"url": "https://cmo.so/skills/cmo-marketing-automation",
 			"references": [
 				{
@@ -11044,7 +10938,6 @@
 				"cmo-cold-email",
 				"cmo-customer-research"
 			],
-			"doc": "docs/skills/sales/cmo-prospecting.md",
 			"url": "https://cmo.so/skills/cmo-prospecting",
 			"references": [
 				{
@@ -11109,7 +11002,6 @@
 				"cmo-positioning",
 				"cmo-proposals"
 			],
-			"doc": "docs/skills/sales/cmo-sales-enablement.md",
 			"url": "https://cmo.so/skills/cmo-sales-enablement",
 			"references": [
 				{
@@ -11188,7 +11080,6 @@
 			"pairs_with": [
 				"cmo-attribution"
 			],
-			"doc": "docs/skills/sales/cmo-revops.md",
 			"url": "https://cmo.so/skills/cmo-revops",
 			"references": [
 				{
@@ -11268,7 +11159,6 @@
 			"pairs_with": [
 				"cmo-sales-enablement"
 			],
-			"doc": "docs/skills/sales/cmo-proposals.md",
 			"url": "https://cmo.so/skills/cmo-proposals",
 			"references": [
 				{
@@ -11335,7 +11225,6 @@
 				"cmo-social-strategy",
 				"cmo-pinterest"
 			],
-			"doc": "docs/skills/creative/cmo-image-generation.md",
 			"url": "https://cmo.so/skills/cmo-image-generation",
 			"references": [
 				{
@@ -11477,7 +11366,6 @@
 				"cmo-youtube-strategy",
 				"cmo-tiktok"
 			],
-			"doc": "docs/skills/creative/cmo-video-production.md",
 			"url": "https://cmo.so/skills/cmo-video-production",
 			"references": [
 				{
@@ -11555,7 +11443,6 @@
 				"cmo-youtube-posts",
 				"cmo-tiktok"
 			],
-			"doc": "docs/skills/creative/cmo-video-repurposing.md",
 			"url": "https://cmo.so/skills/cmo-video-repurposing",
 			"references": [
 				{
@@ -11677,7 +11564,6 @@
 				"cmo-content-repurposing",
 				"cmo-email-deliverability"
 			],
-			"doc": "docs/skills/email/cmo-newsletter.md",
 			"url": "https://cmo.so/skills/cmo-newsletter",
 			"references": [
 				{
@@ -11815,7 +11701,6 @@
 				"cmo-email-sequences",
 				"cmo-cold-email"
 			],
-			"doc": "docs/skills/email/cmo-email-deliverability.md",
 			"url": "https://cmo.so/skills/cmo-email-deliverability",
 			"references": [
 				{
@@ -11974,7 +11859,6 @@
 				"cmo-short-form-video",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/social/cmo-organic-social.md",
 			"url": "https://cmo.so/skills/cmo-organic-social",
 			"references": [
 				{
@@ -12113,7 +11997,6 @@
 				"cmo-short-form-video",
 				"cmo-international-seo"
 			],
-			"doc": "docs/skills/social/cmo-china-social.md",
 			"url": "https://cmo.so/skills/cmo-china-social",
 			"references": [
 				{
@@ -12196,7 +12079,6 @@
 				"cmo-product-launch",
 				"cmo-linkedin"
 			],
-			"doc": "docs/skills/social/cmo-employee-advocacy.md",
 			"url": "https://cmo.so/skills/cmo-employee-advocacy",
 			"references": [
 				{
@@ -12258,7 +12140,6 @@
 				"cmo-content-repurposing",
 				"cmo-social-analytics"
 			],
-			"doc": "docs/skills/social/cmo-open-social.md",
 			"url": "https://cmo.so/skills/cmo-open-social",
 			"references": [
 				{
@@ -12393,7 +12274,6 @@
 				"cmo-ecommerce-seo",
 				"cmo-social-analytics"
 			],
-			"doc": "docs/skills/social/cmo-pinterest.md",
 			"url": "https://cmo.so/skills/cmo-pinterest",
 			"references": [
 				{
@@ -12453,7 +12333,6 @@
 				"cmo-product-launch",
 				"cmo-customer-research"
 			],
-			"doc": "docs/skills/social/cmo-reddit.md",
 			"url": "https://cmo.so/skills/cmo-reddit",
 			"references": [
 				{
@@ -12533,7 +12412,6 @@
 				"cmo-social-listening",
 				"cmo-community"
 			],
-			"doc": "docs/skills/social/cmo-social-crisis.md",
 			"url": "https://cmo.so/skills/cmo-social-crisis",
 			"references": [
 				{
@@ -12615,7 +12493,6 @@
 				"cmo-community",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/social/cmo-social-listening.md",
 			"url": "https://cmo.so/skills/cmo-social-listening",
 			"references": [
 				{
@@ -12697,7 +12574,6 @@
 				"cmo-marketing-plan",
 				"cmo-customer-research"
 			],
-			"doc": "docs/skills/strategy/cmo-market-sizing.md",
 			"url": "https://cmo.so/skills/cmo-market-sizing",
 			"references": [
 				{
@@ -12770,7 +12646,6 @@
 				"cmo-google-ads",
 				"cmo-social-crisis"
 			],
-			"doc": "docs/skills/strategy/cmo-brand-protection.md",
 			"url": "https://cmo.so/skills/cmo-brand-protection",
 			"references": [
 				{
@@ -12829,7 +12704,6 @@
 				"cmo-sms-whatsapp",
 				"cmo-agent-readiness"
 			],
-			"doc": "docs/skills/cro/cmo-checkout-cro.md",
 			"url": "https://cmo.so/skills/cmo-checkout-cro",
 			"references": [
 				{
@@ -12928,7 +12802,6 @@
 				"cmo-linkedin",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/core/cmo-facebook.md",
 			"url": "https://cmo.so/skills/cmo-facebook",
 			"references": [
 				{
@@ -13038,7 +12911,6 @@
 				"cmo-linkedin",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/core/cmo-instagram.md",
 			"url": "https://cmo.so/skills/cmo-instagram",
 			"references": [
 				{
@@ -13119,7 +12991,6 @@
 				"cmo-linkedin-posts",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-facebook-posts.md",
 			"url": "https://cmo.so/skills/cmo-facebook-posts",
 			"references": [
 				{
@@ -13202,7 +13073,6 @@
 				"cmo-linkedin-posts",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-instagram-posts.md",
 			"url": "https://cmo.so/skills/cmo-instagram-posts",
 			"references": [
 				{
@@ -13301,7 +13171,6 @@
 				"cmo-facebook",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/core/cmo-google-business.md",
 			"url": "https://cmo.so/skills/cmo-google-business",
 			"references": [
 				{
@@ -13373,7 +13242,6 @@
 				"cmo-social-strategy",
 				"cmo-tiktok"
 			],
-			"doc": "docs/skills/core/cmo-youtube.md",
 			"url": "https://cmo.so/skills/cmo-youtube",
 			"references": [
 				{
@@ -13444,7 +13312,6 @@
 				"cmo-video-production",
 				"cmo-social-strategy"
 			],
-			"doc": "docs/skills/core/cmo-tiktok.md",
 			"url": "https://cmo.so/skills/cmo-tiktok",
 			"references": [
 				{
@@ -13518,7 +13385,6 @@
 				"cmo-facebook-posts",
 				"cmo-humanize"
 			],
-			"doc": "docs/skills/social/cmo-google-business-posts.md",
 			"url": "https://cmo.so/skills/cmo-google-business-posts",
 			"references": [
 				{

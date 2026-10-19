@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so",
-	"version": "0.11.5",
+	"version": "0.11.6",
 	"description": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, Maggie Memory….",
 	"author": {
 		"name": "AI Marketing OS Ltd",
