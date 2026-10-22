@@ -78,6 +78,13 @@ Show the first line, its id, its picture, its button and slot. Check: short (abo
 ### No video
 Google Business posts can only carry pictures (Google's API takes no video in a post). A video goes to the other channels (`social_video_add`); never promise a video post on Google.
 
+### Reviews
+Ops Autopilot reads the profile's new Google reviews every 6 hours and drafts a reply for each one without an answer (`cmo-ops-autopilot`).
+1. `gbp_reviews_list` (`status: "drafted"` for the ones waiting): rating, reviewer, the review and Maggie's draft.
+2. Show the review and the draft. If the user wants it different, `gbp_review_draft` writes a new one (one AI generation), or use their words.
+3. `gbp_review_reply` (the draft, or `text`) only after the user agrees: the reply is public and a review is answered once here.
+- A low rating: acknowledge the problem and invite them to get in touch; never argue, blame or promise refunds.
+
 ## Output
 ```
 Google Business — connected (AI Marketing OS Ltd, Tonbridge) · posting on · approval: manual · 2 a week

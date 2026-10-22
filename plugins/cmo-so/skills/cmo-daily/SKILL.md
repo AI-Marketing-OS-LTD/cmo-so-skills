@@ -27,6 +27,8 @@ A five-minute routine for the person who owns the website's marketing. Maggie lo
 
 ## Workflow
 
+Also check, when Ops Autopilot is on (`cmo-ops-autopilot`): posts it held before they went out (`social_list` shows `held` with the reasons; fix with `social_update_copy`, or approve as they are), Google review replies drafted (`gbp_reviews_list` `{status: "drafted"}`; post with `gbp_review_reply` after the user agrees), and unread reports (`reports_list` `{unread: true}`).
+
 ### 1. Read the inbox
 Call `inbox_list` (no arguments). In the CMO.so app the same messages open from "Inbox" at the top of the Home tab (Home also shows usage, website health and performance). Each item has a `type`, `id`, `title` and a shortened `body`. If it is empty, say so in one sentence ("Nothing is waiting for you on example.com today.") and offer the weekly report. Stop there; do not invent work.
 

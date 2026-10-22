@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.11.7",
+	"version": "0.12.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -973,7 +973,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"inbox_list",
@@ -986,7 +986,10 @@
 				"quota_get",
 				"workspace_summary",
 				"feedback_send",
-				"feedback_list"
+				"feedback_list",
+				"reports_list",
+				"gbp_reviews_list",
+				"gbp_review_reply"
 			],
 			"pairs_with": [
 				"cmo-weekly-report",
@@ -1075,9 +1078,11 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
+				"reports_list",
+				"report_get",
 				"results_summary",
 				"gsc_status_get",
 				"gsc_performance_get",
@@ -1482,6 +1487,82 @@
 			],
 			"plugin": "cmo-so",
 			"skill_file": "plugins/cmo-so/skills/cmo-memory/SKILL.md"
+		},
+		{
+			"id": "cmo-ops-autopilot",
+			"name": "Ops Autopilot and reports",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "What Maggie does on her own every day and week (fills social slots, checks posts before they go out, retries failures, ideas from Search Console and competitors, post checks, Google reviews, the Monday report), how to switch each part, and how to read and save reports.",
+			"channels": [
+				"cmo.so",
+				"linkedin",
+				"facebook",
+				"instagram",
+				"google-business",
+				"google-search",
+				"ai-search"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"ops_autopilot_get",
+				"ops_autopilot_set",
+				"reports_list",
+				"report_get",
+				"report_save",
+				"inbox_list",
+				"social_list",
+				"social_approve",
+				"social_update_copy",
+				"idea_cleanup_list",
+				"idea_restore_cleanup",
+				"post_health_get",
+				"gbp_reviews_list",
+				"gbp_review_draft",
+				"gbp_review_reply"
+			],
+			"pairs_with": [
+				"cmo-weekly-report",
+				"cmo-daily",
+				"cmo-google-business"
+			],
+			"url": "https://cmo.so/skills/cmo-ops-autopilot",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-ops-autopilot",
+					"path": "plugins/cmo-so/skills/cmo-ops-autopilot/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-ops-autopilot/SKILL.md"
+				}
+			],
+			"triggers": [
+				"what does Maggie do on her own?",
+				"what happened this week?",
+				"show my reports",
+				"turn off the daily top-up",
+				"why was my post held?",
+				"answer my Google reviews",
+				"save this report",
+				"email me the Monday report"
+			],
+			"inputs": [
+				"The website (`workspace`)",
+				"Which part to look at or switch, or a report to save"
+			],
+			"outputs": [
+				"Each Ops Autopilot feature with on/off, when it runs and its last run",
+				"The report inbox (Maggie's reports and agents' reports), one report in full",
+				"A held post, an archived idea or a Google review reply dealt with, after the user agrees"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-ops-autopilot/SKILL.md"
 		},
 		{
 			"id": "cmo-seo-opportunities",
@@ -13140,7 +13221,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -13166,7 +13247,10 @@
 				"social_image_new",
 				"social_image_status",
 				"series_create",
-				"social_approval_mode_set"
+				"social_approval_mode_set",
+				"gbp_reviews_list",
+				"gbp_review_draft",
+				"gbp_review_reply"
 			],
 			"pairs_with": [
 				"cmo-google-business-posts",
