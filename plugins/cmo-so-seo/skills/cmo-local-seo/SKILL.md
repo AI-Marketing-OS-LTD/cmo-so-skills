@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-maps,google-search"
-  version: "0.11.7"
+  version: "0.13.0"
   docs: "https://cmo.so/skills/cmo-local-seo"
 ---
 # Local SEO

@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads"
-  version: "0.11.7"
+  version: "0.13.0"
   docs: "https://cmo.so/skills/cmo-ads-budget"
 ---
 # Ad budget, bidding & forecasting

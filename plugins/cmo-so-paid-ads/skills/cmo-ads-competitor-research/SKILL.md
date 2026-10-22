@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "meta-ads,google-ads,linkedin-ads"
-  version: "0.11.7"
+  version: "0.13.0"
   docs: "https://cmo.so/skills/cmo-ads-competitor-research"
 ---
 # Competitor ad research
