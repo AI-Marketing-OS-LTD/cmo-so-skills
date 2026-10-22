@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.12.0",
+	"version": "0.11.7",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -973,7 +973,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"inbox_list",
@@ -989,7 +989,10 @@
 				"feedback_list",
 				"reports_list",
 				"gbp_reviews_list",
-				"gbp_review_reply"
+				"gbp_review_reply",
+				"ops_autopilot_get",
+				"report_save",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-weekly-report",
@@ -1078,7 +1081,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"reports_list",
@@ -1091,7 +1094,9 @@
 				"inbox_list",
 				"report_overview_get",
 				"seo_audit_get",
-				"gsc_connect_link"
+				"gsc_connect_link",
+				"ops_autopilot_get",
+				"report_save"
 			],
 			"pairs_with": [
 				"cmo-client-report",
@@ -1311,7 +1316,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.7.0",
+			"version": "0.8.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1348,7 +1353,8 @@
 				"social_images_fill",
 				"social_image_stop",
 				"social_style_set",
-				"social_style_retrain"
+				"social_style_retrain",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -1677,7 +1683,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"ai_visibility_get",
@@ -1685,7 +1691,11 @@
 				"ai_visibility_prompt_check",
 				"ai_visibility_prompt_result",
 				"ai_visibility_keywords_set",
-				"ai_visibility_monitor_set"
+				"ai_visibility_monitor_set",
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save",
+				"ideas_add_list"
 			],
 			"pairs_with": [
 				"cmo-ai-visibility-audit",
@@ -3822,7 +3832,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"content_performance_list",
@@ -3831,7 +3841,10 @@
 				"rewrite_request",
 				"rewrite_policy_set",
 				"rewrite_policy_get",
-				"gsc_queries_get"
+				"gsc_queries_get",
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save"
 			],
 			"pairs_with": [
 				"cmo-seo-opportunities",
@@ -4227,12 +4240,19 @@
 			"funnel_stage": "consideration",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_get",
 				"idea_add",
-				"competitor_upsert"
+				"competitor_upsert",
+				"ideas_add_list",
+				"idea_plan",
+				"posts_list",
+				"post_get",
+				"draft_update",
+				"post_publish_now",
+				"autopilot_set_paused"
 			],
 			"pairs_with": [
 				"cmo-competitor-research",
@@ -5359,6 +5379,70 @@
 			],
 			"plugin": "cmo-so-ai-search",
 			"skill_file": "plugins/cmo-so-ai-search/skills/cmo-agent-readiness/SKILL.md"
+		},
+		{
+			"id": "cmo-entity-audit",
+			"name": "Entity & knowledge graph audit",
+			"category": "ai-search",
+			"category_name": "AI search (GEO / AEO)",
+			"summary": "Check that search engines and AI answers can tell exactly who the business is — Organization and Product schema, sameAs links to every official profile, Wikidata, and one consistent name, description and contact details everywhere — and fix the gaps in order.",
+			"channels": [
+				"website",
+				"google-search",
+				"ai-search",
+				"google-business",
+				"linkedin"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"brand_get",
+				"brand_update",
+				"profile_get",
+				"seo_audit_get"
+			],
+			"pairs_with": [
+				"cmo-schema-markup",
+				"cmo-agent-readiness",
+				"cmo-ai-visibility-audit",
+				"cmo-local-seo"
+			],
+			"url": "https://cmo.so/skills/cmo-entity-audit",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-entity-audit",
+					"path": "plugins/cmo-so-ai-search/skills/cmo-entity-audit/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so-ai-search/skills/cmo-entity-audit/SKILL.md"
+				}
+			],
+			"triggers": [
+				"does Google know who we are?",
+				"AI answers get our company wrong",
+				"entity SEO",
+				"add us to the knowledge graph",
+				"Organization schema and sameAs",
+				"should we be on Wikidata?",
+				"make our brand consistent across the web"
+			],
+			"inputs": [
+				"The website and its home page, about page and product pages",
+				"The list of official profiles (LinkedIn, Google Business, YouTube, X, GitHub, app stores, directories)",
+				"The business profile (`brand_get`)"
+			],
+			"outputs": [
+				"A table of every place the business is described, what it says, and what's inconsistent",
+				"Organization (and Product or LocalBusiness) JSON-LD ready to paste, with sameAs",
+				"A Wikidata decision (create, update, or not yet) and a fix list in order"
+			],
+			"plugin": "cmo-so-ai-search",
+			"skill_file": "plugins/cmo-so-ai-search/skills/cmo-entity-audit/SKILL.md"
 		},
 		{
 			"id": "cmo-content-strategy",
@@ -10664,9 +10748,13 @@
 			"funnel_stage": "awareness",
 			"tier": "standalone",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
-			"mcp_tools": [],
+			"mcp_tools": [
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save"
+			],
 			"pairs_with": [
 				"cmo-link-building",
 				"cmo-product-launch"
@@ -10736,9 +10824,13 @@
 			"funnel_stage": "awareness",
 			"tier": "standalone",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
-			"mcp_tools": [],
+			"mcp_tools": [
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save"
+			],
 			"pairs_with": [
 				"cmo-link-building",
 				"cmo-product-launch",
@@ -12405,11 +12497,14 @@
 			"funnel_stage": "consideration",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_get",
-				"ai_visibility_get"
+				"ai_visibility_get",
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save"
 			],
 			"pairs_with": [
 				"cmo-community",
@@ -12562,14 +12657,17 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_get",
 				"topics_list",
 				"ideas_list",
 				"idea_add",
-				"social_idea_add"
+				"social_idea_add",
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save"
 			],
 			"pairs_with": [
 				"cmo-customer-research",
@@ -12855,7 +12953,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12879,7 +12977,8 @@
 				"social_approval_mode_set",
 				"social_video_add",
 				"social_video_attach",
-				"social_video_detach"
+				"social_video_detach",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-facebook-posts",
@@ -12952,7 +13051,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12987,7 +13086,8 @@
 				"social_video_attach",
 				"social_video_detach",
 				"social_images_fill",
-				"social_image_stop"
+				"social_image_stop",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",
@@ -13221,7 +13321,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -13250,7 +13350,8 @@
 				"social_approval_mode_set",
 				"gbp_reviews_list",
 				"gbp_review_draft",
-				"gbp_review_reply"
+				"gbp_review_reply",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-google-business-posts",
@@ -13305,7 +13406,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"youtube_connect_link",
@@ -13319,7 +13420,8 @@
 				"social_skip",
 				"social_restore",
 				"social_move",
-				"social_set_paused"
+				"social_set_paused",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-youtube-posts",
@@ -13377,7 +13479,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"tiktok_connect_link",
@@ -13390,7 +13492,8 @@
 				"social_skip",
 				"social_restore",
 				"social_move",
-				"social_set_paused"
+				"social_set_paused",
+				"social_post_get"
 			],
 			"pairs_with": [
 				"cmo-tiktok-posts",
@@ -13441,6 +13544,143 @@
 			],
 			"plugin": "cmo-so",
 			"skill_file": "plugins/cmo-so/skills/cmo-tiktok/SKILL.md"
+		},
+		{
+			"id": "cmo-routines",
+			"name": "Schedule CMO.so routines",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "Turn any CMO.so skill into a scheduled agent run (Claude Routines or Codex Automations) that works with nobody watching — what to schedule, which connectors and keys, what it may confirm by itself, daily limits, and where its report goes.",
+			"channels": [
+				"cmo.so",
+				"api"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"ops_autopilot_get",
+				"reports_list",
+				"report_get",
+				"report_save",
+				"api_keys_list",
+				"standing_permissions_list",
+				"standing_permission_set",
+				"standing_permission_revoke",
+				"dashboard_link"
+			],
+			"pairs_with": [
+				"cmo-ops-autopilot",
+				"cmo-daily",
+				"cmo-weekly-report",
+				"cmo-social-distribution"
+			],
+			"url": "https://cmo.so/skills/cmo-routines",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-routines",
+					"path": "plugins/cmo-so/skills/cmo-routines/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-routines/SKILL.md"
+				}
+			],
+			"triggers": [
+				"run this every morning",
+				"schedule a daily marketing check",
+				"set up a Claude routine for CMO.so",
+				"can Codex do this on a schedule?",
+				"make an agent that works on my site every day",
+				"what should I automate?",
+				"my routine can't confirm changes"
+			],
+			"inputs": [
+				"The website (`workspace`)",
+				"What the run should do (a skill), how often, and what it may change by itself",
+				"Where the user runs agents: Claude (claude.ai/code Routines) or Codex"
+			],
+			"outputs": [
+				"A routine setup: the prompt, schedule, connectors and the limits written into it",
+				"A short routine skill (or prompt) with a 'Routine mode' section",
+				"Optionally a standing permission on an agent key, so the server enforces the limits"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-routines/SKILL.md"
+		},
+		{
+			"id": "cmo-social-distribution",
+			"name": "Social distribution check",
+			"category": "core",
+			"category_name": "CMO.so core (MCP)",
+			"summary": "A daily check of every social post about to go out on LinkedIn, Facebook, Instagram and Google Business (read in full, fixed or held back before it's public), with the week's empty slots filled only when Maggie's own top-up couldn't.",
+			"channels": [
+				"cmo.so",
+				"linkedin",
+				"facebook",
+				"instagram",
+				"google-business"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"ops_autopilot_get",
+				"reports_list",
+				"report_save",
+				"social_list",
+				"social_post_get",
+				"social_setup_get",
+				"social_sources_list",
+				"social_from_article",
+				"social_write_status",
+				"social_update_copy",
+				"social_skip",
+				"gsc_queries_get",
+				"content_performance_list"
+			],
+			"pairs_with": [
+				"cmo-routines",
+				"cmo-ops-autopilot",
+				"cmo-daily",
+				"cmo-linkedin",
+				"cmo-google-business"
+			],
+			"url": "https://cmo.so/skills/cmo-social-distribution",
+			"references": [
+				{
+					"repo": "AI-Marketing-OS-LTD/cmo-so-skills",
+					"skill": "cmo-social-distribution",
+					"path": "plugins/cmo-so/skills/cmo-social-distribution/SKILL.md",
+					"commit": "main",
+					"license": "MIT (ours)",
+					"usage": "shipped (our own)",
+					"url": "https://github.com/AI-Marketing-OS-LTD/cmo-so-skills/blob/main/plugins/cmo-so/skills/cmo-social-distribution/SKILL.md"
+				}
+			],
+			"triggers": [
+				"check my social posts before they go out",
+				"are my posts for tomorrow OK?",
+				"fill my social calendar for the week",
+				"turn my latest articles into social posts",
+				"run the daily social check"
+			],
+			"inputs": [
+				"The website (`workspace`)",
+				"The approval mode (auto posts go out on their own) and the channels connected"
+			],
+			"outputs": [
+				"Each post due in the next 36 hours checked in full, with fixes or holds",
+				"Empty slots filled from articles not shared in 30 days (only when needed)",
+				"A short report: queue per channel, what was checked, fixed, held or written"
+			],
+			"plugin": "cmo-so",
+			"skill_file": "plugins/cmo-so/skills/cmo-social-distribution/SKILL.md"
 		},
 		{
 			"id": "cmo-google-business-posts",

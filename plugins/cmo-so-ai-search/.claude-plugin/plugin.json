@@ -1,7 +1,7 @@
 {
 	"name": "cmo-so-ai-search",
-	"version": "0.12.0",
-	"description": "CMO.so AI search (GEO / AEO) skills (6): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness. Installs the cmo-so core plugin with it.",
+	"version": "0.11.7",
+	"description": "CMO.so AI search (GEO / AEO) skills (7): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness…. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -19,8 +19,10 @@
 		"blog",
 		"chatgpt",
 		"google-ai-mode",
-		"perplexity",
-		"website"
+		"google-business",
+		"google-search",
+		"linkedin",
+		"perplexity"
 	],
 	"dependencies": [
 		"cmo-so"

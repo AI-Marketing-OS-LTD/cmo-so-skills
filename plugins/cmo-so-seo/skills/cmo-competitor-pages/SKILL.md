@@ -58,7 +58,12 @@ People who search "[product] alternatives" or "[A] vs [B]" are close to a decisi
    - Visible "last updated" date, author, and a short note on how the comparison was made and that this is the user's own product.
    - Schema: BreadcrumbList, ItemList for roundups; product markup only for the user's own product with real data (see `cmo-schema-markup`).
 6. **AI answers.** These pages are often cited when answers explain differences. Put the verdict in a quotable sentence, keep facts in tables, and answer common comparison questions in short sections. Whether AI tools recommend the brand still depends on reviews and mentions elsewhere.
-7. **Hand off to Maggie (optional).** To have Maggie draft the page as a blog post, call `idea_add` with `text` describing the format, competitor, target query and key facts from the fact file. It is a change and uses an AI generation: preview, show the user, confirm only after a yes.
+7. **Have Maggie write it, a person reviews it (optional).**
+   1. `ideas_add_list` with one idea: the page's `title` (the format's title rule), a `description` with the verdict, the target query as `keyword`, close variants as `keywords`, and the fact file's key facts with their sources and "as of" dates. It's added exactly as given (no AI rewrites it). Preview, show the user, confirm after a yes. `idea_plan` puts it next in the plan if the user wants it soon.
+   2. When Maggie has written it, `posts_list` (`status: "draft"`) and `post_get` read the draft in full.
+   3. **Review every competitor claim** against the fact file: prices and plans dated and sourced, nothing claimed that isn't verified, rows where the competitor wins kept, the "who should choose them" section honest. List each claim as verified, changed, unverifiable (soften or remove) or overclaimed (rewrite or remove).
+   4. Fix with `draft_update` (preview, then confirm), then `post_publish_now` after the user's yes, or let it go out on schedule.
+   - On a website where AI CMO publishes on its own, a draft can go out on its turn: review as soon as it's written, or ask the user whether to pause publishing (`autopilot_set_paused`) until it's checked. Never publish a comparison nobody reviewed.
 8. **Keep it current.** Re-check competitor pricing and plans about quarterly, and whenever a customer reports a change. For an audit of existing pages, list each competitor claim, re-verify it, and mark it current, changed, unverifiable (soften or remove) or overclaimed (rewrite or remove); fix public pages first.
 
 ## Output

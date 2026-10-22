@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**136 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**139 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -206,6 +206,8 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-google-business`](plugins/cmo-so/skills/cmo-google-business/SKILL.md) | Run the Google Business Profile queue in CMO.so: connect the business's profile, write short local updates for Google Search and Maps (alone or next to the other channels), pick each post's button, follow Google's review, and keep the pace within Google's limits. |
 | [`cmo-youtube`](plugins/cmo-so/skills/cmo-youtube/SKILL.md) | Run the YouTube queue in CMO.so: connect the channel, add a short video (5-30 seconds) from the app or a file link, check its title, description, tags, visibility and made-for-kids answer, get the user's approval, and follow it through YouTube's processing until it's live as a Short. |
 | [`cmo-tiktok`](plugins/cmo-so/skills/cmo-tiktok/SKILL.md) | Run the TikTok queue in CMO.so (beta): connect the account, add a short video (5-30 seconds) from the app or a file link, let the user choose TikTok's settings for it (who can view it, comments, Duet, Stitch, content disclosure, AI label) exactly as TikTok's rules ask, get their approval, and follow it through TikTok's processing. |
+| [`cmo-routines`](plugins/cmo-so/skills/cmo-routines/SKILL.md) | Turn any CMO.so skill into a scheduled agent run (Claude Routines or Codex Automations) that works with nobody watching — what to schedule, which connectors and keys, what it may confirm by itself, daily limits, and where its report goes. |
+| [`cmo-social-distribution`](plugins/cmo-so/skills/cmo-social-distribution/SKILL.md) | A daily check of every social post about to go out on LinkedIn, Facebook, Instagram and Google Business (read in full, fixed or held back before it's public), with the week's empty slots filled only when Maggie's own top-up couldn't. |
 
 ### Strategy & research · `cmo-so-strategy`
 
@@ -258,6 +260,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-ai-brand-monitoring`](plugins/cmo-so-ai-search/skills/cmo-ai-brand-monitoring/SKILL.md) | Track what AI assistants say about the brand over time and catch wrong, outdated or damaging claims. |
 | [`cmo-aeo-content`](plugins/cmo-so-ai-search/skills/cmo-aeo-content/SKILL.md) | Restructure pages so AI assistants can quote them: direct answers, facts, sources, E-E-A-T signals and schema. |
 | [`cmo-agent-readiness`](plugins/cmo-so-ai-search/skills/cmo-agent-readiness/SKILL.md) | Make a site usable by AI agents that browse, fill in forms and buy for people: accessibility tree, layout stability, access policy, discovery files and safe agent tools, fixed in priority order. |
+| [`cmo-entity-audit`](plugins/cmo-so-ai-search/skills/cmo-entity-audit/SKILL.md) | Check that search engines and AI answers can tell exactly who the business is — Organization and Product schema, sameAs links to every official profile, Wikidata, and one consistent name, description and contact details everywhere — and fix the gaps in order. |
 
 ### Content & copy · `cmo-so-content`
 

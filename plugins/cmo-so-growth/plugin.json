@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-growth",
-	"version": "0.12.0",
+	"version": "0.11.7",
 	"description": "CMO.so Growth & go-to-market skills (9): Product launch, Referral & affiliate program, Co-marketing & partnerships, Free tools as marketing, Directory submissions, PR & earned media…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
