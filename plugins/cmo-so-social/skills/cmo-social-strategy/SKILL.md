@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin,x,instagram,tiktok,facebook"
-  version: "0.14.0"
+  version: "0.15.0"
   docs: "https://cmo.so/skills/cmo-social-strategy"
 ---
 # Social media strategy

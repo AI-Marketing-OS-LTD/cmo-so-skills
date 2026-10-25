@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.14.0",
+	"version": "0.15.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -1316,7 +1316,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.9.0",
+			"version": "0.10.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1357,7 +1357,8 @@
 				"social_post_get",
 				"social_pictures_attach",
 				"social_carousel_pdf_attach",
-				"social_carousel_set"
+				"social_carousel_set",
+				"social_upload_link"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -6433,7 +6434,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.3.0",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_idea_add",
@@ -6445,7 +6446,8 @@
 				"social_format_preview",
 				"social_pictures_attach",
 				"social_carousel_pdf_attach",
-				"social_carousel_set"
+				"social_carousel_set",
+				"social_upload_link"
 			],
 			"pairs_with": [
 				"cmo-linkedin",
@@ -12960,7 +12962,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12986,7 +12988,8 @@
 				"social_video_attach",
 				"social_video_detach",
 				"social_post_get",
-				"social_pictures_attach"
+				"social_pictures_attach",
+				"social_upload_link"
 			],
 			"pairs_with": [
 				"cmo-facebook-posts",
@@ -13059,7 +13062,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.7.0",
+			"version": "0.8.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -13096,7 +13099,8 @@
 				"social_images_fill",
 				"social_image_stop",
 				"social_post_get",
-				"social_pictures_attach"
+				"social_pictures_attach",
+				"social_upload_link"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",

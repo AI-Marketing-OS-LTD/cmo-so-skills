@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.14.0"
+  version: "0.15.0"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
@@ -66,7 +66,7 @@ Writing runs in the background (`social_write_status` when the user asks; don't 
 
 Instagram posts need a picture before they can go out. For every waiting post without one, `social_images_fill` (optional `ids`) makes them in the background, 1 AI generation each; preview the count first. `social_image_stop` stops the picture being made (`all: true` also empties the line).
 
-The user's own carousel: `social_pictures_attach` (`id`, `urls`: public https links to the pictures, in order; `append` adds after the current ones) puts their pictures on the post, free. Instagram posts the first 10 as a carousel; a post from an idea shares them with its other channels. Then `social_photo_words` can set a title and a line on them in the brand's look.
+The user's own carousel: `social_pictures_attach` (`id`; `files`: pictures from this chat, or `urls`: public https links, in order; `append` adds after the current ones) puts their pictures on the post, free; when the chat can't pass files, `social_upload_link` lets the user upload them in the app. Instagram posts the first 10 as a carousel; a post from an idea shares them with its other channels. Then `social_photo_words` can set a title and a line on them in the brand's look.
 
 ### 4. Review Instagram drafts
 For each, show the first line, its id, its picture (or set) and slot. Check:

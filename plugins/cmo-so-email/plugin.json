@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-email",
-	"version": "0.14.0",
+	"version": "0.15.0",
 	"description": "CMO.so Email & lifecycle skills (6): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter, Email deliverability. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

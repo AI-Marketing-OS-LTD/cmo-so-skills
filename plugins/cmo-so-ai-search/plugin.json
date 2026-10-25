@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-ai-search",
-	"version": "0.14.0",
+	"version": "0.15.0",
 	"description": "CMO.so AI search (GEO / AEO) skills (7): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.14.0"
+  version: "0.15.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -87,9 +87,9 @@ A good brief names: the audience, the one thing they should do or remember, the 
 
 ### 4c. Carousels and the user's own pictures
 - A LinkedIn post with a set of pictures goes out as a **swipeable PDF carousel** (a document post, made from the pictures in order when it goes out). `social_carousel_set` (`id`, `format`: `pdf` or `images`, optional `title` shown on the carousel) switches it to several pictures or back. `social_post_get` shows `carousel` (format, title, pages, whether it is the user's own PDF).
-- The user's own slides as pictures: `social_pictures_attach` (`id`, `urls`: 1-20 public https links to JPEG/PNG/WebP files, in order; `append` adds after the current ones). Free, no AI. They replace Maggie's picture; a post from an idea shares them with its other channels (Instagram and Facebook post the first 10, Google Business the first).
-- A ready PDF (slides from another tool): `social_carousel_pdf_attach` (`id`, `url`: public https link to the PDF, up to 300 pages and 20 MB, no password; optional `title`). It goes out as it is; its first 20 pages become the post's pictures. If the user later changes the pictures, the carousel is made from the pictures instead.
-- Slides made by another assistant: put them where they have public https links (or export one PDF), then attach them to the post; never post the caption alone when the user expects the slides. In the app, the picture sheet has "Upload several photos" and, on the web, "Upload a PDF carousel".
+- The user's own slides as pictures: `social_pictures_attach` (`id`; `files`: pictures from this chat, which ChatGPT passes straight to the tool, whether the user added them or they were made in the chat; or `urls`: public https links to JPEG/PNG/WebP files; 1-20 in order; `append` adds after the current ones). Free, no AI. They replace Maggie's picture; a post from an idea shares them with its other channels (Instagram and Facebook post the first 10, Google Business the first).
+- A ready PDF (slides from another tool): `social_carousel_pdf_attach` (`id`; `file`: the PDF from this chat, or `url`: a public https link to it; up to 300 pages and 20 MB, no password; optional `title`). It goes out as it is; its first 20 pages become the post's pictures. If the user later changes the pictures, the carousel is made from the pictures instead.
+- Slides made in the chat (ChatGPT): pass them as `files` / `file`. When the chat can't pass files (Claude, or the files are on the user's device), give `social_upload_link` (`id`): it opens that post's picture in the app, where the user uploads the photos ("Upload several photos") or, on a computer, the PDF ("Upload a PDF carousel"). Never post the caption alone when the user expects the slides: in auto approval mode write the post with `position: "end"` so the slides are on it before it goes out.
 - A carousel works best when each slide says one thing: a title slide that promises the payoff, one step, comparison or number per slide, and a last slide with the takeaway. Keep text large enough to read on a phone (`cmo-linkedin-posts`).
 
 ### 5. Pause, resume, approval mode
