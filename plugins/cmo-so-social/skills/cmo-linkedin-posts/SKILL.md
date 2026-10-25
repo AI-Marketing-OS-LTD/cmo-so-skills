@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.13.0"
+  version: "0.14.0"
   docs: "https://cmo.so/skills/cmo-linkedin-posts"
 ---
 # LinkedIn post writing
@@ -37,6 +37,7 @@ Writes LinkedIn posts that a busy reader stops for, and checks them before they 
    | Poll | A real decision you will report back on | ~10 min | The follow-up post |
    | Repost with take | Joining someone else's conversation | ~15 min | A take longer than "this" |
    Carousel test: if slide one plus the caption delivers the value, it is a text post.
+   Queueing a carousel in CMO.so: put the slides on the post with `social_pictures_attach` (public https links, in order, up to 20; LinkedIn sends them as a swipeable PDF carousel) or a ready PDF with `social_carousel_pdf_attach`; `social_carousel_set` titles it or switches to several pictures (`cmo-linkedin` §4c). The caption still has to stand alone: say what the slides give the reader.
    For the posts Maggie writes, the format is a saved setting rather than a per-post choice. When the user is unsure which formats suit them, `social_formats_suggest` has Maggie propose formats that fit their learned voice (it uses an AI generation, saves nothing). Show any candidate with `social_format_preview` and its `key` (a read, nothing to confirm): it returns example posts in that format at short, medium and long length, so the user picks by reading, not by name.
 2. **Write the hook to the fold.** As a rule of thumb, mobile shows roughly the first 140 characters (desktop more) before "...see more"; the exact cut varies. A full sentence must end inside that space and must: create a specific gap, signal who it is for, and carry a concrete detail. Shapes that work: number + reversal ("Onboarding took 6 weeks. We got it to 4 days without hiring."), the costly mistake, the measurement, the quoted sentence, the decision with a consequence. Delete on sight: "I'm excited/thrilled/humbled to announce", "In today's fast-paced world", any opener that fits any post. When asked for hooks, give 4-6 from different angles (a number, a belief flipped, before and after, a known name or source, an admitted mistake, a prediction), not variants of one. First person ("How I…") only for an experience the user supplied. Count characters with a tool on the final text; do not estimate.
 3. **Write the body.** One idea. Short paragraphs of 2-4 lines; line breaks where a person would pause, not after every sentence. Specifics over adjectives. The stronger posts tend to sit between a few hundred and about 2,000 characters; the hard cap is 3,000. Length should follow what there is to say.

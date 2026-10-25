@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "blog,linkedin,meta-ads"
-  version: "0.13.0"
+  version: "0.14.0"
   docs: "https://cmo.so/skills/cmo-image-generation"
 ---
 # Marketing images

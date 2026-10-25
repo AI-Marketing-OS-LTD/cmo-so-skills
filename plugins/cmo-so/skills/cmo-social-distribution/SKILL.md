@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,linkedin,facebook,instagram,google-business"
-  version: "0.13.0"
+  version: "0.14.0"
   docs: "https://cmo.so/skills/cmo-social-distribution"
 ---
 # Social distribution check
@@ -28,7 +28,7 @@ When posts go out on their own (approval mode auto), nobody reads them before th
 
 ### 1. Fill only what's still empty
 - If `top_up` ran today, skip to step 2 unless a channel still has a gap (its last run says why, e.g. no credits); then write at most 1 article.
-- Otherwise, per connected, unpaused picture channel: gap = `per_week` − posts queued or waiting. Pick from `social_sources_list`: `used_on` empty (not shared in 30 days), published at least 24 hours ago, a different subject from this week's queue; prefer articles matching Search Console queries (`gsc_queries_get`) or doing well (`content_performance_list`). `social_from_article` with only the channels that have a gap (one credit per post), then `social_write_status` until done. At most 2 articles a day.
+- Otherwise, per connected, unpaused picture channel: gap = `per_week` − posts queued or waiting. Pick from `social_sources_list`: `used_on` empty (not shared in 30 days), published at least 24 hours ago, a different subject from this week's queue; prefer articles matching Search Console queries (`gsc_queries_get`) or doing well (`content_performance_list`). `social_from_article` with only the channels that have a gap and `position: "end"` (one credit per post; without it auto-approved posts go to the front and push older ones back every day), then `social_write_status` until done. At most 2 articles a day.
 
 ### 2. Check everything due in the next 36 hours (yours and Maggie's)
 Read each in full with `social_post_get` (`social_list` shortens the text). Then:

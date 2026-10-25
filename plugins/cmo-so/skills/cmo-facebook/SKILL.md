@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "facebook"
-  version: "0.13.0"
+  version: "0.14.0"
   docs: "https://cmo.so/skills/cmo-facebook"
 ---
 # Facebook Page queue
@@ -62,6 +62,8 @@ For each, show the first lines, its id and slot. Check:
 - **Facts and link:** every number or claim from the source or the user; the link points to the right page.
 
 Approve with `social_approve` (ids the user chose); change text with `social_update_copy`; skip or bring back with `social_skip` / `social_restore`; reorder with `social_move`; `social_approve_all` with `channel: "facebook"` approves only Facebook's waiting posts.
+
+The user's own pictures: `social_pictures_attach` (`id`, `urls`: public https links, in order) puts them on the post, free; Facebook posts the first 10 together.
 
 ### 4. Pause and pace
 - `social_set_paused` with `channel: "facebook"` pauses or resumes the Page only; without `channel` it pauses every channel.

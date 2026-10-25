@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.13.0",
+	"version": "0.14.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -1316,7 +1316,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.8.0",
+			"version": "0.9.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1354,7 +1354,10 @@
 				"social_image_stop",
 				"social_style_set",
 				"social_style_retrain",
-				"social_post_get"
+				"social_post_get",
+				"social_pictures_attach",
+				"social_carousel_pdf_attach",
+				"social_carousel_set"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -1417,7 +1420,8 @@
 				"fill LinkedIn for the next week",
 				"start a LinkedIn campaign for our launch",
 				"pause LinkedIn while I'm away",
-				"connect my LinkedIn"
+				"connect my LinkedIn",
+				"post these slides as a LinkedIn carousel"
 			],
 			"inputs": [
 				"The website (`workspace`) the LinkedIn account is linked to",
@@ -6429,7 +6433,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_idea_add",
@@ -6438,7 +6442,10 @@
 				"social_formats_set",
 				"social_voice_learn",
 				"social_formats_suggest",
-				"social_format_preview"
+				"social_format_preview",
+				"social_pictures_attach",
+				"social_carousel_pdf_attach",
+				"social_carousel_set"
 			],
 			"pairs_with": [
 				"cmo-linkedin",
@@ -12953,7 +12960,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12978,7 +12985,8 @@
 				"social_video_add",
 				"social_video_attach",
 				"social_video_detach",
-				"social_post_get"
+				"social_post_get",
+				"social_pictures_attach"
 			],
 			"pairs_with": [
 				"cmo-facebook-posts",
@@ -13051,7 +13059,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.6.0",
+			"version": "0.7.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -13087,7 +13095,8 @@
 				"social_video_detach",
 				"social_images_fill",
 				"social_image_stop",
-				"social_post_get"
+				"social_post_get",
+				"social_pictures_attach"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",
@@ -13627,7 +13636,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"ops_autopilot_get",

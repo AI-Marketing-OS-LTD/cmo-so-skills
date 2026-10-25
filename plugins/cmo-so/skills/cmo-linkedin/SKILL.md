@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.13.0"
+  version: "0.14.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -47,13 +47,13 @@ For each draft show the first lines, its id and its slot. Check before approval:
 | Skip / bring back | `social_skip` / `social_restore` |
 | Reorder | `social_move` (`id`, `to`: `up`, `down`, `top`) |
 
-Approved drafts jump to the front of the queue and go out at the next slots, where the user's network sees them. Say this in plain words before they confirm.
+Approved drafts jump to the front of the queue and go out at the next slots, where the user's network sees them. Say this in plain words before they confirm. `position` puts them elsewhere: `end` (after everything already waiting), `random`, or a number of posts to go after (`0` = front). Scheduled or automated runs use `end`, so they don't push older posts back every day.
 
 ### 3. Create posts
 
 | Need | Steps | Cost |
 |---|---|---|
-| Post about one article | `social_sources_list` (optional `search`; up to 15 published articles) → `social_from_article` (`source_id`) | AI generation; the post goes to the front of the queue |
+| Post about one article | `social_sources_list` (optional `search`; up to 15 published articles) → `social_from_article` (`source_id`, optional `position`) | AI generation; in auto mode the post goes to the front of the queue, or to `position` (`end` for scheduled runs) |
 | Fill the next days | `social_plan_days` (`days` 1-7, `timezone` as an IANA name such as `Europe/London`; UTC if left out) | AI generations, from the best recent articles, queued in order |
 | User's own idea | `social_idea_add` (`title`, optional `summary`) → `social_idea_write` (`id`) | Adding is free; writing uses a credit and the post joins the queue |
 
@@ -84,6 +84,13 @@ A good brief names: the audience, the one thing they should do or remember, the 
 - Posts without a picture: `social_images_fill` (optional `ids` from `social_list`) makes one for each, one after another in the background, 1 AI generation each; a LinkedIn and a Facebook post of the same idea share one picture. Preview the count and the cost first; it says how many are in line and why it stopped early (the line is full, or the day's AI generations ran out).
 - A picture being made that the user doesn't want: `social_image_stop` stops it (the post keeps the picture it had; the next in line starts); `all: true` also empties the line.
 - The look of LinkedIn pictures: `social_style_set` changes the image style (an id from `social_setup_get` styles) and/or the colour palette (hex colours). `social_style_retrain` has Maggie look at the saved logo again and pick a new style and palette (uses AI). Both are previewed and confirmed; for the full picture look across channels use `cmo-instagram`.
+
+### 4c. Carousels and the user's own pictures
+- A LinkedIn post with a set of pictures goes out as a **swipeable PDF carousel** (a document post, made from the pictures in order when it goes out). `social_carousel_set` (`id`, `format`: `pdf` or `images`, optional `title` shown on the carousel) switches it to several pictures or back. `social_post_get` shows `carousel` (format, title, pages, whether it is the user's own PDF).
+- The user's own slides as pictures: `social_pictures_attach` (`id`, `urls`: 1-20 public https links to JPEG/PNG/WebP files, in order; `append` adds after the current ones). Free, no AI. They replace Maggie's picture; a post from an idea shares them with its other channels (Instagram and Facebook post the first 10, Google Business the first).
+- A ready PDF (slides from another tool): `social_carousel_pdf_attach` (`id`, `url`: public https link to the PDF, up to 300 pages and 20 MB, no password; optional `title`). It goes out as it is; its first 20 pages become the post's pictures. If the user later changes the pictures, the carousel is made from the pictures instead.
+- Slides made by another assistant: put them where they have public https links (or export one PDF), then attach them to the post; never post the caption alone when the user expects the slides. In the app, the picture sheet has "Upload several photos" and, on the web, "Upload a PDF carousel".
+- A carousel works best when each slide says one thing: a title slide that promises the payoff, one step, comparison or number per slide, and a last slide with the takeaway. Keep text large enough to read on a phone (`cmo-linkedin-posts`).
 
 ### 5. Pause, resume, approval mode
 - `social_set_paused` pauses or resumes posting: `channel: "linkedin"` for LinkedIn only, no `channel` for every channel (holidays, a crisis, a sensitive news day). Approved posts wait while paused.
