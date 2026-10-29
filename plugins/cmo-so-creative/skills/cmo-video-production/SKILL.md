@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,tiktok,instagram,linkedin"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-video-production"
 ---
 # Video production
@@ -72,6 +72,9 @@ Ask one question at a time:
      - Do not rely on automatic detection; editing and compression often strip provenance metadata. Keep a screenshot of the label as set at publishing, and send anything high-stakes to the user's legal adviser.
 9. **Measure**: note what to check after 24 hours, 3 days and 7 days (hook hold, completion, clicks); treat targets as experiments, not forecasts.
 10. **Optional with CMO.so**: a finished 5-30 second video (vertical or square becomes a Short) can be posted to the user's connected YouTube channel: hand it to `cmo-youtube` (added in the app or from a direct file link, details from `cmo-youtube-posts`, approved by the user; the altered or synthetic content answer from step 8 goes with it). A video's topic can also become a blog post idea via `idea_add` (`text`). Each is previewed and confirmed first.
+
+### When there is no footage
+No footage at all? `cmo-ad-video` makes a short ad video from a brief with CMO.so (pictures made to move, a voice, music, captions and an end card), with its cost shown first.
 
 ## Output
 1. **Brief**: spine sentence, audience, platform, length, CTA.

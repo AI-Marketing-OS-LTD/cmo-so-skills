@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-ad-creative"
 ---
 # Ad creative
@@ -51,6 +51,9 @@ Produce ad creative that is grounded in what the business really offers and what
 7. **Test plan.** One variable per test. Order of impact: concept or angle, hook, visual or format, body copy, CTA. Judge on the business metric after enough spend (at least two to three times the target cost per result per variant); do not crown a winner on a handful of conversions. Hand experiment design to `cmo-ab-testing`.
 8. **Iterate from data.** Sort ads by the business metric. For winners, extract what they share (angle, hook shape, proof type, length, format) and make variants that keep that and change one thing. For losers, note patterns to avoid. Add one or two genuinely new angles per round. Keep an iteration log: round, date, winners with metrics, patterns, new variants, angles retired.
 9. **Detect fatigue from trends, not age.** Signals over 7-14 days versus the ad's own baseline: frequency climbing, CPM rising, CTR falling (a drop of roughly 20% or more is a common rule of thumb), cost per result rising with stable targeting. Classify each ad: healthy, watch (start a replacement now; production takes time), replace (swap in the new version without editing the live ad). A concept is exhausted when fresh executions also decline; then change the angle.
+
+### Turning a concept into a video
+For a video ad, hand the chosen concept (the hook, the angle, the next step) to `cmo-ad-video`: it plans a storyboard with CMO.so, shows its cost, and makes and posts the video once the user agrees.
 
 ## Output
 - Angle and hook matrix: `Segment | Motivation (source) | Format | Visual | Spoken line | Caption`.

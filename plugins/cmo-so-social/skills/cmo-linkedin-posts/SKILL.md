@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-linkedin-posts"
 ---
 # LinkedIn post writing
@@ -60,6 +60,10 @@ Writes LinkedIn posts that a busy reader stops for, and checks them before they 
    - Replace a draft's text with the approved version: `social_update_copy` with `id` and the whole new `text`. Only for posts not yet published.
    - Fix voice: `social_voice_learn` with one post the user wrote (`post_text`); it becomes their default voice.
    - Fix style: `social_formats_set` with the format `keys` the user chose (from `social_formats_suggest` or the ones they already use, up to 10; the list replaces the current choice) and `include_emojis`, `include_hashtags`, `post_length_mode` (`short`, `medium`, `long`). Options left out stay as they are.
+
+### A text carousel from the post
+
+- **A text carousel** (`social_image_new` with `count` 5-10): a cover with the hook, one point a slide and a last slide with the next step, words on the brand's colours (style `bold_type`, or `infographic` for lists and numbers). No AI picture and free; LinkedIn posts it as a PDF carousel, Instagram and Facebook as a carousel (the first 10), TikTok as a photo post (`social_tiktok_photo`). Good for tips, steps, myths vs facts and checklists; change the words on any slide with `social_picture_edit`.
 
 ## Output
 For each post:

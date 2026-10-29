@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-instagram-posts"
 ---
 # Instagram post writing
@@ -57,6 +57,12 @@ Keep the facts identical; change everything else. LinkedIn: the insight and the 
 
 ### 5. Check
 Run the quality bar below, then save it to CMO.so or hand it over.
+
+### Longer carousels
+
+- **A text carousel** (`social_image_new` with `count` 5-10): a cover with the hook, one point a slide and a last slide with the next step, words on the brand's colours (style `bold_type`, or `infographic` for lists and numbers). No AI picture and free; LinkedIn posts it as a PDF carousel, Instagram and Facebook as a carousel (the first 10), TikTok as a photo post (`social_tiktok_photo`). Good for tips, steps, myths vs facts and checklists; change the words on any slide with `social_picture_edit`.
+
+- **A PDF from the user** (`social_carousel_pdf_attach`, `file` or `url`) works on Instagram, Facebook and TikTok posts too: its first pages become the post's pictures (Instagram and Facebook post the first 10); the same idea's LinkedIn post goes out as the PDF itself.
 
 ## Output
 ```

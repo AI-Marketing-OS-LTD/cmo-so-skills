@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**139 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**140 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -386,6 +386,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-image-generation`](plugins/cmo-so-creative/skills/cmo-image-generation/SKILL.md) | Create on-brand images: blog heroes, social graphics, OG images, ad visuals and product shots. |
 | [`cmo-video-production`](plugins/cmo-so-creative/skills/cmo-video-production/SKILL.md) | Plan and produce marketing videos with AI tools: script, footage, edit plan, captions and versions per platform. |
 | [`cmo-video-repurposing`](plugins/cmo-so-creative/skills/cmo-video-repurposing/SKILL.md) | Mine long videos, webinars and podcasts for clips, quotes and posts, with timestamps. |
+| [`cmo-ad-video`](plugins/cmo-so-creative/skills/cmo-ad-video/SKILL.md) | Make a 15-30 second ad video for a business with CMO.so (beta): a storyboard from a brief, a post or a YouTube ad to follow, shown with its cost before anything is paid for; then each scene's picture, a moving clip, the narrator's voice, music, on-screen words and an end card with the real logo, cut into one video and posted on Reels, TikTok, Shorts, LinkedIn or Facebook. |
 
 <!-- skills:end -->
 

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "tiktok"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-tiktok-posts"
 ---
 # TikTok caption writing
@@ -58,6 +58,11 @@ Before the user approves (or ask the user, with these questions):
 
 ### 4. Save and hand over
 Show the caption (with its length), the hashtags and the video check. With the user's yes, save it with `social_update_copy` (previewed). TikTok's settings and the approval happen in `cmo-tiktok`: the user chooses who can view it, comments / Duet / Stitch and the disclosure there.
+
+
+### Photo post captions
+A TikTok post can also be a photo post: a swipeable set of pictures, and TikTok adds music. `social_tiktok_photo` (`id`: a post with pictures: a set, a text carousel from `social_image_new` with `count` 5-10, or a PDF's pages) makes a new TikTok post from them; Maggie writes the caption (or pass `caption`). Then the same TikTok settings as a video, chosen by the user (`social_tiktok_set`), and the user approves it. Up to 35 pictures; vertical or 4:5 pictures fill the screen best; the first is the cover.
+For a photo post, the caption's first line is also its title (up to 90 characters), so put the keyword there; the rest of the rules above apply.
 
 ## Output
 ```

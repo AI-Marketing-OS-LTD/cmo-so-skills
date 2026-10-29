@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
@@ -103,6 +103,10 @@ A LinkedIn post can be a video instead of text or a picture. LinkedIn shows it i
 - New: `social_video_add` with `channels: ["linkedin"]` (or several channels: one post each, words written for each) and a DIRECT link to a 5-30 second video file the user owns (never a platform page). In the app: Social → Write a post → the title's menu → Video.
 - From a post that hasn't gone out: `social_video_attach` `{id, url}` makes it a video post (its picture is removed: a video post never has one); `social_video_detach` makes it a text post again.
 - A video post gets no picture: never offer `social_image_new` or a photo for it. It is approved like any other post; after it goes out, the platform takes a minute or more to process it before it shows.
+
+### Text carousels
+
+- **A text carousel** (`social_image_new` with `count` 5-10): a cover with the hook, one point a slide and a last slide with the next step, words on the brand's colours (style `bold_type`, or `infographic` for lists and numbers). No AI picture and free; LinkedIn posts it as a PDF carousel, Instagram and Facebook as a carousel (the first 10), TikTok as a photo post (`social_tiktok_photo`). Good for tips, steps, myths vs facts and checklists; change the words on any slide with `social_picture_edit`.
 
 ## Output
 ```

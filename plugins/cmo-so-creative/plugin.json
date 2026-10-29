@@ -1,8 +1,8 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-creative",
-	"version": "0.15.0",
-	"description": "CMO.so Images & video skills (3): Marketing images, Video production, Video & podcast repurposing. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"version": "0.16.0",
+	"description": "CMO.so Images & video skills (4): Marketing images, Video production, Video & podcast repurposing, Ad video maker. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -17,6 +17,7 @@
 		"marketing",
 		"creative",
 		"blog",
+		"facebook",
 		"instagram",
 		"linkedin",
 		"meta-ads",
@@ -27,8 +28,8 @@
 		"com.openai": {
 			"interface": {
 				"displayName": "CMO.so Images & video",
-				"shortDescription": "3 Images & video skills from CMO.so",
-				"longDescription": "CMO.so Images & video skills (3): Marketing images, Video production, Video & podcast repurposing. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"shortDescription": "4 Images & video skills from CMO.so",
+				"longDescription": "CMO.so Images & video skills (4): Marketing images, Video production, Video & podcast repurposing, Ad video maker. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 				"developerName": "AI Marketing OS Ltd",
 				"category": "Productivity",
 				"capabilities": [

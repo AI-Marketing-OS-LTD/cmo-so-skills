@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.15.0",
+	"version": "0.16.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -1316,7 +1316,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.10.0",
+			"version": "0.11.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -1358,7 +1358,8 @@
 				"social_pictures_attach",
 				"social_carousel_pdf_attach",
 				"social_carousel_set",
-				"social_upload_link"
+				"social_upload_link",
+				"social_image_new"
 			],
 			"pairs_with": [
 				"cmo-linkedin-posts",
@@ -6434,7 +6435,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_idea_add",
@@ -6447,7 +6448,8 @@
 				"social_pictures_attach",
 				"social_carousel_pdf_attach",
 				"social_carousel_set",
-				"social_upload_link"
+				"social_upload_link",
+				"social_image_new"
 			],
 			"pairs_with": [
 				"cmo-linkedin",
@@ -7441,18 +7443,20 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_video_add",
 				"social_update_copy",
-				"social_tiktok_set"
+				"social_tiktok_set",
+				"social_tiktok_photo"
 			],
 			"pairs_with": [
 				"cmo-tiktok",
 				"cmo-short-form-video",
 				"cmo-video-production",
-				"cmo-humanize"
+				"cmo-humanize",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-tiktok-posts",
 			"references": [
@@ -8518,7 +8522,7 @@
 			"funnel_stage": "conversion",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"brand_get",
@@ -8527,7 +8531,8 @@
 			],
 			"pairs_with": [
 				"cmo-image-generation",
-				"cmo-ab-testing"
+				"cmo-ab-testing",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-ad-creative",
 			"references": [
@@ -11541,7 +11546,7 @@
 			"funnel_stage": "awareness",
 			"tier": "standalone",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [],
 			"pairs_with": [
@@ -11549,7 +11554,8 @@
 				"cmo-youtube",
 				"cmo-youtube-posts",
 				"cmo-youtube-strategy",
-				"cmo-tiktok"
+				"cmo-tiktok",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-video-production",
 			"references": [
@@ -12962,7 +12968,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.6.0",
+			"version": "0.7.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -12989,12 +12995,15 @@
 				"social_video_detach",
 				"social_post_get",
 				"social_pictures_attach",
-				"social_upload_link"
+				"social_upload_link",
+				"social_image_new",
+				"social_carousel_pdf_attach"
 			],
 			"pairs_with": [
 				"cmo-facebook-posts",
 				"cmo-linkedin",
-				"cmo-social-strategy"
+				"cmo-social-strategy",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-facebook",
 			"references": [
@@ -13062,7 +13071,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.8.0",
+			"version": "0.9.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_list",
@@ -13100,13 +13109,16 @@
 				"social_image_stop",
 				"social_post_get",
 				"social_pictures_attach",
-				"social_upload_link"
+				"social_upload_link",
+				"social_carousel_pdf_attach",
+				"social_tiktok_photo"
 			],
 			"pairs_with": [
 				"cmo-instagram-posts",
 				"cmo-facebook",
 				"cmo-linkedin",
-				"cmo-social-strategy"
+				"cmo-social-strategy",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-instagram",
 			"references": [
@@ -13251,7 +13263,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"social_idea_add",
@@ -13262,7 +13274,8 @@
 				"social_image_new",
 				"social_text_effects",
 				"social_look",
-				"social_picture_edit"
+				"social_picture_edit",
+				"social_carousel_pdf_attach"
 			],
 			"pairs_with": [
 				"cmo-instagram",
@@ -13492,7 +13505,7 @@
 			"funnel_stage": "awareness",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"tiktok_connect_link",
@@ -13506,14 +13519,16 @@
 				"social_restore",
 				"social_move",
 				"social_set_paused",
-				"social_post_get"
+				"social_post_get",
+				"social_tiktok_photo"
 			],
 			"pairs_with": [
 				"cmo-tiktok-posts",
 				"cmo-youtube",
 				"cmo-short-form-video",
 				"cmo-video-production",
-				"cmo-social-strategy"
+				"cmo-social-strategy",
+				"cmo-ad-video"
 			],
 			"url": "https://cmo.so/skills/cmo-tiktok",
 			"references": [
@@ -13755,6 +13770,86 @@
 			],
 			"plugin": "cmo-so-social",
 			"skill_file": "plugins/cmo-so-social/skills/cmo-google-business-posts/SKILL.md"
+		},
+		{
+			"id": "cmo-ad-video",
+			"name": "Ad video maker",
+			"category": "creative",
+			"category_name": "Images & video",
+			"summary": "Make a 15-30 second ad video for a business with CMO.so (beta): a storyboard from a brief, a post or a YouTube ad to follow, shown with its cost before anything is paid for; then each scene's picture, a moving clip, the narrator's voice, music, on-screen words and an end card with the real logo, cut into one video and posted on Reels, TikTok, Shorts, LinkedIn or Facebook.",
+			"channels": [
+				"instagram",
+				"tiktok",
+				"youtube",
+				"linkedin",
+				"facebook"
+			],
+			"funnel_stage": "awareness",
+			"tier": "connected",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"ad_video_plan",
+				"ad_video_list",
+				"ad_video_get",
+				"ad_video_change",
+				"ad_video_make",
+				"ad_video_stop",
+				"social_video_add",
+				"social_tiktok_set",
+				"social_youtube_set"
+			],
+			"pairs_with": [
+				"cmo-ad-creative",
+				"cmo-short-form-video",
+				"cmo-video-production",
+				"cmo-tiktok",
+				"cmo-youtube",
+				"cmo-instagram"
+			],
+			"url": "https://cmo.so/skills/cmo-ad-video",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-storyboard",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				},
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-video",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"make an ad video for us",
+				"turn this post into a short video ad",
+				"make a 20-second Reel about our offer",
+				"remake this YouTube ad for our brand",
+				"how much would a video ad cost?",
+				"change the voice-over in scene 2",
+				"post the ad video on TikTok and Instagram"
+			],
+			"inputs": [
+				"What the ad should do: the offer, who it's for, the one thing to remember (or a post to make it from)",
+				"Length (15, 20 or 30 seconds) and shape (vertical 9:16 for Reels, TikTok and Shorts; 16:9 for LinkedIn and YouTube)",
+				"Optionally a public YouTube ad whose rhythm to follow, a voice preference and the music mood"
+			],
+			"outputs": [
+				"A storyboard: scenes with the picture, the movement, the narrator's line and the words on screen, an end card, voice and music",
+				"The cost of making it, item by item, agreed before anything is billed",
+				"A finished vertical or landscape video in CMO.so, and video posts from it waiting for the user's approval"
+			],
+			"plugin": "cmo-so-creative",
+			"skill_file": "plugins/cmo-so-creative/skills/cmo-ad-video/SKILL.md"
 		}
 	],
 	"excluded": [

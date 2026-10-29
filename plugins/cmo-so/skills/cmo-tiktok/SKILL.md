@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "tiktok"
-  version: "0.15.0"
+  version: "0.16.0"
   docs: "https://cmo.so/skills/cmo-tiktok"
 ---
 # TikTok queue
@@ -71,6 +71,10 @@ TikTok's API can't edit or delete a post: changes happen in the TikTok app ("Ope
 
 ### 8. Pause and pace
 `social_set_paused` with `channel: "tiktok"` pauses only TikTok. Three to five videos a week, steadily, beats bursts.
+
+
+### Photo posts
+A TikTok post can also be a photo post: a swipeable set of pictures, and TikTok adds music. `social_tiktok_photo` (`id`: a post with pictures: a set, a text carousel from `social_image_new` with `count` 5-10, or a PDF's pages) makes a new TikTok post from them; Maggie writes the caption (or pass `caption`). Then the same TikTok settings as a video, chosen by the user (`social_tiktok_set`), and the user approves it. Up to 35 pictures; vertical or 4:5 pictures fill the screen best; the first is the cover.
 
 ## Output
 ```
