@@ -7,14 +7,14 @@
 	},
 	"metadata": {
 		"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-		"version": "0.16.0"
+		"version": "0.16.1"
 	},
 	"plugins": [
 		{
 			"name": "cmo-so",
 			"source": "./plugins/cmo-so",
 			"description": "CMO.so core: connects the CMO.so MCP server and runs Maggie day to day — Connect to CMO.so, Daily marketing check-in, Weekly marketing report, Blog planner, LinkedIn queue, Maggie Memory….",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -35,7 +35,7 @@
 			"name": "cmo-so-strategy",
 			"source": "./plugins/cmo-so-strategy",
 			"description": "CMO.so Strategy & research skills (13): Customer research & ICP, Positioning & messaging, Competitor research, Marketing plan, Marketing audit, Marketing ideas…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -52,7 +52,7 @@
 			"name": "cmo-so-seo",
 			"source": "./plugins/cmo-so-seo",
 			"description": "CMO.so SEO skills (18): SEO audit, Technical SEO, On-page SEO, Keyword research, Keyword clustering & topic map, SEO content brief…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -73,7 +73,7 @@
 			"name": "cmo-so-ai-search",
 			"source": "./plugins/cmo-so-ai-search",
 			"description": "CMO.so AI search (GEO / AEO) skills (7): AI visibility audit, AI prompt research, AI citation gap finder, AI brand answer monitoring, Answer-ready content (AEO), Agent readiness…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -94,7 +94,7 @@
 			"name": "cmo-so-content",
 			"source": "./plugins/cmo-so-content",
 			"description": "CMO.so Content & copy skills (8): Content strategy, Blog post writing, Conversion copywriting, Copy editing, Humanise AI writing, Content repurposing…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -115,7 +115,7 @@
 			"name": "cmo-so-social",
 			"source": "./plugins/cmo-so-social",
 			"description": "CMO.so Social & community skills (24): Social media strategy, LinkedIn post writing, LinkedIn profile optimisation, LinkedIn engagement & outreach, LinkedIn strategy & analytics, X (Twitter) growth…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -136,7 +136,7 @@
 			"name": "cmo-so-email",
 			"source": "./plugins/cmo-so-email",
 			"description": "CMO.so Email & lifecycle skills (6): Email sequences, Cold email & outbound, SMS & WhatsApp marketing, Retention & churn prevention, Email newsletter, Email deliverability. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -154,7 +154,7 @@
 			"name": "cmo-so-paid-ads",
 			"source": "./plugins/cmo-so-paid-ads",
 			"description": "CMO.so Paid ads skills (11): Paid ads strategy, Paid ads audit, Google Ads, Meta (Facebook & Instagram) ads, LinkedIn ads, Ad creative…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -175,7 +175,7 @@
 			"name": "cmo-so-cro",
 			"source": "./plugins/cmo-so-cro",
 			"description": "CMO.so Conversion (CRO) skills (10): Page conversion optimisation, Landing page audit, Form optimisation, Signup flow optimisation, Onboarding & activation, Popups & banners…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -194,7 +194,7 @@
 			"name": "cmo-so-analytics",
 			"source": "./plugins/cmo-so-analytics",
 			"description": "CMO.so Analytics & reporting skills (5): Tracking & UTM setup, Attribution, Campaign analytics & benchmarks, Client & executive report, Closed-loop measurement. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -213,7 +213,7 @@
 			"name": "cmo-so-growth",
 			"source": "./plugins/cmo-so-growth",
 			"description": "CMO.so Growth & go-to-market skills (9): Product launch, Referral & affiliate program, Co-marketing & partnerships, Free tools as marketing, Directory submissions, PR & earned media…. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -234,7 +234,7 @@
 			"name": "cmo-so-sales",
 			"source": "./plugins/cmo-so-sales",
 			"description": "CMO.so Sales & revenue skills (4): Prospecting & lead research, Sales enablement, Revenue operations, Proposals & statements of work. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -249,7 +249,7 @@
 			"name": "cmo-so-creative",
 			"source": "./plugins/cmo-so-creative",
 			"description": "CMO.so Images & video skills (4): Marketing images, Video production, Video & podcast repurposing, Ad video maker. Installs the cmo-so core plugin with it.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",
@@ -269,7 +269,7 @@
 			"name": "cmo-so-all",
 			"source": "./plugins/cmo-so-all",
 			"description": "All 140 CMO.so marketing skills in one install: core, Strategy & research, SEO, AI search (GEO / AEO), Content & copy, Social & community, Email & lifecycle, Paid ads, Conversion (CRO), Analytics & reporting, Growth & go-to-market, Sales & revenue, Images & video.",
-			"version": "0.16.0",
+			"version": "0.16.1",
 			"category": "productivity",
 			"keywords": [
 				"cmo.so",

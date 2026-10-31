@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.16.0",
+	"version": "0.16.1",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -13787,7 +13787,7 @@
 			"funnel_stage": "awareness",
 			"tier": "connected",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"ad_video_plan",
@@ -13836,6 +13836,10 @@
 				"remake this YouTube ad for our brand",
 				"how much would a video ad cost?",
 				"change the voice-over in scene 2",
+				"add a scene, drop the last one, swap scenes 2 and 3",
+				"use my own photo for the first scene",
+				"show me the pictures before you make the video",
+				"does the voice-over fit the timing?",
 				"post the ad video on TikTok and Instagram"
 			],
 			"inputs": [

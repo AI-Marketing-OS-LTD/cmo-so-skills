@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "instagram,tiktok,youtube,linkedin,facebook"
-  version: "0.16.0"
+  version: "0.16.1"
   docs: "https://cmo.so/skills/cmo-ad-video"
 ---
 # Ad video maker
@@ -20,7 +20,7 @@ A short ad works when the first two seconds stop the thumb, every scene says one
 - Not for: editing a video the user filmed (`cmo-video-production`); ideas and scripts for the user to film themselves (`cmo-short-form-video`); paid ad campaigns, budgets and targeting (`cmo-ads-strategy`, `cmo-meta-ads`); ad copy and headlines (`cmo-ad-creative`).
 
 ## Before you start
-- Ask one question at a time: what the ad should do (the offer and the one thing people should remember), who it's for, the length and where it will run. If they gave a post, use it (`item_id`).
+- Ask one question at a time: what the ad should do (the offer and the one thing people should remember), who it's for, the length and where it will run. If they gave a post, use it (`item_id`): once made, the video goes on that post by itself (`post.attached`), so only other channels need `social_video_add`.
 - Shape follows the channel: vertical 9:16 for Instagram Reels, TikTok and YouTube Shorts; 16:9 for LinkedIn and YouTube. One video per shape: for both, plan two.
 - A YouTube ad to follow is optional: CMO.so watches it (it is never downloaded) and keeps only its rhythm and kinds of shots, never its brand, people, words or claims.
 - Making a video costs money (pictures, seconds of moving video, voice, music). The plan says the cost; never make it without the user agreeing to that cost.
@@ -34,7 +34,7 @@ Call `ad_video_plan` with the brief (or `item_id`), `seconds` (15, 20 or 30), `a
 | # | Seconds | Picture | Movement | Narrator | On screen |
 |---|---|---|---|---|---|
 
-then the end card (headline and line), the voice, the music and the cost items with the total.
+then the end card (headline and line), the voice, the music and the cost items with the total. Show the `timeline` too (when each scene, line and caption starts and ends, and the end card), and every `script_check` issue: an **error** (a line that can't fit any scene, a voice that starts too late, scenes longer than 30 s) must be fixed before making; a **warning** (a scene stretched for its line, words on screen too fast to read, a video longer or shorter than planned) is the user's call.
 
 ### 2. Review the storyboard with the user
 Check it against these rules before asking for a yes:
@@ -45,10 +45,20 @@ Check it against these rules before asking for a yes:
 - **Faces stay calm**: real-looking people with little motion; no close-ups of talking mouths.
 - **True claims only**: nothing the brief or the business doesn't say: no invented prices, results, awards or quotes.
 - **End card**: one next step, said plainly ("Book a free consult", "moonlakespa.com").
-Change anything with `ad_video_change` (scene `still`, `motion`, `line`, `caption`, `seconds`; `redo_scenes`; `cta_headline`, `cta_sub`; `voice`; `music`). It says what will be made again and the new cost: a new picture brief or movement means a new paid clip; lines, words, end card, voice and music are cheap.
+Change anything with `ad_video_change`:
+- a scene (`scenes`): `still`, `motion`, `line`, `caption`, `seconds`, and its timing: `caption_in` / `caption_out` (when the words show and go) and `voice_at` (when the narrator starts), in seconds into the scene; `-1` (in the app: Reset) puts one back to its default;
+- the scenes themselves: `add_scenes` (a picture brief at least; `after` a scene id), `order` (the scene ids to keep, in order: removes and reorders; 2-5 scenes), `redo_scenes`;
+- the whole video: `style` (the look), `aspect`, `seconds` (15, 20 or 30: scenes rescaled), `card_seconds`, `cta_headline`, `cta_sub`, `voice`, `music`.
+It answers with what will be made again, the new cost, the timeline and the script check. A new picture brief, look or shape means new paid pictures and clips; a movement a new paid clip; lines, words, timing, order, end card, voice and music are cheap.
+
+The user's own photo can be a scene's first frame: `ad_video_picture` with a picture already on CMO.so (a post's picture); from their device, the Ad video screen in the CMO.so app. It is cropped to the shape and costs nothing; `scenes [{id, picture: "ai"}]` goes back to an AI picture.
+
+When the script check reports a line too long, shorten it to about the words its `fix` says (about 2.4 words a second), split it over two scenes, or start the voice earlier; rerun the check by reading `ad_video_get`.
 
 ### 3. Make it
-Only when the user says yes to the cost: `ad_video_make` with `estimate_usd` = the total they agreed to. If the cost changed it is refused with the new one: show it and ask again. It runs in the background for several minutes: pictures (on the user's own ChatGPT when their Maggie Bridge has images on, else Gemini), moving clips, voice, music, words, cut. Follow it with `ad_video_get` now and then, not in a loop. To stop: `ad_video_stop` (what's made is kept). A failure says why; making it again carries on from what was made.
+Offer the pictures first: `ad_video_make` with `stage: "pictures"` and `estimate_usd` = `estimate.pictures_usd` (a few cents) makes only the first frames. Show each scene's `picture_url`; change or redo any (cheap) before the clips, which are most of the cost.
+
+Then, only when the user says yes to the cost: `ad_video_make` with `estimate_usd` = the total they agreed to. If the script check has errors it is refused: fix them, or pass `go_ahead: true` only when the user says to make it anyway. If the cost changed it is refused with the new one: show it and ask again. It runs in the background for several minutes: pictures (on the user's own ChatGPT when their Maggie Bridge has images on, else Gemini), moving clips, voice, music, words, cut. Follow it with `ad_video_get` now and then, not in a loop. To stop: `ad_video_stop` (what's made is kept). A failure says why; making it again carries on from what was made.
 
 ### 4. Check the result
 When it's ready, look at the pictures (each scene's `picture_url`) and the preview with the user:
@@ -80,6 +90,7 @@ Input: "Make a 20-second Reel for our winter HydraFacial offer, for women in Vie
 
 ## Quality bar
 - [ ] The cost was shown item by item and the user agreed to that exact total before `ad_video_make`.
+- [ ] The pictures were offered first, and the timeline and script check were shown; no script errors left unless the user chose to go ahead.
 - [ ] Scene 1 is a hook; one idea a scene; the end card has one next step.
 - [ ] Lines fit their scenes and are plain words; no words drawn inside pictures.
 - [ ] Every claim comes from the brief, the post or the business; nothing invented.

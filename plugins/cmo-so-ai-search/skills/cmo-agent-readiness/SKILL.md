@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website,ai-search,chatgpt,perplexity"
-  version: "0.16.0"
+  version: "0.16.1"
   docs: "https://cmo.so/skills/cmo-agent-readiness"
 ---
 # Agent readiness
