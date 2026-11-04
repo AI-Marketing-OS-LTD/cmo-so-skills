@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**140 skills in 13 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**151 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -387,6 +387,22 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-video-production`](plugins/cmo-so-creative/skills/cmo-video-production/SKILL.md) | Plan and produce marketing videos with AI tools: script, footage, edit plan, captions and versions per platform. |
 | [`cmo-video-repurposing`](plugins/cmo-so-creative/skills/cmo-video-repurposing/SKILL.md) | Mine long videos, webinars and podcasts for clips, quotes and posts, with timestamps. |
 | [`cmo-ad-video`](plugins/cmo-so-creative/skills/cmo-ad-video/SKILL.md) | Make a 15-30 second ad video for a business with CMO.so (beta): a storyboard from a brief, a post or a YouTube ad to follow, shown with its cost before anything is paid for; then each scene's picture, a moving clip, the narrator's voice, music, on-screen words and an end card with the real logo, cut into one video and posted on Reels, TikTok, Shorts, LinkedIn or Facebook. |
+
+### Website (WordPress) · `cmo-so-website`
+
+| Skill | What it does |
+|---|---|
+| [`cmo-wp-builder`](plugins/cmo-so-website/skills/cmo-wp-builder/SKILL.md) | Build and look after a WordPress site on the Maggie Core theme through CMO.so alone: add, design, change or remove pages and sections, fix SEO, change the menu, header, footer and brand. |
+| [`cmo-wp-child-theme`](plugins/cmo-so-website/skills/cmo-wp-child-theme/SKILL.md) | Keep a site's own look — brand colours, fonts, header, footer, patterns, small CSS — in a child theme of Maggie Core, so the parent theme can update safely and the site's design lives in files, not only in the database. |
+| [`cmo-wp-clone`](plugins/cmo-so-website/skills/cmo-wp-clone/SKILL.md) | Take the look of the owner's existing homepage (or a reference site they're allowed to use) and rebuild it on Maggie Core — design tokens, section map, header and footer — as a Design Pack the rest of the site follows. |
+| [`cmo-wp-faq`](plugins/cmo-so-website/skills/cmo-wp-faq/SKILL.md) | Write 10+ questions and answers tailored to each WordPress page from the page's own facts — no invented prices, numbers or claims, no repeats across sibling pages — and put them in the page's FAQ section. |
+| [`cmo-wp-images`](plugins/cmo-so-website/skills/cmo-wp-images/SKILL.md) | Choose, size and describe the pictures on WordPress pages — the right shape per section, fast WebP files, honest alt text, no duplicates — and state the cost before generating any new image. |
+| [`cmo-wp-migrate`](plugins/cmo-so-website/skills/cmo-wp-migrate/SKILL.md) | Move an existing WordPress site (Elementor or another theme) onto Maggie Core page by page without losing SEO — inventory and baseline, page types, one approved page per type, batch conversion, gates, cut-over and rollback. |
+| [`cmo-wp-motion`](plugins/cmo-so-website/skills/cmo-wp-motion/SKILL.md) | Use Maggie Core's motion vocabulary — rise and stagger on entry, lift, zoom and float on hover, underline on links — through section classes only, calm and accessible, never custom scripts. |
+| [`cmo-wp-page-design`](plugins/cmo-so-website/skills/cmo-wp-page-design/SKILL.md) | Design a new WordPress page or rework an existing one as Maggie Core sections, review it on phone and computer, and fix generic, cluttered or weak layouts in place. |
+| [`cmo-wp-qa`](plugins/cmo-so-website/skills/cmo-wp-qa/SKILL.md) | The checks after any WordPress change and before a release or cut-over — pages open, one H1, valid blocks, SEO unchanged against a baseline, links, layout at 390/768/1440 px, contrast, forms — with a clear pass/fail report. |
+| [`cmo-wp-sections`](plugins/cmo-so-website/skills/cmo-wp-sections/SKILL.md) | The rules for Maggie Core sections — which type to use for which job, what each needs, how many per page and in what order — so pages built by AI look designed, not assembled. |
+| [`cmo-wp-seo`](plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md) | Audit and fix a WordPress site's on-page SEO through CMO.so — titles, descriptions, keywords, H1s, robots, canonicals, structured data, redirects and business details — page by page or in batches. |
 
 <!-- skills:end -->
 

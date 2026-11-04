@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.16.1",
+	"version": "0.17.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -22,7 +22,7 @@
 		{
 			"id": "core",
 			"name": "CMO.so core (MCP)",
-			"count": 17
+			"count": 21
 		},
 		{
 			"id": "strategy",
@@ -37,7 +37,7 @@
 		{
 			"id": "ai-search",
 			"name": "AI search (GEO / AEO)",
-			"count": 6
+			"count": 7
 		},
 		{
 			"id": "content",
@@ -82,7 +82,12 @@
 		{
 			"id": "creative",
 			"name": "Images & video",
-			"count": 3
+			"count": 4
+		},
+		{
+			"id": "website",
+			"name": "Website (WordPress)",
+			"count": 11
 		}
 	],
 	"reference_repos": [
@@ -13854,6 +13859,713 @@
 			],
 			"plugin": "cmo-so-creative",
 			"skill_file": "plugins/cmo-so-creative/skills/cmo-ad-video/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-builder",
+			"name": "WordPress site builder",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Build and look after a WordPress site on the Maggie Core theme through CMO.so alone: add, design, change or remove pages and sections, fix SEO, change the menu, header, footer and brand.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_site_connect_link",
+				"wp_site_map",
+				"wp_pages_list",
+				"wp_page_get",
+				"wp_section_library",
+				"wp_preview",
+				"wp_page_create",
+				"wp_page_update",
+				"wp_page_delete",
+				"wp_page_duplicate",
+				"wp_page_undo",
+				"wp_section_add",
+				"wp_section_update",
+				"wp_section_move",
+				"wp_section_remove",
+				"wp_pattern_update",
+				"wp_seo_get",
+				"wp_seo_set",
+				"wp_seo_audit",
+				"wp_menu_get",
+				"wp_menu_set",
+				"wp_part_get",
+				"wp_header_set",
+				"wp_footer_set",
+				"wp_style_get",
+				"wp_style_set",
+				"brand_get"
+			],
+			"pairs_with": [
+				"cmo-wp-page-design",
+				"cmo-wp-sections",
+				"cmo-wp-seo",
+				"cmo-wp-faq",
+				"cmo-wp-migrate",
+				"cmo-wp-qa",
+				"cmo-wp-child-theme"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-builder",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-orchestrator",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"add a new service page to my website",
+				"change the Book Now button on my site",
+				"move the FAQ above the reviews on the homepage",
+				"fix the SEO on my WordPress pages",
+				"add Sunday hours to the footer",
+				"make a page for each city we serve",
+				"redesign my website pages"
+			],
+			"inputs": [
+				"The website (connected to CMO.so) and an Administrator application password saved for it",
+				"What the user wants to change, in their words",
+				"Facts for new copy: services, prices, hours, addresses (from the site or the owner, never invented)"
+			],
+			"outputs": [
+				"The change made on the live site (or saved as a draft), with before → after and a quick check",
+				"For bigger jobs: a short plan (pages, sections, SEO) agreed before anything is written"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-builder/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-child-theme",
+			"name": "WordPress child theme",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Keep a site's own look — brand colours, fonts, header, footer, patterns, small CSS — in a child theme of Maggie Core, so the parent theme can update safely and the site's design lives in files, not only in the database.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_style_get",
+				"wp_part_get",
+				"wp_menu_get"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-clone",
+				"cmo-wp-migrate",
+				"cmo-wp-qa"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-child-theme",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-template",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"make a child theme for my site",
+				"keep my design when the theme updates",
+				"save my site's customisations in a theme",
+				"give this client their own theme on top of Maggie",
+				"export the brand into theme files"
+			],
+			"inputs": [
+				"The site on Maggie Core, connected to CMO.so (or reachable with an application password)",
+				"The child theme's name and slug (e.g. Moon Lake Spa, maggie-moonlake)"
+			],
+			"outputs": [
+				"A child theme folder: style.css (Template: maggie-core), theme.json with the site's Global Styles, header and footer parts, font files, patterns folder",
+				"Install and switch steps, and the check that the site looks the same after switching"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-child-theme/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-clone",
+			"name": "WordPress design from a reference site",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Take the look of the owner's existing homepage (or a reference site they're allowed to use) and rebuild it on Maggie Core — design tokens, section map, header and footer — as a Design Pack the rest of the site follows.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_style_get",
+				"wp_style_set",
+				"wp_part_get",
+				"wp_header_set",
+				"wp_footer_set",
+				"wp_menu_get",
+				"wp_menu_set",
+				"wp_section_library",
+				"wp_page_get",
+				"wp_page_create",
+				"wp_section_add",
+				"wp_section_update",
+				"wp_preview"
+			],
+			"pairs_with": [
+				"cmo-wp-page-design",
+				"cmo-wp-child-theme",
+				"cmo-wp-migrate",
+				"cmo-wp-images"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-clone",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-clone",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"make my new site look like my old one",
+				"rebuild our homepage on the new theme",
+				"use this website's style for my pages",
+				"copy the design of our homepage to all pages",
+				"start the site from our current branding"
+			],
+			"inputs": [
+				"The reference homepage URL (the owner's own site, or one they are authorised to reproduce)",
+				"The target WordPress site on Maggie Core, connected to CMO.so"
+			],
+			"outputs": [
+				"DESIGN notes: colours, fonts, spacing, radius, button and section styles taken from the reference",
+				"The brand applied (wp_style_set), the homepage rebuilt as sections, header and footer matched"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-clone/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-faq",
+			"name": "WordPress page FAQs",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Write 10+ questions and answers tailored to each WordPress page from the page's own facts — no invented prices, numbers or claims, no repeats across sibling pages — and put them in the page's FAQ section.",
+			"channels": [
+				"wordpress",
+				"google-search"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_page_get",
+				"wp_site_map",
+				"wp_section_update",
+				"wp_section_add",
+				"wp_preview",
+				"wp_seo_get",
+				"brand_get"
+			],
+			"pairs_with": [
+				"cmo-wp-seo",
+				"cmo-wp-sections",
+				"cmo-wp-page-design",
+				"cmo-wp-builder"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-faq",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-seo-geo",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"add FAQs to my service pages",
+				"write 10 questions for this page",
+				"our FAQ is too short",
+				"the city pages all have the same FAQ",
+				"add a question about parking"
+			],
+			"inputs": [
+				"The page (its text and existing FAQ)",
+				"Site facts: address, hours, booking, policies (from the site or the owner)",
+				"For several pages of the same service: all of them together"
+			],
+			"outputs": [
+				"The page's FAQ section with 10-12 questions, existing ones kept",
+				"A short note of questions that need the owner (prices, durations not on the page)"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-faq/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-images",
+			"name": "WordPress page pictures",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Choose, size and describe the pictures on WordPress pages — the right shape per section, fast WebP files, honest alt text, no duplicates — and state the cost before generating any new image.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_page_get",
+				"wp_site_map",
+				"wp_section_update",
+				"wp_preview"
+			],
+			"pairs_with": [
+				"cmo-wp-page-design",
+				"cmo-wp-sections",
+				"cmo-wp-clone",
+				"cmo-wp-qa"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-images",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-image",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"change the photo on this page",
+				"my images are blurry or cropped",
+				"add alt text to the pictures",
+				"we need pictures for the new page",
+				"generate a hero image for the promotion"
+			],
+			"inputs": [
+				"The page and sections that need pictures",
+				"The owner's photos (preferred) or permission to generate or license images"
+			],
+			"outputs": [
+				"Each section's picture set or swapped, with alt text, in the right shape and size",
+				"A cost note before any generated image"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-images/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-migrate",
+			"name": "WordPress migration to Maggie Core",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Move an existing WordPress site (Elementor or another theme) onto Maggie Core page by page without losing SEO — inventory and baseline, page types, one approved page per type, batch conversion, gates, cut-over and rollback.",
+			"channels": [
+				"wordpress",
+				"google-search"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_site_map",
+				"wp_page_get",
+				"wp_seo_audit",
+				"wp_seo_import",
+				"wp_seo_get",
+				"wp_redirect_set",
+				"wp_menu_get",
+				"wp_part_get",
+				"wp_page_create",
+				"wp_section_add",
+				"wp_section_update",
+				"wp_page_undo"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-page-design",
+				"cmo-wp-seo",
+				"cmo-wp-faq",
+				"cmo-wp-qa",
+				"cmo-wp-child-theme",
+				"cmo-wp-clone"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-migrate",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-clone",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"move my site off Elementor",
+				"switch my WordPress theme without losing rankings",
+				"migrate my site to the Maggie theme",
+				"rebuild my website on the new theme",
+				"replace Rank Math with the theme's SEO"
+			],
+			"inputs": [
+				"The site, with an Administrator application password saved in CMO.so (and a staging copy if possible)",
+				"The owner's approval of one page per page type before the batch"
+			],
+			"outputs": [
+				"Inventory and SEO baseline (wp-baseline.json), page types with counts",
+				"Converted pages that pass the gates, the cut-over checklist done, a rollback path"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-migrate/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-motion",
+			"name": "WordPress page motion",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Use Maggie Core's motion vocabulary — rise and stagger on entry, lift, zoom and float on hover, underline on links — through section classes only, calm and accessible, never custom scripts.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_page_get",
+				"wp_section_update",
+				"wp_preview",
+				"wp_section_library"
+			],
+			"pairs_with": [
+				"cmo-wp-page-design",
+				"cmo-wp-sections",
+				"cmo-wp-qa"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-motion",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-design-motion",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"make the page feel more alive",
+				"add animations to my website",
+				"the cards should move when I hover",
+				"too much animation on the page",
+				"make sections fade in when you scroll"
+			],
+			"inputs": [
+				"The page and the sections to animate (or to calm down)"
+			],
+			"outputs": [
+				"Sections with the right motion classes, reduced-motion safe, checked on the rendered page"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-motion/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-page-design",
+			"name": "WordPress page design",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Design a new WordPress page or rework an existing one as Maggie Core sections, review it on phone and computer, and fix generic, cluttered or weak layouts in place.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_page_get",
+				"wp_site_map",
+				"wp_section_library",
+				"wp_preview",
+				"wp_page_create",
+				"wp_section_add",
+				"wp_section_update",
+				"wp_section_move",
+				"wp_section_remove",
+				"wp_page_undo",
+				"wp_style_get",
+				"brand_get"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-sections",
+				"cmo-wp-images",
+				"cmo-wp-motion",
+				"cmo-wp-qa",
+				"cmo-wp-faq"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-page-design",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-design",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"this page looks cheap, make it look better",
+				"redesign the about us page",
+				"lay out a new page for our facial treatments",
+				"the layout of this page is ugly",
+				"make our service pages look like the homepage",
+				"plan the sections for a promotion page"
+			],
+			"inputs": [
+				"The page (path) or the new page's purpose and audience",
+				"The site's existing pages as the design reference (its homepage, a good service page)",
+				"Real content: services, prices, photos, reviews from the site or the owner"
+			],
+			"outputs": [
+				"A section plan (order, type, heading, purpose of each) agreed with the user",
+				"The page built or reworked through section tools, checked at 390, 768 and 1440 px"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-page-design/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-qa",
+			"name": "WordPress site QA",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "The checks after any WordPress change and before a release or cut-over — pages open, one H1, valid blocks, SEO unchanged against a baseline, links, layout at 390/768/1440 px, contrast, forms — with a clear pass/fail report.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_seo_audit",
+				"wp_seo_get",
+				"wp_page_get",
+				"wp_site_map",
+				"wp_style_get",
+				"wp_part_get",
+				"wp_page_undo"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-migrate",
+				"cmo-wp-page-design",
+				"cmo-wp-seo"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-qa",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-qa-workflow",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"check the site after the changes",
+				"is everything still working on my website",
+				"test the new page on mobile",
+				"did the migration break anything",
+				"run the release checks"
+			],
+			"inputs": [
+				"The pages changed (or the whole site) and, for migrations, the SEO baseline file"
+			],
+			"outputs": [
+				"A pass/fail report per check with the pages affected and the fix for each failure"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-qa/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-sections",
+			"name": "WordPress sections",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "The rules for Maggie Core sections — which type to use for which job, what each needs, how many per page and in what order — so pages built by AI look designed, not assembled.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "consideration",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_section_library",
+				"wp_page_get",
+				"wp_site_status",
+				"wp_preview",
+				"wp_section_add",
+				"wp_section_update",
+				"wp_section_move",
+				"wp_section_remove",
+				"wp_pattern_update"
+			],
+			"pairs_with": [
+				"cmo-wp-page-design",
+				"cmo-wp-builder",
+				"cmo-wp-faq",
+				"cmo-wp-images"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-sections",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-landing-page",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"which sections should this page have",
+				"add a pricing section",
+				"add a reviews section to the page",
+				"add a gallery of before and after photos",
+				"put a booking box on the page",
+				"what can I add to my page"
+			],
+			"inputs": [
+				"The page and what the new section is for",
+				"The section's real content (text, prices, photos, reviews, form)"
+			],
+			"outputs": [
+				"The right section type with complete slots, placed in the right region and position"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-sections/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-seo",
+			"name": "WordPress SEO",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Audit and fix a WordPress site's on-page SEO through CMO.so — titles, descriptions, keywords, H1s, robots, canonicals, structured data, redirects and business details — page by page or in batches.",
+			"channels": [
+				"wordpress",
+				"google-search"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_seo_audit",
+				"wp_seo_get",
+				"wp_seo_set",
+				"wp_seo_site_set",
+				"wp_redirects_list",
+				"wp_redirect_set",
+				"wp_seo_import",
+				"wp_business_set",
+				"wp_page_get",
+				"wp_pages_list",
+				"wp_section_update",
+				"gsc_queries_get",
+				"brand_get"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-faq",
+				"cmo-wp-qa",
+				"cmo-wp-migrate",
+				"cmo-page-seo",
+				"cmo-local-seo"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-seo",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-seo-geo",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"check my website's SEO",
+				"rewrite the meta descriptions on my service pages",
+				"change the keyword of the HydraFacial page",
+				"which pages are missing a title",
+				"add a redirect from the old page",
+				"switch off Rank Math without losing SEO",
+				"add our opening hours to Google's data"
+			],
+			"inputs": [
+				"The website; for focused work, the pages and target keywords",
+				"Search Console data when connected (queries and pages)",
+				"The business details for structured data (address, phone, hours) from the owner"
+			],
+			"outputs": [
+				"An audit: issues by severity with the pages affected",
+				"Fixed fields (before → after), redirects set, business details filled"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md"
 		}
 	],
 	"excluded": [

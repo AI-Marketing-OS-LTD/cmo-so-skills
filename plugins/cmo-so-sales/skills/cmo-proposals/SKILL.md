@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: ""
-  version: "0.16.1"
+  version: "0.17.0"
   docs: "https://cmo.so/skills/cmo-proposals"
 ---
 # Proposals & statements of work

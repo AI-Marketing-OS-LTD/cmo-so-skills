@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: ""
-  version: "0.16.1"
+  version: "0.17.0"
   docs: "https://cmo.so/skills/cmo-customer-research"
 ---
 # Customer research & ICP

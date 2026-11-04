@@ -159,6 +159,18 @@
 				"authentication": "ON_INSTALL"
 			},
 			"category": "Productivity"
+		},
+		{
+			"name": "cmo-so-website",
+			"source": {
+				"source": "local",
+				"path": "./plugins/cmo-so-website"
+			},
+			"policy": {
+				"installation": "AVAILABLE",
+				"authentication": "ON_INSTALL"
+			},
+			"category": "Productivity"
 		}
 	]
 }
