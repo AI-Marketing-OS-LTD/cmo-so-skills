@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "instagram,tiktok,youtube,linkedin,facebook"
-  version: "0.17.0"
+  version: "0.17.1"
   docs: "https://cmo.so/skills/cmo-ad-video"
 ---
 # Ad video maker

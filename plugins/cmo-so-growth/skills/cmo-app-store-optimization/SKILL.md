@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "app-store,google-play"
-  version: "0.17.0"
+  version: "0.17.1"
   docs: "https://cmo.so/skills/cmo-app-store-optimization"
 ---
 # App store optimisation

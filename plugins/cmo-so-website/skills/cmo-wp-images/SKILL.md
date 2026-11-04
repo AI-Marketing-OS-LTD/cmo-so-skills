@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.17.0"
+  version: "0.17.1"
   docs: "https://cmo.so/skills/cmo-wp-images"
 ---
 # WordPress page pictures
@@ -39,8 +39,10 @@ a generated image costs before making one.
    watermarks; people only with the owner's permission (and the person's).
 4. **Alt text**: what is in the picture, in a short sentence, with the service where it's true ("Therapist
    applying a HydraFacial wand to a client's cheek"); empty alt only for pure decoration.
-5. **Swap** with `wp_section_update` edits images (from → to, alt); preview with `wp_preview`. New photos the
-   owner sends are uploaded to the site's media library first (WordPress → Media), then used by URL.
+5. **Upload, then swap**: put a new picture in the site's media library with `wp_media_upload` (a picture from
+   the chat, or a public https link; alt text included) and use the `source_url` it returns in `wp_section_update`
+   edits images (from → to, alt) or a section's image slot; preview with `wp_preview`. `wp_media_list` finds pictures
+   the site already has. On the command line: `cmo wp media upload ./hero.webp --alt "…"`.
 6. **Generated images**: say the engine, count and cost first and wait for a yes; no fake people "results",
    no logos, no real places presented as the business's own.
 7. **Check** on the rendered page at 390 and 1440 px: faces not cut, nothing blurry, page weight reasonable.
