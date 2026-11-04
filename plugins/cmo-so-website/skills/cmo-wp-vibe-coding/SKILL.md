@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.18.1"
+  version: "0.18.2"
   docs: "https://cmo.so/skills/cmo-wp-vibe-coding"
 ---
 # WordPress vibe coding
@@ -37,6 +37,9 @@ theme. No wp-admin, FTP or SSH; every change is previewed, approved, checked and
 2. **Pick the smallest change.**
    - text, a link, a picture in one section → `wp_section_update` edits;
    - a section rebuilt from content → `wp_section_update` slots (types in `wp_section_library`);
+   - a section's width (line its content up with the header and footer) → `wp_section_update` width `wide`, one
+     section or `all`; the site's content and wide widths, side padding and extra CSS → `wp_style_set`
+     (`wp_style_get` shows them first);
    - a section you write yourself → `wp_section_update` markup (one top-level block);
    - the whole page from your own blocks → `wp_page_markup_set` (Gutenberg markup; Maggie Core and Tailwind classes
      work; PHP is refused);
@@ -54,7 +57,8 @@ theme. No wp-admin, FTP or SSH; every change is previewed, approved, checked and
      `deleted` for an inactive plugin) — only plugins the owner asked for, and say that a plugin runs code on the site;
    - navigation and chrome: `wp_menu_set`, `wp_header_set`, `wp_footer_set`;
    - brand and CSS in the child theme: `wp_child_theme_update` (colours, fonts with `font_files`, styles, CSS, parts,
-     templates, patterns); quick global changes: `wp_style_set`;
+     templates, patterns); quick global changes: `wp_style_set` (colours, fonts, layout widths, padding, extra CSS —
+     Global Styles, works on any block theme);
    - SEO: `wp_seo_audit`, `wp_seo_set`; theme updates: `wp_theme_updates`, `wp_theme_update`.
 6. **Check.** Each write returns a check (page opens, one H1, a title); for visual work open the page at phone and
    desktop widths. Then tell the owner what changed and how to undo it.

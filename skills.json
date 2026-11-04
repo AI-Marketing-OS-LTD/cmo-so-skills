@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.18.1",
+	"version": "0.18.2",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14595,7 +14595,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -14629,6 +14629,7 @@
 				"wp_menu_set",
 				"wp_header_set",
 				"wp_footer_set",
+				"wp_style_get",
 				"wp_style_set",
 				"wp_child_theme_status",
 				"wp_child_theme_update",
@@ -14675,7 +14676,10 @@
 				"vibe code my WordPress site",
 				"install a plugin on my site",
 				"let Google index my site",
-				"write the page's blocks myself"
+				"write the page's blocks myself",
+				"line the sections up with the header",
+				"make the page wider",
+				"add custom CSS to my site"
 			],
 			"inputs": [
 				"A CMO.so account with the website added and verified",
