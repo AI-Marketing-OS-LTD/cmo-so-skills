@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.18.2"
+  version: "0.18.3"
   docs: "https://cmo.so/skills/cmo-wp-child-theme"
 ---
 # WordPress child theme
@@ -41,8 +41,10 @@ carried to staging or a rebuilt site.
    copies the site's current look into the child: Global Styles (colours, fonts with their files, styles) into
    theme.json, the edited header and footer into parts/. Nothing is switched yet.
 3. **Change it**: `wp_child_theme_update` (colours and fonts in theme.json, extra styles, plain CSS, header,
-   footer, templates, and the site's own patterns, which appear in the editor's inserter). Data only: theme.json,
-   style.css, block markup, pattern JSON, fonts; never PHP, the site refuses it. New fonts come in with
+   footer, templates, the site's own patterns, which appear in the editor's inserter, and the site's own script
+   `assets/js/site.js` with `js` / `js_append`). theme.json, style.css, block markup, pattern JSON, fonts and that
+   one script (Maggie Core 0.12+, loaded deferred on every page, only for logins allowed to add scripts; eval and
+   outside addresses are refused); never PHP, the site refuses it. New fonts come in with
    font_files: an https link to each woff2/woff/ttf file (for example the brand's own font files or Google Fonts'
    fonts.gstatic.com files), its family and weight; they are copied into the child. Read the files first with
    `wp_child_theme_status` slug. Every change keeps a backup.

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.18.2"
+  version: "0.18.3"
   docs: "https://cmo.so/skills/cmo-instagram"
 ---
 # Instagram queue
