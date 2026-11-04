@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.17.2"
+  version: "0.17.3"
   docs: "https://cmo.so/skills/cmo-wp-builder"
 ---
 # WordPress site builder
@@ -61,9 +61,13 @@ ones to the specialised `cmo-wp-` skills.
    - remove a page: `wp_page_delete` (trash + 301 to the parent);
    - SEO fields: `wp_seo_set`; menu: `wp_menu_set`; header: `wp_header_set`; footer: `wp_footer_set`;
      colours and fonts: `wp_style_set`.
-5. **Check the result** the tool returns (`check`: the page opens, one H1, a title). For anything visual, look
+5. **Keep Maggie Core current**: `wp_theme_updates` says when a newer version is out; `wp_theme_update`
+   installs it after the owner agrees (checksum-checked, homepage compared before and after, rolled back by itself
+   if the site breaks; `rollback_to` puts a kept version back). The site's look isn't touched: it lives in the
+   database and the child theme.
+6. **Check the result** the tool returns (`check`: the page opens, one H1, a title). For anything visual, look
    at the page (or ask the user to) on a phone and a computer.
-6. **Offer the undo**: `wp_page_undo` puts a page back to the version before the last change.
+7. **Offer the undo**: `wp_page_undo` puts a page back to the version before the last change.
 
 ## Output
 - One line per change: what changed, where (path and section), and the check result.

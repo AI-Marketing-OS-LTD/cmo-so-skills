@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.17.2"
+  version: "0.17.3"
   docs: "https://cmo.so/skills/cmo-linkedin-posts"
 ---
 # LinkedIn post writing
