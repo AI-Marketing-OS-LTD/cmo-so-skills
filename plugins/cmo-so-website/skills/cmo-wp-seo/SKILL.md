@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress,google-search"
-  version: "0.17.1"
+  version: "0.17.2"
   docs: "https://cmo.so/skills/cmo-wp-seo"
 ---
 # WordPress SEO

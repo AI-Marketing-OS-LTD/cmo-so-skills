@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.17.1"
+  version: "0.17.2"
   docs: "https://cmo.so/skills/cmo-wp-motion"
 ---
 # WordPress page motion

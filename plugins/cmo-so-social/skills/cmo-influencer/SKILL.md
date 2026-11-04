@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "instagram,tiktok,youtube,linkedin"
-  version: "0.17.1"
+  version: "0.17.2"
   docs: "https://cmo.so/skills/cmo-influencer"
 ---
 # Influencer & creator partnerships

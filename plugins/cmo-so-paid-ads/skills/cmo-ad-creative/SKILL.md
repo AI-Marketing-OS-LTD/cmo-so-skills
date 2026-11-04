@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads"
-  version: "0.17.1"
+  version: "0.17.2"
   docs: "https://cmo.so/skills/cmo-ad-creative"
 ---
 # Ad creative
