@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.18.3"
+  version: "0.18.4"
   docs: "https://cmo.so/skills/cmo-wp-child-theme"
 ---
 # WordPress child theme
@@ -48,13 +48,17 @@ carried to staging or a rebuilt site.
    font_files: an https link to each woff2/woff/ttf file (for example the brand's own font files or Google Fonts'
    fonts.gstatic.com files), its family and weight; they are copied into the child. Read the files first with
    `wp_child_theme_status` slug. Every change keeps a backup.
-4. **Switch**: `wp_child_theme_activate` slug maggie-<name>. It compares the homepage before and after (words,
+4. **Guides for agents**: creating a child also writes DESIGN.md (from the site's look, with a Rules section the owner
+   keeps), AGENTS.md (how agents work on this site, what not to touch) and MEMORY.md (preferences and don'ts) when
+   Maggie Core is 0.13+. Read them with `wp_site_guides_get`, change them with `wp_site_guides_set`, add a
+   preference with `wp_site_memory_add`. Public files: no secrets.
+5. **Switch**: `wp_child_theme_activate` slug maggie-<name>. It compares the homepage before and after (words,
    fonts, brand colours). Differences you didn't ask for → switch back (`wp_child_theme_activate` maggie-core) and
    fix the child first.
-5. **Undo a change**: `wp_child_theme_restore` with a backup id from `wp_child_theme_status`.
-6. **Keep it in git** (optional): `cmo wp child-theme <slug> --name "<Name>" --from-site` writes the same look
+6. **Undo a change**: `wp_child_theme_restore` with a backup id from `wp_child_theme_status`.
+7. **Keep it in git** (optional): `cmo wp child-theme <slug> --name "<Name>" --from-site` writes the same look
    as a folder on your computer; the host can also install that as a zip when it forbids file writes.
-7. **Afterwards**: day-to-day changes with `wp_style_set` / `wp_header_set` are stored in the database and win over
+8. **Afterwards**: day-to-day changes with `wp_style_set` / `wp_header_set` are stored in the database and win over
    the child's files; move them into the child with `wp_child_theme_create` again (same slug: files are replaced,
    with a backup) when they should be kept in the theme.
 

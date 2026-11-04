@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.18.3",
+	"version": "0.18.4",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -13967,7 +13967,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -13978,7 +13978,10 @@
 				"wp_child_theme_create",
 				"wp_child_theme_update",
 				"wp_child_theme_activate",
-				"wp_child_theme_restore"
+				"wp_child_theme_restore",
+				"wp_site_guides_get",
+				"wp_site_guides_set",
+				"wp_site_memory_add"
 			],
 			"pairs_with": [
 				"cmo-wp-builder",
@@ -14595,10 +14598,13 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.4.0",
+			"version": "0.5.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
+				"wp_site_guides_get",
+				"wp_site_guides_set",
+				"wp_site_memory_add",
 				"wp_site_connect_link",
 				"wp_site_map",
 				"wp_pages_list",
@@ -14680,7 +14686,9 @@
 				"line the sections up with the header",
 				"make the page wider",
 				"add custom CSS to my site",
-				"add JavaScript to my site"
+				"add JavaScript to my site",
+				"remember that I prefer…",
+				"never do … on my site"
 			],
 			"inputs": [
 				"A CMO.so account with the website added and verified",
