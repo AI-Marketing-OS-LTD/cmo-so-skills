@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.18.0"
+  version: "0.18.1"
   docs: "https://cmo.so/skills/cmo-wp-page-design"
 ---
 # WordPress page design
