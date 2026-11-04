@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "blog,linkedin"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-content-strategy"
 ---
 # Content strategy

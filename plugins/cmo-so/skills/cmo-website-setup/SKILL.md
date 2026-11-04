@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,wordpress,shopify,wix,api"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-website-setup"
 ---
 # Website setup & verification

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "pinterest"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-pinterest"
 ---
 # Pinterest for blog and product traffic

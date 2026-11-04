@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "cmo.so,linkedin,facebook,instagram,google-business"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-social-distribution"
 ---
 # Social distribution check

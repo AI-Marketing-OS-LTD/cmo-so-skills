@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "cmo.so,blog"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-draft-review"
 ---
 # Draft review & publishing

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-wp-child-theme"
 ---
 # WordPress child theme
@@ -42,7 +42,9 @@ carried to staging or a rebuilt site.
    theme.json, the edited header and footer into parts/. Nothing is switched yet.
 3. **Change it**: `wp_child_theme_update` (colours and fonts in theme.json, extra styles, plain CSS, header,
    footer, templates, and the site's own patterns, which appear in the editor's inserter). Data only: theme.json,
-   style.css, block markup, pattern JSON, fonts; never PHP, the site refuses it. Read the files first with
+   style.css, block markup, pattern JSON, fonts; never PHP, the site refuses it. New fonts come in with
+   font_files: an https link to each woff2/woff/ttf file (for example the brand's own font files or Google Fonts'
+   fonts.gstatic.com files), its family and weight; they are copied into the child. Read the files first with
    `wp_child_theme_status` slug. Every change keeps a backup.
 4. **Switch**: `wp_child_theme_activate` slug maggie-<name>. It compares the homepage before and after (words,
    fonts, brand colours). Differences you didn't ask for → switch back (`wp_child_theme_activate` maggie-core) and

@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads,linkedin-ads,tiktok-ads"
-  version: "0.17.3"
+  version: "0.17.4"
   docs: "https://cmo.so/skills/cmo-ads-strategy"
 ---
 # Paid ads strategy
