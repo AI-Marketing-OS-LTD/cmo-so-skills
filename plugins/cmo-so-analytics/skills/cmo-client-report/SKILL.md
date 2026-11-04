@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.17.4"
+  version: "0.17.5"
   docs: "https://cmo.so/skills/cmo-client-report"
 ---
 # Client & executive report

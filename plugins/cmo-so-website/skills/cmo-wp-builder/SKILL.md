@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.17.4"
+  version: "0.17.5"
   docs: "https://cmo.so/skills/cmo-wp-builder"
 ---
 # WordPress site builder
@@ -58,6 +58,8 @@ ones to the specialised `cmo-wp-` skills.
    - page title, slug, parent, status: `wp_page_update` (a slug change adds a 301 automatically);
    - new page: `wp_page_create` (draft unless the user says publish); copy for another city: `wp_page_duplicate`,
      then rewrite the copy's text and FAQ;
+   - publish a draft: `wp_page_publish` (checks H1, SEO title and description first; homepage: true also makes it
+     the homepage); change the homepage or the posts page: `wp_site_home_set` (returns how to put it back);
    - remove a page: `wp_page_delete` (trash + 301 to the parent);
    - SEO fields: `wp_seo_set`; menu: `wp_menu_set`; header: `wp_header_set`; footer: `wp_footer_set`;
      colours and fonts: `wp_style_set`.

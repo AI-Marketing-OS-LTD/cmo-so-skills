@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "instagram,tiktok,facebook"
-  version: "0.17.4"
+  version: "0.17.5"
   docs: "https://cmo.so/skills/cmo-organic-social"
 ---
 # Instagram, TikTok & Facebook (organic)
