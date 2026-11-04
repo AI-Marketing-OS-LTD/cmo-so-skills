@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-search,ai-search"
-  version: "0.17.5"
+  version: "0.18.0"
   docs: "https://cmo.so/skills/cmo-schema-markup"
 ---
 # Schema markup

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.17.5"
+  version: "0.18.0"
   docs: "https://cmo.so/skills/cmo-wp-builder"
 ---
 # WordPress site builder
@@ -62,7 +62,10 @@ ones to the specialised `cmo-wp-` skills.
      the homepage); change the homepage or the posts page: `wp_site_home_set` (returns how to put it back);
    - remove a page: `wp_page_delete` (trash + 301 to the parent);
    - SEO fields: `wp_seo_set`; menu: `wp_menu_set`; header: `wp_header_set`; footer: `wp_footer_set`;
-     colours and fonts: `wp_style_set`.
+     colours and fonts: `wp_style_set`;
+   - blog posts the owner writes or edits: `wp_posts_list`, `wp_post_save`; site settings (title, tagline, search
+     engines on/off): `wp_settings_set`; plugins from WordPress.org: `wp_plugin_set`. Coding agents that write blocks
+     themselves: `cmo-wp-vibe-coding`.
 5. **Keep Maggie Core current**: `wp_theme_updates` says when a newer version is out; `wp_theme_update`
    installs it after the owner agrees (checksum-checked, homepage compared before and after, rolled back by itself
    if the site breaks; `rollback_to` puts a kept version back). The site's look isn't touched: it lives in the
@@ -98,6 +101,7 @@ ones to the specialised `cmo-wp-` skills.
 - `cmo-wp-migrate` — moving an existing site onto Maggie Core without losing SEO.
 - `cmo-wp-qa` — checks after changes and before a release.
 - `cmo-wp-child-theme` — the site's own look kept in a child theme.
+- `cmo-wp-vibe-coding` — the same site from Claude Code, Cursor or ChatGPT, block markup included.
 
 ## References
 Ideas adapted from (see `catalog.json` for pinned commits and licences):

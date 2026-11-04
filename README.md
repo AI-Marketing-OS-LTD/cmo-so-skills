@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**151 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**152 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -403,6 +403,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-wp-qa`](plugins/cmo-so-website/skills/cmo-wp-qa/SKILL.md) | The checks after any WordPress change and before a release or cut-over — pages open, one H1, valid blocks, SEO unchanged against a baseline, links, layout at 390/768/1440 px, contrast, forms — with a clear pass/fail report. |
 | [`cmo-wp-sections`](plugins/cmo-so-website/skills/cmo-wp-sections/SKILL.md) | The rules for Maggie Core sections — which type to use for which job, what each needs, how many per page and in what order — so pages built by AI look designed, not assembled. |
 | [`cmo-wp-seo`](plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md) | Audit and fix a WordPress site's on-page SEO through CMO.so — titles, descriptions, keywords, H1s, robots, canonicals, structured data, redirects and business details — page by page or in batches. |
+| [`cmo-wp-vibe-coding`](plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md) | Run a WordPress site on Maggie Core from Claude Code, Cursor or ChatGPT through the CMO.so MCP — read it, change any page, post, setting, plugin, menu or style with block markup or sections, preview, publish and undo — without wp-admin, FTP or SSH. |
 
 <!-- skills:end -->
 

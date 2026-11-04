@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.17.5",
+	"version": "0.18.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -87,7 +87,7 @@
 		{
 			"id": "website",
 			"name": "Website (WordPress)",
-			"count": 11
+			"count": 12
 		}
 	],
 	"reference_repos": [
@@ -13906,6 +13906,10 @@
 				"wp_theme_update",
 				"wp_page_publish",
 				"wp_site_home_set",
+				"wp_posts_list",
+				"wp_post_save",
+				"wp_settings_set",
+				"wp_plugin_set",
 				"brand_get"
 			],
 			"pairs_with": [
@@ -13915,7 +13919,8 @@
 				"cmo-wp-faq",
 				"cmo-wp-migrate",
 				"cmo-wp-qa",
-				"cmo-wp-child-theme"
+				"cmo-wp-child-theme",
+				"cmo-wp-vibe-coding"
 			],
 			"url": "https://cmo.so/skills/cmo-wp-builder",
 			"references": [
@@ -14577,6 +14582,111 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-vibe-coding",
+			"name": "WordPress vibe coding",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Run a WordPress site on Maggie Core from Claude Code, Cursor or ChatGPT through the CMO.so MCP — read it, change any page, post, setting, plugin, menu or style with block markup or sections, preview, publish and undo — without wp-admin, FTP or SSH.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_site_connect_link",
+				"wp_site_map",
+				"wp_pages_list",
+				"wp_page_get",
+				"wp_page_markup_get",
+				"wp_page_markup_set",
+				"wp_section_library",
+				"wp_section_update",
+				"wp_preview",
+				"wp_page_create",
+				"wp_page_update",
+				"wp_page_publish",
+				"wp_page_undo",
+				"wp_site_home_set",
+				"wp_posts_list",
+				"wp_post_get",
+				"wp_post_save",
+				"wp_post_delete",
+				"wp_terms_list",
+				"wp_term_save",
+				"wp_media_upload",
+				"wp_media_list",
+				"wp_settings_get",
+				"wp_settings_set",
+				"wp_plugins_list",
+				"wp_plugin_set",
+				"wp_menu_set",
+				"wp_header_set",
+				"wp_footer_set",
+				"wp_style_set",
+				"wp_child_theme_status",
+				"wp_child_theme_update",
+				"wp_seo_audit",
+				"wp_seo_set",
+				"wp_theme_updates",
+				"wp_theme_update",
+				"wp_api_read"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-page-design",
+				"cmo-wp-sections",
+				"cmo-wp-seo",
+				"cmo-wp-child-theme",
+				"cmo-wp-qa",
+				"cmo-connect"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-vibe-coding",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-orchestrator",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				},
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-design",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"manage my WordPress site from Claude Code",
+				"edit my website with Cursor",
+				"change my homepage with AI",
+				"vibe code my WordPress site",
+				"install a plugin on my site",
+				"let Google index my site",
+				"write the page's blocks myself"
+			],
+			"inputs": [
+				"A CMO.so account with the website added and verified",
+				"The site's Administrator application password saved once (link from wp_site_connect_link)",
+				"What the owner wants changed"
+			],
+			"outputs": [
+				"The change made on the live site (or a draft), previewed, approved, checked and reversible",
+				"A short log: what changed where, how to undo it"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md"
 		}
 	],
 	"excluded": [

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "instagram"
-  version: "0.17.5"
+  version: "0.18.0"
   docs: "https://cmo.so/skills/cmo-instagram-posts"
 ---
 # Instagram post writing
