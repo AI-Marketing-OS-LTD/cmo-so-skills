@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "consideration"
   channels: ""
-  version: "0.19.0"
+  version: "0.19.1"
   docs: "https://cmo.so/skills/cmo-sales-enablement"
 ---
 # Sales enablement

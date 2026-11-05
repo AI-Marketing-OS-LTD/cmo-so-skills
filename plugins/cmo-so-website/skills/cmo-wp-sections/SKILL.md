@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.19.0"
+  version: "0.19.1"
   docs: "https://cmo.so/skills/cmo-wp-sections"
 ---
 # WordPress sections

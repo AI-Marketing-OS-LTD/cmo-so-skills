@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress,google-search,ai-search"
-  version: "0.19.0"
+  version: "0.19.1"
   docs: "https://cmo.so/skills/cmo-wp-seo-technical"
 ---
 # WordPress technical SEO and internal links
@@ -44,8 +44,9 @@ redirects, the internal-link layout across pages, articles, menu and footer, and
      each page with two or more such articles shows them ("From the blog");
    - **orphans**: pages nothing links to; articles linked only from the blog list.
 4. **Apply.** Show the plan's actions to the owner, then `wp_internal_links_apply` with `preview: true`, then for
-   real (20 actions at a time, best matches first). Menu and footer actions go through `wp_menu_set` and
-   `wp_footer_set`. Re-running replaces the earlier bands instead of stacking them. Check a changed page at phone
+   real (20 actions at a time, best matches first). Menu and footer actions carry ready `args`: `wp_menu_set`
+   (`add`) and `wp_footer_set` (`footer_links`, the footer's row of page links; it replaces its own row and `[]`
+   removes it). Re-running replaces the earlier bands instead of stacking them. Check a changed page at phone
    and desktop width; follow DESIGN.md.
 5. **llms.txt.** `wp_llms_txt_set generate: true preview: true`, show it, adjust, then save (`text` or `generate`).
    Check it with `wp_llms_txt_get` (a real llms.txt file on the server would win; it says so).
