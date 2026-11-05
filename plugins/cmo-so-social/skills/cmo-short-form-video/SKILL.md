@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "tiktok,instagram,youtube-shorts,linkedin"
-  version: "0.19.2"
+  version: "0.19.3"
   docs: "https://cmo.so/skills/cmo-short-form-video"
 ---
 # Short-form video

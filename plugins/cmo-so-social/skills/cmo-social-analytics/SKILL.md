@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "linkedin,x,instagram"
-  version: "0.19.2"
+  version: "0.19.3"
   docs: "https://cmo.so/skills/cmo-social-analytics"
 ---
 # Social analytics
