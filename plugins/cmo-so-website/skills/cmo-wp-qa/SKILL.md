@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.18.4"
+  version: "0.19.0"
   docs: "https://cmo.so/skills/cmo-wp-qa"
 ---
 # WordPress site QA

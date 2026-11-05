@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.18.4",
+	"version": "0.19.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14598,7 +14598,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.5.0",
+			"version": "0.6.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -14643,7 +14643,11 @@
 				"wp_seo_set",
 				"wp_theme_updates",
 				"wp_theme_update",
-				"wp_api_read"
+				"wp_api_read",
+				"wp_security_scan",
+				"wp_seo_tech_audit",
+				"wp_internal_links_plan",
+				"wp_llms_txt_set"
 			],
 			"pairs_with": [
 				"cmo-wp-builder",
@@ -14652,7 +14656,9 @@
 				"cmo-wp-seo",
 				"cmo-wp-child-theme",
 				"cmo-wp-qa",
-				"cmo-connect"
+				"cmo-connect",
+				"cmo-wp-security",
+				"cmo-wp-seo-technical"
 			],
 			"url": "https://cmo.so/skills/cmo-wp-vibe-coding",
 			"references": [
@@ -14701,6 +14707,140 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-seo-technical",
+			"name": "WordPress technical SEO and internal links",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Crawl a connected WordPress site like a search engine through the CMO.so MCP — robots.txt, AI crawlers, sitemap, status codes, canonicals, noindex, H1s, alt text, structured data, broken links, Core Web Vitals — then lay out internal links between pages, articles, menu and footer, and publish an llms.txt for AI assistants.",
+			"channels": [
+				"wordpress",
+				"google-search",
+				"ai-search"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_seo_tech_audit",
+				"wp_internal_links_plan",
+				"wp_internal_links_apply",
+				"wp_llms_txt_get",
+				"wp_llms_txt_set",
+				"wp_seo_set",
+				"wp_seo_site_set",
+				"wp_redirect_set",
+				"wp_menu_set",
+				"wp_footer_set",
+				"wp_section_update",
+				"wp_settings_set",
+				"wp_page_undo",
+				"wp_site_memory_add",
+				"gsc_performance_get"
+			],
+			"pairs_with": [
+				"cmo-wp-seo",
+				"cmo-wp-security",
+				"cmo-wp-vibe-coding",
+				"cmo-wp-builder"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-seo-technical",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-seo-geo",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"technical SEO check of my site",
+				"why isn't my site ranking",
+				"fix my internal links",
+				"link my blog posts to my service pages",
+				"what should be in my menu and footer",
+				"make an llms.txt for my site",
+				"can ChatGPT read my site"
+			],
+			"inputs": [
+				"A CMO.so website with its Administrator application password saved",
+				"Maggie Core 0.14+ for llms.txt"
+			],
+			"outputs": [
+				"Technical findings ranked p0–p4 with the fix, and the fixes the owner agreed made and checked",
+				"An internal-link layout applied: hubs and sub-pages, articles and the pages they support, menu and footer",
+				"llms.txt live at /llms.txt"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-seo-technical/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-security",
+			"name": "WordPress security check",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Check a connected WordPress site's security through the CMO.so MCP — vulnerable, outdated or abandoned plugins and themes, WordPress and PHP versions, risky settings, Administrators and old application passwords, WP-Cron jobs, and what visitors can see from outside — then fix what the tools can, with a yes for each.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "retention",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_security_scan",
+				"wp_plugins_list",
+				"wp_plugin_update",
+				"wp_plugin_set",
+				"wp_cron_unschedule",
+				"wp_theme_update",
+				"wp_settings_get",
+				"wp_site_memory_add"
+			],
+			"pairs_with": [
+				"cmo-wp-vibe-coding",
+				"cmo-wp-seo-technical",
+				"cmo-wp-builder"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-security",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-security",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"is my WordPress site safe",
+				"security check my site",
+				"are my plugins up to date",
+				"any vulnerable plugins",
+				"check the cron jobs on my site",
+				"who has admin access to my site"
+			],
+			"inputs": [
+				"A CMO.so website with its Administrator application password saved (wp_site_connect_link)",
+				"Maggie Core 0.14+ for the full check (versions, settings, users, WP-Cron, updates)"
+			],
+			"outputs": [
+				"Findings ranked p0 (fix today) to p4 (for information), each with why and what to do",
+				"The fixes the owner agreed, made and checked; the rest as clear steps for the host"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-security/SKILL.md"
 		}
 	],
 	"excluded": [

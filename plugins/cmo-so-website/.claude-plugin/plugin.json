@@ -1,7 +1,7 @@
 {
 	"name": "cmo-so-website",
-	"version": "0.18.4",
-	"description": "CMO.so Website (WordPress) skills (12): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Installs the cmo-so core plugin with it.",
+	"version": "0.19.0",
+	"description": "CMO.so Website (WordPress) skills (14): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Installs the cmo-so core plugin with it.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -15,6 +15,7 @@
 		"maggie",
 		"marketing",
 		"website",
+		"ai-search",
 		"google-search",
 		"wordpress"
 	],

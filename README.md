@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**152 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**154 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -404,6 +404,8 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-wp-sections`](plugins/cmo-so-website/skills/cmo-wp-sections/SKILL.md) | The rules for Maggie Core sections — which type to use for which job, what each needs, how many per page and in what order — so pages built by AI look designed, not assembled. |
 | [`cmo-wp-seo`](plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md) | Audit and fix a WordPress site's on-page SEO through CMO.so — titles, descriptions, keywords, H1s, robots, canonicals, structured data, redirects and business details — page by page or in batches. |
 | [`cmo-wp-vibe-coding`](plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md) | Run a WordPress site on Maggie Core from Claude Code, Cursor or ChatGPT through the CMO.so MCP — read it, change any page, post, setting, plugin, menu or style with block markup or sections, preview, publish and undo — without wp-admin, FTP or SSH. |
+| [`cmo-wp-seo-technical`](plugins/cmo-so-website/skills/cmo-wp-seo-technical/SKILL.md) | Crawl a connected WordPress site like a search engine through the CMO.so MCP — robots.txt, AI crawlers, sitemap, status codes, canonicals, noindex, H1s, alt text, structured data, broken links, Core Web Vitals — then lay out internal links between pages, articles, menu and footer, and publish an llms.txt for AI assistants. |
+| [`cmo-wp-security`](plugins/cmo-so-website/skills/cmo-wp-security/SKILL.md) | Check a connected WordPress site's security through the CMO.so MCP — vulnerable, outdated or abandoned plugins and themes, WordPress and PHP versions, risky settings, Administrators and old application passwords, WP-Cron jobs, and what visitors can see from outside — then fix what the tools can, with a yes for each. |
 
 <!-- skills:end -->
 

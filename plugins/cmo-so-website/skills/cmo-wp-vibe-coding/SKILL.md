@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.18.4"
+  version: "0.19.0"
   docs: "https://cmo.so/skills/cmo-wp-vibe-coding"
 ---
 # WordPress vibe coding
@@ -63,7 +63,10 @@ theme. No wp-admin, FTP or SSH; every change is previewed, approved, checked and
    - brand, CSS and JavaScript in the child theme: `wp_child_theme_update` (colours, fonts with `font_files`, styles,
      CSS, `js` / `js_append` for the site's own script `assets/js/site.js`, parts, templates, patterns); quick global changes: `wp_style_set` (colours, fonts, layout widths, padding, extra CSS —
      Global Styles, works on any block theme);
-   - SEO: `wp_seo_audit`, `wp_seo_set`; theme updates: `wp_theme_updates`, `wp_theme_update`.
+   - SEO: `wp_seo_audit`, `wp_seo_set`; technical SEO, internal links and llms.txt: `wp_seo_tech_audit`,
+     `wp_internal_links_plan` / `wp_internal_links_apply`, `wp_llms_txt_set` (see `cmo-wp-seo-technical`);
+   - security: `wp_security_scan`, `wp_plugin_update`, `wp_cron_unschedule` (see `cmo-wp-security`);
+   - theme updates: `wp_theme_updates`, `wp_theme_update`.
 6. **Keep the guides current.** The owner states a lasting preference or a don't ("short headlines", "never use
    stock photos of people") → `wp_site_memory_add` (prefer / avoid / note), in their words. After a change to the
    look (colours, fonts, widths) → `wp_site_guides_set refresh_design: true` (the Rules section is kept); a new
