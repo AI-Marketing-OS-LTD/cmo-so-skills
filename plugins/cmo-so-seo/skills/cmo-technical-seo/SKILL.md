@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,bing"
-  version: "0.19.3"
+  version: "0.20.0"
   docs: "https://cmo.so/skills/cmo-technical-seo"
 ---
 # Technical SEO

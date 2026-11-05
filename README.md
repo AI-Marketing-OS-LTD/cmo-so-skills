@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**154 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**155 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -406,6 +406,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-wp-vibe-coding`](plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md) | Run a WordPress site on Maggie Core from Claude Code, Cursor or ChatGPT through the CMO.so MCP — read it, change any page, post, setting, plugin, menu or style with block markup or sections, preview, publish and undo — without wp-admin, FTP or SSH. |
 | [`cmo-wp-seo-technical`](plugins/cmo-so-website/skills/cmo-wp-seo-technical/SKILL.md) | Crawl a connected WordPress site like a search engine through the CMO.so MCP — robots.txt, AI crawlers, sitemap, status codes, canonicals, noindex, H1s, alt text, structured data, broken links, Core Web Vitals — then lay out internal links between pages, articles, menu and footer, and publish an llms.txt for AI assistants. |
 | [`cmo-wp-security`](plugins/cmo-so-website/skills/cmo-wp-security/SKILL.md) | Check a connected WordPress site's security through the CMO.so MCP — vulnerable, outdated or abandoned plugins and themes, WordPress and PHP versions, risky settings, Administrators and old application passwords, WP-Cron jobs, and what visitors can see from outside — then fix what the tools can, with a yes for each. |
+| [`cmo-wp-booking`](plugins/cmo-so-website/skills/cmo-wp-booking/SKILL.md) | Run online booking on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring the menu, clients, appointments and gift cards over from Fresha or another system, set up treatments, team, hours, deals and gift cards, and handle the day's appointments (book, move, cancel, refund) — one approved change at a time. |
 
 <!-- skills:end -->
 

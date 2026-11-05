@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.19.3"
+  version: "0.20.0"
   docs: "https://cmo.so/skills/cmo-wp-vibe-coding"
 ---
 # WordPress vibe coding

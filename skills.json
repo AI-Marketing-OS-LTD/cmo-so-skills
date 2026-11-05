@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.19.3",
+	"version": "0.20.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14843,6 +14843,85 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-security/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-booking",
+			"name": "WordPress online booking",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Run online booking on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring the menu, clients, appointments and gift cards over from Fresha or another system, set up treatments, team, hours, deals and gift cards, and handle the day's appointments (book, move, cancel, refund) — one approved change at a time.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "conversion",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_booking_status",
+				"wp_booking_turn_on",
+				"wp_booking_appointments",
+				"wp_booking_availability",
+				"wp_booking_create",
+				"wp_booking_change",
+				"wp_booking_list",
+				"wp_booking_save",
+				"wp_booking_settings_set",
+				"wp_booking_import_preview",
+				"wp_booking_import",
+				"wp_gift_card",
+				"wp_booking_translate",
+				"wp_theme_update",
+				"wp_site_status"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-migrate",
+				"cmo-wp-clone"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-booking",
+			"references": [
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-booking",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				},
+				{
+					"repo": "CMO.so internal (private)",
+					"skill": "maggie-service-booking",
+					"path": null,
+					"commit": null,
+					"license": "proprietary (our own, private)",
+					"usage": "internal (our own work)",
+					"url": null
+				}
+			],
+			"triggers": [
+				"add online booking to my website",
+				"move my bookings off Fresha",
+				"import my services from Fresha",
+				"book a client in for Friday at 3",
+				"cancel tomorrow's 10am",
+				"who's booked in today",
+				"add a gift card for £50",
+				"set up a 20% off code for January",
+				"change our opening hours"
+			],
+			"inputs": [
+				"A CMO.so website on the Maggie Core theme 0.17+, with its Administrator application password saved (wp_site_connect_link)",
+				"For a switch-over: the business's Fresha page, or CSV exports of clients, appointments and gift cards"
+			],
+			"outputs": [
+				"Online booking switched on with the real menu, team, hours and policies; a Book page",
+				"Appointments booked, moved, cancelled or refunded as asked; gift cards and deals set up"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-booking/SKILL.md"
 		}
 	],
 	"excluded": [

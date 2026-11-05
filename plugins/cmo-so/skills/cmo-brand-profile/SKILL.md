@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.19.3"
+  version: "0.20.0"
   docs: "https://cmo.so/skills/cmo-brand-profile"
 ---
 # Brand profile & marketing context
