@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress,google-search,ai-search"
-  version: "0.19.1"
+  version: "0.19.2"
   docs: "https://cmo.so/skills/cmo-wp-seo-technical"
 ---
 # WordPress technical SEO and internal links
@@ -50,7 +50,10 @@ redirects, the internal-link layout across pages, articles, menu and footer, and
    and desktop width; follow DESIGN.md.
 5. **llms.txt.** `wp_llms_txt_set generate: true preview: true`, show it, adjust, then save (`text` or `generate`).
    Check it with `wp_llms_txt_get` (a real llms.txt file on the server would win; it says so).
-6. **Measure.** Re-run `wp_seo_tech_audit`; four weeks later compare Search Console (`gsc_performance_get`) for
+6. **Speed.** `speed: true` measures the homepage on phones. On Maggie Core 0.15+ with Maggie Press, visitors get
+   only the compiled CSS (no in-browser Tailwind compiler); if a speed finding names render-blocking CSS or a
+   large hero picture, fix those; `wp_css_build` keeps the compiled CSS current after manual changes in wp-admin.
+7. **Measure.** Re-run `wp_seo_tech_audit`; four weeks later compare Search Console (`gsc_performance_get`) for
    the pages that got links.
 
 ## Output

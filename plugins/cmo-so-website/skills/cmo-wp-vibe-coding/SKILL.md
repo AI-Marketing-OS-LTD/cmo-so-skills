@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.19.1"
+  version: "0.19.2"
   docs: "https://cmo.so/skills/cmo-wp-vibe-coding"
 ---
 # WordPress vibe coding
@@ -67,13 +67,17 @@ theme. No wp-admin, FTP or SSH; every change is previewed, approved, checked and
      `wp_internal_links_plan` / `wp_internal_links_apply`, `wp_llms_txt_set` (see `cmo-wp-seo-technical`);
    - security: `wp_security_scan`, `wp_plugin_update`, `wp_cron_unschedule` (see `cmo-wp-security`);
    - theme updates: `wp_theme_updates`, `wp_theme_update`.
-6. **Keep the guides current.** The owner states a lasting preference or a don't ("short headlines", "never use
+6. **Styles.** On Maggie Press sites the tools rebuild the compiled Tailwind CSS on the server about 30 seconds after
+   they change a page, section, article, header, footer, menu or child theme (`styles` in the result says so);
+   visitors get only that file. Run `wp_css_build` to rebuild now or `status: true` to see the last build. A site
+   whose Tailwind setup loads plugins, CDN files or extra sources is refused: build it in wp-admin.
+7. **Keep the guides current.** The owner states a lasting preference or a don't ("short headlines", "never use
    stock photos of people") → `wp_site_memory_add` (prefer / avoid / note), in their words. After a change to the
    look (colours, fonts, widths) → `wp_site_guides_set refresh_design: true` (the Rules section is kept); a new
    design rule the owner agrees → add it under Rules with `wp_site_guides_set design_md`.
-7. **Check.** Each write returns a check (page opens, one H1, a title); for visual work open the page at phone and
+8. **Check.** Each write returns a check (page opens, one H1, a title); for visual work open the page at phone and
    desktop widths. Then tell the owner what changed and how to undo it.
-8. **Undo.** Pages `wp_page_undo`; posts and pages deleted go to the trash; child theme `wp_child_theme_restore`;
+9. **Undo.** Pages `wp_page_undo`; posts and pages deleted go to the trash; child theme `wp_child_theme_restore`;
    theme `wp_theme_update rollback_to`; homepage and settings changes return their previous values.
 
 ## Output

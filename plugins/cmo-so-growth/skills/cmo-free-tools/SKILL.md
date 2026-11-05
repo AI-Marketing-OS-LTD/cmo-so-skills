@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "website,google-search"
-  version: "0.19.1"
+  version: "0.19.2"
   docs: "https://cmo.so/skills/cmo-free-tools"
 ---
 # Free tools as marketing
