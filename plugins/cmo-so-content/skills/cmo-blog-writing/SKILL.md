@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "blog"
-  version: "0.20.3"
+  version: "0.20.4"
   docs: "https://cmo.so/skills/cmo-blog-writing"
 ---
 # Blog post writing

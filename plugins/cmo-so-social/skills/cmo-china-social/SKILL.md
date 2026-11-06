@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "xiaohongshu,wechat,douyin,weibo,zhihu,bilibili"
-  version: "0.20.3"
+  version: "0.20.4"
   docs: "https://cmo.so/skills/cmo-china-social"
 ---
 # Chinese social platforms
