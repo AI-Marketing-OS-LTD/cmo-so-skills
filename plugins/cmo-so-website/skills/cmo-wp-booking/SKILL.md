@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.20.6"
+  version: "0.20.7"
   docs: "https://cmo.so/skills/cmo-wp-booking"
 ---
 # WordPress online booking
@@ -39,6 +39,17 @@ deals, payments, import, settings). This skill does the same work through the CM
    categories, staff with services and weekly hours, time off, rooms, add-ons, promos, packages, price rules,
    forms, gift cards for sale). `wp_booking_settings_set` for rules (lead time, cancellation window, deposit,
    payment), location (time zone, currency) and business hours.
+   **Payments**: `wp_payments_status` first. Easiest: `wp_payments action connect` (mode `live`, or `test` to try
+   with no real money) gives a Stripe sign-in link; the owner opens it, signs in to Stripe and picks their
+   account: payments go straight into it, nothing is copied and the website keeps no Stripe key (Connect with
+   Stripe through cmo.so). If they'd rather use their own keys: wp-admin → Bookings → Payments (`setup_url`);
+   saving the secret key sets the Stripe webhook up by itself (`wp_payments action webhook` repeats it).
+   **Email**: `wp_email_status`. The owner adds a Resend API key (Full access) and an address on their own domain
+   in wp-admin → Bookings → Email (`setup_url`); then every email of the site goes through Resend and Maggie makes
+   one template per kind of email in their Resend account (`wp_email action templates`; edits made in Resend are
+   kept). Domain not verified: `wp_email action add_domain`, then `dns_cloudflare` for a one-sign-in link that adds
+   the DNS records when the domain is on Cloudflare (otherwise show the records). `test` sends a test email.
+   Never ask for Stripe or Resend keys in chat.
 4. **Day to day**: `wp_booking_appointments` (today, a date range, a search), `wp_booking_availability` then
    `wp_booking_create`, and `wp_booking_change` (arrived, completed, no-show, notes, cancel, move, refund).
 5. **Running the business**: `wp_booking_reports` (revenue, no-shows, best treatments, team pay),

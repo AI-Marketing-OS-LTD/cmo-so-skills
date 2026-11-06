@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "facebook"
-  version: "0.20.6"
+  version: "0.20.7"
   docs: "https://cmo.so/skills/cmo-facebook-posts"
 ---
 # Facebook Page post writing

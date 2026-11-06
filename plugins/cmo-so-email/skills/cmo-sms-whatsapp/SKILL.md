@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "sms,whatsapp"
-  version: "0.20.6"
+  version: "0.20.7"
   docs: "https://cmo.so/skills/cmo-sms-whatsapp"
 ---
 # SMS & WhatsApp marketing
