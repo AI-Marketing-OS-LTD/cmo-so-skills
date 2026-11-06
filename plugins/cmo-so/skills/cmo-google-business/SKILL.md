@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "google_business"
-  version: "0.20.2"
+  version: "0.20.3"
   docs: "https://cmo.so/skills/cmo-google-business"
 ---
 # Google Business Profile queue

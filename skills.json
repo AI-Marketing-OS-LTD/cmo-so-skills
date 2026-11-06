@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.20.2",
+	"version": "0.20.3",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14031,7 +14031,7 @@
 			"funnel_stage": "consideration",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -14047,7 +14047,10 @@
 				"wp_page_create",
 				"wp_section_add",
 				"wp_section_update",
-				"wp_preview"
+				"wp_preview",
+				"wp_page_markup_get",
+				"wp_page_markup_set",
+				"wp_child_theme_update"
 			],
 			"pairs_with": [
 				"cmo-wp-page-design",
@@ -14080,7 +14083,8 @@
 			],
 			"outputs": [
 				"DESIGN notes: colours, fonts, spacing, radius, button and section styles taken from the reference",
-				"The brand applied (wp_style_set), the homepage rebuilt as sections, header and footer matched"
+				"The brand applied (wp_style_set), the homepage rebuilt as sections, header and footer matched",
+				"A browser check of every section on desktop and phone, with the fixes and the motion added"
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-clone/SKILL.md"

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.20.2"
+  version: "0.20.3"
   docs: "https://cmo.so/skills/cmo-wp-clone"
 ---
 # WordPress design from a reference site
@@ -50,6 +50,19 @@ inherits the same design. It never copies anyone else's brand without permission
    overlay; `wp_footer_set` for contact details, hours and social links.
 7. **Compare** the rebuilt homepage with the reference at the three widths; list remaining differences as known,
    measured or not yet checked. Write the DESIGN notes so later pages (`cmo-wp-page-design`) follow them.
+8. **Browser check, fix, motion (every clone, every change).** In a real browser, scroll the page from the first
+   screen to the footer on desktop and at 390 px, letting each section's animation finish before judging it:
+   - nothing **cut off** (blocks with a fixed height or a script-set pixel height, e.g. quizzes, tabs, carousels:
+     let them grow with their content), nothing **overflowing** at 390 px (long forced line breaks in headlines,
+     inputs and grid columns that can't shrink), nothing **covered** by sticky or floating bars;
+   - no blank boxes (icon fonts and images load; a video that can't play becomes its poster linking to it), no
+     stray strips or second scrollbars, text readable over photos;
+   - click every menu, tab, quiz step, carousel and video once and check the next state shows in full;
+   - then add motion that keeps the design: sections arrive with a smooth transition (no gaps between coloured
+     bands), headings, text, cards and pictures appear one after another, light hover feedback; respect reduced
+     motion, never leave content hidden, and don't fight animations the page already has
+     (`wp_child_theme_update` css/js, or the page's own markup);
+   - check desktop and 390 px again and list what was found and fixed per section.
 
 ## Output
 - DESIGN notes: token table (role · hex · where used), type scale, spacing, section map (reference band →
@@ -61,6 +74,8 @@ inherits the same design. It never copies anyone else's brand without permission
 - The band order and content match; no lorem ipsum, no images the owner doesn't own.
 - Header, footer and menu items identical to the reference (labels, order, links), except the site-builder
   credit, which is always AI Marketing OS Ltd.
+- Every section checked in a browser on desktop and 390 px: nothing cut off, covered or overflowing, every
+  interactive part works, and motion added without hiding content.
 
 ## Guardrails
 - Changes in CMO.so take two calls: a preview first, shown to the user, then `confirm: true` with the
