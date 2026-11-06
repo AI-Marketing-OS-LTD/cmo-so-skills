@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: ""
-  version: "0.20.4"
+  version: "0.20.5"
   docs: "https://cmo.so/skills/cmo-revops"
 ---
 # Revenue operations

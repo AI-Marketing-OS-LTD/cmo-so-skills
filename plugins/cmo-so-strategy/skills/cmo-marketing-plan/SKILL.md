@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: ""
-  version: "0.20.4"
+  version: "0.20.5"
   docs: "https://cmo.so/skills/cmo-marketing-plan"
 ---
 # Marketing plan

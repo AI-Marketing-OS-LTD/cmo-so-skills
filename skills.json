@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.20.4",
+	"version": "0.20.5",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14853,14 +14853,14 @@
 			"name": "WordPress online booking",
 			"category": "website",
 			"category_name": "Website (WordPress)",
-			"summary": "Run online booking on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring the menu, clients, appointments and gift cards over from Fresha or another system, set up treatments, team, hours, deals and gift cards, and handle the day's appointments (book, move, cancel, refund) — one approved change at a time.",
+			"summary": "Run online booking on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring the menu, clients, appointments and gift cards over from Fresha or another system, set up treatments, team, hours, deals and gift cards, and handle the day's appointments (book, move, cancel, refund), run the till and the whole booking dashboard, and design the visitor booking pages — one approved change at a time.",
 			"channels": [
 				"wordpress"
 			],
 			"funnel_stage": "conversion",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.0",
+			"version": "0.3.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_booking_reports",
@@ -14880,6 +14880,14 @@
 				"wp_booking_import",
 				"wp_gift_card",
 				"wp_booking_translate",
+				"wp_booking_routes",
+				"wp_booking_get",
+				"wp_booking_post",
+				"wp_booking_till",
+				"wp_booking_daily_close",
+				"wp_booking_blocks",
+				"wp_booking_page",
+				"wp_booking_design",
 				"wp_theme_update",
 				"wp_site_status"
 			],
@@ -14918,7 +14926,11 @@
 				"who's booked in today",
 				"add a gift card for £50",
 				"set up a 20% off code for January",
-				"change our opening hours"
+				"change our opening hours",
+				"ring up a sale for the walk-in",
+				"what did we take today?",
+				"make a gift cards page",
+				"make the booking buttons match our brand colour"
 			],
 			"inputs": [
 				"A CMO.so website on the Maggie Core theme 0.17+, with its Administrator application password saved (wp_site_connect_link)",
