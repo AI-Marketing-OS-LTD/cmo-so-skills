@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.20.5"
+  version: "0.20.6"
   docs: "https://cmo.so/skills/cmo-wp-child-theme"
 ---
 # WordPress child theme
@@ -30,8 +30,7 @@ carried to staging or a rebuilt site.
   `wp_menu_get` (the menu stays in the database; child themes don't hold menus).
 - `wp_child_theme_status`: whether this host lets files be written (some hosts forbid it: then use the
   CLI export and an upload), which Maggie children exist, their files and backups.
-- For files kept in git: the `cmo` command line with the site connected (or `--site` with an application
-  password in WP_APP_PASSWORD).
+- For files kept in git: the `cmo` command line with the site connected (`cmo wp connect`).
 
 ## Workflow
 1. **Why it matters**: WordPress keeps Global Styles and edited header/footer per theme. Switching from Maggie

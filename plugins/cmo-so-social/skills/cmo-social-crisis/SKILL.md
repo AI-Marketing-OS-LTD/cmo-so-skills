@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "linkedin,x,instagram,facebook,tiktok,threads"
-  version: "0.20.5"
+  version: "0.20.6"
   docs: "https://cmo.so/skills/cmo-social-crisis"
 ---
 # Social crisis response

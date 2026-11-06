@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.20.5"
+  version: "0.20.6"
   docs: "https://cmo.so/skills/cmo-wp-builder"
 ---
 # WordPress site builder
@@ -31,6 +31,9 @@ ones to the specialised `cmo-wp-` skills.
   - not connected: give the link from `wp_site_connect_link`; the owner saves an Administrator application
     password in that app form (or with `cmo wp connect <site> -u <user>`). Never ask for the password in chat.
   - no Maggie Core: section tools need the theme; SEO fields and plain page edits still work.
+  - `access.site` not allowed: the website tools need a paid plan for this website and its free trial has ended;
+    say so in one line with the message's link and stop (don't retry other wp_* tools). `trial_available` means a
+    free trial starts on the first change; `trial` shows when it ends: mention it once.
   - another plugin outputs SEO (Rank Math, Yoast): stored values are kept, but the plugin's values show until it
     is switched off; offer `wp_seo_import` first (see `cmo-wp-seo`).
 - Call `brand_get` for the business profile (services, tone, region) before writing any copy.
