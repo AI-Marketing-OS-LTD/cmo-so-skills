@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "press"
-  version: "0.20.7"
+  version: "0.20.8"
   docs: "https://cmo.so/skills/cmo-public-relations"
 ---
 # PR & earned media

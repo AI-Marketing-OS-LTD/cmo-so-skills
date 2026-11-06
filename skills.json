@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.20.7",
+	"version": "0.20.8",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -13872,7 +13872,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.2.1",
+			"version": "0.2.2",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -13887,6 +13887,8 @@
 				"wp_page_delete",
 				"wp_page_duplicate",
 				"wp_page_undo",
+				"wp_page_publish",
+				"wp_site_home_set",
 				"wp_section_add",
 				"wp_section_update",
 				"wp_section_move",
@@ -13904,12 +13906,13 @@
 				"wp_style_set",
 				"wp_theme_updates",
 				"wp_theme_update",
-				"wp_page_publish",
-				"wp_site_home_set",
 				"wp_posts_list",
 				"wp_post_save",
 				"wp_settings_set",
 				"wp_plugin_set",
+				"wp_element_undo",
+				"wp_developer_mode",
+				"wp_dev_live",
 				"brand_get"
 			],
 			"pairs_with": [
@@ -14602,7 +14605,7 @@
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.8.0",
+			"version": "0.9.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_site_status",
@@ -14652,7 +14655,11 @@
 				"wp_seo_tech_audit",
 				"wp_internal_links_plan",
 				"wp_llms_txt_set",
-				"wp_css_build"
+				"wp_css_build",
+				"wp_element_undo",
+				"wp_developer_mode",
+				"wp_developer_mode_set",
+				"wp_dev_live"
 			],
 			"pairs_with": [
 				"cmo-wp-builder",
