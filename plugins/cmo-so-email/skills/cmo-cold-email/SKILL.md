@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "email,linkedin"
-  version: "0.20.1"
+  version: "0.20.2"
   docs: "https://cmo.so/skills/cmo-cold-email"
 ---
 # Cold email & outbound

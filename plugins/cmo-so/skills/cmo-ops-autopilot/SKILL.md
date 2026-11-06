@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,linkedin,facebook,instagram,google-business,google-search,ai-search"
-  version: "0.20.1"
+  version: "0.20.2"
   docs: "https://cmo.so/skills/cmo-ops-autopilot"
 ---
 # Ops Autopilot and reports

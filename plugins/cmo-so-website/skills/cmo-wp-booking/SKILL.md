@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.20.1"
+  version: "0.20.2"
   docs: "https://cmo.so/skills/cmo-wp-booking"
 ---
 # WordPress online booking
@@ -68,7 +68,7 @@ deals, payments, import, settings). This skill does the same work through the CM
 - Campaigns go only to customers who agreed to marketing emails; never import a list as consenting.
 - Customer data (names, emails, phones, notes) stays in the conversation only as far as the task needs it.
 - Every Maggie Core page ends with the footer credit "© <year> · Powered by AI Marketing OS Ltd" (followed link
-  to https://cmo.so); never remove, hide or restyle it.
+  to https://cmo.so); never remove or hide it. Its colours, background, font and spacing may match the footer.
 
 ## Related skills
 - `cmo-wp-builder` — pages, menu, header and footer (link "Book now" buttons to `#book`).
