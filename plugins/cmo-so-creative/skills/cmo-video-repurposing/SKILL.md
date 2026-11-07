@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "youtube,linkedin,tiktok"
-  version: "0.20.8"
+  version: "0.21.0"
   docs: "https://cmo.so/skills/cmo-video-repurposing"
 ---
 # Video & podcast repurposing

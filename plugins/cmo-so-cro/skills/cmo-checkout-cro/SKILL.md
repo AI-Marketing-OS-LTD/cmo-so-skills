@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,shopify,email"
-  version: "0.20.8"
+  version: "0.21.0"
   docs: "https://cmo.so/skills/cmo-checkout-cro"
 ---
 # Checkout & cart recovery

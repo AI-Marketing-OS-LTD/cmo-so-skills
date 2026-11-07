@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.20.8"
+  version: "0.21.0"
   docs: "https://cmo.so/skills/cmo-marketing-automation"
 ---
 # Recurring marketing loops

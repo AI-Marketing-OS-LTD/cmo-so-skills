@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "email,in-app"
-  version: "0.20.8"
+  version: "0.21.0"
   docs: "https://cmo.so/skills/cmo-churn-prevention"
 ---
 # Retention & churn prevention

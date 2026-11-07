@@ -1,8 +1,8 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-website",
-	"version": "0.20.8",
-	"description": "CMO.so Website (WordPress) skills (15): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+	"version": "0.21.0",
+	"description": "CMO.so Website (WordPress) skills (16): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",
 		"email": "maggie@cmo.so",
@@ -24,8 +24,8 @@
 		"com.openai": {
 			"interface": {
 				"displayName": "CMO.so Website (WordPress)",
-				"shortDescription": "15 Website (WordPress) skills from CMO.so",
-				"longDescription": "CMO.so Website (WordPress) skills (15): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
+				"shortDescription": "16 Website (WordPress) skills from CMO.so",
+				"longDescription": "CMO.so Website (WordPress) skills (16): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 				"developerName": "AI Marketing OS Ltd",
 				"category": "Productivity",
 				"capabilities": [

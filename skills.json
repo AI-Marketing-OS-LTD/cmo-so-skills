@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.20.8",
+	"version": "0.21.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14953,6 +14953,86 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-booking/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-shop",
+			"name": "WordPress online shop",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Run an online shop on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring products over from WooCommerce, add products with options and variants, keep stock right, fulfil, refund and follow up orders, set delivery prices, tax, payment methods and coupons, and build pages that sell — one approved change at a time.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "conversion",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_shop_status",
+				"wp_shop_turn_on",
+				"wp_shop_products",
+				"wp_shop_product_save",
+				"wp_shop_products_bulk",
+				"wp_shop_stock",
+				"wp_shop_orders",
+				"wp_shop_order",
+				"wp_shop_list",
+				"wp_shop_save",
+				"wp_shop_settings_set",
+				"wp_shop_import",
+				"wp_shop_cart_remind",
+				"wp_shop_page",
+				"wp_media_upload",
+				"wp_payments_status",
+				"wp_payments",
+				"wp_email_status",
+				"wp_email",
+				"wp_theme_update",
+				"wp_site_status"
+			],
+			"pairs_with": [
+				"cmo-wp-booking",
+				"cmo-wp-builder",
+				"cmo-wp-migrate"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-shop",
+			"references": [
+				{
+					"repo": "woocommerce/woocommerce",
+					"skill": "woocommerce (plugin)",
+					"path": "plugins/woocommerce",
+					"commit": "11.3.0-beta.2 (wordpress.org zip)",
+					"license": "GPL-3.0-or-later",
+					"usage": "behaviour reference only (product types, variations, coupon rules, stock holds, shipping zones, product CSV format); no code copied",
+					"url": "https://github.com/woocommerce/woocommerce"
+				}
+			],
+			"triggers": [
+				"add a shop to my website",
+				"sell our products online",
+				"move my shop off WooCommerce",
+				"add this hoodie in S, M and L in three colours",
+				"we got 20 more of the blue mugs",
+				"what orders need sending today?",
+				"mark order 1042 as shipped with Royal Mail tracking",
+				"refund the second item on order 1038",
+				"set up a 15% off code for Black Friday",
+				"free delivery over £50",
+				"turn on VAT at 20%",
+				"which products are running low?",
+				"make a summer collection page"
+			],
+			"inputs": [
+				"A CMO.so website on the Maggie Core theme 0.23+, with its Administrator application password saved (wp_site_connect_link)",
+				"For a switch-over: a WooCommerce product CSV export (Products → Export)"
+			],
+			"outputs": [
+				"The shop switched on with real products, prices, stock, delivery, tax and payment methods",
+				"Orders fulfilled, refunded or followed up as asked; coupons and collection pages set up"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-shop/SKILL.md"
 		}
 	],
 	"excluded": [

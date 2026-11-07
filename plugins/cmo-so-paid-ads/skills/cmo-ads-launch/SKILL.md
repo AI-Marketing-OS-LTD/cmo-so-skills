@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "google-ads,meta-ads,linkedin-ads"
-  version: "0.20.8"
+  version: "0.21.0"
   docs: "https://cmo.so/skills/cmo-ads-launch"
 ---
 # Campaign setup & launch
