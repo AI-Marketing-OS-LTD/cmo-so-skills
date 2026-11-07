@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.23.0"
+  version: "0.24.0"
   docs: "https://cmo.so/skills/cmo-wp-shop"
 ---
 # WordPress online shop
@@ -66,6 +66,15 @@ fulfilment, tracking and refunds, coupons, reviews from buyers and abandoned-car
    `shop-products {category, limit, columns, sort, featured}`, `shop-categories`, `shop-cart-link`), or add one
    block to an existing page with `wp_section_add` / `wp_page_markup_set`. Link menus to `/shop/` and
    `/shop/category/{slug}/`.
+9. **Google Shopping** (Maggie Core 0.26+): the shop publishes a product feed for Google Merchant Center at
+   `/shop/feed/google.xml` (one item per variant with its own link, sale price, availability, GTIN from the
+   barcode, brand, product type, weight, delivery prices per country, tax added where Google expects it).
+   `wp_shop_feed` gives the address and what Google would refuse (no price or picture: left out) or warn about
+   (no brand, an invalid barcode, no delivery price, a currency that differs from a target country's). Fix those
+   with `wp_shop_product_save`, then the owner adds the address in Merchant Center (Products → Add products →
+   From a file → Add a file from a link, daily). `wp_shop_feed_set`: on / off, `brand_fallback` (the shop's name
+   as brand for its own products; false for resellers), `countries` for delivery prices. Products marked never
+   promote (`sales_signal_mark`) stay out of the feed.
 
 ## Output
 - What was switched on, imported (created / updated / skipped, errors by line) or changed, with ids and links.
@@ -76,6 +85,8 @@ fulfilment, tracking and refunds, coupons, reviews from buyers and abandoned-car
 - Money is in minor units (2500 = 25.00) in the shop's currency; a "was" price is always higher than the price.
 - Every product online has a picture, a price and a short description; variants cover every option combination
   the owner sells.
+- For Google Shopping: real barcodes (GTIN) where products have them and the maker's brand for resold goods;
+  never invent a barcode.
 - Shop blocks sit at the theme's full width, never squeezed into the text column.
 
 ## Guardrails

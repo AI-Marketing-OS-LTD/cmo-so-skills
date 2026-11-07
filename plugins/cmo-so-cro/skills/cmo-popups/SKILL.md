@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.23.0"
+  version: "0.24.0"
   docs: "https://cmo.so/skills/cmo-popups"
 ---
 # Popups & banners

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress"
-  version: "0.23.0"
+  version: "0.24.0"
   docs: "https://cmo.so/skills/cmo-wp-images"
 ---
 # WordPress page pictures
