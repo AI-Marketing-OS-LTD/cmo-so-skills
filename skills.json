@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.21.0",
+	"version": "0.22.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -15033,6 +15033,68 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-shop/SKILL.md"
+		},
+		{
+			"id": "cmo-sales-signals",
+			"name": "Sales signals to posts",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Turn what a Maggie Core website's shop and bookings say — launches, new products and treatments, sales and deals, rising and best sellers, nearly sold out, back in stock, quiet booking days — into blog and social ideas through the CMO.so MCP, set what to promote or never promote, check each item live before writing about it, and see where orders and bookings came from.",
+			"channels": [
+				"wordpress",
+				"blog",
+				"linkedin",
+				"instagram",
+				"facebook"
+			],
+			"funnel_stage": "conversion",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"sales_signals",
+				"sales_signals_plan",
+				"sales_signal_mark",
+				"sales_item",
+				"sales_attribution",
+				"ops_autopilot_get",
+				"ops_autopilot_set",
+				"wp_shop_products",
+				"wp_booking_list",
+				"wp_site_status",
+				"wp_theme_update",
+				"ideas_list"
+			],
+			"pairs_with": [
+				"cmo-wp-shop",
+				"cmo-wp-booking",
+				"cmo-routines"
+			],
+			"url": "https://cmo.so/skills/cmo-sales-signals",
+			"references": [],
+			"triggers": [
+				"what's happening in my shop?",
+				"what's selling well this week?",
+				"plan posts for the new hoodie",
+				"we launch the Gift Set on Friday",
+				"facials are 20% off until Sunday — promote it",
+				"never promote the sample pack",
+				"Tuesdays are always empty, help",
+				"turn this week's sales news into posts",
+				"where did this month's bookings come from?",
+				"did Instagram bring any orders?"
+			],
+			"inputs": [
+				"A CMO.so website on the Maggie Core theme 0.24+ with its shop and/or bookings on and its Administrator application password saved (wp_site_connect_link)"
+			],
+			"outputs": [
+				"Blog and social ideas waiting for approval, each written from the website's own facts and linking to the product or booking page",
+				"Marks saved on the website: promote, never promote, launch dates, campaign dates",
+				"Orders and bookings by source, medium or campaign"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-sales-signals/SKILL.md"
 		}
 	],
 	"excluded": [

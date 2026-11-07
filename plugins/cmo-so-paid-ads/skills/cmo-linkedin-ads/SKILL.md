@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "linkedin-ads"
-  version: "0.21.0"
+  version: "0.22.0"
   docs: "https://cmo.so/skills/cmo-linkedin-ads"
 ---
 # LinkedIn ads

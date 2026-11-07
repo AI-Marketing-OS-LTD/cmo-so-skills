@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,blog"
-  version: "0.21.0"
+  version: "0.22.0"
   docs: "https://cmo.so/skills/cmo-content-refresh"
 ---
 # Content refresh

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "tiktok"
-  version: "0.21.0"
+  version: "0.22.0"
   docs: "https://cmo.so/skills/cmo-tiktok"
 ---
 # TikTok queue

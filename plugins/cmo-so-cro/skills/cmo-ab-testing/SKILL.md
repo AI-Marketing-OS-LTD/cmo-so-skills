@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,google-ads,meta-ads,email"
-  version: "0.21.0"
+  version: "0.22.0"
   docs: "https://cmo.so/skills/cmo-ab-testing"
 ---
 # A/B testing & experiments

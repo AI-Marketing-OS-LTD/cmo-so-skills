@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "website,google-search,ai-search,google-business,linkedin"
-  version: "0.21.0"
+  version: "0.22.0"
   docs: "https://cmo.so/skills/cmo-entity-audit"
 ---
 # Entity & knowledge graph audit
