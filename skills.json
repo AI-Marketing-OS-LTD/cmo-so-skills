@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.22.0",
+	"version": "0.23.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -15039,18 +15039,19 @@
 			"name": "Sales signals to posts",
 			"category": "website",
 			"category_name": "Website (WordPress)",
-			"summary": "Turn what a Maggie Core website's shop and bookings say — launches, new products and treatments, sales and deals, rising and best sellers, nearly sold out, back in stock, quiet booking days — into blog and social ideas through the CMO.so MCP, set what to promote or never promote, check each item live before writing about it, and see where orders and bookings came from.",
+			"summary": "Turn what a Maggie Core website's shop and bookings say — launches, new products and treatments, sales and deals, rising and best sellers, nearly sold out, back in stock, quiet booking days — into blog ideas and dated social posts (teaser, launch day, last chance) through the CMO.so MCP, set what to promote or never promote, check each item live before it is posted about, and see where orders and bookings came from.",
 			"channels": [
 				"wordpress",
 				"blog",
 				"linkedin",
 				"instagram",
-				"facebook"
+				"facebook",
+				"google_business"
 			],
 			"funnel_stage": "conversion",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"sales_signals",
@@ -15089,7 +15090,7 @@
 				"A CMO.so website on the Maggie Core theme 0.24+ with its shop and/or bookings on and its Administrator application password saved (wp_site_connect_link)"
 			],
 			"outputs": [
-				"Blog and social ideas waiting for approval, each written from the website's own facts and linking to the product or booking page",
+				"Blog and social ideas waiting for approval, each written from the website's own facts and linking to the product or booking page; launches and offers as dated social posts (Google Business: Offers)",
 				"Marks saved on the website: promote, never promote, launch dates, campaign dates",
 				"Orders and bookings by source, medium or campaign"
 			],
