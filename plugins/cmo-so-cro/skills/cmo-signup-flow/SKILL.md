@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,app"
-  version: "0.26.1"
+  version: "0.27.0"
   docs: "https://cmo.so/skills/cmo-signup-flow"
 ---
 # Signup flow optimisation

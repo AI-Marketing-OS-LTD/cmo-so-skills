@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**158 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**159 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -409,6 +409,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-wp-booking`](plugins/cmo-so-website/skills/cmo-wp-booking/SKILL.md) | Run online booking on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring the menu, clients, appointments and gift cards over from Fresha or another system, set up treatments, team, hours, deals and gift cards, and handle the day's appointments (book, move, cancel, refund), run the till and the whole booking dashboard, and design the visitor booking pages — one approved change at a time. |
 | [`cmo-wp-shop`](plugins/cmo-so-website/skills/cmo-wp-shop/SKILL.md) | Run an online shop on a Maggie Core WordPress site through the CMO.so MCP — switch it on, bring products over from WooCommerce, add products with options and variants, keep stock right, fulfil, refund and follow up orders, set delivery prices, tax, payment methods and coupons, and build pages that sell — one approved change at a time. |
 | [`cmo-wp-languages`](plugins/cmo-so-website/skills/cmo-wp-languages/SKILL.md) | Give a Maggie Core WordPress site more languages through the CMO.so MCP — add Chinese, Spanish or any language at its own address (/zh/…), translate pages and posts from a brief that keeps every price, number and link, review them before search engines see them, keep translations fresh when the source changes, and get hreflang, canonicals and sitemaps right without wp-admin. |
+| [`cmo-wp-move`](plugins/cmo-so-website/skills/cmo-wp-move/SKILL.md) | Move a site built on Astro, Next.js, a custom stack or a site builder onto WordPress + Maggie Core as a byte-identical clone — every address, head tag and asset the same — with its blog, contact form, prices, languages and media running natively in WordPress, then cut over with no downtime and a one-minute rollback. |
 | [`cmo-sales-signals`](plugins/cmo-so-website/skills/cmo-sales-signals/SKILL.md) | Turn what a Maggie Core website's shop and bookings say — launches, new products and treatments, sales and deals, rising and best sellers, nearly sold out, back in stock, quiet booking days — into blog ideas and dated social posts (teaser, launch day, last chance) through the CMO.so MCP, set what to promote or never promote, check each item live before it is posted about, and see where orders and bookings came from. |
 
 <!-- skills:end -->

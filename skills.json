@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.26.1",
+	"version": "0.27.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -15102,6 +15102,62 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-languages/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-move",
+			"name": "Move a non-WordPress site to WordPress without losing SEO",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Move a site built on Astro, Next.js, a custom stack or a site builder onto WordPress + Maggie Core as a byte-identical clone — every address, head tag and asset the same — with its blog, contact form, prices, languages and media running natively in WordPress, then cut over with no downtime and a one-minute rollback.",
+			"channels": [
+				"wordpress",
+				"google-search"
+			],
+			"funnel_stage": "all",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.1.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_site_status",
+				"wp_clone_status",
+				"wp_clone_parts",
+				"wp_clone_part_save",
+				"wp_clone_optimize_set",
+				"wp_clone_prices",
+				"wp_languages",
+				"wp_translations",
+				"wp_translation_save",
+				"wp_media_upload"
+			],
+			"pairs_with": [
+				"cmo-wp-migrate",
+				"cmo-wp-languages",
+				"cmo-wp-booking",
+				"cmo-wp-seo-technical",
+				"cmo-wp-qa"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-move",
+			"references": [],
+			"triggers": [
+				"move my site to WordPress without losing rankings",
+				"migrate our Astro / Next.js site to WordPress",
+				"rebuild our custom site on Maggie Core exactly as it is",
+				"switch hosting platform but keep every URL",
+				"is the migrated site the same as the old one?"
+			],
+			"inputs": [
+				"The live site, and access to its server or source (to export posts, services, media and settings)",
+				"A WordPress install with Maggie Core 0.32+ (a staging host first), connected to CMO.so",
+				"The owner's approval before the cut-over"
+			],
+			"outputs": [
+				"A staging clone where every crawled address answers like the original (status, redirect, bytes)",
+				"Blog, feeds, sitemaps, agent files, contact form, events, prices and media running from WordPress",
+				"An SEO risk audit, the cut-over done with no downtime, and a rollback path"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-move/SKILL.md"
 		},
 		{
 			"id": "cmo-sales-signals",
