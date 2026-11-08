@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "consideration"
   channels: "google-search"
-  version: "0.27.0"
+  version: "0.27.1"
   docs: "https://cmo.so/skills/cmo-competitor-pages"
 ---
 # Comparison & alternative pages

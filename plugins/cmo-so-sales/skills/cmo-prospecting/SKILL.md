@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "linkedin,email"
-  version: "0.27.0"
+  version: "0.27.1"
   docs: "https://cmo.so/skills/cmo-prospecting"
 ---
 # Prospecting & lead research

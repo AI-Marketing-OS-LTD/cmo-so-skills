@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "product-hunt,linkedin,email"
-  version: "0.27.0"
+  version: "0.27.1"
   docs: "https://cmo.so/skills/cmo-product-launch"
 ---
 # Product launch

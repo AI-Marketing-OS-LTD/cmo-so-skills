@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress"
-  version: "0.27.0"
+  version: "0.27.1"
   docs: "https://cmo.so/skills/cmo-wp-languages"
 ---
 # Multilingual WordPress site

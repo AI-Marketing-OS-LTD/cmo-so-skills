@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "website"
-  version: "0.27.0"
+  version: "0.27.1"
   docs: "https://cmo.so/skills/cmo-marketing-audit"
 ---
 # Marketing audit
