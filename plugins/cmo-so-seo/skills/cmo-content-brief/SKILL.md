@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,blog"
-  version: "0.28.1"
+  version: "0.28.2"
   docs: "https://cmo.so/skills/cmo-content-brief"
 ---
 # SEO content brief

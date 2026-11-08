@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.1"
+  version: "0.28.2"
   docs: "https://cmo.so/skills/cmo-wp-operation"
 ---
 # Maggie Operation daily check
@@ -35,6 +35,8 @@ them and never repeating what is fine.
      translations nobody reviewed, comments, updates);
    - **did**: one line per kind (posts delivered, translations, price changes, new treatment pages, list
      changes, IndexNow pings).
+   - **reports** (0.37+): the newest unread report from Maggie's inbox in one line; a failed Ops Autopilot run is an
+     alert (see `cmo-ops-autopilot`).
 2. `wp_operation_growth`:
    - **search**: clicks and impressions for the last 28 days with the change against the 28 before; name a big
      mover among the top searches or pages only when the data shows it;

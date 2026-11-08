@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.28.1"
+  version: "0.28.2"
   docs: "https://cmo.so/skills/cmo-link-building"
 ---
 # Link building

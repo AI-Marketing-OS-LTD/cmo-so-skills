@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: "discord,slack,reddit,telegram"
-  version: "0.28.1"
+  version: "0.28.2"
   docs: "https://cmo.so/skills/cmo-community"
 ---
 # Community marketing
