@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "consideration"
   channels: "google-search"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-competitor-research"
 ---
 # Competitor research

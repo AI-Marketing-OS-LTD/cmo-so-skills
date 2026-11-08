@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search,chatgpt"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-ai-prompt-research"
 ---
 # AI prompt research

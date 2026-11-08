@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "cmo.so"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-closed-loop-measurement"
 ---
 # Closed-loop measurement

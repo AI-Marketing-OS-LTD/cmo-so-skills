@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-wp-booking"
 ---
 # WordPress online booking

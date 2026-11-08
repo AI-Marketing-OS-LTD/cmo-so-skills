@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.27.1",
+	"version": "0.27.2",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -15125,6 +15125,8 @@
 				"wp_clone_part_save",
 				"wp_clone_optimize_set",
 				"wp_clone_prices",
+				"wp_clone_services",
+				"wp_clone_services_set",
 				"wp_languages",
 				"wp_translations",
 				"wp_translation_save",

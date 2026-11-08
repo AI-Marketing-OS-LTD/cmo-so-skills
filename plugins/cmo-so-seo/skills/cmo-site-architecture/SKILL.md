@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "awareness"
   channels: "website"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-site-architecture"
 ---
 # Site architecture & internal links

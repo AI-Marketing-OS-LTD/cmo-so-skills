@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress,google-search"
-  version: "0.27.1"
+  version: "0.27.2"
   docs: "https://cmo.so/skills/cmo-wp-move"
 ---
 # Move a non-WordPress site to WordPress without losing SEO
@@ -51,7 +51,10 @@ addresses byte-identical, cut over 2026-11-08); its full log and 22 lessons are 
    Also compare every asset (images, CSS, fonts, icons: status, type, cache header, bytes), feeds, sitemaps and
    agent files, the SEO contract against both origins, and query views (sorts, pages, search, filters).
 5. **Backend**: contact form → enquiries (stored first, emailed with the site's own Resend key and template),
-   events → site events, prices → `wp_clone_prices` (Fresha sync review first), the cmo.so connector for AI CMO
+   events → site events, prices → `wp_clone_prices` (Fresha sync review first), new treatments →
+   `wp_clone_services_set` (a page template from the original's own "new treatment" page via
+   `tools/clone_service_template.py`, and a lists config so they join the menu, finder, /services/ and category pages;
+   the site refuses either unless it reproduces what the original shows; run dry, then enable), the cmo.so connector for AI CMO
    posts (the site's own `aicmo_` key; set the connector ids on every imported post), languages and
    translations (`cmo-wp-languages`).
 6. **Browser check**: Chrome, every band on desktop and 390 px against the original (same heights, nothing broken,
@@ -72,8 +75,10 @@ For a scheduled agent after a move: `Run the cmo-wp-move skill for example.com (
 
 1. `wp_clone_status`: parts, blog, prices, media look as last time (no part emptied, posts count not dropping).
 2. `wp_clone_prices`: report changes written and any "ambiguous, left as it was".
-3. Fetch the homepage, a post, a service page and the sitemap: 200, canonical, no noindex.
-4. Finish with `report_save`: what changed, anything that needs the owner.
+3. `wp_clone_services`: treatments that got a page or joined / left the lists since last time, anything unplaced
+   or held (more than 5 withdrawals at once means a bad catalogue sync: tell the owner, change nothing).
+4. Fetch the homepage, a post, a service page and the sitemap: 200, canonical, no noindex.
+5. Finish with `report_save`: what changed, anything that needs the owner.
 
 ## Output
 
