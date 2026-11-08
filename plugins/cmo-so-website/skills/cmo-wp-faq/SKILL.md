@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "consideration"
   channels: "wordpress,google-search"
-  version: "0.25.0"
+  version: "0.26.0"
   docs: "https://cmo.so/skills/cmo-wp-faq"
 ---
 # WordPress page FAQs

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,api"
-  version: "0.25.0"
+  version: "0.26.0"
   docs: "https://cmo.so/skills/cmo-routines"
 ---
 # Schedule CMO.so routines

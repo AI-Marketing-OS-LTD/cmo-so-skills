@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search,website"
-  version: "0.25.0"
+  version: "0.26.0"
   docs: "https://cmo.so/skills/cmo-seo-audit"
 ---
 # SEO audit

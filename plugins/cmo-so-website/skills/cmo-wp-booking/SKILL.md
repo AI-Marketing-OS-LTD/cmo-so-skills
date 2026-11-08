@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.25.0"
+  version: "0.26.0"
   docs: "https://cmo.so/skills/cmo-wp-booking"
 ---
 # WordPress online booking
@@ -75,6 +75,25 @@ deals, payments, import, settings). This skill does the same work through the CM
 9. **Languages**: add content languages with `wp_booking_settings_set settings.languages`, then
    `wp_booking_translate` each treatment, option and category. The booking pages, emails and dashboard are already
    translated (Simplified and Traditional Chinese, Spanish).
+
+## Moving from Fresha (or another platform) while both run
+Maggie Core 0.28+. Nothing changes until a bridge is set up.
+1. `wp_booking_bridge_set source <Fresha venue address> sync review` (or `provider json` with a catalogue JSON
+   address for Treatwell, Booksy, Square, Vagaro…). `wp_booking_bridge_sync run`: new, changed and gone services
+   wait for review; `approve` applies them (never deletes; the owner's edits win), `dismiss` drops them. `sync auto`
+   applies them every day.
+2. **Where each service books** (`wp_booking_bridge`): auto = on Maggie once it is ready (online, an option with a
+   duration, a team member who does it, working hours), else the platform's own booking link — the website's Book
+   buttons and booking sheet follow it. `modes {id: maggie}` makes a service Maggie's for good (the platform no
+   longer changes or withdraws it); `external` keeps it on the platform.
+3. **No double bookings**: for each team member, `feed {staff_id, url}` with their platform calendar export
+   (Fresha: team member → Calendar sync → export link); Maggie reads it every 15 minutes and blocks those times.
+   `calendar_link_for staff_id` gives their Maggie calendar link for the platform to subscribe to where it can.
+4. **The other direction**: the platform has no API; `platform_todo` lists what to change there by hand.
+5. **Clients, appointments, gift cards**: `wp_booking_import_preview` / `wp_booking_import` with the platform's CSV
+   exports (dry run first; consent only when opted in; undo).
+6. **Cut-over checklist** (`checklist`): tick manual steps (`checklist {google_link: true}`); when the platform has
+   stopped taking bookings (about 30 days read-only), `wp_booking_bridge_end`.
 
 ## Output
 - What was switched on, imported (counts) or changed, with the booking reference or item id.

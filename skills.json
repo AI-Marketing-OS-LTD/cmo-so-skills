@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.25.0",
+	"version": "0.26.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14867,7 +14867,7 @@
 			"funnel_stage": "conversion",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.3.3",
+			"version": "0.4.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_booking_reports",
@@ -14885,6 +14885,10 @@
 				"wp_booking_settings_set",
 				"wp_booking_import_preview",
 				"wp_booking_import",
+				"wp_booking_bridge",
+				"wp_booking_bridge_set",
+				"wp_booking_bridge_sync",
+				"wp_booking_bridge_end",
 				"wp_gift_card",
 				"wp_booking_translate",
 				"wp_booking_routes",
@@ -14941,7 +14945,10 @@
 				"ring up a sale for the walk-in",
 				"what did we take today?",
 				"make a gift cards page",
-				"make the booking buttons match our brand colour"
+				"make the booking buttons match our brand colour",
+				"move us off Fresha but keep it running for now",
+				"Fresha bookings should block those times on the website",
+				"which treatments still book on Fresha?"
 			],
 			"inputs": [
 				"A CMO.so website on the Maggie Core theme 0.17+, with its Administrator application password saved (wp_site_connect_link)",
