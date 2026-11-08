@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress,blog,linkedin,instagram,facebook,google_business"
-  version: "0.26.0"
+  version: "0.26.1"
   docs: "https://cmo.so/skills/cmo-sales-signals"
 ---
 # Sales signals to posts

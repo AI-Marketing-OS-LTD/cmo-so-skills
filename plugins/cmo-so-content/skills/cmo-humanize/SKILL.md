@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "all"
   channels: "blog,linkedin,email"
-  version: "0.26.0"
+  version: "0.26.1"
   docs: "https://cmo.so/skills/cmo-humanize"
 ---
 # Humanise AI writing

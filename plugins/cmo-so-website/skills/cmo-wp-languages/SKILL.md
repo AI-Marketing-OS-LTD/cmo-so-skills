@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress"
-  version: "0.26.0"
+  version: "0.26.1"
   docs: "https://cmo.so/skills/cmo-wp-languages"
 ---
 # Multilingual WordPress site
@@ -60,7 +60,9 @@ template, picture and categories. Search engines get `<html lang>`, a self canon
      queues the work and the website translates within its daily limit; `wp_translation_ai_set auto true`
      translates new and changed pages by themselves.
    - **Maggie every morning**: Ops Autopilot feature `translations` (`ops_autopilot_set`): the website's own key
-     if it has one, else up to 3 pages a day with cmo.so's model; all unreviewed.
+     if it has one (no credit); else the owner's ChatGPT if linked in app.cmo.so (Maggie Bridge, up to 10 pages,
+     no credit); else up to 3 pages with cmo.so's model, 1 post credit a page, 2 for a long one (over 24,000
+     characters), charged only when saved; long pages go in chunks of whole blocks; all unreviewed.
    - **A routine** (Claude routine, ChatGPT / Codex scheduled task): see Routine mode.
    Whoever translates, a person reviews: the app's Translations screen, wp-admin, or `wp_translation_save
    reviewed true` when the owner says so.
