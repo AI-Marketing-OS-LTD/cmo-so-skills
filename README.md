@@ -181,7 +181,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 
 <!-- skills:start -->
 
-**159 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
+**160 skills in 14 plugins**, plus the `cmo-so-all` bundle. Generated from the catalog: please open an issue rather than editing a `SKILL.md`.
 
 ### CMO.so core (MCP) · `cmo-so`
 
@@ -401,6 +401,7 @@ Each category is its own plugin, and every plugin installs `cmo-so` (the core sk
 | [`cmo-wp-motion`](plugins/cmo-so-website/skills/cmo-wp-motion/SKILL.md) | Use Maggie Core's motion vocabulary — rise and stagger on entry, lift, zoom and float on hover, underline on links — through section classes only, calm and accessible, never custom scripts. |
 | [`cmo-wp-page-design`](plugins/cmo-so-website/skills/cmo-wp-page-design/SKILL.md) | Design a new WordPress page or rework an existing one as Maggie Core sections, review it on phone and computer, and fix generic, cluttered or weak layouts in place. |
 | [`cmo-wp-qa`](plugins/cmo-so-website/skills/cmo-wp-qa/SKILL.md) | The checks after any WordPress change and before a release or cut-over — pages open, one H1, valid blocks, SEO unchanged against a baseline, links, layout at 390/768/1440 px, contrast, forms — with a clear pass/fail report. |
+| [`cmo-wp-operation`](plugins/cmo-so-website/skills/cmo-wp-operation/SKILL.md) | The website owner's day in one look, from Maggie Operation in WordPress — what Maggie did this week, what is waiting for them, what is wrong, and how bookings, the shop, enquiries and payments are doing — with each item linked to where it is handled. |
 | [`cmo-wp-sections`](plugins/cmo-so-website/skills/cmo-wp-sections/SKILL.md) | The rules for Maggie Core sections — which type to use for which job, what each needs, how many per page and in what order — so pages built by AI look designed, not assembled. |
 | [`cmo-wp-seo`](plugins/cmo-so-website/skills/cmo-wp-seo/SKILL.md) | Audit and fix a WordPress site's on-page SEO through CMO.so — titles, descriptions, keywords, H1s, robots, canonicals, structured data, redirects and business details — page by page or in batches. |
 | [`cmo-wp-vibe-coding`](plugins/cmo-so-website/skills/cmo-wp-vibe-coding/SKILL.md) | Run a WordPress site on Maggie Core from Claude Code, Cursor or ChatGPT through the CMO.so MCP — read it, change any page, post, setting, plugin, menu or style with block markup or sections, preview, publish and undo — without wp-admin, FTP or SSH. |

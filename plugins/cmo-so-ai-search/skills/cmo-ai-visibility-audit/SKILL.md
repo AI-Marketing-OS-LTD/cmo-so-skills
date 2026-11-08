@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search,chatgpt,perplexity,google-ai-mode"
-  version: "0.27.2"
+  version: "0.28.0"
   docs: "https://cmo.so/skills/cmo-ai-visibility-audit"
 ---
 # AI visibility audit

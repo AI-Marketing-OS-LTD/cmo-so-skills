@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "google-search"
-  version: "0.27.2"
+  version: "0.28.0"
   docs: "https://cmo.so/skills/cmo-seo-plan"
 ---
 # SEO strategy & roadmap
