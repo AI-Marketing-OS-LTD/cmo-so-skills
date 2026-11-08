@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "cmo.so,api"
-  version: "0.24.0"
+  version: "0.25.0"
   docs: "https://cmo.so/skills/cmo-routines"
 ---
 # Schedule CMO.so routines
@@ -26,7 +26,7 @@ A routine is an agent run on a schedule: every morning, every Monday, or when so
 ## Workflow
 
 ### 1. Pick the job and the time
-- One job per routine, from a CMO.so skill with a "Routine mode" section (`cmo-daily`, `cmo-weekly-report`, `cmo-ai-visibility`, `cmo-content-refresh`, `cmo-social-distribution`, `cmo-reddit`, `cmo-public-relations`, `cmo-social-listening`, `cmo-directory-submissions`).
+- One job per routine, from a CMO.so skill with a "Routine mode" section (`cmo-daily`, `cmo-weekly-report`, `cmo-ai-visibility`, `cmo-content-refresh`, `cmo-social-distribution`, `cmo-reddit`, `cmo-public-relations`, `cmo-social-listening`, `cmo-directory-submissions`, `cmo-wp-languages`).
 - Daily or weekly, never hourly (the daily cap runs out; leave minute-level watching to monitoring). Off the hour (07:16, not 07:00), after Maggie's own jobs for that day (her local times: ideas 06:00, social slots 08:00, post checks 10:00, Monday report 08:00).
 
 ### 2. Write the routine's instructions

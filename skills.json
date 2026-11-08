@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.24.0",
+	"version": "0.25.0",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -15035,6 +15035,66 @@
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-shop/SKILL.md"
+		},
+		{
+			"id": "cmo-wp-languages",
+			"name": "Multilingual WordPress site",
+			"category": "website",
+			"category_name": "Website (WordPress)",
+			"summary": "Give a Maggie Core WordPress site more languages through the CMO.so MCP — add Chinese, Spanish or any language at its own address (/zh/…), translate pages and posts from a brief that keeps every price, number and link, review them before search engines see them, keep translations fresh when the source changes, and get hreflang, canonicals and sitemaps right without wp-admin.",
+			"channels": [
+				"wordpress"
+			],
+			"funnel_stage": "awareness",
+			"tier": "core",
+			"status": "shipped",
+			"version": "0.2.0",
+			"brand": "CMO.so",
+			"mcp_tools": [
+				"wp_languages",
+				"wp_languages_set",
+				"wp_translations",
+				"wp_translation_save",
+				"wp_translation_delete",
+				"wp_translation_ai",
+				"wp_translation_ai_set",
+				"wp_translation_auto",
+				"ops_autopilot_get",
+				"ops_autopilot_set",
+				"report_save",
+				"wp_theme_update",
+				"wp_site_status",
+				"wp_section_add",
+				"wp_menu_set"
+			],
+			"pairs_with": [
+				"cmo-wp-builder",
+				"cmo-wp-migrate",
+				"cmo-wp-booking"
+			],
+			"url": "https://cmo.so/skills/cmo-wp-languages",
+			"references": [],
+			"triggers": [
+				"add a Chinese version of my website",
+				"translate the treatments pages into Chinese",
+				"which Chinese pages are out of date?",
+				"add Spanish at /es/",
+				"our Chinese site lost its rankings after the move",
+				"review the machine translations",
+				"keep the glossary: Chevy Chase is never translated",
+				"translate the shop and the treatments too",
+				"use my own Gemini key to translate the site",
+				"every night, translate whatever is new"
+			],
+			"inputs": [
+				"A CMO.so website on the Maggie Core theme 0.27+, with its Administrator application password saved (wp_site_connect_link)"
+			],
+			"outputs": [
+				"Languages set up with their address prefixes, hreflang tags and switcher",
+				"Pages and posts translated, published and reviewed (or drafts waiting for review), with stale ones listed"
+			],
+			"plugin": "cmo-so-website",
+			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-languages/SKILL.md"
 		},
 		{
 			"id": "cmo-sales-signals",
