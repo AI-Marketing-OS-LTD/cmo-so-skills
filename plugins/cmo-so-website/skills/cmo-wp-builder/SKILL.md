@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.0"
+  version: "0.28.1"
   docs: "https://cmo.so/skills/cmo-wp-builder"
 ---
 # WordPress site builder

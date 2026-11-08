@@ -2,7 +2,7 @@
 	"$schema": "./catalog.schema.json",
 	"name": "CMO.so marketing skills",
 	"description": "Marketing skills for AI agents, rebranded and rebuilt for CMO.so. Core skills run on the CMO.so MCP server (https://mcp.cmo.so/mcp); connected skills use it when available; standalone skills are methods that work anywhere.",
-	"version": "0.28.0",
+	"version": "0.28.1",
 	"updated": "2026-10-15",
 	"publisher": {
 		"name": "AI Marketing OS Ltd",
@@ -14465,17 +14465,20 @@
 			"name": "Maggie Operation daily check",
 			"category": "website",
 			"category_name": "Website (WordPress)",
-			"summary": "The website owner's day in one look, from Maggie Operation in WordPress — what Maggie did this week, what is waiting for them, what is wrong, and how bookings, the shop, enquiries and payments are doing — with each item linked to where it is handled.",
+			"summary": "The website owner's day in one look, from Maggie Operation in WordPress — what Maggie did this week, what is waiting for them, what is wrong, how the site does in Google and AI answers, which missing addresses need a redirect, and how bookings, the shop, enquiries and payments are doing — with each item linked to where it is handled.",
 			"channels": [
 				"wordpress"
 			],
 			"funnel_stage": "all",
 			"tier": "core",
 			"status": "shipped",
-			"version": "0.1.0",
+			"version": "0.2.0",
 			"brand": "CMO.so",
 			"mcp_tools": [
 				"wp_operation_today",
+				"wp_operation_growth",
+				"wp_404_log",
+				"wp_404_redirect",
 				"wp_operation_business",
 				"wp_modules",
 				"wp_modules_set",
@@ -14483,6 +14486,7 @@
 			],
 			"pairs_with": [
 				"cmo-wp-qa",
+				"cmo-wp-seo-technical",
 				"cmo-wp-booking",
 				"cmo-wp-languages",
 				"cmo-wp-move",
@@ -14495,13 +14499,15 @@
 				"anything waiting for me on the site",
 				"is anything wrong with my website",
 				"how are bookings and the shop doing this week",
+				"how is my website doing in Google",
+				"fix the broken links people keep hitting on my site",
 				"turn on bookings on my website"
 			],
 			"inputs": [
 				"A website on Maggie Core 0.35+ connected to CMO.so"
 			],
 			"outputs": [
-				"A short daily brief: needs attention, waiting for you, what Maggie did, business numbers, with links"
+				"A short daily brief: needs attention, waiting for you, what Maggie did, search and AI-answer trends, missing addresses, business numbers, with links"
 			],
 			"plugin": "cmo-so-website",
 			"skill_file": "plugins/cmo-so-website/skills/cmo-wp-operation/SKILL.md"

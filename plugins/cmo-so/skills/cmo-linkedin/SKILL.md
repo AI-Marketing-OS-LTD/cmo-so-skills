@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.28.0"
+  version: "0.28.1"
   docs: "https://cmo.so/skills/cmo-linkedin"
 ---
 # LinkedIn queue
