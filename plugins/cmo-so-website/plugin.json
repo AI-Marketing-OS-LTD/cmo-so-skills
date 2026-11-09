@@ -1,7 +1,7 @@
 {
 	"$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
 	"name": "cmo-so-website",
-	"version": "0.28.5",
+	"version": "0.28.6",
 	"description": "CMO.so Website (WordPress) skills (20): WordPress site builder, WordPress child theme, WordPress design from a reference site, WordPress page FAQs, WordPress page pictures, WordPress migration to Maggie Core…. Add the cmo-so plugin too, for the core skills and the CMO.so MCP server.",
 	"author": {
 		"name": "AI Marketing OS Ltd",

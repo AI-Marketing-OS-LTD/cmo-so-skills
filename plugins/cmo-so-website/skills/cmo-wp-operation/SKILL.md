@@ -7,12 +7,12 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.5"
+  version: "0.28.6"
   docs: "https://cmo.so/skills/cmo-wp-operation"
 ---
 # Maggie Operation daily check
 
-Maggie Operation is the owner's home screen in WordPress (wp-admin → Maggie): Today, Growth, Business and Modules. This
+Maggie Operation is the owner's home screen in WordPress (wp-admin → Maggie Press): Today, Growth, Business and Modules. This
 skill reads the same data and turns it into a brief the owner can act on in a minute, leading with what needs
 them and never repeating what is fine.
 
@@ -65,7 +65,7 @@ them and never repeating what is fine.
 7. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
    data but visitors can no longer book or buy. Multilingual (0.40+) has its own Languages menu; pausing it shows
    the site in its own language only and keeps every translation. Payments (0.40+) is the website's Stripe account
-   in wp-admin → Payments; it stays on while Bookings or the Shop is on (`wp_payments_status` for its state).
+   in wp-admin → Maggie Press → Payments; it stays on while Bookings or the Shop is on (`wp_payments_status` for its state).
    Change one only when the owner asks, with `wp_modules_set` (it asks for confirmation).
 
 ## Routine mode

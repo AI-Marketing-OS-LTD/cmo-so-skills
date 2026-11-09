@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.28.5"
+  version: "0.28.6"
   docs: "https://cmo.so/skills/cmo-wp-booking"
 ---
 # WordPress online booking
@@ -42,7 +42,7 @@ deals, payments, import, settings). This skill does the same work through the CM
    **Payments**: `wp_payments_status` first. Easiest: `wp_payments action connect` (mode `live`, or `test` to try
    with no real money) gives a Stripe sign-in link; the owner opens it, signs in to Stripe and picks their
    account: payments go straight into it, nothing is copied and the website keeps no Stripe key (Connect with
-   Stripe through cmo.so). If they'd rather use their own keys: wp-admin → Payments (`setup_url`; Bookings → Payments before Maggie Core 0.40) —
+   Stripe through cmo.so). If they'd rather use their own keys: wp-admin → Maggie Press → Payments (`setup_url`; Bookings → Payments before Maggie Core 0.40) —
    the one Stripe account for bookings and the shop;
    saving the secret key sets the Stripe webhook up by itself (`wp_payments action webhook` repeats it).
    **Email**: `wp_email_status`. The owner adds a Resend API key (Full access) and an address on their own domain
