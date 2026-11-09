@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "retention"
   channels: ""
-  version: "0.28.3"
+  version: "0.28.4"
   docs: "https://cmo.so/skills/cmo-referral-program"
 ---
 # Referral & affiliate program

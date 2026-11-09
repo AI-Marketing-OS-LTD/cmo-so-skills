@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "conversion"
   channels: "wordpress"
-  version: "0.28.3"
+  version: "0.28.4"
   docs: "https://cmo.so/skills/cmo-wp-shop"
 ---
 # WordPress online shop
@@ -21,8 +21,9 @@ fulfilment, tracking and refunds, coupons, reviews from buyers and abandoned-car
 ## When to use
 - The owner wants to sell products on their WordPress site, or to leave WooCommerce / Shopify for Maggie Core.
 - Day to day: new products, stock deliveries and counts, orders to send, refunds, coupons, delivery and tax.
-- Not for card details or payment keys: card payments use the Stripe account set up for Bookings
-  (`wp_payments`), or the owner adds the shop's own Stripe key in wp-admin → Shop → Payments. Never ask for keys.
+- Not for card details or payment keys: card payments use the website's one Stripe account (Maggie Core 0.40+:
+  wp-admin → Payments, shared with bookings; `wp_payments_status`, `wp_payments action connect`). A shop key from
+  before 0.40 still works; wp-admin → Payments offers to make it the website's account. Never ask for keys.
 
 ## Before you start
 1. `wp_site_status`: the theme must be Maggie Core 0.23 or later (else `wp_theme_update`).

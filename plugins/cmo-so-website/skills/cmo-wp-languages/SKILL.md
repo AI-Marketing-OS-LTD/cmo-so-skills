@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "awareness"
   channels: "wordpress"
-  version: "0.28.3"
+  version: "0.28.4"
   docs: "https://cmo.so/skills/cmo-wp-languages"
 ---
 # Multilingual WordPress site
@@ -55,8 +55,8 @@ template, picture and categories. Search engines get `<html lang>`, a self canon
    one keeps redirecting (301).
 8. **Who translates** — pick per job, they can be mixed:
    - **You, now** (the owner's ChatGPT / Claude / Ask Maggie): steps 3–4.
-   - **The website's own AI key** (Gemini, OpenAI or Claude, entered by the owner in wp-admin → Settings →
-     Languages; never ask for a key): `wp_translation_ai` shows it; `wp_translation_auto lang state both kind all`
+   - **The website's own AI key** (Gemini, OpenAI or Claude, entered by the owner in wp-admin → Languages →
+     Settings, or Settings → Languages before Maggie Core 0.40; never ask for a key): `wp_translation_ai` shows it; `wp_translation_auto lang state both kind all`
      queues the work and the website translates within its daily limit; `wp_translation_ai_set auto true`
      translates new and changed pages by themselves.
    - **Maggie every morning**: Ops Autopilot feature `translations` (`ops_autopilot_set`): the website's own key

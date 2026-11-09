@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.3"
+  version: "0.28.4"
   docs: "https://cmo.so/skills/cmo-wp-operation"
 ---
 # Maggie Operation daily check
@@ -57,8 +57,10 @@ them and never repeating what is fine.
    only the owner turns it on or off with `site_chat_set` (it asks for confirmation). Only Administrators approve
    changes there.
 6. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
-   data but visitors can no longer book or buy. Change one only when the owner asks, with `wp_modules_set`
-   (it asks for confirmation).
+   data but visitors can no longer book or buy. Multilingual (0.40+) has its own Languages menu; pausing it shows
+   the site in its own language only and keeps every translation. Payments (0.40+) is the website's Stripe account
+   in wp-admin → Payments; it stays on while Bookings or the Shop is on (`wp_payments_status` for its state).
+   Change one only when the owner asks, with `wp_modules_set` (it asks for confirmation).
 
 ## Routine mode
 

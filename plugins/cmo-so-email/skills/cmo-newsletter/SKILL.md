@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "email"
-  version: "0.28.3"
+  version: "0.28.4"
   docs: "https://cmo.so/skills/cmo-newsletter"
 ---
 # Email newsletter
