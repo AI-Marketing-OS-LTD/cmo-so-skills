@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin,x,email,youtube,instagram,tiktok,facebook"
-  version: "0.28.2"
+  version: "0.28.3"
   docs: "https://cmo.so/skills/cmo-content-repurposing"
 ---
 # Content repurposing

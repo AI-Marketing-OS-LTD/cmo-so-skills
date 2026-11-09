@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.2"
+  version: "0.28.3"
   docs: "https://cmo.so/skills/cmo-wp-operation"
 ---
 # Maggie Operation daily check
@@ -52,7 +52,11 @@ them and never repeating what is fine.
    like old feed or image paths). Never send everything to the homepage. It asks the owner to confirm.
 4. `wp_operation_business`: the numbers for the modules in use; compare with last time if you have it
    (e.g. more no-shows, takings down) and say so in one line.
-5. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
+5. Maggie Chat in WordPress (Maggie Core 0.38+): the website's Administrators and Editors can ask Maggie from
+   wp-admin and the page editor once the owner allows it. `site_chat_get` shows whether it is allowed or waiting;
+   only the owner turns it on or off with `site_chat_set` (it asks for confirmation). Only Administrators approve
+   changes there.
+6. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
    data but visitors can no longer book or buy. Change one only when the owner asks, with `wp_modules_set`
    (it asks for confirmation).
 
