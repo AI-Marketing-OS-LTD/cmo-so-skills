@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.4"
+  version: "0.28.5"
   docs: "https://cmo.so/skills/cmo-wp-operation"
 ---
 # Maggie Operation daily check
@@ -42,7 +42,9 @@ them and never repeating what is fine.
      mover among the top searches or pages only when the data shows it;
    - **AI answers**: the visibility score and how many answers name the site; the sites answers cite instead are
      the competitors to beat;
-   - **speed**: the PageSpeed scores; below 50 on phones is worth a line;
+   - **speed**: the PageSpeed scores; below 50 on phones is worth a line. 0.41+: `wp_operation_speed` has the
+     homepage and top pages every week with the change against last week; name a page that fell 10+ points and
+     its LCP (`check: true` runs a check now, one page a minute, at most 12 page checks a day);
    - **SEO checks**: each ✗ with its fix (robots.txt blocking a crawler, a sitemap that doesn't answer, Maggie's
      redirects switched off by an SEO plugin); "could not be checked" means the server can't reach itself, not a
      broken site;
@@ -56,7 +58,11 @@ them and never repeating what is fine.
    wp-admin and the page editor once the owner allows it. `site_chat_get` shows whether it is allowed or waiting;
    only the owner turns it on or off with `site_chat_set` (it asks for confirmation). Only Administrators approve
    changes there.
-6. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
+6. Schedule (0.41+): `wp_operation_schedule` is one calendar of the next days (posts and pages set to publish
+   later, the website's jobs and how often they repeat, social posts at their queue time, planned blog posts,
+   Maggie's routines). Use it to answer "what's coming up" and to spot gaps (a week with no post) or clashes (a
+   sale post before the offer starts); each item links to where it is changed — never move things from here.
+7. Modules: `wp_modules` shows what is on. Turning Bookings or the Shop on creates its tables; pausing keeps the
    data but visitors can no longer book or buy. Multilingual (0.40+) has its own Languages menu; pausing it shows
    the site in its own language only and keeps every translation. Payments (0.40+) is the website's Stripe account
    in wp-admin → Payments; it stays on while Bookings or the Shop is on (`wp_payments_status` for its state).
@@ -66,7 +72,8 @@ them and never repeating what is fine.
 
 For a scheduled agent: `Run the cmo-wp-operation skill for example.com (Routine mode).`
 
-1. `wp_operation_today`, `wp_operation_growth` and `wp_operation_business`.
+1. `wp_operation_today`, `wp_operation_growth`, `wp_operation_speed` and `wp_operation_business`; on Mondays also
+   `wp_operation_schedule` for the week ahead.
 2. Report only alerts, waiting items, missing addresses with several visits and notable changes (search or AI
    visibility moving more than 20%); "nothing new" is a valid report.
 3. Never change modules, redirects, settings or content in Routine mode: list the redirects you would make for the

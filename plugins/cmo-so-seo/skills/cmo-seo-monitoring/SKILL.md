@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "retention"
   channels: "google-search"
-  version: "0.28.4"
+  version: "0.28.5"
   docs: "https://cmo.so/skills/cmo-seo-monitoring"
 ---
 # SEO change monitoring

@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "retention"
   channels: "wordpress"
-  version: "0.28.4"
+  version: "0.28.5"
   docs: "https://cmo.so/skills/cmo-wp-security"
 ---
 # WordPress security check

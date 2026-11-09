@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "linkedin"
-  version: "0.28.4"
+  version: "0.28.5"
   docs: "https://cmo.so/skills/cmo-linkedin-strategy"
 ---
 # LinkedIn strategy & analytics
