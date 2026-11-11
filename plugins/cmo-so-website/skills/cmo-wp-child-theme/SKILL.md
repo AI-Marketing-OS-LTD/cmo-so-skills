@@ -7,7 +7,7 @@ metadata:
   tier: "core"
   funnel_stage: "all"
   channels: "wordpress"
-  version: "0.28.6"
+  version: "0.28.7"
   docs: "https://cmo.so/skills/cmo-wp-child-theme"
 ---
 # WordPress child theme

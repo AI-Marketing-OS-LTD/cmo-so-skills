@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "conversion"
   channels: "website,blog"
-  version: "0.28.6"
+  version: "0.28.7"
   docs: "https://cmo.so/skills/cmo-copy-editing"
 ---
 # Copy editing

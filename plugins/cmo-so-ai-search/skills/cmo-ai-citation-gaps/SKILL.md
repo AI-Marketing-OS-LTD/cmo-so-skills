@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "awareness"
   channels: "ai-search"
-  version: "0.28.6"
+  version: "0.28.7"
   docs: "https://cmo.so/skills/cmo-ai-citation-gaps"
 ---
 # AI citation gap finder
