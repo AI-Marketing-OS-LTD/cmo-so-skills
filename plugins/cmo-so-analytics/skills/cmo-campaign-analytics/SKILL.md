@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "all"
   channels: "cmo.so,google-search"
-  version: "0.28.7"
+  version: "0.28.8"
   docs: "https://cmo.so/skills/cmo-campaign-analytics"
 ---
 # Campaign analytics & benchmarks

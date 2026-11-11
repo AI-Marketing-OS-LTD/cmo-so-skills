@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "webinar,events"
-  version: "0.28.7"
+  version: "0.28.8"
   docs: "https://cmo.so/skills/cmo-events-webinars"
 ---
 # Events & webinars

@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.28.7"
+  version: "0.28.8"
   docs: "https://cmo.so/skills/cmo-copywriting"
 ---
 # Conversion copywriting
