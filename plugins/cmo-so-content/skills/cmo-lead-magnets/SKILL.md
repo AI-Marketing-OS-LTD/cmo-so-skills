@@ -7,7 +7,7 @@ metadata:
   tier: "standalone"
   funnel_stage: "consideration"
   channels: "website,email"
-  version: "0.28.8"
+  version: "0.28.9"
   docs: "https://cmo.so/skills/cmo-lead-magnets"
 ---
 # Lead magnets

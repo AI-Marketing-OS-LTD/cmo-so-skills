@@ -7,7 +7,7 @@ metadata:
   tier: "connected"
   funnel_stage: "conversion"
   channels: "website"
-  version: "0.28.8"
+  version: "0.28.9"
   docs: "https://cmo.so/skills/cmo-landing-page-builder"
 ---
 # Landing page builder
